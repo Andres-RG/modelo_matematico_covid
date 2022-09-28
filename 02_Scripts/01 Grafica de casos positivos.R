@@ -25,7 +25,7 @@ load("01_RawData/datos_covid_qro.RData")
 casos_totales_re <- mutate(datos_covid_qro, rango_de_edad = rangos_edades(datos_covid_qro$EDAD))
 
 # Se guarda el objeto como un objeto .RData
-# saveRDS(casos_totales_re, "03_Out/OutData/casos_totales_rangos_edades.RData")
+# save(casos_totales_re, file = "03_Out/OutData/casos_totales_rangos_edades.RData")
 
 # Este objeto contendra los casos unicamente positivos, de acuerdo a la clasificacion
 # reportada.  
@@ -34,7 +34,7 @@ casos_positivos_re <- filter(casos_totales_re, CLASIFICACION_FINAL == 1 |
                         CLASIFICACION_FINAL == 3 )
 
 # Se guarda el objeto como un objeto .RData
-# saveRDS(casos_positivos_re, "03_Out/OutData/casos_positivos_rangos_edades.RData")
+# save(casos_positivos_re, file = "03_Out/OutData/casos_positivos_rangos_edades.RData")
 
 # Se elabora la grafica de casos positivos separados por rango de edades
 plot_positivos_re <- ggplot(casos_positivos_re, 
