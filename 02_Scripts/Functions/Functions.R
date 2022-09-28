@@ -38,36 +38,36 @@ rangos_edades <- function (colm) {
 
 
 
-# Funcion para determinar las probabilidades de trancion
+# Funcion para determinar las probabilidades de transicion
 
 probabilidades <- function(base_1, base_2){
   
   ##
-  p18 <- sum(base_1$rango_edad == "18-") / sum(base_2$rango_edad == "18-")
+  p18 <- sum(base_1$rango_de_edad == "18-") / sum(base_2$rango_de_edad == "18-")
   ##
   ##
-  p18_29 <- sum(base_1$rango_edad == "18-29") / 
-    sum(base_2$rango_edad == "18-29")
+  p18_29 <- sum(base_1$rango_de_edad == "18-29") / 
+    sum(base_2$rango_de_edad == "18-29")
   ##
   ##
-  p30_39 <- sum(base_1$rango_edad == "30-39") / 
-    sum(base_2$rango_edad == "30-39")
+  p30_39 <- sum(base_1$rango_de_edad == "30-39") / 
+    sum(base_2$rango_de_edad == "30-39")
   ##
   ##
-  p40_49 <- sum(base_1$rango_edad == "40-49") /
-    sum(base_2$rango_edad == "40-49")
+  p40_49 <- sum(base_1$rango_de_edad == "40-49") /
+    sum(base_2$rango_de_edad == "40-49")
   ##
   ##
-  p50_59 <- sum(base_1$rango_edad == "50-59") /
-    sum(base_2$rango_edad == "50-59")
+  p50_59 <- sum(base_1$rango_de_edad == "50-59") /
+    sum(base_2$rango_de_edad == "50-59")
   ##
   ##
-  p60_69 <- sum(base_1$rango_edad == "60-69") /
-    sum(base_2$rango_edad == "60-69")
+  p60_69 <- sum(base_1$rango_de_edad == "60-69") /
+    sum(base_2$rango_de_edad == "60-69")
   ##
   ##
-  p70 <- sum(base_1$rango_edad == "70+") /
-    sum(base_2$rango_edad == "70+")
+  p70 <- sum(base_1$rango_de_edad == "70+") /
+    sum(base_2$rango_de_edad == "70+")
   
   
   
