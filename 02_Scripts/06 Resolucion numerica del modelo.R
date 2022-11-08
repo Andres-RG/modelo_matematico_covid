@@ -213,8 +213,8 @@ modelo_covid <- function(t, x, params) {
          {
              
              ## GRUPO 1
-             S1 <- - ( ( beta_1 * S1 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4) ) / N ) 
-             E1 <- ( ( beta_1 * S1 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4) ) / N ) - ( alpha * E1 )
+             S1 <- ( - (beta_1 * S1 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4) ) ) / N
+             E1 <- ( (beta_1 * S1 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4) ) / N )  - ( alpha * E1 )
              I1 <- ( alpha * E1 ) - ( ph_1 * delta_h * I1) - ( pl_1 * delta_l * I1 )
              I_l1 <- ( pl_1 * delta_l * I1 ) - ( gamma_R * I_l1 )
              I_h1 <- ( ph_1 * delta_h * I1) - ( pi_1 * delta_i * I_h1 ) - ( ( 1 - pi_1 ) * gamma_h * I_h1 )
@@ -225,8 +225,8 @@ modelo_covid <- function(t, x, params) {
              
              
              ## GRUPO 2
-             S2 <- - ( ( beta_2 * S2 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4) ) / N ) 
-             E2 <- ( ( beta_2 * S2 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4) ) / N ) - ( alpha * E2 )
+             S2 <- ( - (beta_2 * S2 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4) ) ) / N 
+             E2 <- ( (beta_2 * S2 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4) ) / N ) - ( alpha * E2 )
              I2 <- ( alpha * E2 ) - ( ph_2 * delta_h * I2) - ( pl_2 * delta_l * I2 )
              I_l2 <- ( pl_2 * delta_l * I2 ) - ( gamma_R * I_l2 )
              I_h2 <- ( ph_2 * delta_h * I2) - ( pi_2 * delta_i * I_h2 ) - ( ( 1 - pi_2 ) * gamma_h * I_h2 )
@@ -237,8 +237,8 @@ modelo_covid <- function(t, x, params) {
              
              
              ## GRUPO 3
-             S3 <- - ( ( beta_3 * S3 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4) ) / N ) 
-             E3 <- ( ( beta_3 * S3 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4) ) / N ) - ( alpha * E3 )
+             S3 <- ( - (beta_3 * S3 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4) ) ) / N
+             E3 <- ( (beta_3 * S3 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4) ) / N ) - ( alpha * E3 )
              I3 <- ( alpha * E3 ) - ( ph_3 * delta_h * I3) - ( pl_3 * delta_l * I3 )
              I_l3 <- ( pl_3 * delta_l * I3 ) - ( gamma_R * I_l3 )
              I_h3 <- ( ph_3 * delta_h * I3) - ( pi_3 * delta_i * I_h3 ) - ( ( 1 - pi_3 ) * gamma_h * I_h3 )
@@ -249,8 +249,8 @@ modelo_covid <- function(t, x, params) {
              
              
              ## GRUPO 4
-             S4 <- - ( ( beta_4 * S4 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4) ) / N ) 
-             E4 <- ( ( beta_4 * S4 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4) ) / N ) - ( alpha * E4 )
+             S4 <- ( - (beta_4 * S4 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4) ) ) / N
+             E4 <- ( (beta_4 * S4 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4) ) / N ) - ( alpha * E4 )
              I4 <- ( alpha * E4 ) - ( ph_4 * delta_h * I4) - ( pl_4 * delta_l * I4 )
              I_l4 <- ( pl_4 * delta_l * I4 ) - ( gamma_R * I_l4 )
              I_h4 <- ( ph_4 * delta_h * I4) - ( pi_4 * delta_i * I_h4 ) - ( ( 1 - pi_4 ) * gamma_h * I_h4 )
