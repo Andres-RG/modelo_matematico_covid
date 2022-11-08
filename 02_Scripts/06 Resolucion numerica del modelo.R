@@ -152,9 +152,9 @@ gamma_h <- 1/DRH
 
 # mu. Probabilidad de que los individuos Intubados (ICU) mueran. EE.
 mu_1 <- parms_estructura_edad[1,5]
-mu_2 <- parms_estructura_edad[1,5]
-mu_3 <- parms_estructura_edad[1,5]
-mu_4 <- parms_estructura_edad[1,5]
+mu_2 <- parms_estructura_edad[2,5]
+mu_3 <- parms_estructura_edad[3,5]
+mu_4 <- parms_estructura_edad[4,5]
 
 # delta_m. Modelo CDMX. Tiempo en que los individuos Intubados (ICU) mueren.
 delta_m <- 1/DM
