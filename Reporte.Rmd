@@ -228,48 +228,69 @@ Este diagrama fue elaborado con base al modelo de la CDMX <https://modelo.covid1
 
 $$\begin{array}{l}
 \text{Para el grupo 1 :} \\
-\dot S_1 = \frac { -\beta_1 S_1 * ( I_1 + I_2 + I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4} ) } {N} \\
-\dot E_1 = \frac { \beta_1 S_1 * ( I_1 + I_2 + I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4} ) } {N} - \alpha E_1 \\
-\dot I_1 = \alpha E_1 - p_{h1} \delta_g I_1 - p_{l1} \delta_l I_1 \\
-\dot I_{l1} = p_{l1} \delta_l I_1 - \gamma _R I_{l1} \\
-\dot I_{h1} = p_{h1} \delta_g I_1 - p_{i1} \delta _h I_{h1} - (1-p_{i1}) \gamma _h I_{h1} \\
-\dot I_{i1} = p_{i1} \delta _h I_{h1} - \mu _1 \delta _i I_{i1} - (1-\mu_1)\gamma _i I_{i1} \\
-\dot M_1 = \mu_1 \delta _i I_{i1} \\ 
-\dot R_1 = \gamma _R I_{l1} + (1-p_{i1} ) \gamma _h I_{h1} + ( 1-\mu_1 ) \gamma _i I_{i1}
+\dot S_1 = - \frac{\beta_1}{N} S_1 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4}) \\
+\dot E_1 = \frac{\beta_1}{N} S_1 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4}) - \alpha E_1 \\
+\dot I_1 = \alpha E_1 - p_{h1} \delta _h I_1 - p_{l1} \delta _l I_1 \\
+\dot I_{l1} = p_{l1} \delta _l I_1 - \gamma _R I_{l1} \\
+\dot I_{h1} = p_{h1} \delta _h I_1 - p_{i1} \delta _{i} I_{h1} - (1 - p_{i1}) \gamma _h I_{h1} \\
+\dot I_{i1} = p_{i1} \delta _i I_{h1} - \mu _1 \delta _\mu I_{i1} - (1 - \mu _1) \gamma _i I_{i1} \\
+\dot M_1 = \mu _1 \delta _\mu I_{i1} \\
+\dot R_1 = \gamma _R I_{l1} + (1 - p_{i1}) \gamma _h I_{h1} + (1 - \mu _1) \gamma _i I_{i1}
 \\
 \\
 \text{Para el grupo 2 :} \\
-\dot S_2 = \frac { -\beta_2 S_2 * ( I_1 + I_2 + I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4} ) } {N} \\
-\dot E_2 = \frac { \beta_2 S_2 * ( I_1 + I_2 + I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4} ) } {N} - \alpha E_2 \\
-\dot I_2 = \alpha E_2 - p_{h2} \delta_g I_2 - p_{l2} \delta_l I_2 \\
-\dot I_{l2} = p_{l2} \delta_l I_2 - \gamma _R I_{l2} \\
-\dot I_{h2} = p_{h2} \delta_g I_2 - p_{i2} \delta _h I_{h2} - (1-p_{i2}) \gamma _h I_{h2} \\
-\dot I_{i2} = p_{i2} \delta _h I_{h2} - \mu _2 \delta _i I_{i2} - (1-\mu_2)\gamma _i I_{i2} \\
-\dot M_2 = \mu_2 \delta _i I_{i2} \\ 
-\dot R_2 = \gamma _R I_{l2} + (1-p_{i2} ) \gamma _h I_{h2} + ( 1-\mu_2 ) \gamma _i I_{i2}
+\dot S_2 = - \frac{\beta_2}{N} S_2 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4}) \\
+\dot E_2 = \frac{\beta_2}{N} S_2 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4}) - \alpha E_2 \\
+\dot I_2 = \alpha E_2 - p_{h2} \delta _h I_2 - p_{l2} \delta _l I_2 \\
+\dot I_{l2} = p_{l2} \delta _l I_2 - \gamma _R I_{l2} \\
+\dot I_{h2} = p_{h2} \delta _h I_2 - p_{i2} \delta _{i} I_{h2} - (1 - p_{i2}) \gamma _h I_{h2} \\
+\dot I_{i2} = p_{i2} \delta _i I_{h2} - \mu _2 \delta _\mu I_{i2} - (1 - \mu _2) \gamma _i I_{i2} \\
+\dot M_2 = \mu _2 \delta _\mu I_{i2} \\
+\dot R_2 = \gamma _R I_{l2} + (1 - p_{i2}) \gamma _h I_{h2} + (1 - \mu _2) \gamma _i I_{i2}
 \\
 \\
 \text{Para el grupo 3 :} \\
-\dot S_3 = \frac { -\beta_3 S_3 * ( I_1 + I_2 + I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4} ) } {N} \\
-\dot E_3 = \frac { \beta_3 S_3 * ( I_1 + I_2 + I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4} ) } {N} - \alpha E_3 \\
-\dot I_3 = \alpha E_3 - p_{h3} \delta_g I_3 - p_{l3} \delta_l I_3 \\
-\dot I_{l3} = p_{l3} \delta_l I_3 - \gamma _R I_{l3} \\
-\dot I_{h3} = p_{h3} \delta_g I_3 - p_{i3} \delta _h I_{h3} - (1-p_{i3}) \gamma _h I_{h3} \\
-\dot I_{i3} = p_{i3} \delta _h I_{h3} - \mu _3 \delta _i I_{i3} - (1-\mu_3)\gamma _i I_{i3} \\
-\dot M_3 = \mu_3 \delta _i I_{i3} \\ 
-\dot R_3 = \gamma _R I_{l3} + (1-p_{i3} ) \gamma _h I_{h3} + ( 1-\mu_3 ) \gamma _i I_{i3}
+\dot S_3 = - \frac{\beta_3}{N} S_3 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4}) \\
+\dot E_3 = \frac{\beta_3}{N} S_3 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4}) - \alpha E_3 \\
+\dot I_3 = \alpha E_3 - p_{h3} \delta _h I_3 - p_{l3} \delta _l I_3 \\
+\dot I_{l3} = p_{l3} \delta _l I_3 - \gamma _R I_{l3} \\
+\dot I_{h3} = p_{h3} \delta _h I_3 - p_{i3} \delta _{i} I_{h3} - (1 - p_{i3}) \gamma _h I_{h3} \\
+\dot I_{i3} = p_{i3} \delta _i I_{h3} - \mu _3 \delta _\mu I_{i3} - (1 - \mu _3) \gamma _i I_{i3} \\
+\dot M_3 = \mu _3 \delta _\mu I_{i3} \\
+\dot R_3 = \gamma _R I_{l3} + (1 - p_{i3}) \gamma _h I_{h3} + (1 - \mu _3) \gamma _i I_{i3}
 \\
 \\
 \text{Para el grupo 4 :} \\
-\dot S_4 = \frac { -\beta_4 S_4 * ( I_1 + I_2 + I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4} ) } {N} \\
-\dot E_4 = \frac { \beta_4 S_4 * ( I_1 + I_2 + I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4} ) } {N} - \alpha E_4 \\
-\dot I_4 = \alpha E_4 - p_{h4} \delta_g I_4 - p_{l4} \delta_l I_4 \\
-\dot I_{l4} = p_{l4} \delta_l I_4 - \gamma _R I_{l4} \\
-\dot I_{h4} = p_{h4} \delta_g I_4 - p_{i4} \delta _h I_{h4} - (1-p_{i4}) \gamma _h I_{h4} \\
-\dot I_{i4} = p_{i4} \delta _h I_{h4} - \mu _4 \delta _i I_{i4} - (1-\mu_4)\gamma _i I_{i4} \\
-\dot M_4 = \mu_4 \delta _i I_{i4} \\ 
-\dot R_4 = \gamma _R I_{l4} + (1-p_{i4} ) \gamma _h I_{h4} + ( 1-\mu_4 ) \gamma _i I_{i4}
+\dot S_4 = - \frac{\beta_4}{N} S_4 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4}) \\
+\dot E_4 = \frac{\beta_4}{N} S_4 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4}) - \alpha E_4 \\
+\dot I_4 = \alpha E_4 - p_{h4} \delta _h I_4 - p_{l4} \delta _l I_4 \\
+\dot I_{l4} = p_{l4} \delta _l I_4 - \gamma _R I_{l4} \\
+\dot I_{h4} = p_{h4} \delta _h I_4 - p_{i4} \delta _{i} I_{h4} - (1 - p_{i4}) \gamma _h I_{h4} \\
+\dot I_{i4} = p_{i4} \delta _i I_{h4} - \mu _4 \delta _\mu I_{i4} - (1 - \mu _4) \gamma _i I_{i4} \\
+\dot M_4 = \mu _4 \delta _\mu I_{i4} \\
+\dot R_4 = \gamma _R I_{l4} + (1 - p_{i4}) \gamma _h I_{h4} + (1 - \mu _4) \gamma _i I_{i4}
 \end{array}$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
