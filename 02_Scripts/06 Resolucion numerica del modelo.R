@@ -279,7 +279,7 @@ modelo_covid <- function(t, x, params) {
 
 ## Times, Parametros, Variables ====
 # Tiempo
-times <- seq (0, 1000, by = 0.01)
+times <- seq (0, 10, by = 0.001)
 
 # Parámetros
 params <- c(
@@ -340,36 +340,36 @@ params <- c(
 
 xstart <- c( 
     
-    S1    = 782000 - 2,
+    S1    = 782000 - 100,
     E1    = 0,
-    I1    = 1,
+    I1    = 99,
     I_l1  = 1,
     I_h1  = 0,
     I_i1  = 0,
     R1    = 0,
     M1    = 0,
     
-    S2    = 801000 - 2,
+    S2    = 801000 - 100,
     E2    = 0,
-    I2    = 1,
+    I2    = 99,
     I_l2  = 1,
     I_h2  = 0,
     I_i2  = 0,
     R2    = 0,
     M2    = 0,
     
-    S3    = 539000 - 2,
+    S3    = 539000 - 100,
     E3    = 0,
-    I3    = 1,
+    I3    = 99,
     I_l3  = 1,
     I_h3  = 0,
     I_i3  = 0,
     R3    = 0,
     M3    = 0,
     
-    S4    = 242000 - 2,
+    S4    = 242000 - 100,
     E4    = 0,
-    I4    = 1,
+    I4    = 99,
     I_l4  = 1,
     I_h4  = 0,
     I_i4  = 0,
