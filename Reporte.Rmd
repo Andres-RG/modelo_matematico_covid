@@ -410,3 +410,5 @@ $$\begin{array}{l}
 + \mu _n \delta _\mu I_{in} + \gamma _R I_{ln} + (1-p_{in}) \gamma _h I_{hn} \\
 + (1-\mu_n) \gamma_i I_{in} = 0
 \end{array}$$
+
+
