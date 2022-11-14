@@ -16,50 +16,50 @@ library(lubridate)
 covid <- function(t, state, parameters){
   with(as.list(c(state, parameters)), {
     ## GRUPO 1
-    S1   <- - ( beta_1 / N ) * S1 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4 )
-    E1   <- ( ( beta_1 / N ) * S1 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4 ) ) - ( alpha * E1 )
-    I1   <- ( alpha * E1 ) - ( ph_1 * delta_h * I1) - ( pl_1 * delta_l * I1)
-    I_l1 <- ( pl_1 * delta_l * I1) - ( gamma_R * I_l1 )
-    I_h1 <- ( ph_1 * delta_h * I1) - ( pi_1 * delta_i * I_h1 ) - ( (1 - pi_1) * gamma_h * I_h1 )
-    I_i1 <- ( pi_1 * delta_i * I_h1 ) - ( mu_1 * delta_m * I_i1 ) - ( (1 - mu_1) * gamma_i * I_i1 )
-    M1   <-  mu_1 * delta_m * I_i1
-    R1   <- ( gamma_R * I_l1 ) + ( (1 - pi_1) * gamma_h * I_h1 ) + ( (1 - mu_1) * gamma_i * I_i1 )
+    dS1   <- - ( beta_1 / N ) * S1 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4 )
+    dE1   <- ( ( beta_1 / N ) * S1 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4 ) ) - ( alpha * E1 )
+    dI1   <- ( alpha * E1 ) - ( ph_1 * delta_h * I1) - ( pl_1 * delta_l * I1)
+    dI_l1 <- ( pl_1 * delta_l * I1) - ( gamma_R * I_l1 )
+    dI_h1 <- ( ph_1 * delta_h * I1) - ( pi_1 * delta_i * I_h1 ) - ( (1 - pi_1) * gamma_h * I_h1 )
+    dI_i1 <- ( pi_1 * delta_i * I_h1 ) - ( mu_1 * delta_m * I_i1 ) - ( (1 - mu_1) * gamma_i * I_i1 )
+    dM1   <-  mu_1 * delta_m * I_i1
+    dR1   <- ( gamma_R * I_l1 ) + ( (1 - pi_1) * gamma_h * I_h1 ) + ( (1 - mu_1) * gamma_i * I_i1 )
     
     
     
     ## GRUPO 2
-    S2   <- - ( beta_2 / N ) * S2 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4 )
-    E2   <- ( ( beta_2 / N ) * S2 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4 ) ) - ( alpha * E2 )
-    I2   <- ( alpha * E2 ) - ( ph_2 * delta_h * I2) - ( pl_2 * delta_l * I2)
-    I_l2 <- ( pl_2 * delta_l * I2) - ( gamma_R * I_l2 )
-    I_h2 <- ( ph_2 * delta_h * I2) - ( pi_2 * delta_i * I_h2 ) - ( (1 - pi_2) * gamma_h * I_h2 )
-    I_i2 <- ( pi_2 * delta_i * I_h2 ) - ( mu_2 * delta_m * I_i2 ) - ( (1 - mu_2) * gamma_i * I_i2 )
-    M2   <-  mu_2 * delta_m * I_i2
-    R2   <- ( gamma_R * I_l2 ) + ( (1 - pi_2) * gamma_h * I_h2 ) + ( (1 - mu_2) * gamma_i * I_i2 )
+    dS2   <- - ( beta_2 / N ) * S2 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4 )
+    dI2   <- ( ( beta_2 / N ) * S2 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4 ) ) - ( alpha * E2 )
+    dE2   <- ( alpha * E2 ) - ( ph_2 * delta_h * I2) - ( pl_2 * delta_l * I2)
+    dI_l2 <- ( pl_2 * delta_l * I2) - ( gamma_R * I_l2 )
+    dI_h2 <- ( ph_2 * delta_h * I2) - ( pi_2 * delta_i * I_h2 ) - ( (1 - pi_2) * gamma_h * I_h2 )
+    dI_i2 <- ( pi_2 * delta_i * I_h2 ) - ( mu_2 * delta_m * I_i2 ) - ( (1 - mu_2) * gamma_i * I_i2 )
+    dM2   <-  mu_2 * delta_m * I_i2
+    dR2   <- ( gamma_R * I_l2 ) + ( (1 - pi_2) * gamma_h * I_h2 ) + ( (1 - mu_2) * gamma_i * I_i2 )
     
     
     
     ## GRUPO 3
-    S3   <- - ( beta_3 / N ) * S3 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4 )
-    E3   <- ( ( beta_3 / N ) * S3 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4 ) ) - ( alpha * E3 )
-    I3   <- ( alpha * E3 ) - ( ph_3 * delta_h * I3) - ( pl_3 * delta_l * I3)
-    I_l3 <- ( pl_3 * delta_l * I3) - ( gamma_R * I_l3 )
-    I_h3 <- ( ph_3 * delta_h * I3) - ( pi_3 * delta_i * I_h3 ) - ( (1 - pi_3) * gamma_h * I_h3 )
-    I_i3 <- ( pi_3 * delta_i * I_h3 ) - ( mu_3 * delta_m * I_i3 ) - ( (1 - mu_3) * gamma_i * I_i3 )
-    M3   <-  mu_3 * delta_m * I_i3
-    R3   <- ( gamma_R * I_l3 ) + ( (1 - pi_3) * gamma_h * I_h3 ) + ( (1 - mu_3) * gamma_i * I_i3 )
+    dS3   <- - ( beta_3 / N ) * S3 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4 )
+    dE3   <- ( ( beta_3 / N ) * S3 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4 ) ) - ( alpha * E3 )
+    dI3   <- ( alpha * E3 ) - ( ph_3 * delta_h * I3) - ( pl_3 * delta_l * I3)
+    dI_l3 <- ( pl_3 * delta_l * I3) - ( gamma_R * I_l3 )
+    dI_h3 <- ( ph_3 * delta_h * I3) - ( pi_3 * delta_i * I_h3 ) - ( (1 - pi_3) * gamma_h * I_h3 )
+    dI_i3 <- ( pi_3 * delta_i * I_h3 ) - ( mu_3 * delta_m * I_i3 ) - ( (1 - mu_3) * gamma_i * I_i3 )
+    dM3   <-  mu_3 * delta_m * I_i3
+    dR3   <- ( gamma_R * I_l3 ) + ( (1 - pi_3) * gamma_h * I_h3 ) + ( (1 - mu_3) * gamma_i * I_i3 )
     
     
     
     ## GRUPO 4
-    S4   <- - ( beta_4 / N ) * S4 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4 )
-    E4   <- ( ( beta_4 / N ) * S4 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4 ) ) - ( alpha * E4 )
-    I4   <- ( alpha * E4 ) - ( ph_4 * delta_h * I4) - ( pl_4 * delta_l * I4)
-    I_l4 <- ( pl_4 * delta_l * I4) - ( gamma_R * I_l4 )
-    I_h4 <- ( ph_4 * delta_h * I4) - ( pi_4 * delta_i * I_h4 ) - ( (1 - pi_4) * gamma_h * I_h4 )
-    I_i4 <- ( pi_4 * delta_i * I_h4 ) - ( mu_4 * delta_m * I_i4 ) - ( (1 - mu_4) * gamma_i * I_i4 )
-    M4   <-  mu_4 * delta_m * I_i4
-    R4   <- ( gamma_R * I_l4 ) + ( (1 - pi_4) * gamma_h * I_h4 ) + ( (1 - mu_4) * gamma_i * I_i4 )
+    dS4   <- - ( beta_4 / N ) * S4 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4 )
+    dE4   <- ( ( beta_4 / N ) * S4 * (I1 + I2 + I3 + I4 + I_l1 + I_l2 + I_l3 + I_l4 ) ) - ( alpha * E4 )
+    dI4   <- ( alpha * E4 ) - ( ph_4 * delta_h * I4) - ( pl_4 * delta_l * I4)
+    dI_l4 <- ( pl_4 * delta_l * I4) - ( gamma_R * I_l4 )
+    dI_h4 <- ( ph_4 * delta_h * I4) - ( pi_4 * delta_i * I_h4 ) - ( (1 - pi_4) * gamma_h * I_h4 )
+    dI_i4 <- ( pi_4 * delta_i * I_h4 ) - ( mu_4 * delta_m * I_i4 ) - ( (1 - mu_4) * gamma_i * I_i4 )
+    dM4   <-  mu_4 * delta_m * I_i4
+    dR4   <- ( gamma_R * I_l4 ) + ( (1 - pi_4) * gamma_h * I_h4 ) + ( (1 - mu_4) * gamma_i * I_i4 )
     
     list(c(dS1, dE1, dI1, dI_l1, dI_h1, dI_i1, dR1, dM1,
            dS2, dE2, dI2, dI_l2, dI_h2, dI_i2, dR2, dM2,
@@ -195,4 +195,4 @@ legend("topright", c("Suceptibles Grupo 1"                             ,
                      "Unidad de Terapia Intensiva Grupo 4"             ,
                      "Recuperados  Grupo 4"                            ,
                      "Muertos Grupo 4"                                 )
-       , scale_fill_viridis(discrete = T), lty = 1, cex = 0.5)
+       , col =1:32,lty = 1, cex = 0.25)
