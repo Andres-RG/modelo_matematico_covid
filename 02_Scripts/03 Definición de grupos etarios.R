@@ -55,13 +55,12 @@ agroup4 <- hclust(distancias_pt, method = "single", members = NULL)
 agroup5 <- hclust(distancias_pt, method = "average", members = NULL)
 agroup6 <- hclust(distancias_pt, method = "mcquitty", members = NULL)
 agroup7 <- hclust(distancias_pt, method = "median", members = NULL)
-agroup8 <- hclust(distancias_pt, method = "median", members = NULL)
-agroup9 <- hclust(distancias_pt, method = "centroid", members = NULL)
+agroup8 <- hclust(distancias_pt, method = "centroid", members = NULL)
 
 # Los resultados de este análisis se visualizan mediante un dendograma, al mismo
 # tiempo, se guardan los dendogramas en conjunto como un archivo png
 png("03_Out/Plots/analisis_de_cluster_probabilidades_de_transicion.png", width = 550, height = 550)
-layout ( matrix ( c( 1 : 9 ), 3, 3))
+layout ( matrix ( c( 1 : 8 ), 3, 3))
 plot(agroup1)
 plot(agroup2) 
 plot(agroup3)
@@ -70,7 +69,6 @@ plot(agroup5)
 plot(agroup6) 
 plot(agroup7)
 plot(agroup8)
-plot(agroup9)
 layout(matrix (c (1), 1, 1))
 dev.off()
 
