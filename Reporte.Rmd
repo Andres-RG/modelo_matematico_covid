@@ -25,7 +25,7 @@ Esto pone en pie la idea de que la edad del paciente es importante para determin
 
 ```{r message=FALSE, warning=FALSE}
 library(plotly)
-source("02_Scripts/01 Grafica de casos positivos.R")
+source("02_Scripts/01_Grafica_de_casos_positivos.R")
 ggplotly(plot_positivos_re)
 ```
 
@@ -57,7 +57,7 @@ Con este análisis, se obtuvieron cuatro grupos etarios por el cual se va a desa
 
 Este diagrama fue elaborado con base al modelo de la CDMX <https://modelo.covid19.cdmx.gob.mx/>, al cual se le modificaron los compartimentos establecidos, ya que estos fueron definidos con base a las probabilidades de transición obtenidas con los datos públicos.
 
-![Diagrama por compartimentos](04_Images/Diagrama%20por%20compartimentos.png)
+![Diagrama por compartimentos](04_Images/Diagrama por compartimentos.png)
 
 ## 5.2 Definición de los parámteros
 
@@ -219,79 +219,79 @@ Este diagrama fue elaborado con base al modelo de la CDMX <https://modelo.covid1
 
 ### 5.2.3 Comparación de Parámetros
 
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| Variable | Elementos de las ecuaciones                                                           |                   |                    |
-+==========+=======================================================================================+===================+====================+
-| $S_1$    | $- 0.3771 \frac{S_1 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4})}{N}$   |                   |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $E_1$    | $0.3771 \frac{S_1 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4})}{N}$     | $-0.1785 E_1$     |                    |
-+----------+----------------------------------------------------------------------------------------+-------------------+-------------------+
-| $I_1$    | $0.1785 E_1$                                                                          | $-0.006325 I_1$   | $-0.1772 I_1$      |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $I_{l1}$ | $0.1772 I_1$                                                                          | $-0.0714 I_{l1}$  |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $I_{h1}$ | $0.006325 I_1$                                                                        | $-0.0943 I_{h1}$  | $-0.0754 I_{h1}$   |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $I_{i1}$ | $0.0943 I_{h1}$                                                                       | $-0.0625 I_{i1}$  | $-0.0714 I_{i1}$   |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $M_1$    | $0.0625 I_{i1}$                                                                       |                   |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $R_1$    | $0.0714 I_{l1}$                                                                       | $+0.0754 I_{h1}$  | $+0.0714 I_{i1}$   |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| \        |                                                                                       |                   |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $S_2$    | $- 0.4473 \frac{S_2 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4})}{N}$   |                   |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $E_2$    | $0.4473 \frac{S_2 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4})}{N}$     | $-0.1785 E_2$     |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $I_2$    | $0.1785 E_2$                                                                          | $-0.009725 I_2$   | $-0.1747 I_2$      |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $I_{l2}$ | $0.1747 I_2$                                                                          | $-0.0714 I_{l2}$  |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $I_{h2}$ | $0.009725 I_2$                                                                        | $-0.1115 I_{h2}$  | $-0.0740 I_{h2}$   |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $I_{i2}$ | $0.1115 I_{h2}$                                                                       | $-0.0862 I_{i2}$  | $-0.0443 I_{i2}$   |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $M_2$    | $0.0862 I_{i2}$                                                                       |                   |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $R_2$    | $0.0714 I_{l2}$                                                                       | $+0.0740 I_{h2}$  | $+0.0443 I_{i2}$   |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| \        |                                                                                       |                   |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $S_3$    | $-0.5090 \frac{S_3 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4})}{N}$    |                   |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $E_3$    | $0.5090 \frac{S_3 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4})}{N}$     | $-0.1785 E_3$     |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $I_3$    | $0.1785 E_3$                                                                          | $-0.0394 I_3$     | $-0.1530 I_3$      |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $I_{l3}$ | $0.1530 I_3$                                                                          | $-0.0714 I_{l3}$  |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $I_{h3}$ | $0.0394 I_3$                                                                          | $-0.1882 I_{h3}$  | $-0.0676 I_{h3}$   |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $I_{i3}$ | $0.1882 I_{h3}$                                                                       | $-0.1028 I_{i3}$  | $-0.0253 I_{i3}$   |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $M_3$    | $0.1028 I_{i3}$                                                                       |                   |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $R_3$    | $0.0714 I_{l3}$                                                                       | $+0.0676 I_{h3}$  | $+0.0253 I_{i3}$   |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| \        |                                                                                       |                   |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $S_4$    | $- 0.5638 \frac{S_4 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4})}{N}$   |                   |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $E_4$    | $0.5638 \frac{S_4 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4})}{N}$     | $-0.1785 E_4$     |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $I_4$    | $0.1785 E_4$                                                                          | $-0.1108 I_4$     | $-1012 I_4$        |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $I_{l4}$ | $1012 I_4$                                                                            | $-0.0714 I_{l4}$  |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $I_{h4}$ | $0.1108 I_4$                                                                          | $-0.2119 I_{h4}$  | $-0.0656 I_{h4}$   |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $I_{i4}$ | $0.2119 I_{h4}$                                                                       | $-0.1121 I_{i4}$  | $-0.01468 I_{i4}$  |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $M_4$    | $0.1121 I_{i4}$                                                                       |                   |                    |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
-| $R_4$    | $0.0714 I_{l4}$                                                                       | $0.0656 I_{h4}$   | $0.01468 I_{i4}$   |
-+----------+---------------------------------------------------------------------------------------+-------------------+--------------------+
++----------+-----------------------------------------+-------------------+--------------------+
+| Variable | Elementos de las ecuaciones             |                   |                    |
++==========+=========================================+===================+====================+
+| $S_1$    | $- 0.3771 S_1 (I_1 + I_2+ I_3 + I_4)$   |                   |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $E_1$    | $0.3771 S_1 (I_1 + I_2+ I_3 + I_4)$     | $-0.1785 E_1$     |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $I_1$    | $0.1785 E_1$                            | $-0.006325 I_1$   | $-0.1772 I_1$      |
++----------+-----------------------------------------+-------------------+--------------------+
+| $I_{l1}$ | $0.1772 I_1$                            | $-0.0714 I_{l1}$  |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $I_{h1}$ | $0.006325 I_1$                          | $-0.0943 I_{h1}$  | $-0.0754 I_{h1}$   |
++----------+-----------------------------------------+-------------------+--------------------+
+| $I_{i1}$ | $0.0943 I_{h1}$                         | $-0.0625 I_{i1}$  | $-0.0714 I_{i1}$   |
++----------+-----------------------------------------+-------------------+--------------------+
+| $M_1$    | $0.0625 I_{i1}$                         |                   |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $R_1$    | $0.0714 I_{l1}$                         | $+0.0754 I_{h1}$  | $+0.0714 I_{i1}$   |
++----------+-----------------------------------------+-------------------+--------------------+
+| \        |                                         |                   |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $S_2$    | $- 0.4473 S_2 (I_1 + I_2+ I_3 + I_4)$   |                   |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $E_2$    | $0.4473 S_2 (I_1 + I_2+ I_3 + I_4)$     | $-0.1785 E_2$     |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $I_2$    | $0.1785 E_2$                            | $-0.009725 I_2$   | $-0.1747 I_2$      |
++----------+-----------------------------------------+-------------------+--------------------+
+| $I_{l2}$ | $0.1747 I_2$                            | $-0.0714 I_{l2}$  |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $I_{h2}$ | $0.009725 I_2$                          | $-0.1115 I_{h2}$  | $-0.0740 I_{h2}$   |
++----------+-----------------------------------------+-------------------+--------------------+
+| $I_{i2}$ | $0.1115 I_{h2}$                         | $-0.0862 I_{i2}$  | $-0.0443 I_{i2}$   |
++----------+-----------------------------------------+-------------------+--------------------+
+| $M_2$    | $0.0862 I_{i2}$                         |                   |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $R_2$    | $0.0714 I_{l2}$                         | $+0.0740 I_{h2}$  | $+0.0443 I_{i2}$   |
++----------+-----------------------------------------+-------------------+--------------------+
+| \        |                                         |                   |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $S_3$    | $-0.5090 S_3 (I_1 + I_2+ I_3 + I_4)$    |                   |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $E_3$    | $0.5090 S_3 (I_1 + I_2+ I_3 + I_4)$     | $-0.1785 E_3$     |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $I_3$    | $0.1785 E_3$                            | $-0.0394 I_3$     | $-0.1530 I_3$      |
++----------+-----------------------------------------+-------------------+--------------------+
+| $I_{l3}$ | $0.1530 I_3$                            | $-0.0714 I_{l3}$  |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $I_{h3}$ | $0.0394 I_3$                            | $-0.1882 I_{h3}$  | $-0.0676 I_{h3}$   |
++----------+-----------------------------------------+-------------------+--------------------+
+| $I_{i3}$ | $0.1882 I_{h3}$                         | $-0.1028 I_{i3}$  | $-0.0253 I_{i3}$   |
++----------+-----------------------------------------+-------------------+--------------------+
+| $M_3$    | $0.1028 I_{i3}$                         |                   |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $R_3$    | $0.0714 I_{l3}$                         | $+0.0676 I_{h3}$  | $+0.0253 I_{i3}$   |
++----------+-----------------------------------------+-------------------+--------------------+
+| \        |                                         |                   |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $S_4$    | $- 0.5638 S_4 (I_1 + I_2+ I_3 + I_4)$   |                   |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $E_4$    | $0.5638 S_4 (I_1 + I_2+ I_3 + I_4)$     | $-0.1785 E_4$     |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $I_4$    | $0.1785 E_4$                            | $-0.1108 I_4$     | $-1012 I_4$        |
++----------+-----------------------------------------+-------------------+--------------------+
+| $I_{l4}$ | $1012 I_4$                              | $-0.0714 I_{l4}$  |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $I_{h4}$ | $0.1108 I_4$                            | $-0.2119 I_{h4}$  | $-0.0656 I_{h4}$   |
++----------+-----------------------------------------+-------------------+--------------------+
+| $I_{i4}$ | $0.2119 I_{h4}$                         | $-0.1121 I_{i4}$  | $-0.01468 I_{i4}$  |
++----------+-----------------------------------------+-------------------+--------------------+
+| $M_4$    | $0.1121 I_{i4}$                         |                   |                    |
++----------+-----------------------------------------+-------------------+--------------------+
+| $R_4$    | $0.0714 I_{l4}$                         | $0.0656 I_{h4}$   | $0.01468 I_{i4}$   |
++----------+-----------------------------------------+-------------------+--------------------+
 
 
 ## 5.3 Variables
@@ -344,8 +344,8 @@ Este diagrama fue elaborado con base al modelo de la CDMX <https://modelo.covid1
 
 $$\begin{array}{l}
 \text{Para el grupo 1 :} \\
-\dot S_1 = - \beta_1 \frac{S_1 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4})}{N}  \\
-\dot E_1 = \beta_1 \frac{S_1 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4})}{N} - \alpha E_1 \\
+\dot S_1 = - \beta_1 S_1 (I_1 + I_2+ I_3 + I_4)  \\
+\dot E_1 = \beta_1 S_1 (I_1 + I_2+ I_3 + I_4) - \alpha E_1 \\
 \dot I_1 = \alpha E_1 - p_{h1} \delta _h I_1 - p_{l1} \delta _l I_1 \\
 \dot I_{l1} = p_{l1} \delta _l I_1 - \gamma _R I_{l1} \\
 \dot I_{h1} = p_{h1} \delta _h I_1 - p_{i1} \delta _{i} I_{h1} - (1 - p_{i1}) \gamma _h I_{h1} \\
@@ -355,8 +355,8 @@ $$\begin{array}{l}
 \\
 \\
 \text{Para el grupo 2 :} \\
-\dot S_2 = - \beta_2 \frac{S_2 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4})}{N}  \\
-\dot E_2 = \beta_2 \frac{S_2 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4})}{N} - \alpha E_2 \\
+\dot S_2 = - \beta_2 S_2 (I_1 + I_2+ I_3 + I_4)\\
+\dot E_2 = \beta_2 S_2 (I_1 + I_2+ I_3 + I_4) - \alpha E_2 \\
 \dot I_2 = \alpha E_2 - p_{h2} \delta _h I_2 - p_{l2} \delta _l I_2 \\
 \dot I_{l2} = p_{l2} \delta _l I_2 - \gamma _R I_{l2} \\
 \dot I_{h2} = p_{h2} \delta _h I_2 - p_{i2} \delta _{i} I_{h2} - (1 - p_{i2}) \gamma _h I_{h2} \\
@@ -366,8 +366,8 @@ $$\begin{array}{l}
 \\
 \\
 \text{Para el grupo 3 :} \\
-\dot S_3 = - \beta_3 \frac{S_3 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4})}{N}  \\
-\dot E_3 = \beta_3 \frac{S_3 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4})}{N} - \alpha E_3 \\
+\dot S_3 = - \beta_3 S_3 (I_1 + I_2+ I_3 + I_4)  \\
+\dot E_3 = \beta_3 S_3 (I_1 + I_2+ I_3 + I_4) - \alpha E_3 \\
 \dot I_3 = \alpha E_3 - p_{h3} \delta _h I_3 - p_{l3} \delta _l I_3 \\
 \dot I_{l3} = p_{l3} \delta _l I_3 - \gamma _R I_{l3} \\
 \dot I_{h3} = p_{h3} \delta _h I_3 - p_{i3} \delta _{i} I_{h3} - (1 - p_{i3}) \gamma _h I_{h3} \\
@@ -377,8 +377,8 @@ $$\begin{array}{l}
 \\
 \\
 \text{Para el grupo 4 :} \\
-\dot S_4 = - \beta_4 \frac{S_4 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4})}{N}  \\
-\dot E_4 = \beta_4 \frac{S_4 (I_1 + I_2+ I_3 + I_4 + I_{l1} + I_{l2} + I_{l3} + I_{l4})}{N} - \alpha E_4 \\
+\dot S_4 = - \beta_4 S_4 (I_1 + I_2+ I_3 + I_4)  \\
+\dot E_4 = \beta_4 S_4 (I_1 + I_2+ I_3 + I_4) - \alpha E_4 \\
 \dot I_4 = \alpha E_4 - p_{h4} \delta _h I_4 - p_{l4} \delta _l I_4 \\
 \dot I_{l4} = p_{l4} \delta _l I_4 - \gamma _R I_{l4} \\
 \dot I_{h4} = p_{h4} \delta _h I_4 - p_{i4} \delta _{i} I_{h4} - (1 - p_{i4}) \gamma _h I_{h4} \\
@@ -401,8 +401,8 @@ $$\dot N = \dot S + \dot E + \dot I + \dot I_l + \dot I_h + \dot I_i + \dot M + 
 De manera que, integrando a las ecuaciones, quedaría como:
 
 $$\begin{array}{l}
-\dot N = - \beta_n \frac{S_n (\sum I_n + \sum I_{ln})}{N} + \\ 
-\beta_n \frac{S_n (\sum I_n + \sum I_{ln})}{N} - \alpha E_n + \alpha E_n \\
+\dot N = - \beta_n S_n (\sum I_n) + \\ 
+\beta_n S_n (\sum I_n) - \alpha E_n + \alpha E_n \\
 - p_{hn} \delta_{h} I_n - p_{ln} \delta _l I_{n} + p_{ln} \delta _l I_{n} \\
 - \gamma _R I_{ln} + p_{hn} \delta_{h} I_n - p_{in} \delta _i I_{hn} \\
 - (1-p_{in}) \gamma _h I_{hn} + p_{in} \delta _i I_{hn} \\
@@ -411,4 +411,563 @@ $$\begin{array}{l}
 + (1-\mu_n) \gamma_i I_{in} = 0
 \end{array}$$
 
+## 5.5 Condiciones iniciales del sistema
 
+De acuerdo a la información obtenida del INEGI, la población del estado de  Querétaro es de 2,368,467 habitantes, al [senso realizado en 2020](https://cuentame.inegi.org.mx/monografias/informacion/queret/poblacion/default.aspx?tema). Este valor de la poblacion se toma como el valor total de la población. Para el caso de cada estructura de edad definia, la población de individuos suceptibles quedaria como:
+
++ Grupo 1: Menores de 18 años = 782000
++ Grupo 2: 18 - 39 años = 801000
++ Grupo 3: 40 - 59 años = 539000
++ Grupo 4: 60 - >70 años = 242000
+
+# 6 Resolución numérica del modelo
+
+## 6.1 Modelo con grupos completos
+
+El modelo de COVID para el estado de Querétaro se resolvió en R con el uso de [deSolve](https://cran.r-project.org/web/packages/deSolve/index.html). 
+
+```
+## Funcion del modelo ====
+modelo_covid_all_groups <- function(t, state, parameters){
+    with(as.list(c(state, parameters)), {
+        
+        ## GRUPO 1
+        dS1   <- - beta_1 * S1 * (I1 + I2 + I3 + I4)
+        dE1   <- ( beta_1 * S1 * (I1 + I2 + I3 + I4) ) - ( alpha * E1 )
+        dI1   <- ( alpha * E1 ) - ( ph_1 * delta_h * I1 ) - ( pl_1 * delta_l * I1 )
+        dI_l1 <- ( pl_1 * delta_l * I1 ) - ( gamma_R * I_l1 )
+        dI_h1 <- ( ph_1 * delta_h * I1 ) - ( pi_1 * delta_i * I_h1 ) - ( (1 - pi_1) * gamma_h * I_h1 )
+        dI_i1 <- ( pi_1 * delta_i * I_h1 ) - ( mu_1 * delta_m * I_i1 ) - ( (1 - mu_1) * gamma_i * I_i1 )
+        dM1   <-  mu_1 * delta_m * I_i1
+        dR1   <- ( gamma_R * I_l1 ) + ( (1 - pi_1) * gamma_h * I_h1 ) + ( (1 - mu_1) * gamma_i * I_i1 )
+        
+        
+        
+        ## GRUPO 2
+        dS2   <- - beta_2 * S2 * (I1 + I2 + I3 + I4)
+        dE2   <- ( beta_2 * S2 * (I1 + I2 + I3 + I4) ) - ( alpha * E2 )
+        dI2   <- ( alpha * E2 ) - ( ph_2 * delta_h * I2 ) - ( pl_2 * delta_l * I2 )
+        dI_l2 <- ( pl_2 * delta_l * I2 ) - ( gamma_R * I_l2 )
+        dI_h2 <- ( ph_2 * delta_h * I2 ) - ( pi_2 * delta_i * I_h2 ) - ( (1 - pi_2) * gamma_h * I_h2 )
+        dI_i2 <- ( pi_2 * delta_i * I_h2 ) - ( mu_2 * delta_m * I_i2 ) - ( (1 - mu_2) * gamma_i * I_i2 )
+        dM2   <-  mu_2 * delta_m * I_i2
+        dR2   <- ( gamma_R * I_l2 ) + ( (1 - pi_2) * gamma_h * I_h2 ) + ( (1 - mu_2) * gamma_i * I_i2 )
+        
+        
+        
+        ## GRUPO 3
+        dS3   <- - beta_3 * S3 * (I1 + I2 + I3 + I4)
+        dE3   <- ( beta_3 * S3 * (I1 + I2 + I3 + I4) ) - ( alpha * E3 )
+        dI3   <- ( alpha * E3 ) - ( ph_3 * delta_h * I3 ) - ( pl_3 * delta_l * I3 )
+        dI_l3 <- ( pl_3 * delta_l * I3 ) - ( gamma_R * I_l3 )
+        dI_h3 <- ( ph_3 * delta_h * I3 ) - ( pi_3 * delta_i * I_h3 ) - ( (1 - pi_3) * gamma_h * I_h3 )
+        dI_i3 <- ( pi_3 * delta_i * I_h3 ) - ( mu_3 * delta_m * I_i3 ) - ( (1 - mu_3) * gamma_i * I_i3 )
+        dM3   <-  mu_3 * delta_m * I_i3
+        dR3   <- ( gamma_R * I_l3 ) + ( (1 - pi_3) * gamma_h * I_h3 ) + ( (1 - mu_3) * gamma_i * I_i3 )
+        
+        
+        
+        ## GRUPO 4
+        dS4   <- - beta_4 * S4 * (I1 + I2 + I3 + I4)
+        dE4   <- ( beta_4 * S4 * (I1 + I2 + I3 + I4) ) - ( alpha * E4 )
+        dI4   <- ( alpha * E4 ) - ( ph_4 * delta_h * I4 ) - ( pl_4 * delta_l * I4 )
+        dI_l4 <- ( pl_4 * delta_l * I4 ) - ( gamma_R * I_l4 )
+        dI_h4 <- ( ph_4 * delta_h * I4 ) - ( pi_4 * delta_i * I_h4 ) - ( (1 - pi_4) * gamma_h * I_h4 )
+        dI_i4 <- ( pi_4 * delta_i * I_h4 ) - ( mu_4 * delta_m * I_i4 ) - ( (1 - mu_4) * gamma_i * I_i4 )
+        dM4   <-  mu_4 * delta_m * I_i4
+        dR4   <- ( gamma_R * I_l4 ) + ( (1 - pi_4) * gamma_h * I_h4 ) + ( (1 - mu_4) * gamma_i * I_i4 )
+        
+        
+        
+        list(c(dS1, dE1, dI1, dI_l1, dI_h1, dI_i1, dM1, dR1,
+               dS2, dE2, dI2, dI_l2, dI_h2, dI_i2, dM2, dR2,
+               dS3, dE3, dI3, dI_l3, dI_h3, dI_i3, dM3, dR3,
+               dS4, dE4, dI4, dI_l4, dI_h4, dI_i4, dM4, dR4))
+        
+    })
+}
+
+## Tiempo ====
+
+t <- seq (0, 100, by = 0.01)
+
+## Parametros ====
+
+parameters <- c(
+    
+    beta_1  <- 0.3771645     ,
+    beta_2  <- 0.4473864     ,
+    beta_3  <- 0.5090940     ,
+    beta_4  <- 0.5638485     ,
+    
+    
+    alpha   <- 1/5.6         ,
+    
+    pl_1    <- 0.9746533     ,
+    pl_2    <- 0.9610823     ,
+    pl_3    <- 0.8420886     ,
+    pl_4    <- 0.5567019     ,
+    
+    ph_1    <- 0.02534672    ,
+    ph_2    <- 0.03891768    ,
+    ph_3    <- 0.15791136    ,
+    ph_4    <- 0.44329812    ,
+    
+    delta_l <- 1/5.5         ,
+    
+    delta_h <- 1/4           ,
+    
+    gamma_R <- 1/14          ,
+    
+    pi_1    <- 0.09433962    ,
+    pi_2    <- 0.11152620    ,
+    pi_3    <- 0.18827911    ,
+    pi_4    <- 0.21197680    ,
+    
+    delta_i <- 1/1           ,
+    
+    gamma_h <- 1/12          ,
+    
+    mu_1    <- 0.5000000     ,
+    mu_2    <- 0.6896226     ,
+    mu_3    <- 0.8224699     ,
+    mu_4    <- 0.8972645     ,
+    
+    delta_m <- 1/8           ,
+    
+    gamma_i <- 1/7           ,
+    
+    N1       <- 782000       ,
+    N2       <- 801000       ,
+    N3       <- 539000       ,
+    N4       <- 242000       
+    
+)
+
+state <- c(
+    
+    ## GRUPO 1
+    S1    = N1 - 1,
+    E1    = 0,
+    I1    = 1,
+    I_l1  = 0,
+    I_h1  = 0,
+    I_i1  = 0,
+    M1    = 0,
+    R1    = 0,
+    
+    
+    
+    ## GRUPO 2
+    S2    = N2 - 1,
+    E2    = 0,
+    I2    = 1,
+    I_l2  = 0,
+    I_h2  = 0,
+    I_i2  = 0,
+    M2    = 0,
+    R2    = 0,
+    
+    ## GRUPO 3
+    S3    = N3 - 1,
+    E3    = 0,
+    I3    = 1,
+    I_l3  = 0,
+    I_h3  = 0,
+    I_i3  = 0,
+    M3    = 0,
+    R3    = 0,
+    
+    
+    
+    ## GRUPO 4
+    S4    = N4 - 1,
+    E4    = 0,
+    I4    = 1,
+    I_l4  = 0,
+    I_h4  = 0,
+    I_i4  = 0,
+    M4    = 0,
+    R4    = 0
+)
+
+## Out ====
+out <- as.data.frame(ode(y     = state, 
+                         times = t, 
+                         func   = modelo_covid_all_groups,
+                         parms = parameters))
+```
+
+![Modelo matemático por estructura etaria para el estado de Querétaro](03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.png)
+
+## 6.2 Modelo para el grupo etario 1
+
+Posteriormente, se realizó el modelo por cada grupo etario. Para esto, no se consideró la interación entre infectados de diferentes grupos etarios debido a que no se toman en cuenta sus ecuaciones correspondientes.
+
+```
+# Resolucion ====
+## Funcion del modelo ====
+modelo_covid_grupo_1 <- function(t, state, parameters){
+  with(as.list(c(state, parameters)), {
+    
+    ## GRUPO 1
+    dS1   <- - beta_1 * S1 * I1
+    dE1   <- (beta_1 * S1 * I1) - ( alpha * E1 )
+    dI1   <- ( alpha * E1 ) - ( ph_1 * delta_h * I1 ) - ( pl_1 * delta_l * I1 )
+    dI_l1 <- ( pl_1 * delta_l * I1 ) - ( gamma_R * I_l1 )
+    dI_h1 <- ( ph_1 * delta_h * I1 ) - ( pi_1 * delta_i * I_h1 ) - ( (1 - pi_1) * gamma_h * I_h1 )
+    dI_i1 <- ( pi_1 * delta_i * I_h1 ) - ( mu_1 * delta_m * I_i1 ) - ( (1 - mu_1) * gamma_i * I_i1 )
+    dM1   <-  mu_1 * delta_m * I_i1
+    dR1   <- ( gamma_R * I_l1 ) + ( (1 - pi_1) * gamma_h * I_h1 ) + ( (1 - mu_1) * gamma_i * I_i1 )
+    
+    list(c(dS1, dE1, dI1, dI_l1, dI_h1, dI_i1, dM1, dR1))
+    
+  })
+}
+
+## Tiempo ====
+
+t <- seq (0, 100, by = 0.01)
+
+## Parametros ====
+
+parameters <- c(
+  
+  beta_1  <- 0.3771645     ,
+  
+  alpha   <- 1/5.6         ,
+  
+  pl_1    <- 0.9746533     ,
+  
+  ph_1    <- 0.02534672    ,
+  
+  delta_l <- 1/5.5         ,
+  
+  delta_h <- 1/4           ,
+  
+  gamma_R <- 1/14          ,
+  
+  pi_1    <- 0.09433962    ,
+  
+  delta_i <- 1/1           ,
+  
+  gamma_h <- 1/12          ,
+  
+  mu_1    <- 0.5000000     ,
+  
+  delta_m <- 1/8           ,
+  
+  gamma_i <- 1/7           ,
+  
+  N       <- 782000
+)
+
+## Condiciones iniciales del sistema ====
+# De acuerdo a la información obtenida del INEGI, la población del estado de 
+# Querétaro es de 2,368,467 habitantes, al senso realizado en 2020. 
+# Este valor de la poblacion se toma como el valor total de la población.
+# Para el caso de cada estructura de edad definia, la población de individuos 
+# suceptibles quedaria como:
+#        Grupo 1: Menores de 18 años = 782000
+#        Grupo 2: 18 - 39 años = 801000
+#        Grupo 3: 40 - 59 años = 539000
+#        Grupo 4: 60 - >70 años = 242000
+
+state <- c(
+  S1    = N - 1,
+  E1    = 0,
+  I1    = 1,
+  I_l1  = 0,
+  I_h1  = 0,
+  I_i1  = 0,
+  M1    = 0,
+  R1    = 0
+)
+
+## Out ====
+out <- as.data.frame(ode(y     = state, 
+                         times = t, 
+                         func   = modelo_covid_grupo_1,
+                         parms = parameters))
+```
+
+![Modelo covid grupo 1](03_Out/Plots/Modelo COVID del Grupo 1 para el Estado de Queretaro.png)
+
+## 6.3 Modelo para el grupo etario 2
+
+Mismo caso, solo que todo el modelo está contemplado para el grupo 2
+
+```
+# Resolucion ====
+## Funcion del modelo ====
+modelo_covid_grupo_2 <- function(t, state, parameters){
+  with(as.list(c(state, parameters)), {
+    
+    ## GRUPO 2
+    dS2   <- - beta_2 * S2 * I2
+    dE2   <- (beta_2 * S2 * I2) - ( alpha * E2 )
+    dI2   <- ( alpha * E2 ) - ( ph_2 * delta_h * I2 ) - ( pl_2 * delta_l * I2 )
+    dI_l2 <- ( pl_2 * delta_l * I2 ) - ( gamma_R * I_l2 )
+    dI_h2 <- ( ph_2 * delta_h * I2 ) - ( pi_2 * delta_i * I_h2 ) - ( (1 - pi_2) * gamma_h * I_h2 )
+    dI_i2 <- ( pi_2 * delta_i * I_h2 ) - ( mu_2 * delta_m * I_i2 ) - ( (1 - mu_2) * gamma_i * I_i2 )
+    dM2   <-  mu_2 * delta_m * I_i2
+    dR2   <- ( gamma_R * I_l2 ) + ( (1 - pi_2) * gamma_h * I_h2 ) + ( (1 - mu_2) * gamma_i * I_i2 )
+    
+    list(c(dS2, dE2, dI2, dI_l2, dI_h2, dI_i2, dM2, dR2))
+    
+  })
+}
+
+## Tiempo ====
+
+t <- seq (0, 100, by = 0.01)
+
+## Parametros ====
+
+parameters <- c(
+  
+  beta_2  <- 0.4473864     ,
+  
+  alpha   <- 1/5.6         ,
+  
+  pl_2    <- 0.9610823     ,
+  
+  ph_2    <- 0.03891768    ,
+  
+  delta_l <- 1/5.5         ,
+  
+  delta_h <- 1/4           ,
+  
+  gamma_R <- 1/14          ,
+  
+  pi_2    <- 0.11152620    ,
+  
+  delta_i <- 1/1           ,
+  
+  gamma_h <- 1/12          ,
+  
+  mu_2    <- 0.6896226     ,
+  
+  delta_m <- 1/8           ,
+  
+  gamma_i <- 1/7           ,
+  
+  N       <- 801000
+)
+
+## Condiciones iniciales del sistema ====
+# De acuerdo a la información obtenida del INEGI, la población del estado de 
+# Querétaro es de 2,368,467 habitantes, al senso realizado en 2020. 
+# Este valor de la poblacion se toma como el valor total de la población.
+# Para el caso de cada estructura de edad definia, la población de individuos 
+# suceptibles quedaria como:
+#        Grupo 1: Menores de 18 años = 782000
+#        Grupo 2: 18 - 39 años = 801000
+#        Grupo 3: 40 - 59 años = 539000
+#        Grupo 4: 60 - >70 años = 242000
+
+state <- c(
+  S2    = N - 1,
+  E2    = 0,
+  I2    = 1,
+  I_l2  = 0,
+  I_h2  = 0,
+  I_i2  = 0,
+  M2    = 0,
+  R2    = 0
+)
+
+## Out ====
+out <- as.data.frame(ode(y     = state, 
+                         times = t, 
+                         func   = modelo_covid_grupo_2,
+                         parms = parameters))
+```
+
+![Modelo covid para el grupo 2](03_Out/Plots/Modelo COVID del Grupo 2 para el Estado de Queretaro.png)
+
+## 6.4 Modelo para el grupo etario 3
+
+Mismo caso, solo que todo el modelo está contemplado para el grupo 3
+
+```
+# Resolucion ====
+## Funcion del modelo ====
+modelo_covid_grupo_3 <- function(t, state, parameters){
+    with(as.list(c(state, parameters)), {
+        
+        ## GRUPO 3
+        dS3   <- - beta_3 * S3 * I3
+        dE3   <- (beta_3 * S3 * I3) - ( alpha * E3 )
+        dI3   <- ( alpha * E3 ) - ( ph_3 * delta_h * I3 ) - ( pl_3 * delta_l * I3 )
+        dI_l3 <- ( pl_3 * delta_l * I3 ) - ( gamma_R * I_l3 )
+        dI_h3 <- ( ph_3 * delta_h * I3 ) - ( pi_3 * delta_i * I_h3 ) - ( (1 - pi_3) * gamma_h * I_h3 )
+        dI_i3 <- ( pi_3 * delta_i * I_h3 ) - ( mu_3 * delta_m * I_i3 ) - ( (1 - mu_3) * gamma_i * I_i3 )
+        dM3   <-  mu_3 * delta_m * I_i3
+        dR3   <- ( gamma_R * I_l3 ) + ( (1 - pi_3) * gamma_h * I_h3 ) + ( (1 - mu_3) * gamma_i * I_i3 )
+        
+        list(c(dS3, dE3, dI3, dI_l3, dI_h3, dI_i3, dM3, dR3))
+        
+    })
+}
+
+## Tiempo ====
+
+t <- seq (0, 100, by = 0.01)
+
+## Parametros ====
+
+parameters <- c(
+    
+    beta_3  <- 0.5090940     ,
+    
+    alpha   <- 1/5.6         ,
+    
+    pl_3    <- 0.8420886     ,
+    
+    ph_3    <- 0.15791136    ,
+    
+    delta_l <- 1/5.5         ,
+    
+    delta_h <- 1/4           ,
+    
+    gamma_R <- 1/14          ,
+    
+    pi_3    <- 0.18827911    ,
+    
+    delta_i <- 1/1           ,
+    
+    gamma_h <- 1/12          ,
+    
+    mu_3    <- 0.8224699     ,
+    
+    delta_m <- 1/8           ,
+    
+    gamma_i <- 1/7           ,
+    
+    N       <- 539000
+)
+
+## Condiciones iniciales del sistema ====
+# De acuerdo a la información obtenida del INEGI, la población del estado de 
+# Querétaro es de 2,368,467 habitantes, al senso realizado en 2020. 
+# Este valor de la poblacion se toma como el valor total de la población.
+# Para el caso de cada estructura de edad definia, la población de individuos 
+# suceptibles quedaria como:
+#        Grupo 1: Menores de 18 años = 782000
+#        Grupo 2: 18 - 39 años = 801000
+#        Grupo 3: 40 - 59 años = 539000
+#        Grupo 4: 60 - >70 años = 242000
+
+state <- c(
+    S3    = N - 1,
+    E3    = 0,
+    I3    = 1,
+    I_l3  = 0,
+    I_h3  = 0,
+    I_i3  = 0,
+    M3    = 0,
+    R3    = 0
+)
+
+## Out ====
+out <- as.data.frame(ode(y     = state, 
+                         times = t, 
+                         func   = modelo_covid_grupo_3,
+                         parms = parameters))
+```
+
+![Modelo covid para el grupo 3](03_Out/Plots/Modelo COVID del Grupo 3 para el Estado de Queretaro.png)
+
+## 6.5 Modelo para el grupo etario 4
+
+Mismo caso, solo que todo el modelo está contemplado para el grupo 3
+
+```
+# Resolucion ====
+## Funcion del modelo ====
+modelo_covid_grupo_4 <- function(t, state, parameters){
+    with(as.list(c(state, parameters)), {
+        
+        ## GRUPO 4
+        dS4   <- - beta_4 * S4 * I4
+        dE4   <- (beta_4 * S4 * I4) - ( alpha * E4 )
+        dI4   <- ( alpha * E4 ) - ( ph_4 * delta_h * I4 ) - ( pl_4 * delta_l * I4 )
+        dI_l4 <- ( pl_4 * delta_l * I4 ) - ( gamma_R * I_l4 )
+        dI_h4 <- ( ph_4 * delta_h * I4 ) - ( pi_4 * delta_i * I_h4 ) - ( (1 - pi_4) * gamma_h * I_h4 )
+        dI_i4 <- ( pi_4 * delta_i * I_h4 ) - ( mu_4 * delta_m * I_i4 ) - ( (1 - mu_4) * gamma_i * I_i4 )
+        dM4   <-  mu_4 * delta_m * I_i4
+        dR4   <- ( gamma_R * I_l4 ) + ( (1 - pi_4) * gamma_h * I_h4 ) + ( (1 - mu_4) * gamma_i * I_i4 )
+        
+        list(c(dS4, dE4, dI4, dI_l4, dI_h4, dI_i4, dM4, dR4))
+        
+    })
+}
+
+## Tiempo ====
+
+t <- seq (0, 100, by = 0.01)
+
+## Parametros ====
+
+parameters <- c(
+    
+    beta_4  <- 0.5638485     ,
+    
+    alpha   <- 1/5.6         ,
+    
+    pl_4    <- 0.5567019     ,
+    
+    ph_4    <- 0.44329812    ,
+    
+    delta_l <- 1/5.5         ,
+    
+    delta_h <- 1/4           ,
+    
+    gamma_R <- 1/14          ,
+    
+    pi_4    <- 0.21197680    ,
+    
+    delta_i <- 1/1           ,
+    
+    gamma_h <- 1/12          ,
+    
+    mu_4    <- 0.8972645     ,
+    
+    delta_m <- 1/8           ,
+    
+    gamma_i <- 1/7           ,
+    
+    N       <- 242000
+)
+
+## Condiciones iniciales del sistema ====
+# De acuerdo a la información obtenida del INEGI, la población del estado de 
+# Querétaro es de 2,368,467 habitantes, al senso realizado en 2020. 
+# Este valor de la poblacion se toma como el valor total de la población.
+# Para el caso de cada estructura de edad definia, la población de individuos 
+# suceptibles quedaria como:
+#        Grupo 1: Menores de 18 años = 782000
+#        Grupo 2: 18 - 39 años = 801000
+#        Grupo 3: 40 - 59 años = 539000
+#        Grupo 4: 60 - >70 años = 242000
+
+state <- c(
+    S4    = N - 1,
+    E4    = 0,
+    I4    = 1,
+    I_l4  = 0,
+    I_h4  = 0,
+    I_i4  = 0,
+    M4    = 0,
+    R4    = 0
+)
+
+## Out ====
+out <- as.data.frame(ode(y     = state, 
+                         times = t, 
+                         func   = modelo_covid_grupo_4,
+                         parms = parameters))
+```
+
+![Modelo covid para el grupo 4](03_Out/Plots/Modelo COVID del Grupo 4 para el Estado de Queretaro.png)
