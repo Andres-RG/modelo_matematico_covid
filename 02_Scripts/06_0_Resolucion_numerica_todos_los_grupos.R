@@ -9,6 +9,7 @@ library(deSolve)
 library(ape)
 library(lubridate)
 library(randomcoloR)
+library(ggmatplot)
 
 # Cargar las funciones
 source("02_Scripts/Functions/Functions.R")
@@ -249,3 +250,5 @@ legend("right", c("Suceptibles Grupo 1"                             ,
                        "Recuperados Grupo 4"                             )
        , col = vec_col, cex = 0.7, fill = vec_col)
 dev.off()
+
+## Grafica con ggmatplot
