@@ -249,5 +249,3 @@ legend("right", c("Suceptibles Grupo 1"                             ,
                        "Recuperados Grupo 4"                             )
        , col = viridis(32), cex = 0.7, fill = viridis(32))
 dev.off()
-
-## Grafica con ggmatplot
