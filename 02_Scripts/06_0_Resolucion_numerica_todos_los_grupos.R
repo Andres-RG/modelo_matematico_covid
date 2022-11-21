@@ -204,8 +204,8 @@ out <- as.data.frame(ode(y     = state,
                          parms = parameters))
 
 ## Grafica ====
-pdf("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.pdf")
-vec_col <- c(randomColor(32))
+pdf("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.pdf",
+    paper = "a4r", width = 12, height = 9)
 matplot(out[,1], out[,2:33], type ="l", xlab = "Tiempo", ylab = "Población", 
         main = "Modelo COVID con Estructura Etaria para el estado de Queretaro", 
         lwd = 2, lty = 1, col = viridis(32))

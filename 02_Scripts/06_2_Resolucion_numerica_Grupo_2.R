@@ -106,7 +106,8 @@ out <- as.data.frame(ode(y     = state,
                          parms = parameters))
 
 ## Grafica ====
-pdf("03_Out/Plots/Modelo COVID del Grupo 2 para el Estado de Queretaro.pdf")
+pdf("03_Out/Plots/Modelo COVID del Grupo 2 para el Estado de Queretaro.pdf",
+    paper = "a4r", width = 12, height = 9)
 matplot(out[,1], out[,2:9], type ="l", xlab = "tiempo", ylab = "Población", 
         main = "Modelo COVID del Grupo 2 para el estado de Queretaro", 
         lwd = 2, lty = 1, col = viridis(8)) 
@@ -119,5 +120,5 @@ legend("right", c("Suceptibles"                             ,
                   "Unidad de Terapia Intensiva"             ,
                   "Muertos"                                 ,
                   "Recuperados"                             )
-       , col = viridis(8), fill = viridis(8), cex = 0.7)
+       , col = viridis(8), fill = viridis(8), cex = 1)
 dev.off()

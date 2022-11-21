@@ -50,6 +50,7 @@ plot_positivos_re <- ggplot(casos_positivos_re,
     scale_fill_viridis(discrete = T)
 
 # El objeto que contiene la grafica se guarda como una imagen png
-png("03_Out/Plots/Casos positivos a COVID por rangos de edades para el estado de Queretaro.png", width = 650,  height = 350)
+pdf("03_Out/Plots/Casos positivos a COVID por rangos de edades para el estado de Queretaro.pdf",
+    paper = "a4r", width = 12, height = 9)
 plot_positivos_re
 dev.off()
