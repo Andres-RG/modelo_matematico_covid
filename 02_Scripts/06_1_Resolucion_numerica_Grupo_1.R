@@ -122,3 +122,20 @@ legend("right", c("Suceptibles"                             ,
        , col = viridis(8), fill = viridis(8), cex = 1)
 dev.off()
 
+
+
+png("03_Out/Plots/Modelo COVID del Grupo 1 para el Estado de Queretaro.png",
+    width = 265, height = 225, res = 300, units = "mm")
+matplot(out[,1], out[,2:9], type ="l", xlab = "tiempo", ylab = "Población", 
+        main = "Modelo COVID del Grupo 1 para el estado de Queretaro", 
+        lwd = 2, lty = 1, col = viridis(8)) 
+legend("right", c("Suceptibles"                             ,
+                  "Expuestos"                               ,
+                  "Infectados"                              ,
+                  "Contagiados sintomáticos leves"          ,
+                  "Contagiados sintomáticos Hospitalizados" ,
+                  "Unidad de Terapia Intensiva"             ,
+                  "Muertos"                                 ,
+                  "Recuperados"                             )
+       , col = viridis(8), fill = viridis(8), cex = 1)
+dev.off()

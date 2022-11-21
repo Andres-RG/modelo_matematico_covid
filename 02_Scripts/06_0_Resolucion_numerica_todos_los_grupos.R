@@ -206,7 +206,7 @@ out <- as.data.frame(ode(y     = state,
 ## Grafica ====
 pdf("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.pdf",
     paper = "a4r", width = 12, height = 9)
-matplot(out[,1], out[,2:33], type ="l", xlab = "Tiempo", ylab = "Población", 
+matplot(out[,1], out[,2:33], type ="l", xlab = "Tiempo", ylab = "Poblacion", 
         main = "Modelo COVID con Estructura Etaria para el estado de Queretaro", 
         lwd = 2, lty = 1, col = viridis(32))
 legend("right", c("Suceptibles Grupo 1"                             ,
@@ -247,5 +247,53 @@ legend("right", c("Suceptibles Grupo 1"                             ,
                        "Unidad de Terapia Intensiva Grupo 4"             ,
                        "Muertos Grupo 4"                                 ,
                        "Recuperados Grupo 4"                             )
+       , col = viridis(32), cex = 0.7, fill = viridis(32))
+dev.off()
+
+
+
+png("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.png",
+    width = 465, height = 225, res = 300, units = "mm")
+matplot(out[,1], out[,2:33], type ="l", xlab = "Tiempo", ylab = "Población", 
+        main = "Modelo COVID con Estructura Etaria para el estado de Queretaro", 
+        lwd = 2, lty = 1, col = viridis(32))
+legend("right", c("Suceptibles Grupo 1"                             ,
+                  "Expuestos Grupo 1"                               ,
+                  "Infectados Grupo 1"                              ,
+                  "Contagiados sintomáticos leves Grupo 1"          ,
+                  "Contagiados sintomáticos Hospitalizados Grupo 1" ,
+                  "Unidad de Terapia Intensiva Grupo 1"             ,
+                  "Muertos Grupo 1"                                 ,
+                  "Recuperados Grupo 1"                             ,
+                  #
+                  #
+                  "Suceptibles Grupo 2"                             ,
+                  "Expuestos Grupo 2"                               ,
+                  "Infectados Grupo 2"                              ,
+                  "Contagiados sintomáticos leves Grupo 2"          ,
+                  "Contagiados sintomáticos Hospitalizados Grupo 2" ,
+                  "Unidad de Terapia Intensiva Grupo 2"             ,
+                  "Muertos Grupo 2"                                 ,
+                  "Recuperados Grupo 2"                             ,
+                  #
+                  #
+                  "Suceptibles Grupo 3"                             ,
+                  "Expuestos Grupo 3"                               ,
+                  "Infectados Grupo 3"                              ,
+                  "Contagiados sintomáticos leves Grupo 3"          ,
+                  "Contagiados sintomáticos Hospitalizados Grupo 3" ,
+                  "Unidad de Terapia Intensiva Grupo 3"             ,
+                  "Muertos Grupo 3"                                 ,
+                  "Recuperados Grupo 3"                             ,
+                  #
+                  #
+                  "Suceptibles Grupo 4"                             ,
+                  "Expuestos Grupo 4"                               ,
+                  "Infectados Grupo 4"                              ,
+                  "Contagiados sintomáticos leves Grupo 4"          ,
+                  "Contagiados sintomáticos Hospitalizados Grupo 4" ,
+                  "Unidad de Terapia Intensiva Grupo 4"             ,
+                  "Muertos Grupo 4"                                 ,
+                  "Recuperados Grupo 4"                             )
        , col = viridis(32), cex = 0.7, fill = viridis(32))
 dev.off()
