@@ -8,6 +8,7 @@ library(viridis)
 library(deSolve)
 library(ape)
 library(lubridate)
+library(randomcoloR)
 
 # Cargar las funciones
 source("02_Scripts/Functions/Functions.R")
@@ -206,7 +207,7 @@ out <- as.data.frame(ode(y     = state,
 pdf("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.pdf")
 matplot(out[,1], out[,2:33], type ="l", xlab = "tiempo", ylab = "Población", 
         main = "Modelo COVID con Estructura Etaria para el estado de Queretaro", 
-        lwd = 2, lty = 1, col = 1:8)
+        lwd = 2, lty = 1, col = randomColor(32))
 legend("bottomright", c("Suceptibles Grupo 1"                             ,
                         "Expuestos Grupo 1"                               ,
                         "Infectados Grupo 1"                              ,
@@ -245,5 +246,5 @@ legend("bottomright", c("Suceptibles Grupo 1"                             ,
                        "Unidad de Terapia Intensiva Grupo 4"             ,
                        "Muertos Grupo 4"                                 ,
                        "Recuperados Grupo 4"                             )
-       , col = 1:8,lty = 1, cex = 0.5)
+       , col = randomColor(32),lty = 1, cex = 0.5)
 dev.off()
