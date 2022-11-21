@@ -8,8 +8,7 @@ library(viridis)
 library(deSolve)
 library(ape)
 library(lubridate)
-library(randomcoloR)
-library(ggmatplot)
+
 
 # Cargar las funciones
 source("02_Scripts/Functions/Functions.R")
@@ -209,7 +208,7 @@ pdf("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro
 vec_col <- c(randomColor(32))
 matplot(out[,1], out[,2:33], type ="l", xlab = "Tiempo", ylab = "Población", 
         main = "Modelo COVID con Estructura Etaria para el estado de Queretaro", 
-        lwd = 2, lty = 1, col = vec_col)
+        lwd = 2, lty = 1, col = viridis(32))
 legend("right", c("Suceptibles Grupo 1"                             ,
                         "Expuestos Grupo 1"                               ,
                         "Infectados Grupo 1"                              ,
@@ -248,7 +247,7 @@ legend("right", c("Suceptibles Grupo 1"                             ,
                        "Unidad de Terapia Intensiva Grupo 4"             ,
                        "Muertos Grupo 4"                                 ,
                        "Recuperados Grupo 4"                             )
-       , col = vec_col, cex = 0.7, fill = vec_col)
+       , col = viridis(32), cex = 0.7, fill = viridis(32))
 dev.off()
 
 ## Grafica con ggmatplot
