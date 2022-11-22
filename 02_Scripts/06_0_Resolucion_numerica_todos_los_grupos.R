@@ -13,8 +13,6 @@ library(lubridate)
 # Cargar las funciones
 source("02_Scripts/Functions/Functions.R")
 
-# Cargar las funciones
-source("02_Scripts/Functions/Functions.R")
 
 # Se carga la base de datos
 load("03_Out/OutData/probabilidades_de_transicion.RData")
@@ -27,8 +25,8 @@ modelo_covid_all_groups <- function(t, state, parameters){
     with(as.list(c(state, parameters)), {
         
         ## GRUPO 1
-        dS1   <- - beta_1 * S1 * (I1 + I2 + I3 + I4)
-        dE1   <- ( beta_1 * S1 * (I1 + I2 + I3 + I4) ) - ( alpha * E1 )
+        dS1   <- - (beta_1/N1+N2+N3+N4) * S1 * (I1 + I2 + I3 + I4)
+        dE1   <- ( (beta_1/N1+N2+N3+N4) * S1 * (I1 + I2 + I3 + I4) ) - ( alpha * E1 )
         dI1   <- ( alpha * E1 ) - ( ph_1 * delta_h * I1 ) - ( pl_1 * delta_l * I1 )
         dI_l1 <- ( pl_1 * delta_l * I1 ) - ( gamma_R * I_l1 )
         dI_h1 <- ( ph_1 * delta_h * I1 ) - ( pi_1 * delta_i * I_h1 ) - ( (1 - pi_1) * gamma_h * I_h1 )
@@ -39,8 +37,8 @@ modelo_covid_all_groups <- function(t, state, parameters){
         
         
         ## GRUPO 2
-        dS2   <- - beta_2 * S2 * (I1 + I2 + I3 + I4)
-        dE2   <- ( beta_2 * S2 * (I1 + I2 + I3 + I4) ) - ( alpha * E2 )
+        dS2   <- - (beta_2/N1+N2+N3+N4) * S2 * (I1 + I2 + I3 + I4)
+        dE2   <- ( (beta_2/N1+N2+N3+N4) * S2 * (I1 + I2 + I3 + I4) ) - ( alpha * E2 )
         dI2   <- ( alpha * E2 ) - ( ph_2 * delta_h * I2 ) - ( pl_2 * delta_l * I2 )
         dI_l2 <- ( pl_2 * delta_l * I2 ) - ( gamma_R * I_l2 )
         dI_h2 <- ( ph_2 * delta_h * I2 ) - ( pi_2 * delta_i * I_h2 ) - ( (1 - pi_2) * gamma_h * I_h2 )
@@ -51,8 +49,8 @@ modelo_covid_all_groups <- function(t, state, parameters){
         
         
         ## GRUPO 3
-        dS3   <- - beta_3 * S3 * (I1 + I2 + I3 + I4)
-        dE3   <- ( beta_3 * S3 * (I1 + I2 + I3 + I4) ) - ( alpha * E3 )
+        dS3   <- - (beta_3/N1+N2+N3+N4) * S3 * (I1 + I2 + I3 + I4)
+        dE3   <- ( (beta_3/N1+N2+N3+N4) * S3 * (I1 + I2 + I3 + I4) ) - ( alpha * E3 )
         dI3   <- ( alpha * E3 ) - ( ph_3 * delta_h * I3 ) - ( pl_3 * delta_l * I3 )
         dI_l3 <- ( pl_3 * delta_l * I3 ) - ( gamma_R * I_l3 )
         dI_h3 <- ( ph_3 * delta_h * I3 ) - ( pi_3 * delta_i * I_h3 ) - ( (1 - pi_3) * gamma_h * I_h3 )
@@ -63,8 +61,8 @@ modelo_covid_all_groups <- function(t, state, parameters){
         
         
         ## GRUPO 4
-        dS4   <- - beta_4 * S4 * (I1 + I2 + I3 + I4)
-        dE4   <- ( beta_4 * S4 * (I1 + I2 + I3 + I4) ) - ( alpha * E4 )
+        dS4   <- - (beta_4/N1+N2+N3+N4) * S4 * (I1 + I2 + I3 + I4)
+        dE4   <- ( (beta_4/N1+N2+N3+N4) * S4 * (I1 + I2 + I3 + I4) ) - ( alpha * E4 )
         dI4   <- ( alpha * E4 ) - ( ph_4 * delta_h * I4 ) - ( pl_4 * delta_l * I4 )
         dI_l4 <- ( pl_4 * delta_l * I4 ) - ( gamma_R * I_l4 )
         dI_h4 <- ( ph_4 * delta_h * I4 ) - ( pi_4 * delta_i * I_h4 ) - ( (1 - pi_4) * gamma_h * I_h4 )
@@ -198,15 +196,15 @@ state <- c(
 )
 
 ## Out ====
-out <- as.data.frame(ode(y     = state, 
+out_all_groups <- as.data.frame(ode(y     = state, 
                          times = t, 
                          func   = modelo_covid_all_groups,
                          parms = parameters))
 
 ## Grafica ====
-pdf("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.pdf",
-    paper = "a4r", width = 12, height = 9)
-matplot(out[,1], out[,2:33], type ="l", xlab = "Tiempo", ylab = "Poblacion", 
+#pdf("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.pdf",
+#    paper = "a4r", width = 12, height = 9)
+matplot(out_all_groups[,1], out_all_groups[,2:33], type ="l", xlab = "Tiempo", ylab = "Poblacion", 
         main = "Modelo COVID con Estructura Etaria para el estado de Queretaro", 
         lwd = 2, lty = 1, col = viridis(32))
 legend("right", c("Suceptibles Grupo 1"                             ,
@@ -248,13 +246,13 @@ legend("right", c("Suceptibles Grupo 1"                             ,
                        "Muertos Grupo 4"                                 ,
                        "Recuperados Grupo 4"                             )
        , col = viridis(32), cex = 0.7, fill = viridis(32))
-dev.off()
+#dev.off()
 
 
 
-png("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.png",
-    width = 465, height = 225, res = 300, units = "mm")
-matplot(out[,1], out[,2:33], type ="l", xlab = "Tiempo", ylab = "Población", 
+#png("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.png",
+#    width = 465, height = 225, res = 300, units = "mm")
+matplot(out_all_groups[,1], out_all_groups[,2:33], type ="l", xlab = "Tiempo", ylab = "Población", 
         main = "Modelo COVID con Estructura Etaria para el estado de Queretaro", 
         lwd = 2, lty = 1, col = viridis(32))
 legend("right", c("Suceptibles Grupo 1"                             ,
@@ -296,4 +294,4 @@ legend("right", c("Suceptibles Grupo 1"                             ,
                   "Muertos Grupo 4"                                 ,
                   "Recuperados Grupo 4"                             )
        , col = viridis(32), cex = 0.7, fill = viridis(32))
-dev.off()
+#dev.off()
