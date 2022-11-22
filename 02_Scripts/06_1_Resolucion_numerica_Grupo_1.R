@@ -9,11 +9,10 @@ library(deSolve)
 library(ape)
 library(lubridate)
 
-# Cargar las funciones
-source("02_Scripts/Functions/Functions.R")
 
 # Cargar las funciones
 source("02_Scripts/Functions/Functions.R")
+
 
 # Se carga la base de datos
 load("03_Out/OutData/probabilidades_de_transicion.RData")
@@ -100,15 +99,15 @@ state <- c(
 )
 
 ## Out ====
-out <- as.data.frame(ode(y     = state, 
-                         times = t, 
-                         func   = modelo_covid_grupo_1,
-                         parms = parameters))
+out_grupo_1 <- as.data.frame(ode(y     = state, 
+                                 times = t, 
+                                 func   = modelo_covid_grupo_1,
+                                 parms = parameters))
 
 ## Grafica ====
-pdf("03_Out/Plots/Modelo COVID del Grupo 1 para el Estado de Queretaro.pdf",
-    paper = "a4r", width = 12, height = 9)
-matplot(out[,1], out[,2:9], type ="l", xlab = "tiempo", ylab = "Población", 
+#pdf("03_Out/Plots/Modelo COVID del Grupo 1 para el Estado de Queretaro.pdf",
+#    paper = "a4r", width = 12, height = 9)
+matplot(out_grupo_1[,1], out_grupo_1[,2:9], type ="l", xlab = "tiempo", ylab = "Población", 
         main = "Modelo COVID del Grupo 1 para el estado de Queretaro", 
         lwd = 2, lty = 1, col = viridis(8)) 
 legend("right", c("Suceptibles"                             ,
@@ -120,13 +119,13 @@ legend("right", c("Suceptibles"                             ,
                   "Muertos"                                 ,
                   "Recuperados"                             )
        , col = viridis(8), fill = viridis(8), cex = 1)
-dev.off()
+#dev.off()
 
 
 
-png("03_Out/Plots/Modelo COVID del Grupo 1 para el Estado de Queretaro.png",
-    width = 265, height = 225, res = 300, units = "mm")
-matplot(out[,1], out[,2:9], type ="l", xlab = "tiempo", ylab = "Población", 
+#png("03_Out/Plots/Modelo COVID del Grupo 1 para el Estado de Queretaro.png",
+#    width = 265, height = 225, res = 300, units = "mm")
+matplot(out_grupo_1[,1], out_grupo_1[,2:9], type ="l", xlab = "tiempo", ylab = "Población", 
         main = "Modelo COVID del Grupo 1 para el estado de Queretaro", 
         lwd = 2, lty = 1, col = viridis(8)) 
 legend("right", c("Suceptibles"                             ,
@@ -138,4 +137,4 @@ legend("right", c("Suceptibles"                             ,
                   "Muertos"                                 ,
                   "Recuperados"                             )
        , col = viridis(8), fill = viridis(8), cex = 1)
-dev.off()
+#dev.off()
