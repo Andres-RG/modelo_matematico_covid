@@ -31,10 +31,10 @@ heatmap(cor(t(probabilidades_de_transicion)))
 # ----------------- 18 -  (Grupo 5)
 
 # El objeto que contiene el heatmap se guarda como un archivo png
-png("03_Out/Plots/heatmap_probabilidades_de_transicion.png", 
-    width = 265, height = 265, res = 300, units = "mm")
-heatmap(cor(t(probabilidades_de_transicion)))
-dev.off()
+#png("03_Out/Plots/heatmap_probabilidades_de_transicion.png", 
+#    width = 265, height = 265, res = 300, units = "mm")
+#heatmap(cor(t(probabilidades_de_transicion)))
+#dev.off()
 
 
 
@@ -60,7 +60,8 @@ agroup8 <- hclust(distancias_pt, method = "centroid", members = NULL)
 
 # Los resultados de este análisis se visualizan mediante un dendograma, al mismo
 # tiempo, se guardan los dendogramas en conjunto como un archivo png
-png("03_Out/Plots/analisis_de_cluster_probabilidades_de_transicion.png", width = 550, height = 550)
+png("03_Out/Plots/analisis_de_cluster_probabilidades_de_transicion.png",
+    width = 265, height = 265, res = 300, units = "mm")
 layout ( matrix ( c( 1 : 9 ), 3, 3))
 plot(agroup1)
 plot(agroup2) 
