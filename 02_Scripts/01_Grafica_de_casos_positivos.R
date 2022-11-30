@@ -14,6 +14,8 @@ source("02_Scripts/Functions/Functions.R")
 
 # Se carga la base de datos
 load("01_RawData/datos_covid_qro.RData")
+load("03_Out/OutData/casos_totales_rangos_edades.RData")
+load("03_Out/OutData/casos_positivos_rangos_edades.RData")
 
 # De la base de datos inicial, se determinaran los rangos de edad de todos
 # los casos positivos a Covid-19 hasta diciembre, 2021. A partir de esta 
@@ -50,7 +52,13 @@ plot_positivos_re <- ggplot(casos_positivos_re,
     scale_fill_viridis(discrete = T)
 
 # El objeto que contiene la grafica se guarda como una imagen png
-pdf("03_Out/Plots/Casos positivos a COVID por rangos de edades para el estado de Queretaro.pdf",
-    paper = "a4r", width = 12, height = 9)
+#pdf("03_Out/Plots/Casos positivos a COVID por rangos de edades para el estado de Queretaro.pdf",
+#    paper = "a4r", width = 12, height = 9)
 plot_positivos_re
-dev.off()
+#dev.off()
+
+
+#png("03_Out/Plots/Casos positivos a COVID por rangos de edades para el estado de Queretaro.png",
+#    width = 365, height = 225, res = 300, units = "mm")
+#plot_positivos_re
+#dev.off()
