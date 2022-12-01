@@ -10,7 +10,6 @@ library(ape)
 library(lubridate)
 library(randomcoloR)
 
-
 # Cargar las funciones
 source("02_Scripts/Functions/Functions.R")
 
@@ -249,13 +248,13 @@ legend("topright", c("Suceptibles Grupo 1"                             ,
 #dev.off()
 
 
-#colores <- c(randomColor(32))
+#colores <- c(viridis(32))
 #png("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.png",
 #    width = 465, height = 225, res = 300, units = "mm")
 matplot(out_all_groups[,1], out_all_groups[,2:33], type ="l", xlab = "Tiempo", ylab = "Población", 
         main = "Modelo COVID con Estructura Etaria para el estado de Queretaro", 
         lwd = 2, lty = 1, col = colores)
-legend("right", c("Suceptibles Grupo 1"                             ,
+legend("right", c("Susceptibles Grupo 1"                             ,
                   "Expuestos Grupo 1"                               ,
                   "Infectados Grupo 1"                              ,
                   "Contagiados sintomáticos leves Grupo 1"          ,
@@ -265,7 +264,7 @@ legend("right", c("Suceptibles Grupo 1"                             ,
                   "Recuperados Grupo 1"                             ,
                   #
                   #
-                  "Suceptibles Grupo 2"                             ,
+                  "Susceptibles Grupo 2"                             ,
                   "Expuestos Grupo 2"                               ,
                   "Infectados Grupo 2"                              ,
                   "Contagiados sintomáticos leves Grupo 2"          ,
@@ -275,7 +274,7 @@ legend("right", c("Suceptibles Grupo 1"                             ,
                   "Recuperados Grupo 2"                             ,
                   #
                   #
-                  "Suceptibles Grupo 3"                             ,
+                  "Susceptibles Grupo 3"                             ,
                   "Expuestos Grupo 3"                               ,
                   "Infectados Grupo 3"                              ,
                   "Contagiados sintomáticos leves Grupo 3"          ,
@@ -285,7 +284,7 @@ legend("right", c("Suceptibles Grupo 1"                             ,
                   "Recuperados Grupo 3"                             ,
                   #
                   #
-                  "Suceptibles Grupo 4"                             ,
+                  "Susceptibles Grupo 4"                             ,
                   "Expuestos Grupo 4"                               ,
                   "Infectados Grupo 4"                              ,
                   "Contagiados sintomáticos leves Grupo 4"          ,
