@@ -250,12 +250,11 @@ legend("topright", c("Suceptibles Grupo 1"                             ,
 #dev.off()
 
 
-#colores <- c(viridis(32))
 #png("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.png",
 #    width = 465, height = 225, res = 300, units = "mm")
 matplot(out_all_groups[,1], out_all_groups[,2:33], type ="l", xlab = "Tiempo", ylab = "Población", 
         main = "Modelo COVID con Estructura Etaria para el estado de Queretaro", 
-        lwd = 2, lty = 1, col = colores)
+        lwd = 2, lty = 1, col = viridis(32))
 legend("right", c("Susceptibles Grupo 1"                             ,
                   "Expuestos Grupo 1"                               ,
                   "Infectados Grupo 1"                              ,
@@ -294,7 +293,7 @@ legend("right", c("Susceptibles Grupo 1"                             ,
                   "Unidad de Terapia Intensiva Grupo 4"             ,
                   "Muertos Grupo 4"                                 ,
                   "Recuperados Grupo 4"                             )
-       , col = colores, cex = 0.7, fill = colores,
+       , col = viridis(32), cex = 0.7, fill = viridis(32),
        inset=c(0, 0))
 #dev.off()
 
