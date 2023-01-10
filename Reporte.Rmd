@@ -355,7 +355,7 @@ $$\begin{array}{l}
 \\
 \\
 \text{Para el grupo 2 :} \\
-\dot S_2 = - \frac{\beta_2}{N} * S_2 (I_1 + I_2+ I_3 + I_4)\\
+\dot S_2 = - \frac{\beta_2}{N} * S_2 (I_1 + I_2+ I_3 + I_4)  \\
 \dot E_2 = \frac{\beta_2}{N} * S_2 (I_1 + I_2+ I_3 + I_4) - \alpha E_2 \\
 \dot I_2 = \alpha E_2 - p_{h2} \delta _h I_2 - p_{l2} \delta _l I_2 \\
 \dot I_{l2} = p_{l2} \delta _l I_2 - \gamma _R I_{l2} \\
@@ -432,8 +432,8 @@ modelo_covid_all_groups <- function(t, state, parameters){
     with(as.list(c(state, parameters)), {
         
         ## GRUPO 1
-        dS1   <- - (beta_1/N1+N2+N3+N4) * S1 * (I1 + I2 + I3 + I4)
-        dE1   <- ( (beta_1/N1+N2+N3+N4) * S1 * (I1 + I2 + I3 + I4) ) - ( alpha * E1 )
+        dS1   <- - (beta_1/(N1+N2+N3+N4)) * S1 * (I1 + I2 + I3 + I4)
+        dE1   <- ( (beta_1/(N1+N2+N3+N4)) * S1 * (I1 + I2 + I3 + I4) ) - ( alpha * E1 )
         dI1   <- ( alpha * E1 ) - ( ph_1 * delta_h * I1 ) - ( pl_1 * delta_l * I1 )
         dI_l1 <- ( pl_1 * delta_l * I1 ) - ( gamma_R * I_l1 )
         dI_h1 <- ( ph_1 * delta_h * I1 ) - ( pi_1 * delta_i * I_h1 ) - ( (1 - pi_1) * gamma_h * I_h1 )
@@ -444,8 +444,8 @@ modelo_covid_all_groups <- function(t, state, parameters){
         
         
         ## GRUPO 2
-        dS2   <- - (beta_2/N1+N2+N3+N4) * S2 * (I1 + I2 + I3 + I4)
-        dE2   <- ( (beta_2/N1+N2+N3+N4) * S2 * (I1 + I2 + I3 + I4) ) - ( alpha * E2 )
+        dS2   <- - (beta_2/(N1+N2+N3+N4)) * S2 * (I1 + I2 + I3 + I4)
+        dE2   <- ( (beta_2/(N1+N2+N3+N4)) * S2 * (I1 + I2 + I3 + I4) ) - ( alpha * E2 )
         dI2   <- ( alpha * E2 ) - ( ph_2 * delta_h * I2 ) - ( pl_2 * delta_l * I2 )
         dI_l2 <- ( pl_2 * delta_l * I2 ) - ( gamma_R * I_l2 )
         dI_h2 <- ( ph_2 * delta_h * I2 ) - ( pi_2 * delta_i * I_h2 ) - ( (1 - pi_2) * gamma_h * I_h2 )
@@ -456,8 +456,8 @@ modelo_covid_all_groups <- function(t, state, parameters){
         
         
         ## GRUPO 3
-        dS3   <- - (beta_3/N1+N2+N3+N4) * S3 * (I1 + I2 + I3 + I4)
-        dE3   <- ( (beta_3/N1+N2+N3+N4) * S3 * (I1 + I2 + I3 + I4) ) - ( alpha * E3 )
+        dS3   <- - (beta_3/(N1+N2+N3+N4)) * S3 * (I1 + I2 + I3 + I4)
+        dE3   <- ( (beta_3/(N1+N2+N3+N4)) * S3 * (I1 + I2 + I3 + I4) ) - ( alpha * E3 )
         dI3   <- ( alpha * E3 ) - ( ph_3 * delta_h * I3 ) - ( pl_3 * delta_l * I3 )
         dI_l3 <- ( pl_3 * delta_l * I3 ) - ( gamma_R * I_l3 )
         dI_h3 <- ( ph_3 * delta_h * I3 ) - ( pi_3 * delta_i * I_h3 ) - ( (1 - pi_3) * gamma_h * I_h3 )
@@ -468,8 +468,8 @@ modelo_covid_all_groups <- function(t, state, parameters){
         
         
         ## GRUPO 4
-        dS4   <- - (beta_4/N1+N2+N3+N4) * S4 * (I1 + I2 + I3 + I4)
-        dE4   <- ( (beta_4/N1+N2+N3+N4) * S4 * (I1 + I2 + I3 + I4) ) - ( alpha * E4 )
+        dS4   <- - (beta_4/(N1+N2+N3+N4)) * S4 * (I1 + I2 + I3 + I4)
+        dE4   <- ( (beta_4/(N1+N2+N3+N4)) * S4 * (I1 + I2 + I3 + I4) ) - ( alpha * E4 )
         dI4   <- ( alpha * E4 ) - ( ph_4 * delta_h * I4 ) - ( pl_4 * delta_l * I4 )
         dI_l4 <- ( pl_4 * delta_l * I4 ) - ( gamma_R * I_l4 )
         dI_h4 <- ( ph_4 * delta_h * I4 ) - ( pi_4 * delta_i * I_h4 ) - ( (1 - pi_4) * gamma_h * I_h4 )
@@ -489,7 +489,7 @@ modelo_covid_all_groups <- function(t, state, parameters){
 
 ## Tiempo ====
 
-t <- seq (0, 100, by = 0.01)
+t <- seq (0, 300, by = 0.1)
 
 ## Parametros ====
 
@@ -544,6 +544,17 @@ parameters <- c(
     
 )
 
+## Condiciones iniciales del sistema ====
+# De acuerdo a la información obtenida del INEGI, la población del estado de 
+# Querétaro es de 2,368,467 habitantes, al senso realizado en 2020. 
+# Este valor de la poblacion se toma como el valor total de la población.
+# Para el caso de cada estructura de edad definia, la población de individuos 
+# suceptibles quedaria como:
+#        Grupo 1: Menores de 18 años = 782000
+#        Grupo 2: 18 - 39 años = 801000
+#        Grupo 3: 40 - 59 años = 539000
+#        Grupo 4: 60 - >70 años = 242000
+
 state <- c(
     
     ## GRUPO 1
@@ -592,13 +603,22 @@ state <- c(
 )
 
 ## Out ====
-out <- as.data.frame(ode(y     = state, 
+out_all_groups <- as.data.frame(ode(y     = state, 
                          times = t, 
                          func   = modelo_covid_all_groups,
                          parms = parameters))
 ```
 
-![Modelo matemático por estructura etaria para el estado de Querétaro](03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.png)
+![Modelo matemático por estructura etaria para el estado de Querétaro](03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.jpeg)
+
+# Gráficas suplementarias
+
+## Gráfica de infectados 
+
+```{r}
+source("02_Scripts/07_Graficas_del_modelo.R")
+plotly(grafica_infectados)
+```
 
 ## 6.2 Modelo para el grupo etario 1
 

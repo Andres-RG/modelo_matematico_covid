@@ -9,6 +9,8 @@ library(deSolve)
 library(ape)
 library(lubridate)
 library(ggmatplot)
+library(plotly)
+library(wesanderson)
 
 # Cargar las funciones
 source("02_Scripts/Functions/Functions.R")
@@ -28,10 +30,29 @@ load("03_Out/OutData/casos_positivos_x_dia_rango_edad.RData")
 matplot(out_all_groups[,1], out_all_groups[,c(4,12,20,28)],
         type = "l", xlab = "Tiempo", ylab = "Infectados", 
         main = "Infectados inferidos del modelo de COVID-19", 
-        lty = 1, lwd = 0.5, col = viridis(4))
+        lty = 1, lwd = 2, col = viridis(4))
 legend("topright", c("Infectados Grupo 1", "Infectados Grupo 2", 
                      "Infectados Grupo 3", "Infectados Grupo 4"),
                      fill = viridis (4))
+
+grafica_infectados <- ggmatplot(x = out_all_groups[,1], out_all_groups[,c(4,12,20,28)],
+                                plot_type = "line", color = wes_palette("FantasticFox1", 4), 
+                                fill = wes_palette("FantasticFox1", 4),
+                                linetype = 1, xlab = "Tiempo", ylab = "Población",
+                                main = "Infectados inferidos del modelo heterogéneo",
+                                legend_title = "Grupos", legend_label = c("Infectados Menores 18 años",
+                                                                          "Infectados 18 - 39 años",
+                                                                          "Infectados 40 - 59 años",
+                                                                          "Infectados Mayores de 60 años"),
+                                 lwd = 1) + 
+        theme(plot.title = element_text(hjust = 0.5))+
+        theme(panel.background = element_rect(fill = "white"), 
+              axis.line = element_line(colour = "black", size = 0.75))
+
+
+ggsave("03_Out/Plots/grafica_infectados_inferidos.jpeg", 
+       plot = grafica_infectados, 
+       width = 2487, height = 1791,units = "px")
 
 
 
@@ -40,11 +61,30 @@ legend("topright", c("Infectados Grupo 1", "Infectados Grupo 2",
 matplot(out_all_groups[,1], out_all_groups[,c(9,17,25,33)],
         type = "l", xlab = "Tiempo", ylab = "Recuperados", 
         main = "Recuperados inferidos del modelo de COVID-19", 
-        lty = 1, lwd = 0.5, col = viridis(4))
+        lty = 1, lwd = 2, col = viridis(4))
 legend("topright", c("Recuperados Grupo 1", "Recuperados Grupo 2", 
                      "Recuperados Grupo 3", "Recuperados Grupo 4"),
        fill = viridis (4))
 
+
+grafica_recuperados <- ggmatplot(x = out_all_groups[,1], out_all_groups[,c(9,17,25,33)],
+          plot_type = "line", color = wes_palette("FantasticFox1", 4), 
+          fill = wes_palette("FantasticFox1", 4),
+          linetype = 1, xlab = "Tiempo", ylab = "Población", 
+          main = "Recuperados inferidos del modelo heterogéneo",
+          legend_title = "Grupos", legend_label = c("Recuperados Menores 18 años",
+                                                    "Recuperados 18 - 39 años",
+                                                    "Recuperados 40 - 59 años",
+                                                    "Recuperados Mayores de 60 años"),
+          lwd = 1) + 
+        theme(plot.title = element_text(hjust = 0.5))+
+        theme(panel.background = element_rect(fill = "white"), 
+              axis.line = element_line(colour = "black", size = 0.75))
+
+
+ggsave("03_Out/Plots/grafica_recuperados_inferidos.jpeg", 
+       plot = grafica_recuperados, 
+       width = 2487, height = 1791, units = "px")
 
 
 # Gráfica de Muertos ====
@@ -52,11 +92,29 @@ legend("topright", c("Recuperados Grupo 1", "Recuperados Grupo 2",
 matplot(out_all_groups[,1], out_all_groups[,c(8,16,24,32)],
         type = "l", xlab = "Tiempo", ylab = "Muertos", 
         main = "Muertos inferidos del modelo de COVID-19", 
-        lty = 1, lwd = 0.5, col = viridis(4))
+        lty = 1, lwd = 2, col = viridis(4))
 legend("topright", c("Muertos Grupo 1", "Muertos Grupo 2", 
                      "Muertos Grupo 3", "Muertos Grupo 4"),
        fill = viridis (4))
 
+grafica_muertos <- ggmatplot(x = out_all_groups[,1], out_all_groups[,c(8,16,24,32)],
+                             plot_type = "line", color = wes_palette("FantasticFox1", 4), 
+                             fill = wes_palette("FantasticFox1", 4),
+                             linetype = 1, xlab = "Tiempo", ylab = "Población",
+                             main = "Muertos inferidos del modelo heterogéneo",
+                             legend_title = "Grupos", legend_label = c("Muertos Menores 18 años",
+                                                                       "Muertos 18 - 39 años",
+                                                                       "Muertos 40 - 59 años",
+                                                                       "Muertos Mayores de 60 años"),
+                             lwd = 1) + 
+        theme(plot.title = element_text(hjust = 0.5))+
+        theme(panel.background = element_rect(fill = "white"), 
+              axis.line = element_line(colour = "black", size = 0.75))
+
+
+ggsave("03_Out/Plots/grafica_muertos_inferidos.jpeg", 
+       plot = grafica_muertos, 
+       width = 2487, height = 1791, units = "px")
 
 
 # Grafica de Infectados, Recuperados y Muertos totales inferidos ====
@@ -75,7 +133,7 @@ legend("topright", c("Infectados", "Recuperados", "Muertos"),
 
 plot_irm <- ggmatplot(x = inferidos_totales[,1], 
                       y = inferidos_totales[,c(34,35,36)],
-                      plot_type = "line", color = viridis(3),
+                      plot_type = "line", color = wes_palette("Zissou1", 32, type =  "discrete"),
                       linetype = 1, main = "Infectados, Recuperados y Muertos inferidos por el modelo",
                       xlab = "Tiempo", ylab = "Población", 
                       legend_label = c("Infectados", "Recuperados", "Muertos"),

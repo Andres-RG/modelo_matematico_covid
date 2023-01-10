@@ -9,6 +9,8 @@ library(deSolve)
 library(ape)
 library(lubridate)
 library(randomcoloR)
+library(ggmatplot)
+library(wesanderson)
 
 # Cargar las funciones
 source("02_Scripts/Functions/Functions.R")
@@ -25,8 +27,8 @@ modelo_covid_all_groups <- function(t, state, parameters){
     with(as.list(c(state, parameters)), {
         
         ## GRUPO 1
-        dS1   <- - (beta_1/N1+N2+N3+N4) * S1 * (I1 + I2 + I3 + I4)
-        dE1   <- ( (beta_1/N1+N2+N3+N4) * S1 * (I1 + I2 + I3 + I4) ) - ( alpha * E1 )
+        dS1   <- - (beta_1/(N1+N2+N3+N4)) * S1 * (I1 + I2 + I3 + I4)
+        dE1   <- ( (beta_1/(N1+N2+N3+N4)) * S1 * (I1 + I2 + I3 + I4) ) - ( alpha * E1 )
         dI1   <- ( alpha * E1 ) - ( ph_1 * delta_h * I1 ) - ( pl_1 * delta_l * I1 )
         dI_l1 <- ( pl_1 * delta_l * I1 ) - ( gamma_R * I_l1 )
         dI_h1 <- ( ph_1 * delta_h * I1 ) - ( pi_1 * delta_i * I_h1 ) - ( (1 - pi_1) * gamma_h * I_h1 )
@@ -37,8 +39,8 @@ modelo_covid_all_groups <- function(t, state, parameters){
         
         
         ## GRUPO 2
-        dS2   <- - (beta_2/N1+N2+N3+N4) * S2 * (I1 + I2 + I3 + I4)
-        dE2   <- ( (beta_2/N1+N2+N3+N4) * S2 * (I1 + I2 + I3 + I4) ) - ( alpha * E2 )
+        dS2   <- - (beta_2/(N1+N2+N3+N4)) * S2 * (I1 + I2 + I3 + I4)
+        dE2   <- ( (beta_2/(N1+N2+N3+N4)) * S2 * (I1 + I2 + I3 + I4) ) - ( alpha * E2 )
         dI2   <- ( alpha * E2 ) - ( ph_2 * delta_h * I2 ) - ( pl_2 * delta_l * I2 )
         dI_l2 <- ( pl_2 * delta_l * I2 ) - ( gamma_R * I_l2 )
         dI_h2 <- ( ph_2 * delta_h * I2 ) - ( pi_2 * delta_i * I_h2 ) - ( (1 - pi_2) * gamma_h * I_h2 )
@@ -49,8 +51,8 @@ modelo_covid_all_groups <- function(t, state, parameters){
         
         
         ## GRUPO 3
-        dS3   <- - (beta_3/N1+N2+N3+N4) * S3 * (I1 + I2 + I3 + I4)
-        dE3   <- ( (beta_3/N1+N2+N3+N4) * S3 * (I1 + I2 + I3 + I4) ) - ( alpha * E3 )
+        dS3   <- - (beta_3/(N1+N2+N3+N4)) * S3 * (I1 + I2 + I3 + I4)
+        dE3   <- ( (beta_3/(N1+N2+N3+N4)) * S3 * (I1 + I2 + I3 + I4) ) - ( alpha * E3 )
         dI3   <- ( alpha * E3 ) - ( ph_3 * delta_h * I3 ) - ( pl_3 * delta_l * I3 )
         dI_l3 <- ( pl_3 * delta_l * I3 ) - ( gamma_R * I_l3 )
         dI_h3 <- ( ph_3 * delta_h * I3 ) - ( pi_3 * delta_i * I_h3 ) - ( (1 - pi_3) * gamma_h * I_h3 )
@@ -61,8 +63,8 @@ modelo_covid_all_groups <- function(t, state, parameters){
         
         
         ## GRUPO 4
-        dS4   <- - (beta_4/N1+N2+N3+N4) * S4 * (I1 + I2 + I3 + I4)
-        dE4   <- ( (beta_4/N1+N2+N3+N4) * S4 * (I1 + I2 + I3 + I4) ) - ( alpha * E4 )
+        dS4   <- - (beta_4/(N1+N2+N3+N4)) * S4 * (I1 + I2 + I3 + I4)
+        dE4   <- ( (beta_4/(N1+N2+N3+N4)) * S4 * (I1 + I2 + I3 + I4) ) - ( alpha * E4 )
         dI4   <- ( alpha * E4 ) - ( ph_4 * delta_h * I4 ) - ( pl_4 * delta_l * I4 )
         dI_l4 <- ( pl_4 * delta_l * I4 ) - ( gamma_R * I_l4 )
         dI_h4 <- ( ph_4 * delta_h * I4 ) - ( pi_4 * delta_i * I_h4 ) - ( (1 - pi_4) * gamma_h * I_h4 )
@@ -82,7 +84,7 @@ modelo_covid_all_groups <- function(t, state, parameters){
 
 ## Tiempo ====
 
-t <- seq (0, 100, by = 0.01)
+t <- seq (0, 300, by = 0.1)
 
 ## Parametros ====
 
@@ -295,3 +297,18 @@ legend("right", c("Susceptibles Grupo 1"                             ,
        , col = colores, cex = 0.7, fill = colores,
        inset=c(0, 0))
 #dev.off()
+
+
+grafica_all_groups <- ggmatplot(x = out_all_groups[,1], y = out_all_groups[,2:33],
+                                plot_type = "line", color = viridis(32), 
+                                fill =viridis(32),
+                                linetype = 1, xlab = "Tiempo", ylab = "Población",
+                                main = "Modelo COVID con Estructura Etaria para el estado de Queretaro",
+                                legend_title = "Variables", lwd = 1) + 
+    theme(plot.title = element_text(hjust = 0.5))+
+    theme(panel.background = element_rect(fill = "white"), 
+          axis.line = element_line(colour = "black", size = 0.75))
+    
+
+ggsave("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.jpeg", 
+       plot = grafica_all_groups, width = 2887, height = 1464, units = "px")
