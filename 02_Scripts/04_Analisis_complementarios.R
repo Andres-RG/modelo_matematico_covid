@@ -152,3 +152,56 @@ colnames(parms_estructura_edad) <- c("S -> I", "I -> L", "I -> H", "H -> ICU",
 rownames(parms_estructura_edad) <- c("Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4")
 # Se guarda el objeto como un .RData
 # save(parms_estructura_edad, file = "03_Out/OutData/Tabla de parametros obtendos por estructura de edad.RData")
+
+
+
+# Grafica de casos positivos por rangos de edad. Geom_density ====
+
+## Librerias necesarias 
+library(ggplot2)
+library(ggridges)
+library(tidyverse)
+library(viridisLite)
+library(viridis)
+library(deSolve)
+library(ape)
+library(lubridate)
+
+## Bases de datos
+load("03_Out/OutData/casos_totales_rangos_edades.RData")
+load("03_Out/OutData/casos_positivos_rangos_edades.RData")
+
+## Grafica 1
+plot_positivos_re <- ggplot(casos_positivos_re, 
+                            aes(x=FECHA_SINTOMAS, fill = rango_de_edad)) + 
+  geom_density(position="stack") + 
+  ggtitle("Casos positivos a COVID por rangos de edades 
+          para el estado de Queretaro") + 
+  labs(x="Tiempo", y="Casos") +
+  labs(fill="Rangos de Edad") +
+  theme(plot.title = element_text(hjust = 0.5))+
+  theme(panel.background = element_rect(fill = "white"), 
+        axis.line = element_line(colour = "black", size = 1)) +
+  scale_fill_viridis(discrete = T)
+plot_positivos_re
+# El objeto que contiene la grafica se guarda como una imagen jpeg
+ggsave("03_Out/Plots/plot_casos_positivos_geom_density_1.jpeg", 
+       plot = plot_positivos_re, width = 2887, height = 1464, units = "px")
+
+## Grafica 2
+plot_positivos_re <- ggplot(casos_positivos_re, 
+                            aes(x=FECHA_SINTOMAS, fill = rango_de_edad)) + 
+  geom_density(position="fill") + 
+  ggtitle("Casos positivos a COVID por rangos de edades 
+          para el estado de Queretaro") + 
+  labs(x="Tiempo", y="Casos") +
+  labs(fill="Rangos de Edad") +
+  theme(plot.title = element_text(hjust = 0.5))+
+  theme(panel.background = element_rect(fill = "white"), 
+        axis.line = element_line(colour = "black", size = 1)) +
+  scale_fill_viridis(discrete = T)
+plot_positivos_re
+# El objeto que contiene la grafica se guarda como una imagen jpeg
+ggsave("03_Out/Plots/plot_casos_positivos_geom_density_2.jpeg", 
+       plot = plot_positivos_re, width = 2887, height = 1464, units = "px")
+
