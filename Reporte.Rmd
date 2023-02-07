@@ -647,4 +647,3 @@ ggplotly(grafica_muertos)
 
 
 
-## 6.2 Modelo para el grupo etario 1
