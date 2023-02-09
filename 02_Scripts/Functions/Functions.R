@@ -113,3 +113,18 @@ fechas_vacunacion <- function(fecha){
   
   return(vac)
 }
+
+
+
+
+
+
+
+
+
+
+# Funcion para determinar la presencia de comorbilidades 
+# 1 = SI ; 0 = NO 
+comorbilidadesdet <- function( base ){
+  
+}
