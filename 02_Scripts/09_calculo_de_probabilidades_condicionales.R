@@ -32,6 +32,7 @@ casos_pos_re_comorbilidad <- select(casos_positivos_re,
                                       CARDIOVASCULAR, OBESIDAD, RENAL_CRONICA, 
                                       TABAQUISMO, rango_de_edad))
 casos_pos_re_comorbilidad <- arrange(casos_pos_re_comorbilidad, rango_de_edad)
+casos_pos_re_comorbilidad <- mutate(casos_pos_re_comorbilidad, ind = 1)
 # save(casos_pos_re_comorbilidad, file = "03_Out/OutData/casos_positivos_re_comorbilidad.RData")
 
 # Ordenar por rango de edad
@@ -67,6 +68,7 @@ comorbilidades_casos_4 <- t(comorbilidades_casos_4)
 # 2 Determinacion de probabilidad
 # p( cat_i | com_j ) = ( p ( com_j | cat_1 ) * p( com_j ) ) / (.p( com_j ) * p ( com_j | cat_1 ) + (1-p( com_j )) * (1-p ( com_j | cat_1 )) )
 
+### p( com_j | cat_i )
 
 
 
