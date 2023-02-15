@@ -126,5 +126,16 @@ fechas_vacunacion <- function(fecha){
 # Funcion para determinar la presencia de comorbilidades 
 # 1 = SI ; 0 = NO 
 comorbilidadesdet <- function( base ){
-  
+  comorbilidades <- c()
+  ##
+  n <- seq(1:ncol(base))
+  for (i in n) {
+    if ( any(base[,i] == 1)){
+      comorbilidades <- c(comorbilidades,1)
+    } else {
+      comorbilidades <- c(comorbilidades,0)
+    }
+  }
+  ##
+  return(comorbilidades)
 }

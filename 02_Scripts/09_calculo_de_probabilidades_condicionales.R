@@ -13,7 +13,11 @@ library(randomcoloR)
 
 # Se carga la base de datos
 load("03_Out/OutData/casos_positivos_rangos_edades.RData")
-load("casos_positivos_re_comorbilidad.RData")
+load("03_Out/OutData/casos_positivos_re_comorbilidad.RData")
+
+# Se cargan las funciones
+source("02_Scripts/Functions/Functions.R")
+
 
 #¿Cuál es la probabilidad que una persona de cierta tenga una comorbilidad, dos,
 #tres , cuatro o combinaciones de éstas ?
@@ -28,7 +32,7 @@ casos_pos_re_comorbilidad <- select(casos_positivos_re,
                                       OTRA_COM, CARDIOVASCULAR, OBESIDAD, RENAL_CRONICA, 
                                       TABAQUISMO, OTRO_CASO, rango_de_edad))
 casos_pos_re_comorbilidad <- arrange(casos_pos_re_comorbilidad, rango_de_edad)
-# save(casos_pos_re_comorbilidad, file = "casos_positivos_re_comorbilidad.RData")
+# save(casos_pos_re_comorbilidad, file = "03_Out/OutData/casos_positivos_re_comorbilidad.RData")
 
 # Ordenar por rango de edad
 comorbilidades_casos <- casos_pos_re_comorbilidad[,c(5:15)]
@@ -65,20 +69,7 @@ comorbilidades_casos_4 <- t(comorbilidades_casos_4)
 
 ## 2 . 1   p ( com n cat ) 
 
-
-comorbilidades <- c()
-#
-n <- seq(1:ncol(comorbilidades_casos_4))
-for (i in n) {
-if ( any(comorbilidades_casos_4[,i] == 1)){
-    comorbilidades <- c(comorbilidades,1)
-} else {
-    comorbilidades <- c(comorbilidades,0)
-}
-}
-comorbilidades
-
-
+comorbilidades <- comorbilidadesdet(comorbilidades_casos_1)
 
 
 
