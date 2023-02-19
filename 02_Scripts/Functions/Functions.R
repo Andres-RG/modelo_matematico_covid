@@ -139,3 +139,96 @@ comorbilidadesdet <- function( base ){
   ##
   return(comorbilidades)
 }
+
+
+
+
+
+
+
+# FUNCION PARA CONTAR CUANTOS PACIENTES TIENEN COMORBILIDADES ESPECIFICAS
+# DE LA BASE DE DATOS DE COVID
+comorbilidades_conteo <- function(base){
+  
+  #contadores vacios
+  diabetes_conteo         <- 0
+  epoc_conteo             <- 0
+  asma_conteo             <- 0
+  inmunsupr_conteo        <- 0
+  hipertension_conteo     <- 0
+  cardiovascular_conteo   <- 0
+  obesidad_conteo         <- 0
+  renal_cronica_conteo    <- 0
+  tabaquismo_conteo       <- 0
+  
+  # para cada columna de la base
+  for (i in colnames(base[,5:13])){
+    if (i == "DIABETES"){
+      for (n in base[[i]]){
+        if (n != 2){
+          diabetes_conteo <- diabetes_conteo + 1
+        }
+      }
+    } else if( i == "EPOC"){
+      for (n in base[[i]]){
+        if (n != 2){
+          epoc_conteo <- epoc_conteo + 1
+        }
+      }
+    } else if( i == "ASMA"){
+      for (n in base[[i]]){
+        if (n != 2){
+          asma_conteo <- asma_conteo + 1
+        }
+      }
+    } else if( i == "INMUSUPR"){
+      for (n in base[[i]]){
+        if (n != 2){
+          inmunsupr_conteo <- inmunsupr_conteo + 1
+        }
+      }
+    } else if( i == "HIPERTENSION"){
+      for (n in base[[i]]){
+        if (n != 2){
+          hipertension_conteo <- hipertension_conteo + 1
+        }
+      }
+    } else if( i == "CARDIOVASCULAR"){
+      for (n in base[[i]]){
+        if (n != 2){
+          cardiovascular_conteo <- cardiovascular_conteo + 1
+        }
+      }
+    } else if( i == "OBESIDAD"){
+      for (n in base[[i]]){
+        if (n != 2){
+          obesidad_conteo <- obesidad_conteo + 1
+        }
+      }
+    } else if( i == "RENAL_CRONICA"){
+      for (n in base[[i]]){
+        if (n != 2){
+          renal_cronica_conteo <- renal_cronica_conteo + 1
+        }
+      }
+    } else if( i == "TABAQUISMO"){
+      for (n in base[[i]]){
+        if (n != 2){
+          tabaquismo_conteo <- tabaquismo_conteo + 1
+        }
+      }
+    } 
+  }
+  
+  com_conteos <- c(diabetes_conteo         ,
+                   epoc_conteo             ,
+                   asma_conteo             ,
+                   inmunsupr_conteo        ,
+                   hipertension_conteo     ,
+                   cardiovascular_conteo   ,
+                   obesidad_conteo         ,
+                   renal_cronica_conteo    ,
+                   tabaquismo_conteo       )
+  
+  
+}
