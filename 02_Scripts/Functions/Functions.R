@@ -232,3 +232,94 @@ comorbilidades_conteo <- function(base){
   
   
 }
+
+
+
+
+
+# FUNCION PARA CONTAR CUANTOS PACIENTES ****NO**** TIENEN 
+# COMORBILIDADES ESPECIFICAS DE LA BASE DE DATOS DE COVID
+sin_comorbilidades_conteo <- function(base){
+  
+  #contadores vacios
+  sin_diabetes_conteo         <- 0
+  sin_epoc_conteo             <- 0
+  sin_asma_conteo             <- 0
+  sin_inmunsupr_conteo        <- 0
+  sin_hipertension_conteo     <- 0
+  sin_cardiovascular_conteo   <- 0
+  sin_obesidad_conteo         <- 0
+  sin_renal_cronica_conteo    <- 0
+  sin_tabaquismo_conteo       <- 0
+  
+  # para cada columna de la base
+  for (i in colnames(base[,5:13])){
+    if (i == "DIABETES"){
+      for (n in base[[i]]){
+        if (n == 2){
+          sin_diabetes_conteo <- sin_diabetes_conteo + 1
+        }
+      }
+    } else if( i == "EPOC"){
+      for (n in base[[i]]){
+        if (n == 2){
+          sin_epoc_conteo <- sin_epoc_conteo + 1
+        }
+      }
+    } else if( i == "ASMA"){
+      for (n in base[[i]]){
+        if (n == 2){
+          sin_asma_conteo <- sin_asma_conteo + 1
+        }
+      }
+    } else if( i == "INMUSUPR"){
+      for (n in base[[i]]){
+        if (n == 2){
+          sin_inmunsupr_conteo <- sin_inmunsupr_conteo + 1
+        }
+      }
+    } else if( i == "HIPERTENSION"){
+      for (n in base[[i]]){
+        if (n == 2){
+          sin_hipertension_conteo <- sin_hipertension_conteo + 1
+        }
+      }
+    } else if( i == "CARDIOVASCULAR"){
+      for (n in base[[i]]){
+        if (n == 2){
+          sin_cardiovascular_conteo <- sin_cardiovascular_conteo + 1
+        }
+      }
+    } else if( i == "OBESIDAD"){
+      for (n in base[[i]]){
+        if (n == 2){
+          sin_obesidad_conteo <- sin_obesidad_conteo + 1
+        }
+      }
+    } else if( i == "RENAL_CRONICA"){
+      for (n in base[[i]]){
+        if (n == 2){
+          sin_renal_cronica_conteo <- sin_renal_cronica_conteo + 1
+        }
+      }
+    } else if( i == "TABAQUISMO"){
+      for (n in base[[i]]){
+        if (n == 2){
+          sin_tabaquismo_conteo <- sin_tabaquismo_conteo + 1
+        }
+      }
+    } 
+  }
+  
+  sin_com_conteos <- c(sin_diabetes_conteo         ,
+                       sin_epoc_conteo             ,
+                       sin_asma_conteo             ,
+                       sin_inmunsupr_conteo        ,
+                       sin_hipertension_conteo     ,
+                       sin_cardiovascular_conteo   ,
+                       sin_obesidad_conteo         ,
+                       sin_renal_cronica_conteo    ,
+                       sin_tabaquismo_conteo       )
+  
+  
+}
