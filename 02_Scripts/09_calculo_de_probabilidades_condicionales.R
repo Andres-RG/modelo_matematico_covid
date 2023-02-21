@@ -16,6 +16,7 @@ load("03_Out/OutData/casos_positivos_rangos_edades.RData")
 load("03_Out/OutData/casos_positivos_re_comorbilidad.RData")
 load("03_Out/OutData/conteo_comorbilidades.RData")
 load("03_Out/OutData/conteo_SIN_comorbilidades.RData")
+load("03_Out/OutData/matriz_p_comorbilidades.RData")
 
 
 # Se cargan las funciones
@@ -293,3 +294,178 @@ p_obesidad <- sum(comorbilidades_conteos[7,])/(N)
 p_renal_cronica <- sum(comorbilidades_conteos[8,])/(N)
 #### P ( TABAQUISMO )
 p_tabaquismo <- sum(comorbilidades_conteos[9,])/(N)
+
+
+
+
+#### PROBABILIDADES CONDICIONALES ============---------------
+### p ( C1 | Diabetes ) 
+p_c1_diabetes <-( p_diab_c1 * p_diabetes )/
+    ( p_diabetes * p_diab_c1 + ((1-p_diabetes) * (1-p_diab_c1)))
+### p ( C1 | EPOC ) 
+p_c1_epoc <-( p_epoc_c1 * p_epoc )/
+    ( p_epoc * p_epoc_c1 + ((1-p_epoc) * (1-p_epoc_c1)))
+### p ( C1 | ASMA ) 
+p_c1_asma <-( p_asma_c1 * p_asma )/
+    ( p_asma * p_asma_c1 + ((1-p_asma) * (1-p_asma_c1)))
+### p ( C1 | INMUNSUPR ) 
+p_c1_inmunsupr <-( p_inmunsupr_c1 * p_inmunsupr )/
+    ( p_inmunsupr * p_inmunsupr_c1 + ((1-p_inmunsupr) * (1-p_inmunsupr_c1)))
+### p ( C1 | HIPERTENSION ) 
+p_c1_hipertension <-( p_hipertension_c1 * p_hipertension )/
+    ( p_hipertension * p_hipertension_c1 + ((1-p_hipertension) * (1-p_hipertension_c1)))
+### p ( C1 | CARDIOVASCULAR ) 
+p_c1_cardiovascular <-( p_cardiovascular_c1 * p_cardiovascular )/
+    ( p_cardiovascular * p_cardiovascular_c1 + ((1-p_cardiovascular) * (1-p_cardiovascular_c1)))
+### p ( C1 | OBESIDAD ) 
+p_c1_obesidad <-( p_obesidad_c1 * p_obesidad )/
+    ( p_obesidad * p_obesidad_c1 + ((1-p_obesidad) * (1-p_obesidad_c1)))
+### p ( C1 | RENAL_CRONICA ) 
+p_c1_renal_cronica <-( p_renal_cronica_c1 * p_renal_cronica )/
+    ( p_renal_cronica * p_renal_cronica_c1 + ((1-p_renal_cronica) * (1-p_renal_cronica_c1)))
+### p ( C1 | TABAQUISMO ) 
+p_c1_tabaquismo <-( p_tabaquismo_c1 * p_tabaquismo )/
+    ( p_tabaquismo * p_tabaquismo_c1 + ((1-p_tabaquismo) * (1-p_tabaquismo_c1)))
+
+p_c1_com <- c(p_c1_diabetes,p_c1_epoc,p_c1_asma,p_c1_inmunsupr,
+              p_c1_hipertension,p_c1_cardiovascular,p_c1_obesidad,
+              p_c1_renal_cronica,p_c1_tabaquismo)
+
+
+######----------===
+
+
+
+
+### p ( C2 | Diabetes ) 
+p_c2_diabetes <-( p_diab_c2 * p_diabetes )/
+    ( p_diabetes * p_diab_c2 + ((1-p_diabetes) * (1-p_diab_c2)))
+### p ( C2 | EPOC ) 
+p_c2_epoc <-( p_epoc_c2 * p_epoc )/
+    ( p_epoc * p_epoc_c2 + ((1-p_epoc) * (1-p_epoc_c2)))
+### p ( C2 | ASMA ) 
+p_c2_asma <-( p_asma_c2 * p_asma )/
+    ( p_asma * p_asma_c2 + ((1-p_asma) * (1-p_asma_c2)))
+### p ( C2 | INMUNSUPR ) 
+p_c2_inmunsupr <-( p_inmunsupr_c2 * p_inmunsupr )/
+    ( p_inmunsupr * p_inmunsupr_c2 + ((1-p_inmunsupr) * (1-p_inmunsupr_c2)))
+### p ( C2 | HIPERTENSION ) 
+p_c2_hipertension <-( p_hipertension_c2 * p_hipertension )/
+    ( p_hipertension * p_hipertension_c2 + ((1-p_hipertension) * (1-p_hipertension_c2)))
+### p ( C2 | CARDIOVASCULAR ) 
+p_c2_cardiovascular <-( p_cardiovascular_c2 * p_cardiovascular )/
+    ( p_cardiovascular * p_cardiovascular_c2 + ((1-p_cardiovascular) * (1-p_cardiovascular_c2)))
+### p ( C2 | OBESIDAD ) 
+p_c2_obesidad <-( p_obesidad_c2 * p_obesidad )/
+    ( p_obesidad * p_obesidad_c2 + ((1-p_obesidad) * (1-p_obesidad_c2)))
+### p ( C2 | RENAL_CRONICA ) 
+p_c2_renal_cronica <-( p_renal_cronica_c2 * p_renal_cronica )/
+    ( p_renal_cronica * p_renal_cronica_c2 + ((1-p_renal_cronica) * (1-p_renal_cronica_c2)))
+### p ( C2 | TABAQUISMO ) 
+p_c2_tabaquismo <-( p_tabaquismo_c2 * p_tabaquismo )/
+    ( p_tabaquismo * p_tabaquismo_c2 + ((1-p_tabaquismo) * (1-p_tabaquismo_c2)))
+
+p_c2_com <- c(p_c2_diabetes,p_c2_epoc,p_c2_asma,p_c2_inmunsupr,
+              p_c2_hipertension,p_c2_cardiovascular,p_c2_obesidad,
+              p_c2_renal_cronica,p_c2_tabaquismo)
+
+
+######----------===
+
+
+
+
+### p ( C3 | Diabetes ) 
+p_c3_diabetes <-( p_diab_c3 * p_diabetes )/
+    ( p_diabetes * p_diab_c3 + ((1-p_diabetes) * (1-p_diab_c3)))
+### p ( C3 | EPOC ) 
+p_c3_epoc <-( p_epoc_c3 * p_epoc )/
+    ( p_epoc * p_epoc_c3 + ((1-p_epoc) * (1-p_epoc_c3)))
+### p ( C3 | ASMA ) 
+p_c3_asma <-( p_asma_c3 * p_asma )/
+    ( p_asma * p_asma_c3 + ((1-p_asma) * (1-p_asma_c3)))
+### p ( C3 | INMUNSUPR ) 
+p_c3_inmunsupr <-( p_inmunsupr_c3 * p_inmunsupr )/
+    ( p_inmunsupr * p_inmunsupr_c3 + ((1-p_inmunsupr) * (1-p_inmunsupr_c3)))
+### p ( C3 | HIPERTENSION ) 
+p_c3_hipertension <-( p_hipertension_c3 * p_hipertension )/
+    ( p_hipertension * p_hipertension_c3 + ((1-p_hipertension) * (1-p_hipertension_c3)))
+### p ( C3 | CARDIOVASCULAR ) 
+p_c3_cardiovascular <-( p_cardiovascular_c3 * p_cardiovascular )/
+    ( p_cardiovascular * p_cardiovascular_c3 + ((1-p_cardiovascular) * (1-p_cardiovascular_c3)))
+### p ( C3 | OBESIDAD ) 
+p_c3_obesidad <-( p_obesidad_c3 * p_obesidad )/
+    ( p_obesidad * p_obesidad_c3 + ((1-p_obesidad) * (1-p_obesidad_c3)))
+### p ( C3 | RENAL_CRONICA ) 
+p_c3_renal_cronica <-( p_renal_cronica_c3 * p_renal_cronica )/
+    ( p_renal_cronica * p_renal_cronica_c3 + ((1-p_renal_cronica) * (1-p_renal_cronica_c3)))
+### p ( C3 | TABAQUISMO ) 
+p_c3_tabaquismo <-( p_tabaquismo_c3 * p_tabaquismo )/
+    ( p_tabaquismo * p_tabaquismo_c3 + ((1-p_tabaquismo) * (1-p_tabaquismo_c3)))
+
+p_c3_com <- c(p_c3_diabetes,p_c3_epoc,p_c3_asma,p_c3_inmunsupr,
+              p_c3_hipertension,p_c3_cardiovascular,p_c3_obesidad,
+              p_c3_renal_cronica,p_c3_tabaquismo)
+
+
+######----------===
+
+
+
+
+### p ( C4 | Diabetes ) 
+p_c4_diabetes <-( p_diab_c4 * p_diabetes )/
+    ( p_diabetes * p_diab_c4 + ((1-p_diabetes) * (1-p_diab_c4)))
+### p ( C4 | EPOC ) 
+p_c4_epoc <-( p_epoc_c4 * p_epoc )/
+    ( p_epoc * p_epoc_c4 + ((1-p_epoc) * (1-p_epoc_c4)))
+### p ( C4 | ASMA ) 
+p_c4_asma <-( p_asma_c4 * p_asma )/
+    ( p_asma * p_asma_c4 + ((1-p_asma) * (1-p_asma_c4)))
+### p ( C4 | INMUNSUPR ) 
+p_c4_inmunsupr <-( p_inmunsupr_c4 * p_inmunsupr )/
+    ( p_inmunsupr * p_inmunsupr_c4 + ((1-p_inmunsupr) * (1-p_inmunsupr_c4)))
+### p ( C4 | HIPERTENSION ) 
+p_c4_hipertension <-( p_hipertension_c4 * p_hipertension )/
+    ( p_hipertension * p_hipertension_c4 + ((1-p_hipertension) * (1-p_hipertension_c4)))
+### p ( C4 | CARDIOVASCULAR ) 
+p_c4_cardiovascular <-( p_cardiovascular_c4 * p_cardiovascular )/
+    ( p_cardiovascular * p_cardiovascular_c4 + ((1-p_cardiovascular) * (1-p_cardiovascular_c4)))
+### p ( C4 | OBESIDAD ) 
+p_c4_obesidad <-( p_obesidad_c4 * p_obesidad )/
+    ( p_obesidad * p_obesidad_c4 + ((1-p_obesidad) * (1-p_obesidad_c4)))
+### p ( C4 | RENAL_CRONICA ) 
+p_c4_renal_cronica <-( p_renal_cronica_c4 * p_renal_cronica )/
+    ( p_renal_cronica * p_renal_cronica_c4 + ((1-p_renal_cronica) * (1-p_renal_cronica_c4)))
+### p ( C4 | TABAQUISMO ) 
+p_c4_tabaquismo <-( p_tabaquismo_c4 * p_tabaquismo )/
+    ( p_tabaquismo * p_tabaquismo_c4 + ((1-p_tabaquismo) * (1-p_tabaquismo_c4)))
+
+p_c4_com <- c(p_c4_diabetes,p_c4_epoc,p_c4_asma,p_c4_inmunsupr,
+              p_c4_hipertension,p_c4_cardiovascular,p_c4_obesidad,
+              p_c4_renal_cronica,p_c4_tabaquismo)
+
+
+
+#### MATRIZ DE PROBABILIDADES DE COMORBILIDADES P ( CAT_I | COM_J )
+matriz_p_comorbilidades <- matrix(c(p_c1_com,p_c2_com,p_c3_com,p_c4_com),
+                                  ncol = 4, byrow = F)
+colnames(matriz_p_comorbilidades) <- c("CATEGORIA 1", "CATEGORIA 2", 
+                                       "CATEGORIA 3", "CATEGORIA 4")
+rownames(matriz_p_comorbilidades) <- c("p ( cat_i | diabetes )",
+                                       "p ( cat_i | epoc )",
+                                       "p ( cat_i | asma )", 
+                                       "p ( cat_i | inmunsupr )",
+                                       "p ( cat_i | hipertension )", 
+                                       "p ( cat_i | cardiovascular )",
+                                       "p ( cat_i | obesidad )",
+                                       "p ( cat_i | renal_cronica )", 
+                                       "p ( cat_i | tabaquismo )")
+matriz_p_comorbilidades
+# save(matriz_p_comorbilidades, file = "03_Out/OutData/matriz_p_comorbilidades.RData")
+
+
+
+
+
+
