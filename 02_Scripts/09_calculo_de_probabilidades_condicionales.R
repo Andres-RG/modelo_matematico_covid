@@ -46,19 +46,19 @@ comorbilidades_casos_1 <- t(comorbilidades_casos_1)
 
 # cat 2. 18 a 39 años
 casos_pos_re_comorbilidad_cat_2 <- filter(casos_pos_re_comorbilidad, 
-                                          rango_de_edad == c("18-29", "30-39"))
+                                          rango_de_edad == "18-29" | rango_de_edad == "30-39")
 comorbilidades_casos_2 <- t(comorbilidades_casos_2)
 
 
 # cat 3. 40 a 59 años
 casos_pos_re_comorbilidad_cat_3 <- filter(casos_pos_re_comorbilidad, 
-                                          rango_de_edad == c("40-49", "50-59"))
+                                          rango_de_edad == "40-49" | rango_de_edad == "50-59")
 comorbilidades_casos_3 <- t(comorbilidades_casos_3)
 
 
 # cat 4. 60 años en adelante
 casos_pos_re_comorbilidad_cat_4 <- filter(casos_pos_re_comorbilidad, 
-                                          rango_de_edad == c("60-69", "70+"))
+                                          rango_de_edad == "60-69" | rango_de_edad == "70+")
 comorbilidades_casos_4 <- t(comorbilidades_casos_4)
 
 # 2 Determinacion de probabilidad
@@ -122,7 +122,7 @@ c3 <- sum(casos_pos_re_comorbilidad_cat_3$ind)
 #       # # # C 4
 c4 <- sum(casos_pos_re_comorbilidad_cat_4$ind)
 
-
+N <- c1+c2+c3+c4
 
 ### =========== CATEGORIA 1 ---------
 ### p( diabetes | c1 )
@@ -269,3 +269,27 @@ rownames(matriz_comor) <- c("p ( diabetes | c_j )"," p ( epoc | c_j )",
                             "p ( renal_cronica | c_j )", "p ( tabaquismo | c_j )")
 colnames(matriz_comor) <-c("CATEGORIA 1", "CATEGORIA 2", "CATEGORIA 3", "CATEGORIA 4")
 matriz_comor
+
+
+
+
+### p ( com_j )
+### p ( com_j ) = #TODOS LOS QUE TIENEN COM_J / N
+#### P ( DIABETES )
+p_diabetes <- sum(comorbilidades_conteos[1,])/(N)
+#### P ( EPOC )
+p_epoc <- sum(comorbilidades_conteos[2,])/(N)
+#### P ( ASMA )
+p_asma <- sum(comorbilidades_conteos[3,])/(N)
+#### P ( INMUNSUPR )
+p_inmunsupr <- sum(comorbilidades_conteos[4,])/(N)
+#### P ( HIPERTENSION )
+p_hipertension <- sum(comorbilidades_conteos[5,])/(N)
+#### P ( CARDIOVASCULAR )
+p_cardiovascular <- sum(comorbilidades_conteos[6,])/(N)
+#### P ( OBESIDAD )
+p_obesidad <- sum(comorbilidades_conteos[7,])/(N)
+#### P ( RENAL_CRONICA )
+p_renal_cronica <- sum(comorbilidades_conteos[8,])/(N)
+#### P ( TABAQUISMO )
+p_tabaquismo <- sum(comorbilidades_conteos[9,])/(N)
