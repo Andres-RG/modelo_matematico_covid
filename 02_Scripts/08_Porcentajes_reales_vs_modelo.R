@@ -83,3 +83,28 @@ rownames(porcentajes) <- c("p_infeccion", "p_hospitalizacion",
                            "p_intubacion", "p_muerte")
 porcentajes <- t(porcentajes)
 
+
+
+
+
+porcentajes <- matrix(ncol = 3, nrow = 8)
+porcentajes[1:4, 1] <- porcentajes_modelo
+porcentajes[5:8, 1] <- porcentajes_reales
+porcentajes[1:4, 2] <- c("modelo")
+porcentajes[5:8, 2] <- c("reales")
+porcentajes[,3] <- c("p_infeccion", "p_hospitalizacion",
+                     "p_intubacion", "p_muerte")
+colnames(porcentajes) <- c("p", "tipo", "dato")
+porcentajes <- as.data.frame(porcentajes)
+
+ggplot(porcentajes, aes(fill = tipo, x = dato, y = p)) +
+    geom_bar(position="stack", stat="identity") +
+    labs(y = "Porcentaje", x = "Variable", fill="Datos") +
+    ggtitle("Porcentajes relativos de los datos reales vs inferidos") +
+    theme(plot.title = element_text(hjust = 0.5))+
+    theme(panel.background = element_rect(fill = "white"), 
+          axis.line = element_line(colour = "black", size = 1)) +
+    scale_x_discrete(labels =c("p_hospitalizacion"="Hospitalizados", 
+                               "p_infeccion"="Infectados", 
+                               "p_intubacion"="Intubados",
+                               "p_muerte"="Muerte"))
