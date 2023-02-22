@@ -30,7 +30,7 @@ source("02_Scripts/Functions/Functions.R")
 #  es más probable que  pertenezcan
 #  p( cat_j | com_i )
 
-# 1 Seleccionar solo las columnas de interes con comorbilidades
+# 1 Seleccionar solo las columnas de interes con comorbilidades ----
 casos_pos_re_comorbilidad <- select(casos_positivos_re, 
                                     c(FECHA_SINTOMAS, EDAD, INTUBADO, NEUMONIA,
                                       DIABETES, EPOC, ASMA, INMUSUPR, HIPERTENSION, 
@@ -45,7 +45,7 @@ casos_pos_re_comorbilidad <- mutate(casos_pos_re_comorbilidad, ind = 1)
 # save(casos_pos_re_comorbilidad, file = "03_Out/OutData/casos_positivos_re_comorbilidad.RData")
 
 
-# 1.4 Se separa la base de datos de acuerdo al rango de edad
+# 1.4 Se separa la base de datos de acuerdo al rango de edad ----
 # 1.4.1 cat 1. Menores de 18 años
 casos_pos_re_comorbilidad_cat_1 <- filter(casos_pos_re_comorbilidad, 
                                           rango_de_edad == "18-")
@@ -66,13 +66,13 @@ casos_pos_re_comorbilidad_cat_4 <- filter(casos_pos_re_comorbilidad,
                                           rango_de_edad == "60-69" | rango_de_edad == "70+")
 comorbilidades_casos_4 <- t(comorbilidades_casos_4)
 
-# 2 Determinacion de probabilidad
+# 2 Determinacion de probabilidad ----
 # p( cat_i | com_j ) = ( p ( com_j | cat_1 ) * p( com_j ) ) / 
 #                      (.p( com_j ) * p ( com_j | cat_1 ) + (1-p( com_j )) * 
 #                      (1-p ( com_j | cat_1 )) )
 
-# 2.1 Obtención de p( com_j | cat_i )
-# 2.1.1 Conteo de casos con comorbilidades
+# 2.1 Obtención de p( com_j | cat_i ) ----
+# 2.1.1 Conteo de casos con comorbilidades ----
 
 # 2.1.1.1 Se obtienen los conteos por categoria de cuantos pacientes tienen alguna
 #         comorbilidad, se hace por cada una, y para cada categoria.
@@ -127,7 +127,7 @@ sin_comorbilidades_conteos
 # save(comorbilidades_conteos, file = "03_Out/OutData/conteo_SIN_comorbilidades.RData")
 
 
-# 2.1.2 Conteo de individuos por categoria
+# 2.1.2 Conteo de individuos por categoria ----
 # 2.1.2.1      CATEGORIA 1: MENORES DE 18 AÑOS
 c1 <- sum(casos_pos_re_comorbilidad_cat_1$ind)
 # 2.1.2.2      CATEGIRIA 2: 18 - 39 AÑOS
@@ -140,7 +140,7 @@ c4 <- sum(casos_pos_re_comorbilidad_cat_4$ind)
 N <- c1+c2+c3+c4
 
 
-# 2.1.3 Determinación de la probabilidad
+# 2.1.3 Determinación de la probabilidad P ( COM_J | CAT_I )----
 #       Se dividen los casos de comorbilidad, por comorbilidad, de cada 
 #       categoria entre el total de casos de esa categoria
 # 2.1.3.1 ---- CATEGORIA 1 
@@ -243,7 +243,7 @@ p_comorb_c4 <- c(p_diab_c4,p_epoc_c4,p_asma_c4,p_inmunsupr_c4,
                  p_renal_cronica_c4,p_tabaquismo_c4)
 
 
-# 2.1.4 Se guarda como una matriz, todas las P ( COM_I | CAT_J ) obtenidas 
+# 2.1.4 Se guarda como una matriz, todas las P ( COM_I | CAT_J ) obtenidas ---- 
 #       previamente
 matriz_comor <- matrix(c(p_comorb_c1,p_comorb_c2,p_comorb_c3,p_comorb_c4),
                        ncol = 4, byrow = F)
@@ -260,7 +260,7 @@ colnames(matriz_comor) <-c("CATEGORIA 1", "CATEGORIA 2", "CATEGORIA 3", "CATEGOR
 matriz_comor
 
 
-# 2.1.5 Determinacion de P ( COM_J )
+# 2.1.5 Determinacion de P ( COM_J ) ----
 #       = #TODOS LOS QUE TIENEN LA COM_J / N
 # 2.1.5.1 P ( DIABETES )
 p_diabetes <- sum(comorbilidades_conteos[1,])/(N)
@@ -282,7 +282,7 @@ p_renal_cronica <- sum(comorbilidades_conteos[8,])/(N)
 p_tabaquismo <- sum(comorbilidades_conteos[9,])/(N)
 
 
-# 2.1.6 Determinacion de las PROBABILIDADES CONDICIONALES
+# 2.1.6 Determinacion de las PROBABILIDADES CONDICIONALES ----
 # p( cat_i | com_j ) = ( p ( com_j | cat_1 ) * p( com_j ) ) / 
 #                      (.p( com_j ) * p ( com_j | cat_1 ) + (1-p( com_j )) * 
 #                      (1-p ( com_j | cat_1 )) )
@@ -422,7 +422,7 @@ p_c4_com <- c(p_c4_diabetes,p_c4_epoc,p_c4_asma,p_c4_inmunsupr,
               p_c4_renal_cronica,p_c4_tabaquismo)
 
 
-# 2.1.7 Se guardan todas las probabilidades como una MATRIZ DE PROBABILIDADES 
+# 2.1.7 Se guardan todas las probabilidades como una MATRIZ DE PROBABILIDADES ---- 
 #       DE COMORBILIDADES P ( CAT_I | COM_J )
 matriz_p_comorbilidades <- matrix(c(p_c1_com,p_c2_com,p_c3_com,p_c4_com),
                                   ncol = 4, byrow = F)
