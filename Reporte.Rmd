@@ -25,6 +25,10 @@ Esto pone en pie la idea de que la edad del paciente es importante para determin
 
 ![Casos positivos por rangos de edad](03_Out/Plots/Casos positivos a COVID por rangos de edades para el estado de Queretaro.jpeg)
 
+![Densidad de Casos positivos 1](03_Out/Plots/plot_casos_positivos_geom_density_1.jpeg)
+
+![Densidad de Casos positivos 2](03_Out/Plots/plot_casos_positivos_geom_density_2.jpeg)
+
 # 3. Probabilidades de transicion
 
 Con esta observación, se determinaron las probabilidades de transición entre estados, con base en el modelo de la CDMX. Estas probabilidades se obtuvieron por cada rango de edad de todos los casos que estan involucrados en la transición.
@@ -645,5 +649,10 @@ ggplotly(grafica_recuperados)
 ggplotly(grafica_muertos)
 ```
 
+# 7. Cálculo de probabilidades condicionales
+
+¿Por qué no considerar comorbilidades? R= ¿Cuál es la probabilidad que una persona de cierta edad tenga una comorbilidad, dos, tres , cuatro o combinaciones de éstas?
+
+## 7.1 Cálculo de $p(categoria_i|comorbilidad_j)$
 
 
