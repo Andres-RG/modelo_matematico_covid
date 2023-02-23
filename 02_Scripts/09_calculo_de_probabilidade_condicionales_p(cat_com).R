@@ -25,12 +25,12 @@ source("02_Scripts/Functions/Functions.R")
 
 #¿Cuál es la probabilidad que una persona de cierta edad tenga una comorbilidad, 
 # dos, tres , cuatro o combinaciones de éstas ?
-
 #  probabilidad de que dado que tienen una comorbilidad, a qué categoría de edad
 #  es más probable que  pertenezcan
 #  p( cat_j | com_i )
 
-# 1 Seleccionar solo las columnas de interes con comorbilidades ----
+# 1 Ajustar los datos ----
+# 1.1 Seleccionar solo las columnas de interes con comorbilidades
 casos_pos_re_comorbilidad <- select(casos_positivos_re, 
                                     c(FECHA_SINTOMAS, EDAD, INTUBADO, NEUMONIA,
                                       DIABETES, EPOC, ASMA, INMUSUPR, HIPERTENSION, 
@@ -43,9 +43,7 @@ casos_pos_re_comorbilidad <- arrange(casos_pos_re_comorbilidad, rango_de_edad)
 casos_pos_re_comorbilidad <- mutate(casos_pos_re_comorbilidad, ind = 1)
 # 1.3 Se guarda como archivo
 # save(casos_pos_re_comorbilidad, file = "03_Out/OutData/casos_positivos_re_comorbilidad.RData")
-
-
-# 1.4 Se separa la base de datos de acuerdo al rango de edad ----
+# 1.4 Se separa la base de datos de acuerdo al rango de edad
 # 1.4.1 cat 1. Menores de 18 años
 casos_pos_re_comorbilidad_cat_1 <- filter(casos_pos_re_comorbilidad, 
                                           rango_de_edad == "18-")
