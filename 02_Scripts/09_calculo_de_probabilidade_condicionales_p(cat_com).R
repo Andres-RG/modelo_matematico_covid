@@ -24,6 +24,7 @@ load("03_Out/OutData/matriz_p_comorbilidades.RData")
 source("02_Scripts/Functions/Functions.R")
 
 
+
 #¿Cuál es la probabilidad que una persona de cierta edad tenga una comorbilidad, 
 # dos, tres , cuatro o combinaciones de éstas ?
 #  probabilidad de que dado que tienen una comorbilidad, a qué categoría de edad
