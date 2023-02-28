@@ -254,6 +254,8 @@ rownames(matriz_comor) <- c("p ( diabetes | c_j )",
                             "p ( tabaquismo | c_j )")
 colnames(matriz_comor) <-c("CATEGORIA 1", "CATEGORIA 2", "CATEGORIA 3", "CATEGORIA 4")
 matriz_comor
+# 2.1.4.1 Se guarda como archivo 
+# save(matriz_comor, file = "03_Out/OutData/matriz_2_p_comorbilidades.RData")
 
 # 2.1.5 Determinacion de P ( COM_j ) ----
 #       =         # TODOS LOS QUE TIENEN LA COM_j
