@@ -346,3 +346,390 @@ sin_comorbilidades_conteo <- function(base){
   
   
 }
+
+# 7. Funcion para hacer los conteos de casos con comorbilidades con combinaciones----
+comorbilidades_combinadas_conteo <- function(base) {
+  
+  # CONTADORES
+  diabetes_epoc <- 0
+  diabetes_asma <- 0
+  diabetes_inmunsupr <- 0
+  diabetes_hipertension <- 0
+  diabetes_cardiovascular <- 0
+  diabetes_obesidad <- 0
+  diabetes_renal_cronica <- 0
+  diabetes_tabaquismo <- 0
+  
+  epoc_asma <- 0
+  epoc_inmunsupr <- 0
+  epoc_hipertension <- 0
+  epoc_cardiovascular <- 0
+  epoc_obesidad <- 0
+  epoc_renal_cronica <- 0
+  epoc_tabaquismo <- 0
+  
+  asma_inmunsupr <- 0
+  asma_hipertension <- 0
+  asma_cardiovascular <- 0
+  asma_obesidad <- 0
+  asma_renal_cronica <- 0
+  asma_tabaquismo <- 0
+  
+  inmunsupr_hipertension <- 0
+  inmunsupr_cardiovascular <- 0
+  inmunsupr_obesidad <- 0
+  inmunsupr_renal_cronica <- 0
+  inmunsupr_tabaquismo <- 0
+  
+  hipertension_cardiovascular <- 0
+  hipertension_obesidad <- 0
+  hipertension_renal_cronica <- 0
+  hipertension_tabaquismo <- 0
+  
+  cardiovascular_obesidad <- 0
+  cardiovascular_renal_cronica <- 0
+  cardiovascular_tabaquismo <- 0
+  
+  obesidad_renal_cronica <- 0
+  obesidad_tabaquismo <- 0
+  
+  renal_cronica_tabaquismo <- 0
+  
+  
+  for ( i in colnames(base) ) {
+    if (i == "DIABETES") {
+      for ( n in base[[i]] ) {
+        if (n != 2) {
+          
+          for ( i in colnames(base) ){
+            
+            if (i == "EPOC"){
+              for (n in base[[i]] ){
+                if (n != 2){
+                  diabetes_epoc <- diabetes_epoc + 1
+                }
+              }
+            } else if(i == "ASMA") {
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  diabetes_asma <- diabetes_asma + 1
+                }
+              }
+            } else if(i == "INMUSUPR") {
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  diabetes_inmunsupr <- diabetes_inmunsupr + 1
+                }
+              }
+            } else if(i == "HIPERTENSION"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  diabetes_hipertension <- diabetes_hipertension + 1
+                }
+              }
+            } else if(i == "CARDIOVASCULAR"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  diabetes_cardiovascular <- diabetes_cardiovascular + 1
+                }
+              }
+            } else if (i == "OBESIDAD") {
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  diabetes_obesidad <- diabetes_obesidad + 1
+                }
+              }
+            } else if (i == "RENAL_CRONICA"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  diabetes_renal_cronica <- diabetes_renal_cronica + 1
+                }
+              }
+            } else if (i == "TABAQUISMO"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  diabetes_tabaquismo <- diabetes_tabaquismo + 1
+                }
+              }
+            }
+          }
+        }
+      }
+    } else if (i == "EPOC") {
+      for ( n in base[[i]] ) {
+        if (n != 2) {
+          
+          for ( i in colnames(base) ){
+            
+            
+            if(i == "ASMA"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  epoc_asma <- epoc_asma + 1
+                }
+              }
+            } else if(i == "INMUSUPR") {
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  epoc_inmunsupr <- epoc_inmunsupr + 1
+                }
+              }
+            } else if(i == "HIPERTENSION"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  epoc_hipertension <- epoc_hipertension + 1
+                }
+              }
+            } else if(i == "CARDIOVASCULAR"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  epoc_cardiovascular <- epoc_cardiovascular + 1
+                }
+              }
+            } else if (i == "OBESIDAD") {
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  epoc_obesidad <- epoc_obesidad + 1
+                }
+              }
+            } else if (i == "RENAL_CRONICA"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  epoc_renal_cronica <- epoc_renal_cronica + 1
+                }
+              }
+            } else if (i == "TABAQUISMO"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  epoc_tabaquismo <- epoc_tabaquismo + 1
+                }
+              }
+            }
+          }
+        }
+      }
+    } else if (i == "ASMA") {
+      for ( n in base[[i]] ) {
+        if (n != 2) {
+          
+          for ( i in colnames(base) ){
+            
+            if(i == "INMUSUPR") {
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  asma_inmunsupr <- asma_inmunsupr + 1
+                }
+              }
+            } else if(i == "HIPERTENSION"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  asma_hipertension <- asma_hipertension + 1
+                }
+              }
+            } else if(i == "CARDIOVASCULAR"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  asma_cardiovascular <- asma_cardiovascular + 1
+                }
+              }
+            } else if (i == "OBESIDAD") {
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  asma_obesidad <- asma_obesidad + 1
+                }
+              }
+            } else if (i == "RENAL_CRONICA"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  asma_renal_cronica <- asma_renal_cronica + 1
+                }
+              }
+            } else if (i == "TABAQUISMO"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  asma_tabaquismo <- asma_tabaquismo + 1
+                }
+              }
+            }
+          }
+        }
+      }
+    } else if (i == "INMUSUPR") {
+      for ( n in base[[i]] ) {
+        if (n != 2) {
+          
+          for ( i in colnames(base) ){
+            
+            if(i == "HIPERTENSION"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  inmunsupr_hipertension <- inmunsupr_hipertension + 1
+                }
+              }
+            } else if(i == "CARDIOVASCULAR"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  inmunsupr_cardiovascular <- inmunsupr_cardiovascular + 1
+                }
+              }
+            } else if (i == "OBESIDAD") {
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  inmunsupr_obesidad <- inmunsupr_obesidad + 1
+                }
+              }
+            } else if (i == "RENAL_CRONICA"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  inmunsupr_renal_cronica <- inmunsupr_renal_cronica + 1
+                }
+              }
+            } else if (i == "TABAQUISMO"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  inmunsupr_tabaquismo <- inmunsupr_tabaquismo + 1
+                }
+              }
+            }
+          }
+        }
+      }
+    } else if (i == "HIPERTENSION") {
+      for ( n in base[[i]] ) {
+        if (n != 2) {
+          
+          for ( i in colnames(base) ){
+            
+            if(i == "CARDIOVASCULAR"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  hipertension_cardiovascular <- hipertension_cardiovascular + 1
+                }
+              }
+            } else if (i == "OBESIDAD") {
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  hipertension_obesidad <- hipertension_obesidad + 1
+                }
+              }
+            } else if (i == "RENAL_CRONICA"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  hipertension_renal_cronica <- hipertension_renal_cronica + 1
+                }
+              }
+            } else if (i == "TABAQUISMO"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  hipertension_tabaquismo <- hipertension_tabaquismo + 1
+                }
+              }
+            }
+          }
+        }
+      }
+    } else if (i == "CARDIOVASCULAR") {
+      for ( n in base[[i]] ) {
+        if (n != 2) {
+          
+          for ( i in colnames(base) ){
+            
+            if (i == "OBESIDAD") {
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  cardiovascular_obesidad <- cardiovascular_obesidad + 1
+                }
+              }
+            } else if (i == "RENAL_CRONICA"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  cardiovascular_renal_cronica <- cardiovascular_renal_cronica + 1
+                }
+              }
+            } else if (i == "TABAQUISMO"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  cardiovascular_tabaquismo <- cardiovascular_tabaquismo + 1
+                }
+              }
+            }
+          }
+        }
+      }
+    } else if (i == "OBESIDAD") {
+      for ( n in base[[i]] ) {
+        if (n != 2) {
+          
+          for ( i in colnames(base) ){
+            
+            if (i == "RENAL_CRONICA"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  obesidad_renal_cronica <- obesidad_renal_cronica + 1
+                }
+              }
+            } else if (i == "TABAQUISMO"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  obesidad_tabaquismo <- obesidad_tabaquismo + 1
+                }
+              }
+            }
+          }
+        }
+      }
+    } else if (i == "RENAL_CRONICA") {
+      for ( n in base[[i]] ) {
+        if (n != 2) {
+          
+          for ( i in colnames(base) ){
+            
+            if (i == "TABAQUISMO"){
+              for (n in base[[i]] ){
+                if (n != 2) {
+                  renal_cronica_tabaquismo <- renal_cronica_tabaquismo + 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  
+  conteo <- c(NA,diabetes_epoc,diabetes_asma,diabetes_inmunsupr, 
+              diabetes_hipertension, diabetes_cardiovascular,
+              diabetes_obesidad, diabetes_renal_cronica,diabetes_tabaquismo,
+              
+              0,NA,epoc_asma,epoc_inmunsupr,epoc_hipertension,epoc_cardiovascular,
+              epoc_obesidad,epoc_renal_cronica,epoc_tabaquismo,
+              
+              0,0,NA,asma_inmunsupr,asma_hipertension,asma_cardiovascular,asma_obesidad,
+              asma_renal_cronica,asma_tabaquismo,
+              
+              0,0,0,NA,inmunsupr_hipertension,inmunsupr_cardiovascular,
+              inmunsupr_obesidad,inmunsupr_renal_cronica,inmunsupr_tabaquismo,
+              
+              0,0,0,0,NA,hipertension_cardiovascular,hipertension_obesidad,
+              hipertension_renal_cronica,hipertension_tabaquismo,
+              
+              0,0,0,0,0,NA,cardiovascular_obesidad,cardiovascular_renal_cronica,
+              cardiovascular_tabaquismo,
+              
+              0,0,0,0,0,0,NA,obesidad_renal_cronica,obesidad_tabaquismo,
+              
+              0,0,0,0,0,0,0,NA,renal_cronica_tabaquismo,
+              
+              0,0,0,0,0,0,0,0,NA)
+  
+  matriz_conteos <- matrix(conteo, nrow = 9, ncol = 9,byrow = F)
+  colnames(matriz_conteos) <- c("Diabetes","EPOC","Asma","Inmunsupr",
+                                "Hipertension","Cardiovascular","Obesidad",
+                                "Renal Cronica","Tabaquismo")
+  rownames(matriz_conteos) <- c("Diabetes","EPOC","Asma","Inmunsupr",
+                                "Hipertension","Cardiovascular","Obesidad",
+                                "Renal Cronica","Tabaquismo")
+  return(matriz_conteos)
+  
+}

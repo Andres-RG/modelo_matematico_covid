@@ -22,3 +22,63 @@ load("03_Out/OutData/matriz_2_p_comorbilidades.RData")
 
 # Se cargan las funciones
 source("02_Scripts/Functions/Functions.R")
+
+# P ( CAT_i & COM_j & COM_k )
+casos_pos_re_comorbilidad
+
+conteo_com_combinated_1 <- comorbilidades_combinadas_conteo(casos_pos_re_comorbilidad_cat_1)
+conteo_com_combinated_2 <- comorbilidades_combinadas_conteo(casos_pos_re_comorbilidad_cat_2)
+conteo_com_combinated_3 <- comorbilidades_combinadas_conteo(casos_pos_re_comorbilidad_cat_3)
+conteo_com_combinated_4 <- comorbilidades_combinadas_conteo(casos_pos_re_comorbilidad_cat_4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
