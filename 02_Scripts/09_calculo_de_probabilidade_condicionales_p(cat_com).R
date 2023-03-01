@@ -49,22 +49,18 @@ casos_pos_re_comorbilidad <- mutate(casos_pos_re_comorbilidad, ind = 1)
 # 1.4.1 cat 1. Menores de 18 años
 casos_pos_re_comorbilidad_cat_1 <- filter(casos_pos_re_comorbilidad, 
                                           rango_de_edad == "18-")
-comorbilidades_casos_1 <- t(comorbilidades_casos_1)
 
 # 1.4.2 cat 2. 18 a 39 años
 casos_pos_re_comorbilidad_cat_2 <- filter(casos_pos_re_comorbilidad, 
                                           rango_de_edad == "18-29" | rango_de_edad == "30-39")
-comorbilidades_casos_2 <- t(comorbilidades_casos_2)
 
 # 1.4.3 cat 3. 40 a 59 años
 casos_pos_re_comorbilidad_cat_3 <- filter(casos_pos_re_comorbilidad, 
                                           rango_de_edad == "40-49" | rango_de_edad == "50-59")
-comorbilidades_casos_3 <- t(comorbilidades_casos_3)
 
 # 1.4.4 cat 4. 60 años en adelante
 casos_pos_re_comorbilidad_cat_4 <- filter(casos_pos_re_comorbilidad, 
                                           rango_de_edad == "60-69" | rango_de_edad == "70+")
-comorbilidades_casos_4 <- t(comorbilidades_casos_4)
 
 
 
