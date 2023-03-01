@@ -183,7 +183,7 @@ comorbilidades_conteo <- function(base){
                           # a la comorbilidad especifica ...
       for (n in base[[i]]){ # Establece un segundo ciclo for, donde para cada 
                             # valor de la columna de la comorbilidad:
-        if (n != 2){ # Si el valor es diferente a 2 ....
+        if (n == 1){ # Si el valor es diferente a 2 ....
           diabetes_conteo <- diabetes_conteo + 1 # Al contador de la 
                                                  # comorbilidad en especifico, 
                                                  # le suma 1.
@@ -191,49 +191,49 @@ comorbilidades_conteo <- function(base){
       } # Cierra el ciclo cuando ya recorrio toda la columna 
     } else if( i == "EPOC"){ # En cambio, pasa a la siguiente comorbilidad
       for (n in base[[i]]){
-        if (n != 2){
+        if (n == 1){
           epoc_conteo <- epoc_conteo + 1
         }
       }
     } else if( i == "ASMA"){
       for (n in base[[i]]){
-        if (n != 2){
+        if (n == 1){
           asma_conteo <- asma_conteo + 1
         }
       }
     } else if( i == "INMUSUPR"){
       for (n in base[[i]]){
-        if (n != 2){
+        if (n == 1){
           inmunsupr_conteo <- inmunsupr_conteo + 1
         }
       }
     } else if( i == "HIPERTENSION"){
       for (n in base[[i]]){
-        if (n != 2){
+        if (n == 1){
           hipertension_conteo <- hipertension_conteo + 1
         }
       }
     } else if( i == "CARDIOVASCULAR"){
       for (n in base[[i]]){
-        if (n != 2){
+        if (n == 1){
           cardiovascular_conteo <- cardiovascular_conteo + 1
         }
       }
     } else if( i == "OBESIDAD"){
       for (n in base[[i]]){
-        if (n != 2){
+        if (n == 1){
           obesidad_conteo <- obesidad_conteo + 1
         }
       }
     } else if( i == "RENAL_CRONICA"){
       for (n in base[[i]]){
-        if (n != 2){
+        if (n == 1){
           renal_cronica_conteo <- renal_cronica_conteo + 1
         }
       }
     } else if( i == "TABAQUISMO"){
       for (n in base[[i]]){
-        if (n != 2){
+        if (n == 1){
           tabaquismo_conteo <- tabaquismo_conteo + 1
         }
       }
@@ -348,355 +348,54 @@ sin_comorbilidades_conteo <- function(base){
 }
 
 # 7. Funcion para hacer los conteos de casos con comorbilidades con combinaciones----
+#    Toma como argumento una base de datos, que deberia estar filtrada por los
+#    rangos de edades.
 comorbilidades_combinadas_conteo <- function(base) {
   
-  # CONTADORES
-  diabetes_epoc <- 0
-  diabetes_asma <- 0
-  diabetes_inmunsupr <- 0
-  diabetes_hipertension <- 0
-  diabetes_cardiovascular <- 0
-  diabetes_obesidad <- 0
-  diabetes_renal_cronica <- 0
-  diabetes_tabaquismo <- 0
+  # Genera los 36 CONTADORES en 0 de las combinaciones de comorbilidades
+  diabetes_epoc <- nrow(base[base$DIABETES == 1 & base$EPOC == 1,])
+  diabetes_asma <- nrow(base[base$DIABETES == 1 & base$ASMA == 1,])
+  diabetes_inmunsupr <- nrow(base[base$DIABETES == 1 & base$INMUSUPR == 1,])
+  diabetes_hipertension <- nrow(base[base$DIABETES == 1 & base$HIPERTENSION == 1,])
+  diabetes_cardiovascular <- nrow(base[base$DIABETES == 1 & base$CARDIOVASCULAR == 1,])
+  diabetes_obesidad <- nrow(base[base$DIABETES == 1 & base$OBESIDAD == 1,])
+  diabetes_renal_cronica <- nrow(base[base$DIABETES == 1 & base$RENAL_CRONICA == 1,])
+  diabetes_tabaquismo <- nrow(base[base$DIABETES == 1 & base$TABAQUISMO == 1,])
   
-  epoc_asma <- 0
-  epoc_inmunsupr <- 0
-  epoc_hipertension <- 0
-  epoc_cardiovascular <- 0
-  epoc_obesidad <- 0
-  epoc_renal_cronica <- 0
-  epoc_tabaquismo <- 0
+  epoc_asma <- nrow(base[base$EPOC == 1 & base$ASMA == 1,])
+  epoc_inmunsupr <- nrow(base[base$EPOC == 1 & base$INMUSUPR == 1,])
+  epoc_hipertension <- nrow(base[base$EPOC == 1 & base$HIPERTENSION == 1,])
+  epoc_cardiovascular <- nrow(base[base$EPOC == 1 & base$CARDIOVASCULAR == 1,])
+  epoc_obesidad <- nrow(base[base$EPOC == 1 & base$OBESIDAD == 1,])
+  epoc_renal_cronica <- nrow(base[base$EPOC == 1 & base$RENAL_CRONICA == 1,])
+  epoc_tabaquismo <- nrow(base[base$EPOC == 1 & base$TABAQUISMO == 1,])
   
-  asma_inmunsupr <- 0
-  asma_hipertension <- 0
-  asma_cardiovascular <- 0
-  asma_obesidad <- 0
-  asma_renal_cronica <- 0
-  asma_tabaquismo <- 0
+  asma_inmunsupr <- nrow(base[base$ASMA == 1 & base$INMUSUPR == 1,])
+  asma_hipertension <- nrow(base[base$ASMA == 1 & base$HIPERTENSION == 1,])
+  asma_cardiovascular <- nrow(base[base$ASMA == 1 & base$CARDIOVASCULAR == 1,])
+  asma_obesidad <- nrow(base[base$ASMA == 1 & base$OBESIDAD == 1,])
+  asma_renal_cronica <- nrow(base[base$ASMA == 1 & base$RENAL_CRONICA == 1,])
+  asma_tabaquismo <- nrow(base[base$ASMA == 1 & base$TABAQUISMO == 1,])
   
-  inmunsupr_hipertension <- 0
-  inmunsupr_cardiovascular <- 0
-  inmunsupr_obesidad <- 0
-  inmunsupr_renal_cronica <- 0
-  inmunsupr_tabaquismo <- 0
+  inmunsupr_hipertension <- nrow(base[base$INMUSUPR == 1 & base$HIPERTENSION == 1,])
+  inmunsupr_cardiovascular <- nrow(base[base$INMUSUPR == 1 & base$CARDIOVASCULAR== 1,])
+  inmunsupr_obesidad <- nrow(base[base$INMUSUPR == 1 & base$OBESIDAD == 1,])
+  inmunsupr_renal_cronica <- nrow(base[base$INMUSUPR == 1 & base$RENAL_CRONICA == 1,])
+  inmunsupr_tabaquismo <- nrow(base[base$INMUSUPR == 1 & base$TABAQUISMO == 1,])
   
-  hipertension_cardiovascular <- 0
-  hipertension_obesidad <- 0
-  hipertension_renal_cronica <- 0
-  hipertension_tabaquismo <- 0
+  hipertension_cardiovascular <- nrow(base[base$HIPERTENSION == 1 & base$CARDIOVASCULAR == 1,])
+  hipertension_obesidad <- nrow(base[base$HIPERTENSION == 1 & base$OBESIDAD == 1,])
+  hipertension_renal_cronica <- nrow(base[base$HIPERTENSION == 1 & base$RENAL_CRONICA == 1,])
+  hipertension_tabaquismo <- nrow(base[base$HIPERTENSION == 1 & base$TABAQUISMO == 1,])
   
-  cardiovascular_obesidad <- 0
-  cardiovascular_renal_cronica <- 0
-  cardiovascular_tabaquismo <- 0
+  cardiovascular_obesidad <- nrow(base[base$CARDIOVASCULAR == 1 & base$OBESIDAD == 1,])
+  cardiovascular_renal_cronica <- nrow(base[base$CARDIOVASCULAR == 1 & base$RENAL_CRONICA == 1,])
+  cardiovascular_tabaquismo <- nrow(base[base$CARDIOVASCULAR == 1 & base$TABAQUISMO== 1,])
   
-  obesidad_renal_cronica <- 0
-  obesidad_tabaquismo <- 0
+  obesidad_renal_cronica <- nrow(base[base$OBESIDAD == 1 & base$RENAL_CRONICA == 1,])
+  obesidad_tabaquismo <- nrow(base[base$OBESIDAD == 1 & base$TABAQUISMO == 1,])
   
-  renal_cronica_tabaquismo <- 0
-  
-  
-  for ( i in colnames(base) ) {
-    if (i == "DIABETES") {
-      for ( n in base[[i]] ) {
-        if (n != 2) {
-          
-          for ( i in colnames(base) ){
-            
-            if (i == "EPOC"){
-              for (n in base[[i]] ){
-                if (n != 2){
-                  diabetes_epoc <- diabetes_epoc + 1
-                }
-              }
-            } else if(i == "ASMA") {
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  diabetes_asma <- diabetes_asma + 1
-                }
-              }
-            } else if(i == "INMUSUPR") {
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  diabetes_inmunsupr <- diabetes_inmunsupr + 1
-                }
-              }
-            } else if(i == "HIPERTENSION"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  diabetes_hipertension <- diabetes_hipertension + 1
-                }
-              }
-            } else if(i == "CARDIOVASCULAR"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  diabetes_cardiovascular <- diabetes_cardiovascular + 1
-                }
-              }
-            } else if (i == "OBESIDAD") {
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  diabetes_obesidad <- diabetes_obesidad + 1
-                }
-              }
-            } else if (i == "RENAL_CRONICA"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  diabetes_renal_cronica <- diabetes_renal_cronica + 1
-                }
-              }
-            } else if (i == "TABAQUISMO"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  diabetes_tabaquismo <- diabetes_tabaquismo + 1
-                }
-              }
-            }
-          }
-        }
-      }
-    } else if (i == "EPOC") {
-      for ( n in base[[i]] ) {
-        if (n != 2) {
-          
-          for ( i in colnames(base) ){
-            
-            
-            if(i == "ASMA"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  epoc_asma <- epoc_asma + 1
-                }
-              }
-            } else if(i == "INMUSUPR") {
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  epoc_inmunsupr <- epoc_inmunsupr + 1
-                }
-              }
-            } else if(i == "HIPERTENSION"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  epoc_hipertension <- epoc_hipertension + 1
-                }
-              }
-            } else if(i == "CARDIOVASCULAR"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  epoc_cardiovascular <- epoc_cardiovascular + 1
-                }
-              }
-            } else if (i == "OBESIDAD") {
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  epoc_obesidad <- epoc_obesidad + 1
-                }
-              }
-            } else if (i == "RENAL_CRONICA"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  epoc_renal_cronica <- epoc_renal_cronica + 1
-                }
-              }
-            } else if (i == "TABAQUISMO"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  epoc_tabaquismo <- epoc_tabaquismo + 1
-                }
-              }
-            }
-          }
-        }
-      }
-    } else if (i == "ASMA") {
-      for ( n in base[[i]] ) {
-        if (n != 2) {
-          
-          for ( i in colnames(base) ){
-            
-            if(i == "INMUSUPR") {
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  asma_inmunsupr <- asma_inmunsupr + 1
-                }
-              }
-            } else if(i == "HIPERTENSION"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  asma_hipertension <- asma_hipertension + 1
-                }
-              }
-            } else if(i == "CARDIOVASCULAR"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  asma_cardiovascular <- asma_cardiovascular + 1
-                }
-              }
-            } else if (i == "OBESIDAD") {
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  asma_obesidad <- asma_obesidad + 1
-                }
-              }
-            } else if (i == "RENAL_CRONICA"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  asma_renal_cronica <- asma_renal_cronica + 1
-                }
-              }
-            } else if (i == "TABAQUISMO"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  asma_tabaquismo <- asma_tabaquismo + 1
-                }
-              }
-            }
-          }
-        }
-      }
-    } else if (i == "INMUSUPR") {
-      for ( n in base[[i]] ) {
-        if (n != 2) {
-          
-          for ( i in colnames(base) ){
-            
-            if(i == "HIPERTENSION"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  inmunsupr_hipertension <- inmunsupr_hipertension + 1
-                }
-              }
-            } else if(i == "CARDIOVASCULAR"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  inmunsupr_cardiovascular <- inmunsupr_cardiovascular + 1
-                }
-              }
-            } else if (i == "OBESIDAD") {
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  inmunsupr_obesidad <- inmunsupr_obesidad + 1
-                }
-              }
-            } else if (i == "RENAL_CRONICA"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  inmunsupr_renal_cronica <- inmunsupr_renal_cronica + 1
-                }
-              }
-            } else if (i == "TABAQUISMO"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  inmunsupr_tabaquismo <- inmunsupr_tabaquismo + 1
-                }
-              }
-            }
-          }
-        }
-      }
-    } else if (i == "HIPERTENSION") {
-      for ( n in base[[i]] ) {
-        if (n != 2) {
-          
-          for ( i in colnames(base) ){
-            
-            if(i == "CARDIOVASCULAR"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  hipertension_cardiovascular <- hipertension_cardiovascular + 1
-                }
-              }
-            } else if (i == "OBESIDAD") {
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  hipertension_obesidad <- hipertension_obesidad + 1
-                }
-              }
-            } else if (i == "RENAL_CRONICA"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  hipertension_renal_cronica <- hipertension_renal_cronica + 1
-                }
-              }
-            } else if (i == "TABAQUISMO"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  hipertension_tabaquismo <- hipertension_tabaquismo + 1
-                }
-              }
-            }
-          }
-        }
-      }
-    } else if (i == "CARDIOVASCULAR") {
-      for ( n in base[[i]] ) {
-        if (n != 2) {
-          
-          for ( i in colnames(base) ){
-            
-            if (i == "OBESIDAD") {
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  cardiovascular_obesidad <- cardiovascular_obesidad + 1
-                }
-              }
-            } else if (i == "RENAL_CRONICA"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  cardiovascular_renal_cronica <- cardiovascular_renal_cronica + 1
-                }
-              }
-            } else if (i == "TABAQUISMO"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  cardiovascular_tabaquismo <- cardiovascular_tabaquismo + 1
-                }
-              }
-            }
-          }
-        }
-      }
-    } else if (i == "OBESIDAD") {
-      for ( n in base[[i]] ) {
-        if (n != 2) {
-          
-          for ( i in colnames(base) ){
-            
-            if (i == "RENAL_CRONICA"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  obesidad_renal_cronica <- obesidad_renal_cronica + 1
-                }
-              }
-            } else if (i == "TABAQUISMO"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  obesidad_tabaquismo <- obesidad_tabaquismo + 1
-                }
-              }
-            }
-          }
-        }
-      }
-    } else if (i == "RENAL_CRONICA") {
-      for ( n in base[[i]] ) {
-        if (n != 2) {
-          
-          for ( i in colnames(base) ){
-            
-            if (i == "TABAQUISMO"){
-              for (n in base[[i]] ){
-                if (n != 2) {
-                  renal_cronica_tabaquismo <- renal_cronica_tabaquismo + 1
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  
+  renal_cronica_tabaquismo <- nrow(base[base$RENAL_CRONICA == 1 & base$TABAQUISMO == 1,])
   
   conteo <- c(NA,diabetes_epoc,diabetes_asma,diabetes_inmunsupr, 
               diabetes_hipertension, diabetes_cardiovascular,

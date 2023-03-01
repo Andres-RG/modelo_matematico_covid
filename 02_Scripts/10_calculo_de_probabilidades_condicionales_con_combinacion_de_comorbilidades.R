@@ -30,13 +30,10 @@ conteo_com_combinated_1 <- comorbilidades_combinadas_conteo(casos_pos_re_comorbi
 conteo_com_combinated_2 <- comorbilidades_combinadas_conteo(casos_pos_re_comorbilidad_cat_2)
 conteo_com_combinated_3 <- comorbilidades_combinadas_conteo(casos_pos_re_comorbilidad_cat_3)
 conteo_com_combinated_4 <- comorbilidades_combinadas_conteo(casos_pos_re_comorbilidad_cat_4)
-
-
-
-
-
-
-
+conteo_com_combinated_1
+conteo_com_combinated_2
+conteo_com_combinated_3
+conteo_com_combinated_4
 
 
 
