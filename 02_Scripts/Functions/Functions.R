@@ -352,7 +352,9 @@ sin_comorbilidades_conteo <- function(base){
 #    rangos de edades.
 comorbilidades_combinadas_conteo <- function(base) {
   
-  # Genera los 36 CONTADORES en 0 de las combinaciones de comorbilidades
+  # Cuenta con las condicionales para cada renglon. Si en la base de datos, en 
+  # las columnas especificadas, los valores son iguales, los cuenta.
+  # Realiza el mismo proceso para cada combinacion
   diabetes_epoc <- nrow(base[base$DIABETES == 1 & base$EPOC == 1,])
   diabetes_asma <- nrow(base[base$DIABETES == 1 & base$ASMA == 1,])
   diabetes_inmunsupr <- nrow(base[base$DIABETES == 1 & base$INMUSUPR == 1,])
