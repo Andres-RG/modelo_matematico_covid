@@ -434,3 +434,46 @@ comorbilidades_combinadas_conteo <- function(base) {
   return(matriz_conteos)
   
 }
+
+# 8 Determinar p(com & com & cat)
+probabilidades_combinaciones <- function( b, m){
+  
+  # Sumar todos los individuos de la categoria
+  categ <- sum(b$ind)
+  
+  # Crear una matriz de 9x9
+  probs <- matrix(nrow = 9, ncol = 9)
+  
+  # Asignar nombres
+  colnames(probs) <- c("diabetes"         ,
+                       "epoc"             ,
+                       "asma"             ,
+                       "inmunsupr"        ,
+                       "hipertension"     ,
+                       "cardiovascular"   ,
+                       "obesidad"         ,
+                       "renal_cronica"    ,
+                       "tabaquismo"       )
+  
+  rownames(probs) <- c("diabetes"         ,
+                       "epoc"             ,
+                       "asma"             ,
+                       "inmunsupr"        ,
+                       "hipertension"     ,
+                       "cardiovascular"   ,
+                       "obesidad"         ,
+                       "renal_cronica"    ,
+                       "tabaquismo"       )
+  
+  # Ciclo FOR
+  for (i in 1:ncol(m)) {
+    for (j in 1:nrow(m)) {
+      
+      probs[i,j] <- round(m[i,j] / categ,5)
+      
+    }
+  }
+  
+  # Devolver el resultado
+  return(probs)
+}

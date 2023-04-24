@@ -9,7 +9,8 @@ library(deSolve)
 library(ape)
 library(lubridate)
 library(ggmatplot)
-library(randomcoloR)
+library(devtools)
+library(ComplexHeatmap)
 
 # Se carga la base de datos
 load("03_Out/OutData/casos_totales_rangos_edades.RData")
@@ -49,18 +50,19 @@ casos_pos_re_comorbilidad <- mutate(casos_pos_re_comorbilidad, ind = 1)
 # 1.4.1 cat 1. Menores de 18 años
 casos_pos_re_comorbilidad_cat_1 <- filter(casos_pos_re_comorbilidad, 
                                           rango_de_edad == "18-")
-
+# save(casos_pos_re_comorbilidad_cat_1, file = "03_Out/OutData/casos_positivos_re_comorbilidad_cat_1.RData")
 # 1.4.2 cat 2. 18 a 39 años
 casos_pos_re_comorbilidad_cat_2 <- filter(casos_pos_re_comorbilidad, 
                                           rango_de_edad == "18-29" | rango_de_edad == "30-39")
-
+# save(casos_pos_re_comorbilidad_cat_2, file = "03_Out/OutData/casos_positivos_re_comorbilidad_cat_2.RData")
 # 1.4.3 cat 3. 40 a 59 años
 casos_pos_re_comorbilidad_cat_3 <- filter(casos_pos_re_comorbilidad, 
                                           rango_de_edad == "40-49" | rango_de_edad == "50-59")
-
+# save(casos_pos_re_comorbilidad_cat_3, file = "03_Out/OutData/casos_positivos_re_comorbilidad_cat_3.RData")
 # 1.4.4 cat 4. 60 años en adelante
 casos_pos_re_comorbilidad_cat_4 <- filter(casos_pos_re_comorbilidad, 
                                           rango_de_edad == "60-69" | rango_de_edad == "70+")
+# save(casos_pos_re_comorbilidad_cat_4, file = "03_Out/OutData/casos_positivos_re_comorbilidad_cat_4.RData")
 
 
 
@@ -252,6 +254,22 @@ colnames(matriz_comor) <-c("CATEGORIA 1", "CATEGORIA 2", "CATEGORIA 3", "CATEGOR
 matriz_comor
 # 2.1.4.1 Se guarda como archivo 
 # save(matriz_comor, file = "03_Out/OutData/matriz_2_p_comorbilidades.RData")
+#
+#
+# 2.1.4.2 Visualizacion de la matriz
+
+# install_github("jokergoo/ComplexHeatmap")
+mat = matriz_comor
+rownames(mat) <- c("Diabetes",
+                   "EPOC",
+                   "Asma", 
+                   "Inmunsupr",
+                   "Hipertension", 
+                   "Cardiovascular",
+                   "Obesidad",
+                   "Renal Crónica", 
+                   "Tabaquismo")
+Heatmap(mat, name= "p(com|cat)", col = viridis(10))
 
 # 2.1.5 Determinacion de P ( COM_j ) ----
 #       =         # TODOS LOS QUE TIENEN LA COM_j
@@ -424,3 +442,18 @@ rownames(matriz_p_comorbilidades) <- c("p ( cat_i | diabetes )",
 matriz_p_comorbilidades
 # 2.1.7.1 Se guarda la matriz como un archivo
 # save(matriz_p_comorbilidades, file = "03_Out/OutData/matriz_p_comorbilidades.RData")
+#
+#
+# 2.1.7.2 Visualizacion en un Heatmap
+mat_2 = matriz_p_comorbilidades
+rownames(mat_2) <- c("Diabetes",
+                   "EPOC",
+                   "Asma", 
+                   "Inmunsupr",
+                   "Hipertension", 
+                   "Cardiovascular",
+                   "Obesidad",
+                   "Renal Crónica", 
+                   "Tabaquismo")
+Heatmap(mat_2, name= "p(com|cat)")
+
