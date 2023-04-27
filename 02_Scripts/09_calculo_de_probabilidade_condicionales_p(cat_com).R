@@ -269,11 +269,15 @@ rownames(mat) <- c("Diabetes",
                    "Obesidad",
                    "Renal Crónica", 
                    "Tabaquismo")
-#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_categorias.jpeg",
-#     width = 265, height = 265, res = 300, units = "mm")
+colnames(mat) <- c("< 18", "18 - 39",
+                   "40 - 59", "60 <")
+jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_categorias.jpeg",
+     width = 265, height = 265, res = 300, units = "mm")
 Heatmap(mat, name= "p(com|cat)", col = viridis(10),
-        column_title = "Heatmap de p(com|cat)")
-#dev.off()
+        column_title = "Heatmap de p(com|cat)",
+        na_col = "black",
+        cluster_rows = F, cluster_columns = F)
+dev.off()
 
 # 2.1.5 Determinacion de P ( COM_j ) ----
 #       =         # TODOS LOS QUE TIENEN LA COM_j
