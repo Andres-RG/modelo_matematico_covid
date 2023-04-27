@@ -477,3 +477,21 @@ probabilidades_combinaciones <- function( b, m){
   # Devolver el resultado
   return(probs)
 }
+# 8. Funcion para el conteo de casos que tiene al menos UNA comorbilidad ------
+#    Toma como argumentos la base de datos de cada categoria. En la funcion 
+#    estan definidas las columnas 3:13, que son donde estan contenidas las
+#    comorbilidades
+conteo_una_comorbilidad <- function(base){
+  # Se genera un contador vacio
+  c <- 0
+  # Se genera un ciclo for() para que itere en todos los renglones
+  for(i in 1:nrow(base)){
+    # Se ponde la funcion logica en ek ciclo if
+    if (any(base[i,3:13] == 1)){
+      # Se suma 1 al contador si la afirmacion es positiva
+      c <- c + 1
+    }
+  }
+  # Devuelve c
+  return(c)
+}

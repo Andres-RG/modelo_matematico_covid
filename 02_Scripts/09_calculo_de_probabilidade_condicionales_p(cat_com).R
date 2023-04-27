@@ -11,6 +11,7 @@ library(lubridate)
 library(ggmatplot)
 library(devtools)
 library(ComplexHeatmap)
+library(colorRamp2)
 
 # Se carga la base de datos
 load("03_Out/OutData/casos_totales_rangos_edades.RData")
@@ -271,13 +272,13 @@ rownames(mat) <- c("Diabetes",
                    "Tabaquismo")
 colnames(mat) <- c("< 18", "18 - 39",
                    "40 - 59", "60 <")
-jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_categorias.jpeg",
-     width = 265, height = 265, res = 300, units = "mm")
+#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_categorias.jpeg",
+#     width = 265, height = 265, res = 300, units = "mm")
 Heatmap(mat, name= "p(com|cat)", col = viridis(10),
         column_title = "Heatmap de p(com|cat)",
         na_col = "black",
         cluster_rows = F, cluster_columns = F)
-dev.off()
+#dev.off()
 
 # 2.1.5 Determinacion de P ( COM_j ) ----
 #       =         # TODOS LOS QUE TIENEN LA COM_j
@@ -464,4 +465,60 @@ rownames(mat_2) <- c("Diabetes",
                    "Renal Crónica", 
                    "Tabaquismo")
 Heatmap(mat_2, name= "p(com|cat)")
+
+# 2.2 Conteo de casos positivos que tienen al menos una comorbilidad
+# 2.2.1 Categoria 1: menores de 18 años
+#       Se toma cada renglon de la base de datos, que representa a un individuo 
+#       y con la funcion condicional if(), se busca por cada renglon aquellos que
+#       tengan al menos una comorbilidad, dentro de un ciclo for(). Se usa una funcion
+conteo_una_com_cat1 <- conteo_una_comorbilidad(casos_pos_re_comorbilidad_cat_1)
+#
+conteo_una_com_cat1
+# 2.2.2 Categoria 2: 18 a 39 años
+#       Se toma cada renglon de la base de datos, que representa a un individuo 
+#       y con la funcion condicional if(), se busca por cada renglon aquellos que
+#       tengan al menos una comorbilidad, dentro de un ciclo for(). Se usa una funcion
+conteo_una_com_cat2 <- conteo_una_comorbilidad(casos_pos_re_comorbilidad_cat_2)
+#
+conteo_una_com_cat2
+# 2.2.3 Categoria 3: 40 a 59 años
+#       Se toma cada renglon de la base de datos, que representa a un individuo 
+#       y con la funcion condicional if(), se busca por cada renglon aquellos que
+#       tengan al menos una comorbilidad, dentro de un ciclo for(). Se usa una funcion
+conteo_una_com_cat3 <- conteo_una_comorbilidad(casos_pos_re_comorbilidad_cat_3)
+#
+conteo_una_com_cat3
+# 2.2.4 Categoria 4: mayores de 60 años
+#       Se toma cada renglon de la base de datos, que representa a un individuo 
+#       y con la funcion condicional if(), se busca por cada renglon aquellos que
+#       tengan al menos una comorbilidad, dentro de un ciclo for(). Se usa una funcion
+conteo_una_com_cat4 <- conteo_una_comorbilidad(casos_pos_re_comorbilidad_cat_4)
+#
+conteo_una_com_cat4
+#
+# 2.2.5. Normalizacion de los datos de conteo
+# 2.2.5.1. Categoria 1: menores de 18 años
+nomc1 <- conteo_una_com_cat1/c1
+nomc1
+# 2.2.5.2. Categoria 2:18 a 39 años
+nomc2 <- conteo_una_com_cat2/c2
+nomc2
+# 2.2.5.3. Categoria 3: 40 a 59 años
+nomc3 <- conteo_una_com_cat3/c3
+nomc3
+# 2.2.5.4. Categoria 4: mayores de 60 años
+nomc4 <- conteo_una_com_cat4/c4
+nomc4
+#
+# 2.2.6 Visualicacion de los datos de conteo
+conteos_normalizados <- c(nomc1,nomc2,nomc3,nomc4)
+names(conteos_normalizados) <- c("<18","18-39","40-59","60<")
+mat_3 <- conteos_normalizados
+col_fun <- colorRamp2(c( 0, 0.375, 0.75), c("lightblue", "deepskyblue", "deepskyblue4"))
+heatmap_p_una_comorbilidad <- Heatmap(mat_3,cluster_rows = F,name = "p(com)", col = col_fun,
+                                      row_order = order(names(mat_3),decreasing = T))
+#jpeg("03_Out/Plots/heatmap_p_una_comorbilidad.jpeg",
+#     width = 265, height = 265, res = 300, units = "mm")
+heatmap_p_una_comorbilidad
+#dev.off()
 
