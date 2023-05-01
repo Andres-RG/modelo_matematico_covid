@@ -495,8 +495,14 @@ conteo_una_com_cat3
 conteo_una_com_cat4 <- conteo_una_comorbilidad(casos_pos_re_comorbilidad_cat_4)
 #
 conteo_una_com_cat4
-#
+# 2.2.4.1 Vector de conteos
+conteo_una_com_all_cat <- c(conteo_una_com_cat1, conteo_una_com_cat2, 
+                            conteo_una_com_cat3, conteo_una_com_cat4)
 # 2.2.5. Normalizacion de los datos de conteo
+# 
+min_val <- min(conteo_una_com_all_cat)
+max_val <- max(conteo_una_com_all_cat)
+normalized_vector <- (conteo_una_com_all_cat - min_val) / (max_val - min_val)
 # 2.2.5.1. Categoria 1: menores de 18 años
 nomc1 <- conteo_una_com_cat1/c1
 nomc1
@@ -521,4 +527,33 @@ heatmap_p_una_comorbilidad <- Heatmap(mat_3,cluster_rows = F,name = "p(com)", co
 #     width = 265, height = 265, res = 300, units = "mm")
 heatmap_p_una_comorbilidad
 #dev.off()
+#
+mat <- matrix(c( sample( seq(0,1,0.01), 81 ) ), ncol = 9, nrow = 9)
+conteos_normalizados
+mat_3 <- as.matrix(conteos_normalizados)
+col_fun <- colorRamp2(c( 0, 0.375, 0.75), c("lightblue", "deepskyblue", "deepskyblue4"))
 
+heatmap_p_una_comorbilidad_v2 <- Heatmap(mat_3, col = col_fun, column_title = "Una comorbilidad",
+                                         rect_gp = gpar(type = "none"),
+        
+        cell_fun = function(j, i, x, y, width, height, fill) {
+            
+            grid.rect(x = x, y = y, width = width, height = height, 
+                      gp = gpar(col = "grey", fill = NA))
+            if(i == j) {
+                grid.text(nm[i], x = x, y = y)
+            } else if(i > j) {
+                grid.circle(x = x, y = y, 
+                            r = abs(mat_3[i, j])/2 * min(unit.c(width, height)), 
+                            gp = gpar(fill = col_fun(mat_3[i, j]), col = NA))
+            } else {
+                grid.text(sprintf("%.1f", mat_3[i, j]), x, y, gp = gpar(fontsize = 10))
+            }
+        }, 
+        
+        cluster_rows = FALSE, cluster_columns = FALSE,
+        show_row_names = T, show_column_names = T)
+#jpeg("03_Out/Plots/heatmap_p_una_comorbilidad_v2.jpeg",
+#     width = 265, height = 265, res = 300, units = "mm")
+heatmap_p_una_comorbilidad_v2
+#dev.off()
