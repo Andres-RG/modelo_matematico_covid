@@ -61,33 +61,37 @@ probabilidades_combinadas_cat_4
 # C1
 mat_combinaciones_c1 = probabilidades_combinadas_cat_1
 heatmap_c1 <- Heatmap(mat_combinaciones_c1, 
-                      name= "p(com|com)", col = viridis(35), 
+                      name= "Valor", col = viridis(35), 
                       column_title = "Heatmap comorbilidades combinadas menores de 18 años",
-                      na_col = "black",
+                      na_col = "white",
+                      row_names_side = "left",
                       cluster_rows = F, cluster_columns = F)
 #
 # C2
 mat_combinaciones_c2 = probabilidades_combinadas_cat_2
 heatmap_c2 <- Heatmap(mat_combinaciones_c2, 
-                      name= "p(com|com)", col = viridis(35),
+                      name= "Valor", col = viridis(35),
                       column_title = "Heatmap comorbilidades combinadas 18 - 39 años",
-                      na_col = "black",
+                      na_col = "white",
+                      row_names_side = "left",
                       cluster_rows = F, cluster_columns = F)
 #
 # C3
 mat_combinaciones_c3 = probabilidades_combinadas_cat_3
 heatmap_c3 <- Heatmap(mat_combinaciones_c3, 
-                      name= "p(com|com)", col = viridis(35),
+                      name= "Valor", col = viridis(35),
                       column_title = "Heatmap comorbilidades combinadas 40 - 59 años",
-                      na_col = "black",
+                      na_col = "white",
+                      row_names_side = "left",
                       cluster_rows = F, cluster_columns = F)
 #
 # C4
 mat_combinaciones_c4 = probabilidades_combinadas_cat_4
 heatmap_c4 <- Heatmap(mat_combinaciones_c4, 
-                      name= "p(com|com)", col = viridis(35),
+                      name= "Valor", col = viridis(35),
                       column_title = "Heatmap comorbilidades combinadas mayores de 60 años",
-                      na_col = "black",
+                      na_col = "white",
+                      row_names_side = "left",
                       cluster_rows = F, cluster_columns = F)
 #
 #

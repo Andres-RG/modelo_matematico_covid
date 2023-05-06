@@ -276,7 +276,7 @@ colnames(mat) <- c("< 18", "18 - 39",
 #     width = 265, height = 265, res = 300, units = "mm")
 Heatmap(mat, name= "p(com|cat)", col = viridis(10),
         column_title = "Heatmap de p(com|cat)",
-        na_col = "black",
+        na_col = "black",row_names_side = "left",
         cluster_rows = F, cluster_columns = F)
 #dev.off()
 
@@ -552,7 +552,8 @@ heatmap_p_una_comorbilidad_v2 <- Heatmap(mat_3, col = col_fun, column_title = "U
         }, 
         
         cluster_rows = FALSE, cluster_columns = FALSE,
-        show_row_names = T, show_column_names = T)
+        show_row_names = T, show_column_names = T,
+        row_names_side = "left",)
 #jpeg("03_Out/Plots/heatmap_p_una_comorbilidad_v2.jpeg",
 #     width = 265, height = 265, res = 300, units = "mm")
 heatmap_p_una_comorbilidad_v2
