@@ -424,7 +424,7 @@ comorbilidades_combinadas_conteo <- function(base) {
               
               NA,NA,NA,NA,NA,NA,NA,NA,NA)
   
-  matriz_conteos <- matrix(conteo, nrow = 9, ncol = 9,byrow = F)
+  matriz_conteos <- matrix(conteo, nrow = 9, ncol = 9,byrow = T)
   colnames(matriz_conteos) <- c("Diabetes","EPOC","Asma","Inmunsupr",
                                 "Hipertension","Cardiovascular","Obesidad",
                                 "Renal Cronica","Tabaquismo")
@@ -435,7 +435,7 @@ comorbilidades_combinadas_conteo <- function(base) {
   
 }
 
-# 8 Determinar p(com & com & cat)
+# 8 Determinar p(com & com & cat) ----
 probabilidades_combinaciones <- function( b, m){
   
   # Sumar todos los individuos de la categoria
@@ -477,7 +477,7 @@ probabilidades_combinaciones <- function( b, m){
   # Devolver el resultado
   return(probs)
 }
-# 8. Funcion para el conteo de casos que tiene al menos UNA comorbilidad ------
+# 9. Funcion para el conteo de casos que tiene al menos UNA comorbilidad ------
 #    Toma como argumentos la base de datos de cada categoria. En la funcion 
 #    estan definidas las columnas 3:13, que son donde estan contenidas las
 #    comorbilidades

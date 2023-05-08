@@ -9,7 +9,8 @@ library(deSolve)
 library(ape)
 library(lubridate)
 library(ggmatplot)
-
+library(ComplexHeatmap)
+library(circlize)
 
 # Se carga la base de datos
 load("03_Out/OutData/casos_totales_rangos_edades.RData")
@@ -95,20 +96,46 @@ heatmap_c4 <- Heatmap(mat_combinaciones_c4,
                       cluster_rows = F, cluster_columns = F)
 #
 #
-#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c1.jpeg",
-#     width = 265, height = 265, res = 300, units = "mm")
+jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c1.jpeg",
+     width = 265, height = 265, res = 300, units = "mm")
 heatmap_c1
-#dev.off()
-#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c2.jpeg",
-#     width = 265, height = 265, res = 300, units = "mm")
+dev.off()
+jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c2.jpeg",
+     width = 265, height = 265, res = 300, units = "mm")
 heatmap_c2
-#dev.off()
-#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c3.jpeg",
-#     width = 265, height = 265, res = 300, units = "mm")
+dev.off()
+jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c3.jpeg",
+     width = 265, height = 265, res = 300, units = "mm")
 heatmap_c3
-#dev.off()
-#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c4.jpeg",
-#     width = 265, height = 265, res = 300, units = "mm")
+dev.off()
+jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c4.jpeg",
+     width = 265, height = 265, res = 300, units = "mm")
 heatmap_c4
+dev.off()
+#
+mat_combinaciones_c1
+nm <- rownames(mat_combinaciones_c1)
+col_fun <- colorRamp2(c(0, 0.0005, 0.001),  
+                      c("lightblue", "deepskyblue", "deepskyblue4"))
+heatmap_c1_v2 <- Heatmap(mat_combinaciones_c1,
+                         col = col_fun, name = "Valor",
+                         column_title = "Combinacion comorbilidades",
+                         cluster_rows = FALSE, cluster_columns = FALSE,
+                         show_row_names = F, show_column_names = F,
+                         rect_gp = gpar(type = "none"),
+                         cell_fun = function(j, i, x, y, width, height, fill) {
+                             grid.rect(x = x, y = y, width = width, height = height, 
+                                       gp = gpar(col = "white", fill = NA))
+                             if(i == j) {
+                                 grid.text(nm[i], x = x, y = y, gp = gpar(fontsize = 7.5, fontface = "bold"))
+                             } else if(i > j) {
+                                 grid.circle(x = x, y = y, r = abs(mat_combinaciones_c1[i, j])/2 * min(unit.c(width, height)), 
+                                             gp = gpar(fill = col_fun(mat_combinaciones_c1[i, j]), col = NA))
+                             } else {
+                                 grid.text(sprintf("%.5f", mat_combinaciones_c1[i, j]), x, y, gp = gpar(fontsize = 10))
+                             }
+                         })
+#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c1_v2.jpeg",
+#     width = 265, height = 265, res = 300, units = "mm")
+heatmap_c1_v2
 #dev.off()
-
