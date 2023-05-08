@@ -8,7 +8,6 @@ library(viridis)
 library(deSolve)
 library(ape)
 library(lubridate)
-library(randomcoloR)
 library(ggmatplot)
 library(wesanderson)
 
