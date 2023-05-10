@@ -11,7 +11,7 @@ library(lubridate)
 library(ggmatplot)
 library(devtools)
 library(ComplexHeatmap)
-library(colorRamp2)
+library(circlize)
 
 # Se carga la base de datos
 load("03_Out/OutData/casos_totales_rangos_edades.RData")
@@ -528,32 +528,27 @@ heatmap_p_una_comorbilidad <- Heatmap(mat_3,cluster_rows = F,name = "p(com)", co
 heatmap_p_una_comorbilidad
 #dev.off()
 #
-mat <- matrix(c( sample( seq(0,1,0.01), 81 ) ), ncol = 9, nrow = 9)
-conteos_normalizados
-mat_3 <- as.matrix(conteos_normalizados)
-col_fun <- colorRamp2(c( 0, 0.375, 0.75), c("lightblue", "deepskyblue", "deepskyblue4"))
-
-heatmap_p_una_comorbilidad_v2 <- Heatmap(mat_3, col = col_fun, column_title = "Una comorbilidad",
-                                         rect_gp = gpar(type = "none"),
-        
-        cell_fun = function(j, i, x, y, width, height, fill) {
-            
-            grid.rect(x = x, y = y, width = width, height = height, 
-                      gp = gpar(col = "grey", fill = NA))
-            if(i == j) {
-                grid.text(nm[i], x = x, y = y)
-            } else if(i > j) {
-                grid.circle(x = x, y = y, 
-                            r = abs(mat_3[i, j])/2 * min(unit.c(width, height)), 
-                            gp = gpar(fill = col_fun(mat_3[i, j]), col = NA))
-            } else {
-                grid.text(sprintf("%.1f", mat_3[i, j]), x, y, gp = gpar(fontsize = 10))
-            }
-        }, 
-        
-        cluster_rows = FALSE, cluster_columns = FALSE,
-        show_row_names = T, show_column_names = T,
-        row_names_side = "left",)
+mat_3 <- as.matrix(mat_3)
+col_fun <- colorRamp2(c( 0, 0.45, 0.9), 
+                      c("lightblue", "deepskyblue", "deepskyblue4"))
+heatmap_p_una_comorbilidad_v2 <-  Heatmap(mat_3, 
+                                          col = col_fun, 
+                                          column_title = "P una comorbilidad",
+                                          rect_gp = gpar(type = "none"),
+                                          
+                                          cell_fun = function(j, i, x, y, width, height, fill) {
+                                                  
+                                                  grid.rect(x = x, y = y, width = width, height = height, 
+                                                            gp = gpar(col = "black", fill = NA))
+                                                  if(i >= j) {
+                                                          grid.circle(x = x, y = y, 
+                                                                      r = abs(mat_3[i, j])/2 * min(unit.c(width, height)), 
+                                                                      gp = gpar(fill = col_fun(mat_3[i, j]), col = NA))
+                                                  }
+                                          },
+                                          cluster_rows = FALSE, cluster_columns = FALSE,
+                                          show_row_names = T, show_column_names = F,
+                                          name = "Valor", row_names_side = "left")
 #jpeg("03_Out/Plots/heatmap_p_una_comorbilidad_v2.jpeg",
 #     width = 265, height = 265, res = 300, units = "mm")
 heatmap_p_una_comorbilidad_v2
