@@ -399,32 +399,55 @@ comorbilidades_combinadas_conteo <- function(base) {
   
   renal_cronica_tabaquismo <- nrow(base[base$RENAL_CRONICA == 1 & base$TABAQUISMO == 1,])
   
-  conteo <- c(NA,diabetes_epoc,diabetes_asma,diabetes_inmunsupr, 
-              diabetes_hipertension, diabetes_cardiovascular,
-              diabetes_obesidad, diabetes_renal_cronica,diabetes_tabaquismo,
-              
-              NA,NA,epoc_asma,epoc_inmunsupr,epoc_hipertension,epoc_cardiovascular,
-              epoc_obesidad,epoc_renal_cronica,epoc_tabaquismo,
-              
-              NA,NA,NA,asma_inmunsupr,asma_hipertension,asma_cardiovascular,asma_obesidad,
-              asma_renal_cronica,asma_tabaquismo,
-              
-              NA,NA,NA,NA,inmunsupr_hipertension,inmunsupr_cardiovascular,
-              inmunsupr_obesidad,inmunsupr_renal_cronica,inmunsupr_tabaquismo,
-              
-              NA,NA,NA,NA,NA,hipertension_cardiovascular,hipertension_obesidad,
-              hipertension_renal_cronica,hipertension_tabaquismo,
-              
-              NA,NA,NA,NA,NA,NA,cardiovascular_obesidad,cardiovascular_renal_cronica,
-              cardiovascular_tabaquismo,
-              
-              NA,NA,NA,NA,NA,NA,NA,obesidad_renal_cronica,obesidad_tabaquismo,
-              
-              NA,NA,NA,NA,NA,NA,NA,NA,renal_cronica_tabaquismo,
-              
-              NA,NA,NA,NA,NA,NA,NA,NA,NA)
+  conteo <- c(
+    ### DIABETES
+    NA,diabetes_epoc,diabetes_asma,diabetes_inmunsupr,diabetes_hipertension,
+    diabetes_cardiovascular,diabetes_obesidad,diabetes_renal_cronica,
+    diabetes_tabaquismo,
+    
+    ### EPOC
+    diabetes_epoc,NA,epoc_asma,epoc_inmunsupr,epoc_hipertension,
+    epoc_cardiovascular,epoc_obesidad,epoc_renal_cronica,epoc_tabaquismo,
+    
+    ### ASMA
+    diabetes_asma,epoc_asma,NA,asma_inmunsupr,asma_hipertension,
+    asma_cardiovascular,asma_obesidad,asma_renal_cronica,asma_tabaquismo,
+    
+    ### INMUNSUPR
+    diabetes_inmunsupr,epoc_inmunsupr,asma_inmunsupr,NA,
+    inmunsupr_hipertension,inmunsupr_cardiovascular,inmunsupr_obesidad,
+    inmunsupr_renal_cronica,inmunsupr_tabaquismo,
+    
+    ### HIPERTENSION
+    diabetes_hipertension,epoc_hipertension,asma_hipertension,
+    inmunsupr_hipertension,NA,hipertension_cardiovascular,
+    hipertension_obesidad, hipertension_renal_cronica,
+    hipertension_tabaquismo,
+    
+    ### CARDIOVASCULAR
+    diabetes_cardiovascular,epoc_cardiovascular,asma_cardiovascular,
+    inmunsupr_cardiovascular,hipertension_cardiovascular,NA,
+    cardiovascular_obesidad,cardiovascular_renal_cronica,
+    cardiovascular_tabaquismo,
+    
+    ### OBESIDAD
+    diabetes_obesidad,epoc_obesidad,asma_obesidad,inmunsupr_obesidad,
+    hipertension_obesidad,cardiovascular_obesidad,NA,
+    obesidad_renal_cronica,obesidad_tabaquismo,
+    
+    ### RENAL CRONICA
+    diabetes_renal_cronica,epoc_renal_cronica,asma_renal_cronica,
+    inmunsupr_renal_cronica,hipertension_renal_cronica,
+    cardiovascular_renal_cronica,obesidad_renal_cronica,NA,
+    renal_cronica_tabaquismo,
+    
+    ### TABAQUISMO
+    diabetes_tabaquismo,epoc_tabaquismo,asma_tabaquismo,
+    inmunsupr_tabaquismo,hipertension_tabaquismo,cardiovascular_tabaquismo,
+    obesidad_tabaquismo,renal_cronica_tabaquismo,NA)
   
-  matriz_conteos <- matrix(conteo, nrow = 9, ncol = 9,byrow = T)
+  matriz_conteos <- matrix(conteo, nrow = 9, ncol = 9, byrow = F)
+  
   colnames(matriz_conteos) <- c("Diabetes","EPOC","Asma","Inmunsupr",
                                 "Hipertension","Cardiovascular","Obesidad",
                                 "Renal Cronica","Tabaquismo")
