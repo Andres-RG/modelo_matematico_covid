@@ -61,65 +61,176 @@ probabilidades_combinadas_cat_4
 # Heatmap
 # C1
 mat_combinaciones_c1 = probabilidades_combinadas_cat_1
-heatmap_c1 <- Heatmap(mat_combinaciones_c1, 
-                      name= "Valor", col = viridis(35), 
-                      column_title = "Heatmap comorbilidades combinadas menores de 18 años",
-                      na_col = "white",
-                      row_names_side = "left",
-                      cluster_rows = F, cluster_columns = F)
+heatmap_c1 <- Heatmap(mat_combinaciones_c1,
+                      rect_gp = gpar(type = "none"), column_dend_side = "bottom",
+                      cell_fun = function(j, i, x, y, w, h, fill) {
+                              if(as.numeric(x) <= 1 - as.numeric(y) + 1e-6) {
+                                      grid.rect(x, y, w, h, gp = gpar(fill = fill, col = fill))
+                                      }
+                              },
+                      cluster_columns = F, cluster_rows = F,
+                      column_title = "Comorbilidades combinadas <18 años",
+                      row_names_side = "left", col = viridis(35),
+                      name = "Valor")
+
+#
+heatmap_c1_v3 <- Heatmap(mat_combinaciones_c1,
+        col = viridis(35), name = "Valor",
+        column_title = "Combinacion comorbilidades de <18 años",
+        cluster_rows = FALSE, cluster_columns = FALSE,
+        show_row_names = F, show_column_names = F,
+        rect_gp = gpar(type = "none"), 
+        cell_fun = function(j, i, x, y, w, h, fill) {
+            if(i == j) {
+                grid.text(nm[i], x = x, y = y, 
+                          gp = gpar(fontsize = 7.5, fontface = "bold"))
+            } else if(i <= j) {
+                grid.rect(x, y, w, h, gp = gpar(fill = fill, col = "white"))
+            }
+        })
+#
 #
 # C2
 mat_combinaciones_c2 = probabilidades_combinadas_cat_2
-heatmap_c2 <- Heatmap(mat_combinaciones_c2, 
-                      name= "Valor", col = viridis(35),
-                      column_title = "Heatmap comorbilidades combinadas 18 - 39 años",
-                      na_col = "white",
-                      row_names_side = "left",
-                      cluster_rows = F, cluster_columns = F)
+heatmap_c2 <- Heatmap(mat_combinaciones_c2,
+                      rect_gp = gpar(type = "none"), column_dend_side = "bottom",
+                      cell_fun = function(j, i, x, y, w, h, fill) {
+                              if(as.numeric(x) <= 1 - as.numeric(y) + 1e-6) {
+                                      grid.rect(x, y, w, h, gp = gpar(fill = fill, col = fill))
+                              }
+                      },
+                      cluster_columns = F, cluster_rows = F,
+                      column_title = "Comorbilidades combinadas 18 - 39 años",
+                      row_names_side = "left", col = viridis(35),
+                      name = "Valor")
+#
+heatmap_c2_v3 <- Heatmap(mat_combinaciones_c2,
+                         col = viridis(35), name = "Valor",
+                         column_title = "Combinacion comorbilidades 18 - 39 años",
+                         cluster_rows = FALSE, cluster_columns = FALSE,
+                         show_row_names = F, show_column_names = F,
+                         rect_gp = gpar(type = "none"), 
+                         cell_fun = function(j, i, x, y, w, h, fill) {
+                                 if(i == j) {
+                                         grid.text(nm[i], x = x, y = y, 
+                                                   gp = gpar(fontsize = 7.5, fontface = "bold"))
+                                 } else if(i <= j) {
+                                         grid.rect(x, y, w, h, gp = gpar(fill = fill, col = "white"))
+                                 }
+                         })
 #
 # C3
 mat_combinaciones_c3 = probabilidades_combinadas_cat_3
-heatmap_c3 <- Heatmap(mat_combinaciones_c3, 
-                      name= "Valor", col = viridis(35),
-                      column_title = "Heatmap comorbilidades combinadas 40 - 59 años",
-                      na_col = "white",
-                      row_names_side = "left",
-                      cluster_rows = F, cluster_columns = F)
+heatmap_c3 <- Heatmap(mat_combinaciones_c3,
+                      rect_gp = gpar(type = "none"), column_dend_side = "bottom",
+                      cell_fun = function(j, i, x, y, w, h, fill) {
+                              if(as.numeric(x) <= 1 - as.numeric(y) + 1e-6) {
+                                      grid.rect(x, y, w, h, gp = gpar(fill = fill, col = fill))
+                              }
+                      },
+                      cluster_columns = F, cluster_rows = F,
+                      column_title = "Comorbilidades combinadas 40 - 59 años",
+                      row_names_side = "left", col = viridis(35),
+                      name = "Valor")
+#
+#
+heatmap_c3_v3 <- Heatmap(mat_combinaciones_c3,
+                         col = viridis(35), name = "Valor",
+                         column_title = "Combinacion comorbilidades 40 - 59 años",
+                         cluster_rows = FALSE, cluster_columns = FALSE,
+                         show_row_names = F, show_column_names = F,
+                         rect_gp = gpar(type = "none"), 
+                         cell_fun = function(j, i, x, y, w, h, fill) {
+                                 if(i == j) {
+                                         grid.text(nm[i], x = x, y = y, 
+                                                   gp = gpar(fontsize = 7.5, fontface = "bold"))
+                                 } else if(i <= j) {
+                                         grid.rect(x, y, w, h, gp = gpar(fill = fill, col = "white"))
+                                 }
+                         })
 #
 # C4
 mat_combinaciones_c4 = probabilidades_combinadas_cat_4
-heatmap_c4 <- Heatmap(mat_combinaciones_c4, 
-                      name= "Valor", col = viridis(35),
-                      column_title = "Heatmap comorbilidades combinadas mayores de 60 años",
-                      na_col = "white",
-                      row_names_side = "left",
-                      cluster_rows = F, cluster_columns = F)
+heatmap_c4 <- Heatmap(mat_combinaciones_c4,
+                      rect_gp = gpar(type = "none"), column_dend_side = "bottom",
+                      cell_fun = function(j, i, x, y, w, h, fill) {
+                              if(as.numeric(x) <= 1 - as.numeric(y) + 1e-6) {
+                                      grid.rect(x, y, w, h, gp = gpar(fill = fill, col = fill))
+                              }
+                      },
+                      cluster_columns = F, cluster_rows = F,
+                      column_title = "Comorbilidades combinadas >60 años",
+                      row_names_side = "left", col = viridis(35),
+                      name = "Valor")
+#
+heatmap_c4_v3 <- Heatmap(mat_combinaciones_c4,
+                         col = viridis(35), name = "Valor",
+                         column_title = "Combinacion comorbilidades >60 años",
+                         cluster_rows = FALSE, cluster_columns = FALSE,
+                         show_row_names = F, show_column_names = F,
+                         rect_gp = gpar(type = "none"), 
+                         cell_fun = function(j, i, x, y, w, h, fill) {
+                                 if(i == j) {
+                                         grid.text(nm[i], x = x, y = y, 
+                                                   gp = gpar(fontsize = 7.5, fontface = "bold"))
+                                 } else if(i <= j) {
+                                         grid.rect(x, y, w, h, gp = gpar(fill = fill, col = "white"))
+                                 }
+                         })
 #
 #
-jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c1.jpeg",
-     width = 265, height = 265, res = 300, units = "mm")
+#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c1.jpeg",
+#     width = 265, height = 265, res = 300, units = "mm")
 heatmap_c1
-dev.off()
-jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c2.jpeg",
-     width = 265, height = 265, res = 300, units = "mm")
+#dev.off()
+#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c2.jpeg",
+#     width = 265, height = 265, res = 300, units = "mm")
 heatmap_c2
-dev.off()
-jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c3.jpeg",
-     width = 265, height = 265, res = 300, units = "mm")
+#dev.off()
+#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c3.jpeg",
+#     width = 265, height = 265, res = 300, units = "mm")
 heatmap_c3
-dev.off()
-jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c4.jpeg",
-     width = 265, height = 265, res = 300, units = "mm")
+#dev.off()
+#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c4.jpeg",
+#     width = 265, height = 265, res = 300, units = "mm")
 heatmap_c4
-dev.off()
+#dev.off()
 #
+#
+#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c1_v3.jpeg",
+#     width = 265, height = 265, res = 300, units = "mm")
+heatmap_c1_v3
+#dev.off()
+#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c2_v3.jpeg",
+#     width = 265, height = 265, res = 300, units = "mm")
+heatmap_c2_v3
+#dev.off()
+#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c3_v3.jpeg",
+#     width = 265, height = 265, res = 300, units = "mm")
+heatmap_c3_v3
+#dev.off()
+#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c4_v3.jpeg",
+#     width = 265, height = 265, res = 300, units = "mm")
+heatmap_c4_v3
+#dev.off()
+#
+# Version 2
+# Categoria 1: Menores de 18 años
 mat_combinaciones_c1
-nm <- rownames(mat_combinaciones_c1)
+nm <- c("Diabetes",
+        "EPOC",
+        "Asma", 
+        "Inmunsupr",
+        "Hipertension", 
+        "Cardiovascular",
+        "Obesidad",
+        "Renal Crónica", 
+        "Tabaquismo")
 col_fun <- colorRamp2(c(0, 0.0005, 0.001),  
                       c("lightblue", "deepskyblue", "deepskyblue4"))
 heatmap_c1_v2 <- Heatmap(mat_combinaciones_c1,
                          col = col_fun, name = "Valor",
-                         column_title = "Combinacion comorbilidades",
+                         column_title = "Combinacion comorbilidades <18 años",
                          cluster_rows = FALSE, cluster_columns = FALSE,
                          show_row_names = F, show_column_names = F,
                          rect_gp = gpar(type = "none"),
@@ -129,13 +240,121 @@ heatmap_c1_v2 <- Heatmap(mat_combinaciones_c1,
                              if(i == j) {
                                  grid.text(nm[i], x = x, y = y, gp = gpar(fontsize = 7.5, fontface = "bold"))
                              } else if(i > j) {
-                                 grid.circle(x = x, y = y, r = abs(mat_combinaciones_c1[i, j])/2 * min(unit.c(width, height)), 
+                                 grid.circle(x = x, y = y, r = abs(mat_combinaciones_c1[i, j])/2 * min(unit.c(width, height))*1000, 
                                              gp = gpar(fill = col_fun(mat_combinaciones_c1[i, j]), col = NA))
                              } else {
                                  grid.text(sprintf("%.5f", mat_combinaciones_c1[i, j]), x, y, gp = gpar(fontsize = 10))
                              }
                          })
 #jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c1_v2.jpeg",
-#     width = 265, height = 265, res = 300, units = "mm")
+#     width = 365, height = 365, res = 300, units = "mm")
 heatmap_c1_v2
+#dev.off()
+#
+# Categoria 2:18 - 39 años
+mat_combinaciones_c2
+nm <- c("Diabetes",
+        "EPOC",
+        "Asma", 
+        "Inmunsupr",
+        "Hipertension", 
+        "Cardiovascular",
+        "Obesidad",
+        "Renal Crónica", 
+        "Tabaquismo")
+col_fun <- colorRamp2(c(0, 0.003, 0.006),  
+                      c("lightblue", "deepskyblue", "deepskyblue4"))
+heatmap_c2_v2 <- Heatmap(mat_combinaciones_c2,
+                         col = col_fun, name = "Valor",
+                         column_title = "Combinacion comorbilidades 18 - 39 años",
+                         cluster_rows = FALSE, cluster_columns = FALSE,
+                         show_row_names = F, show_column_names = F,
+                         rect_gp = gpar(type = "none"),
+                         cell_fun = function(j, i, x, y, width, height, fill) {
+                                 grid.rect(x = x, y = y, width = width, height = height, 
+                                           gp = gpar(col = "white", fill = NA))
+                                 if(i == j) {
+                                         grid.text(nm[i], x = x, y = y, gp = gpar(fontsize = 7.5, fontface = "bold"))
+                                 } else if(i > j) {
+                                         grid.circle(x = x, y = y, r = abs(mat_combinaciones_c2[i, j])/2 * min(unit.c(width, height))*80, 
+                                                     gp = gpar(fill = col_fun(mat_combinaciones_c2[i, j]), col = NA))
+                                 } else {
+                                         grid.text(sprintf("%.5f", mat_combinaciones_c2[i, j]), x, y, gp = gpar(fontsize = 10))
+                                 }
+                         })
+#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c2_v2.jpeg",
+#     width = 365, height = 365, res = 300, units = "mm")
+heatmap_c2_v2
+#dev.off()
+#
+# Categoria 3: 40 - 59 años
+mat_combinaciones_c3
+nm <- c("Diabetes",
+        "EPOC",
+        "Asma", 
+        "Inmunsupr",
+        "Hipertension", 
+        "Cardiovascular",
+        "Obesidad",
+        "Renal Crónica", 
+        "Tabaquismo")
+col_fun <- colorRamp2(c(0, 0.0325, 0.065),  
+                      c("lightblue", "deepskyblue", "deepskyblue4"))
+heatmap_c3_v2 <- Heatmap(mat_combinaciones_c3,
+                         col = col_fun, name = "Valor",
+                         column_title = "Combinacion comorbilidades 40 - 59 años",
+                         cluster_rows = FALSE, cluster_columns = FALSE,
+                         show_row_names = F, show_column_names = F,
+                         rect_gp = gpar(type = "none"),
+                         cell_fun = function(j, i, x, y, width, height, fill) {
+                                 grid.rect(x = x, y = y, width = width, height = height, 
+                                           gp = gpar(col = "white", fill = NA))
+                                 if(i == j) {
+                                         grid.text(nm[i], x = x, y = y, gp = gpar(fontsize = 7.5, fontface = "bold"))
+                                 } else if(i > j) {
+                                         grid.circle(x = x, y = y, r = abs(mat_combinaciones_c3[i, j])/2 * min(unit.c(width, height))*15, 
+                                                     gp = gpar(fill = col_fun(mat_combinaciones_c3[i, j]), col = NA))
+                                 } else {
+                                         grid.text(sprintf("%.5f", mat_combinaciones_c3[i, j]), x, y, gp = gpar(fontsize = 10))
+                                 }
+                         })
+#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c3_v2.jpeg",
+#     width = 365, height = 365, res = 300, units = "mm")
+heatmap_c3_v2
+#dev.off()
+#
+# Categoria 4: >60 años
+mat_combinaciones_c4
+nm <- c("Diabetes",
+        "EPOC",
+        "Asma", 
+        "Inmunsupr",
+        "Hipertension", 
+        "Cardiovascular",
+        "Obesidad",
+        "Renal Crónica", 
+        "Tabaquismo")
+col_fun <- colorRamp2(c(0, 0.11, 0.23),  
+                      c("lightblue", "deepskyblue", "deepskyblue4"))
+heatmap_c4_v2 <- Heatmap(mat_combinaciones_c4,
+                         col = col_fun, name = "Valor",
+                         column_title = "Combinacion comorbilidades >60 años",
+                         cluster_rows = FALSE, cluster_columns = FALSE,
+                         show_row_names = F, show_column_names = F,
+                         rect_gp = gpar(type = "none"),
+                         cell_fun = function(j, i, x, y, width, height, fill) {
+                                 grid.rect(x = x, y = y, width = width, height = height, 
+                                           gp = gpar(col = "white", fill = NA))
+                                 if(i == j) {
+                                         grid.text(nm[i], x = x, y = y, gp = gpar(fontsize = 7.5, fontface = "bold"))
+                                 } else if(i > j) {
+                                         grid.circle(x = x, y = y, r = abs(mat_combinaciones_c4[i, j])/2 * min(unit.c(width, height))*4.5, 
+                                                     gp = gpar(fill = col_fun(mat_combinaciones_c4[i, j]), col = NA))
+                                 } else {
+                                         grid.text(sprintf("%.5f", mat_combinaciones_c4[i, j]), x, y, gp = gpar(fontsize = 10))
+                                 }
+                         })
+#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c4_v2.jpeg",
+#     width = 265, height = 265, res = 300, units = "mm")
+heatmap_c4_v2
 #dev.off()
