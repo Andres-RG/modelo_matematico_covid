@@ -10,6 +10,6 @@ Se divide en cuatro carpetas principales
     - Contiene todos los scripts generados para el desarrollo del proyecto
 - 03_Out: 
     - OutData: Datos de salida, todos los datos procesados, filtrados, se generaros sub-bases de datos, tablas filtradas, matrices.
-    - Plots: Contiene todas las gráficas generadas del proyecto.}
+    - Plots: Contiene todas las gráficas generadas del proyecto.
 - Images: Contiene ilustraciones, tablas y gráficas necesarias para ejecutar el formato .rmd del reporte
-- Reporte: Contiene el proyecto generado a manera de reporte, con código y gráficasas
+- Reporte: Contiene el proyecto generado a manera de reporte, con código y gráficas.
