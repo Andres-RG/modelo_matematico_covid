@@ -17,7 +17,7 @@ source("02_Scripts/Functions/Functions.R")
 
 
 # Se cargan los datos del modelo
-source("02_Scripts/06_0_Resolucion_numerica_todos_los_grupos.R")
+source("02_Scripts/06_Resolucion_numerica.R")
 
 
 # Se cargan los datos de COVID

@@ -308,5 +308,5 @@ grafica_all_groups <- ggmatplot(x = out_all_groups[,1], y = out_all_groups[,2:33
           axis.line = element_line(colour = "black", size = 0.75))
     
 
-ggsave("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.jpeg", 
-       plot = grafica_all_groups, width = 2887, height = 1464, units = "px")
+#ggsave("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.jpeg", 
+#       plot = grafica_all_groups, width = 2887, height = 1464, units = "px")
