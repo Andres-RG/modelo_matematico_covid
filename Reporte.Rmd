@@ -23,6 +23,8 @@ Este proyecto parte al observar la grafica de casos positivos de COVID-19 para e
 
 Esto pone en pie la idea de que la edad del paciente es importante para determinar la dinámica de las infecciones de COVID-19.
 
+Además de múltiples fuentes bibliográficas.
+
 ![Casos positivos por rangos de edad](03_Out/Plots/Casos positivos a COVID por rangos de edades para el estado de Queretaro.jpeg)
 
 ![Densidad de Casos positivos 1](03_Out/Plots/plot_casos_positivos_geom_density_1.jpeg)
@@ -33,6 +35,35 @@ Esto pone en pie la idea de que la edad del paciente es importante para determin
 
 Con esta observación, se determinaron las probabilidades de transición entre estados, con base en el modelo de la CDMX. Estas probabilidades se obtuvieron por cada rango de edad de todos los casos que estan involucrados en la transición.
 
+EStas probabilidades se determinaron como:
+
+$$
+\frac{\sum \text{todos los casos que cumplen con X}}{\sum \text{todos los casos que cumplen con y}}
+$$
+
+Con base al modelo de la CDMX, las probabilidades de transición que se podían calcular a partir de los datos, son:
+
+- Probabilidad de ser infectado, dado que eres suceptible "**$\beta$**": 
+
+$$p(infectado | susceptible) = \frac{\text{todos los casos positivos}}{\text{todos los casos reportados (positivos/negativos})}$$
+
+- Probabilidad de que un infectado sea un caso ambulatorio "**$p_l$**": 
+
+$$p(ambulatorio | infectado) = \frac{\text{todos los casos ambulatorios}}{\text{todos los casos positivos}}$$
+
+- Probabilidad de que un infectado sea un caso grave/hospitalizado "**$p_h$**": 
+
+$$p(hospitalizado | infectado)= \frac{\text{todos los casos hospitalizados}}{\text{todos los casos infectados}}$$
+- Probabilidad de que un hospitalizado sea intubado (ICU) "**$p_i$**": 
+
+$$p(ICU | hospitalizado) = \frac{\text{todos los casos que fueron intubados}}{todos los casos hospitalizados}$$
+
+- Probabilidad de que unintubado muera "**$p_m$**": 
+
+$$p(muerte | ICU) = \frac{\text{todos los casos que murieron}}{\text{todos los casos que fueron intubados}}$$
+
+Para los casos donde se va centrando la transición, por ejemplo, de ICU a Muerte, la base de datos se filtró para contar solamente los casos, de los que fueron intubados, auqellos que murieron, sin tomar en cuenta, todas las otras muertes regitradas en la base de datos, que no fueron intubados.
+
 ```{r}
 load("03_Out/OutData/probabilidades_de_transicion.RData")
 probabilidades_de_transicion
@@ -42,7 +73,7 @@ probabilidades_de_transicion
 
 Para el estableimiento del modelo es necesario establecer las categorias de edades con base en las probabilidades de transición. Para esto, se realiza un análisis de clusterización, donde los grupos de edad se agrupan de acuerdo a la distancia entre las probabilidades de transición, es decir, para aquellas probabilidades que sean más parecidas o menos distantes, seran agrupadas en un conjunto.
 
-![Analisis de cluster](03_Out/Plots/analisis_de_cluster_probabilidades_de_transicion.png)
+![Analisis de cluster](03_Out/Plots/analisis_de_cluster_probabilidades_de_transicion.jpeg)
 
 Con este análisis, se obtuvieron cuatro grupos etarios por el cual se va a desarrollar el modelo:
 
@@ -609,11 +640,9 @@ out_all_groups <- as.data.frame(ode(y     = state,
                          parms = parameters))
 ```
 
-![Modelo matemático por estructura etaria para el estado de Querétaro](03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.jpeg)
-
 ```{r message=FALSE, warning=FALSE}
 library(plotly)
-source("02_Scripts/06_0_Resolucion_numerica_todos_los_grupos.R")
+source("02_Scripts/06_Resolucion_numerica.R")
 ggplotly(grafica_all_groups)
 ```
 
@@ -621,9 +650,6 @@ ggplotly(grafica_all_groups)
 
 ### 6.2.1 Gráfica de infectados 
 
-![Infectados inferidos](03_Out/Plots/grafica_infectados_inferidos.jpeg)
-
-#### 6.2.1.1 Gráfica dinámica
 ```{r message=FALSE, warning=FALSE}
 source("02_Scripts/07_Graficas_del_modelo.R")
 ggplotly(grafica_infectados)
@@ -631,19 +657,11 @@ ggplotly(grafica_infectados)
 
 ### 6.2.2 Grafica de Recuperados
 
-![Recuperados inferidos](03_Out/Plots/grafica_recuperados_inferidos.jpeg)
-
-#### 6.2.2.1 Gráfica dinámica
-
 ```{r}
 ggplotly(grafica_recuperados)
 ```
 
 ### 6.2.3 Gráfica de muertos
-
-![Muertos inferidos](03_Out/Plots/grafica_muertos_inferidos.jpeg)
-
-#### 6.2.3.1 Gráfica dinámica
 
 ```{r}
 ggplotly(grafica_muertos)
@@ -651,8 +669,43 @@ ggplotly(grafica_muertos)
 
 # 7. Cálculo de probabilidades condicionales
 
-¿Por qué no considerar comorbilidades? R= ¿Cuál es la probabilidad que una persona de cierta edad tenga una comorbilidad, dos, tres , cuatro o combinaciones de éstas?
+¿Por qué no considerar comorbilidades? R= ¿Cuál es la probabilidad que una persona de cierta edad tenga una comorbilidad, dos, tres , cuatro o combinaciones de éstas? La probabilidad de que dado que tiene una comorbilidad, a qué categoría es más probable que pertenezca $p(cat_j|com_i) = \frac{\text{# casos de comorbilidad }j\text{ en la categoría }i}{\text{#casos de la categoría }i}$.
 
-## 7.1 Cálculo de $p(categoria_i|comorbilidad_j)$
+## 7.1 Conteo de comorbilidades
+
+Se hicieron los conteos por cada categoría de cuántos pácientes tienen alguna comorbilidad. Se hace por cada categoría y en cada comorbilidad. Se hace uso de una función alojada en R.
+
+```{r}
+load("03_Out/OutData/conteo_comorbilidades.RData")
+comorbilidades_conteos
+```
+
+Una vez se obtuvo el conteo de las comorbilidades, se hizo el conteo de todos los casos positivos registrados para obtener el total de casos por cada categoría.
+
+## 7.2 Determinación de $p( com_j & cat_i)$
+
+Para obtener la probabilidad, se dividen los casos de comorbilidad por cada una, entre el total de casos de cada categoría. Los datos se guardaron en una matriz.
+
+```{r}
+load("03_Out/OutData/matriz_2_p_comorbilidades.RData")
+matriz_comor
+```
+
+## 7.3 Visualización de datos
+
+Los datos se visualizaron en una matriz, utilizando el paquete *ComplexHetmap*.
+
+![Matriz de comorbilidades](03_Out/Plots/heatmap_probabilidades_comorbilidades_categorias.jpeg)
+
+## 7.4 Probabilidad de que tengas al menos una comorbilidad
+
+Para esto, se hace el conteo de casos que tengan al menos una comorbilidad, por cada categoría de edad. Los conteos se dividieron entre el número de casos positivos registrados para esa categoría. POsteriormente, los datos se normalizaron. Los datos procesados se visualizan como un heatmap. 
+
+![heatmap p de una comorbilidad v1](03_Out/Plots/heatmap_p_una_comorbilidad.jpeg)
+
+![heatmap p de una comorbilidad v1](03_Out/Plots/heatmap_p_una_comorbilidad_v2.jpeg)
+
+
+
 
 

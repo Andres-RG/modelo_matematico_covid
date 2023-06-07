@@ -72,7 +72,7 @@ casos_pos_re_comorbilidad_cat_4 <- filter(casos_pos_re_comorbilidad,
 # p( cat_i | com_j ) = P ( COM_j & CAT_i )
 #                      --- --- --- --- ---
 #                         P ( COM_j )
-# 2.1 ObtenciOn de P ( COM_j & CAT_i )
+# 2.1 Obtencion de P ( COM_j & CAT_i )
 #.    # casos de comorbilidad de la cat_i
 #.    --- --- --- --- --- --- --- --- ---
 #.            # casos de la cat_i
