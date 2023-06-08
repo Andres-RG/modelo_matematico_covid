@@ -682,7 +682,7 @@ comorbilidades_conteos
 
 Una vez se obtuvo el conteo de las comorbilidades, se hizo el conteo de todos los casos positivos registrados para obtener el total de casos por cada categoría.
 
-## 7.2 Determinación de $p( com_j & cat_i)$
+## 7.2 Determinación de p(com_j & cat_i)
 
 Para obtener la probabilidad, se dividen los casos de comorbilidad por cada una, entre el total de casos de cada categoría. Los datos se guardaron en una matriz.
 
@@ -705,7 +705,64 @@ Para esto, se hace el conteo de casos que tengan al menos una comorbilidad, por 
 
 ![heatmap p de una comorbilidad v1](03_Out/Plots/heatmap_p_una_comorbilidad_v2.jpeg)
 
+# 8. Determinación de probabilidades condiconales con combinación de comorbilidades
 
+¿Cuál es la probabilidad que una persona de cierta edad tenga combinaciones de dos comorbilidades? La probabilidad de que dado que tiene dos comorbilidad, a qué categoría es más probable que pertenezca. $p(cat_i|com_j\&com_k)=\frac{\sum\text{casos de combinación de dos comorbilidades de la cat}_i}{\sum\text{casos de la cat}_i}$
 
+## 8.1 Conteo de casos con combinaciones de comorbilidades
 
+De los casos positivos, se hizo el conteo de los casos que tienen combinaciones de 9 comorbilidades, entre cada una de ellas. Se generaron cuatro matrices de 9x9 de cada categoría con los conteos de cada combinación de comorbilidades. Se hizo uso de una función generada en R.
+
+```{r}
+source("02_Scripts/10_calculo_de_probabilidades_condicionales_con_combinacion_de_comorbilidades.R")
+conteo_comor_combinated_1
+conteo_comor_combinated_2
+conteo_comor_combinated_3
+conteo_comor_combinated_4
+```
+
+## 8.2 Determinación de las probabilidades
+
+Para determinar las probabilidades, cada conteo se dividió entre el total de casos de cada categoría. Se generó una matriz de 9x9 de combinaciones de comorbilidades por cada categoría. Se hizo uso de una función generada en R.
+
+```{r}
+probabilidades_combinadas_cat_1
+probabilidades_combinadas_cat_2
+probabilidades_combinadas_cat_3
+probabilidades_combinadas_cat_4
+```
+
+## 8.3 Visualización de los datos
+
+Los datos se visualizaron en heatmaps. Se hizo uso del paquete "*ComplexHeatmap*".
+
+### 8.3.1 Versión 1
+
+![Heatmap categoria 1 v1](03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c1.jpeg)
+
+![Heatmap categoria 2 v1](03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c2.jpeg)
+
+![Heatmap categoria 3 v1](03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c3.jpeg)
+
+![Heatmap categoria 4 v1](03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c4.jpeg)
+
+### 8.3.1 Versión 2
+
+![Heatmap categoria 1 v2](03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c1_v2.jpeg)
+
+![Heatmap categoria 2 v2](03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c2_v2.jpeg)
+
+![Heatmap categoria 3 v2](03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c3_v2.jpeg)
+
+![Heatmap categoria 4 v2](03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c4_v2.jpeg)
+
+### 8.3.1 Versión 3
+
+![Heatmap categoria 1 v3](03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c1_v3.jpeg)
+
+![Heatmap categoria 2 v3](03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c2_v3.jpeg)
+
+![Heatmap categoria 3 v3](03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c3_v3.jpeg)
+
+![Heatmap categoria 4 v3](03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c4_v3.jpeg)
 

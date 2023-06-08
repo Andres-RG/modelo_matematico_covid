@@ -59,6 +59,15 @@ probabilidades_combinadas_cat_3
 probabilidades_combinadas_cat_4
 
 # Heatmap
+nm <- c("Diabetes",
+        "EPOC",
+        "Asma", 
+        "Inmunsupr",
+        "Hipertension", 
+        "Cardiovascular",
+        "Obesidad",
+        "Renal Crónica", 
+        "Tabaquismo")
 # C1
 mat_combinaciones_c1 = probabilidades_combinadas_cat_1
 heatmap_c1 <- Heatmap(mat_combinaciones_c1,
