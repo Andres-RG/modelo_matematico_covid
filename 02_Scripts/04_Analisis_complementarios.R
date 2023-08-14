@@ -59,12 +59,13 @@ plot_casos_positivos_tail_probability <- ggplot(casos_positivos_re,
            fill = 0.5 - abs(0.5 - stat(ecdf)))) +
     stat_density_ridges(geom = "density_ridges_gradient", calc_ecdf = T) +
     scale_fill_viridis_c(name = "Tail probability", direction = -1)
+plot_casos_positivos_tail_probability
 #dev.off()
 
 plot_total_casos_positivos_re <- ggplot(casos_positivos_re_conteo,
                                         aes(x = FECHA_SINTOMAS, y = positivos)) +
   geom_point()
-
+plot_total_casos_positivos_re
 #ggsave("03_Out/Plots/plot_casos_positivos_totales_conteo.jpeg", 
 #       plot = plot_total_casos_positivos_re, width = 2887, height = 1464, units = "px")
 
@@ -97,10 +98,32 @@ plot_pos_x_dia_re
 #ggsave("03_Out/Plots/conteo_casos_totales_x_re.jpeg",
 #       plot = plot_pos_x_dia_re, width = 2887, height = 1464, units = "px")
 
-plot_pos_x_dia_re_2 <- ggplot(casos_positivos_x_dia_re) +
-  geom_smooth(mapping = aes(x = FECHA_SINTOMAS, y = casos_totales, 
-                            color = rango_de_edad), 
-              se = F)
+plot_pos_x_dia_re_2 <- ggplot(casos_positivos_x_dia_re, 
+                              aes(x = FECHA_SINTOMAS, 
+                                  y = casos_totales,
+                                  color = rango_de_edad,
+                                  shape = rango_de_edad)) + 
+  geom_point(alpha = 1, size = 3) +
+  geom_smooth(se = F, linetype = "dashed", size = 1.2, alpha = 1.5) +
+  labs(title = "Casos positivos por día",
+       x = "Fecha", y = "No. de casos",
+       color = "Rangos de edad",   # Cambia el nombre de la leyenda de color
+       shape = "Rangos de edad") +
+  scale_shape_manual(values = seq(0, 25)) +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+  theme(
+    plot.title = element_text(size = 14, hjust = 0.5),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    panel.grid.major = element_blank(),
+    panel.border = element_blank(),
+    panel.background = element_blank(),
+    axis.line = element_line(colour = "black", size = 0.75),
+    legend.position = "right",  # Posición de la leyenda
+    legend.title = element_text(size = 10),  # Título de la leyenda
+    legend.text = element_text(size = 10),  # Texto de la leyenda
+    legend.spacing = unit(0.5, "cm")
+  )
+
 plot_pos_x_dia_re_2
 
 #ggsave("03_Out/Plots/conteo_casos_totales_x_re_v2.jpeg",
