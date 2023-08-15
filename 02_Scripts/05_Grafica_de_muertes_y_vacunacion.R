@@ -32,7 +32,7 @@ max_cases <- max(casos_por_fecha$NumCasos)
 # .RData
 # save(casos_solo_positivos_muerte_re, 
 #     file = "03_Out/OutData/casos_positivos_re_m.RData")
-
+# save(casos_por_fecha, file = "03_Out/OutData/casos_solo_fecha.RData")
 # Se genera una grafica donde se observan las fechas por meses, de los casos 
 # positivos y por estructura de edad, si los pacientes fallecieron o no.
 plot_positivos_muertes_y_no_raw <- ggplot(casos_por_fecha,
