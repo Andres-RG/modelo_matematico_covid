@@ -37,29 +37,34 @@ max_cases <- max(casos_por_fecha$NumCasos)
 # positivos y por estructura de edad, si los pacientes fallecieron o no.
 plot_positivos_muertes_y_no_raw <- ggplot(casos_por_fecha,
                                       aes(x = FECHA_SINTOMAS,
-                                          group = interaction(rango_de_edad, Muerte),
+                                          group = interaction(rango_de_edad, 
+                                                              Muerte),
                                           col = Muerte)) +
-    geom_line(aes(y = NumCasos), size = 0.5) +
+    geom_line(aes(y = NumCasos), size = 0.5, alpha = 0.75) +
+    geom_smooth(aes(y = NumCasos, linetype = Muerte), se = FALSE,
+            size = 0.9, alpha = 1.5, show.legend = F) +
     facet_grid(rango_de_edad ~ ., scales = "free_y") +
     labs(title = "Comparación de casos de muertes vs recuperados de COVID-19",
          x = "Tiempo", y = "No. de casos", fill = "Muerte") +
     theme(
         plot.title = element_text(size = 14, hjust = 0.5),
-        axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.text.x = element_text(angle = 45, hjust = 1), #texto en el eje x
         panel.grid.major = element_blank(),
-        panel.border = element_blank(),
-        axis.line = element_line(colour = "black", size = 0.75),
+        panel.border = element_blank(), 
+        axis.line = element_line(colour = "black", size = 0.75), #Eje de la gráfica
         legend.position = "bottom",  # Posición de la leyenda
         legend.title = element_blank(),  # Título de la leyenda
         legend.text = element_text(size = 10),  # Texto de la leyenda
         legend.spacing = unit(0.5, "cm")
     ) +
-    scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
-    scale_y_continuous(labels = scales::comma) +
-    scale_fill_manual(values = c("Muerte" = "#E63946", "No Muerte" = "dodgerblue"),
+    scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") + #agrega los meses
+    scale_y_continuous(labels = scales::comma) + #agrega el numero de casos
+    scale_fill_manual(values = c("Muerte" = "red4", "No Muerte" = "dodgerblue"),
                       labels = c("Fallecimientos", "Recuperados")) +
-    scale_color_manual(values = c("Muerte" = "#E63946", "No Muerte" = "dodgerblue"),
-                       labels = c("Fallecimientos", "Recuperados"))
+    scale_color_manual(values = c("Muerte" = "red4", "No Muerte" = "dodgerblue"),
+                       labels = c("Fallecimientos", "Recuperados")) + 
+    scale_linetype_manual(values = c("dashed", "solid"))
+
 # El objeto se guarda como un objeto jpeg
 plot_positivos_muertes_y_no_raw
 #jpeg("03_Out/Plots/plot_casos_fallecidos_vs_recuperados_raw.jpeg",
@@ -71,7 +76,9 @@ plot_positivos_muertes_y_no_nom <- ggplot(casos_por_fecha,
                                       aes(x = FECHA_SINTOMAS,
                                           group = interaction(rango_de_edad, Muerte),
                                           col = Muerte)) +
-    geom_line(aes(y = NumCasos / max_cases), size = 0.5) +
+    geom_line(aes(y = NumCasos / max_cases), size = 0.5, alpha = 0.75) +
+    geom_smooth(aes(y = NumCasos / max_cases, linetype = Muerte), se = FALSE,
+                size = 0.9, alpha = 1.5, show.legend = F) +
     facet_grid(rango_de_edad ~ ., scales = "free_y") +
     labs(title = "Comparación de casos de muertes vs recuperados con datos normalizados de COVID-19",
          x = "Tiempo", y = "No. de casos", fill = "Muerte") +
@@ -88,10 +95,11 @@ plot_positivos_muertes_y_no_nom <- ggplot(casos_por_fecha,
     ) +
     scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
     scale_y_continuous(labels = scales::comma) +
-    scale_fill_manual(values = c("Muerte" = "#E63946", "No Muerte" = "dodgerblue"),
+    scale_fill_manual(values = c("Muerte" = "red4", "No Muerte" = "dodgerblue"),
                       labels = c("Fallecimientos", "Recuperados")) +
-    scale_color_manual(values = c("Muerte" = "#E63946", "No Muerte" = "dodgerblue"),
-                       labels = c("Fallecimientos", "Recuperados"))
+    scale_color_manual(values = c("Muerte" = "red4", "No Muerte" = "dodgerblue"),
+                       labels = c("Fallecimientos", "Recuperados")) +
+    scale_linetype_manual(values = c("dashed", "solid"))
 # El objeto se guarda como un objeto jpeg
 plot_positivos_muertes_y_no_nom
 #jpeg("03_Out/Plots/plot_casos_fallecidos_vs_recuperados_nom.jpeg",
