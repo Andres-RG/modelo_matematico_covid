@@ -103,7 +103,7 @@ plot_pos_x_dia_re_2 <- ggplot(casos_positivos_x_dia_re,
                                   y = casos_totales,
                                   color = rango_de_edad,
                                   shape = rango_de_edad)) + 
-  geom_point(alpha = 1, size = 3) +
+  geom_point(alpha = 0.4, size = 3) +
   geom_smooth(se = F, linetype = "dashed", size = 1.2, alpha = 1.5) +
   labs(title = "Casos positivos por día",
        x = "Fecha", y = "No. de casos",
