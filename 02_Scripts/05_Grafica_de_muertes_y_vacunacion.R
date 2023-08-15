@@ -23,6 +23,10 @@ load("03_Out/OutData/casos_positivos_rangos_edades.RData")
 casos_solo_positivos_muerte_re <- mutate(casos_positivos_re, 
                                          Muerte = c ( ifelse( !is.na(casos_positivos_re$FECHA_DEF),
                                                               "Muerte", "No Muerte") ))
+casos_solo_positivos_muerte_re <- casos_solo_positivos_muerte_re[,c("ID_REGISTRO","FECHA_SINTOMAS","SEXO","rango_de_edad", "Muerte")]
+casos_por_fecha <- casos_solo_positivos_muerte_re %>%
+    count(FECHA_SINTOMAS, rango_de_edad, Muerte, name = "NumCasos")
+max_cases <- max(casos_por_fecha$NumCasos)
 # La base de datos generada contiene solo los casos positivos, con la columna
 # que indica si fallecio o no, y rangos de edades. Se guarada como un objeto 
 # .RData
@@ -31,21 +35,69 @@ casos_solo_positivos_muerte_re <- mutate(casos_positivos_re,
 
 # Se genera una grafica donde se observan las fechas por meses, de los casos 
 # positivos y por estructura de edad, si los pacientes fallecieron o no.
-plot_positivos_muertes_y_no <- ggplot(casos_solo_positivos_muerte_re, 
-       aes(x = FECHA_SINTOMAS,
-           y = rango_de_edad,
-           fill=Muerte)) +
-    geom_density_ridges2(alpha = 0.5) +
-    theme(plot.title = element_text(hjust = 0.5))+
-    theme(panel.background = element_rect(fill = "white"), 
-          axis.line = element_line(colour = "black", size = 1)) +
-    scale_x_date(date_breaks = "1 month", date_labels = "%b")
-# El objeto se guarda como un objeto png
-png("03_Out/Plots/Grafica de muertes o no de casos positivos.png", width = 550, height = 350)
-plot_positivos_muertes_y_no
-dev.off()
-
-
+plot_positivos_muertes_y_no_raw <- ggplot(casos_por_fecha,
+                                      aes(x = FECHA_SINTOMAS,
+                                          group = interaction(rango_de_edad, Muerte),
+                                          col = Muerte)) +
+    geom_line(aes(y = NumCasos), size = 0.5) +
+    facet_grid(rango_de_edad ~ ., scales = "free_y") +
+    labs(title = "Comparación de casos de muertes vs recuperados de COVID-19",
+         x = "Tiempo", y = "No. de casos", fill = "Muerte") +
+    theme(
+        plot.title = element_text(size = 14, hjust = 0.5),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        panel.grid.major = element_blank(),
+        panel.border = element_blank(),
+        axis.line = element_line(colour = "black", size = 0.75),
+        legend.position = "bottom",  # Posición de la leyenda
+        legend.title = element_blank(),  # Título de la leyenda
+        legend.text = element_text(size = 10),  # Texto de la leyenda
+        legend.spacing = unit(0.5, "cm")
+    ) +
+    scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+    scale_y_continuous(labels = scales::comma) +
+    scale_fill_manual(values = c("Muerte" = "#E63946", "No Muerte" = "dodgerblue"),
+                      labels = c("Fallecimientos", "Recuperados")) +
+    scale_color_manual(values = c("Muerte" = "#E63946", "No Muerte" = "dodgerblue"),
+                       labels = c("Fallecimientos", "Recuperados"))
+# El objeto se guarda como un objeto jpeg
+plot_positivos_muertes_y_no_raw
+#jpeg("03_Out/Plots/plot_casos_fallecidos_vs_recuperados_raw.jpeg",
+#     width = 365, height = 265, res = 300, units = "mm")
+plot_positivos_muertes_y_no_raw
+#dev.off()
+# datos normalizados
+plot_positivos_muertes_y_no_nom <- ggplot(casos_por_fecha,
+                                      aes(x = FECHA_SINTOMAS,
+                                          group = interaction(rango_de_edad, Muerte),
+                                          col = Muerte)) +
+    geom_line(aes(y = NumCasos / max_cases), size = 0.5) +
+    facet_grid(rango_de_edad ~ ., scales = "free_y") +
+    labs(title = "Comparación de casos de muertes vs recuperados con datos normalizados de COVID-19",
+         x = "Tiempo", y = "No. de casos", fill = "Muerte") +
+    theme(
+        plot.title = element_text(size = 14, hjust = 0.5),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        panel.grid.major = element_blank(),
+        panel.border = element_blank(),
+        axis.line = element_line(colour = "black", size = 0.75),
+        legend.position = "bottom",  # Posición de la leyenda
+        legend.title = element_blank(),
+        legend.text = element_text(size = 10),  # Texto de la leyenda
+        legend.spacing = unit(0.5, "cm")
+    ) +
+    scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+    scale_y_continuous(labels = scales::comma) +
+    scale_fill_manual(values = c("Muerte" = "#E63946", "No Muerte" = "dodgerblue"),
+                      labels = c("Fallecimientos", "Recuperados")) +
+    scale_color_manual(values = c("Muerte" = "#E63946", "No Muerte" = "dodgerblue"),
+                       labels = c("Fallecimientos", "Recuperados"))
+# El objeto se guarda como un objeto jpeg
+plot_positivos_muertes_y_no_nom
+#jpeg("03_Out/Plots/plot_casos_fallecidos_vs_recuperados_nom.jpeg",
+#     width = 365, height = 265, res = 300, units = "mm")
+plot_positivos_muertes_y_no_nom
+#dev.off()
 
 
 # Se va a generar una grafica donde se observen las muertes de todos los casos 
