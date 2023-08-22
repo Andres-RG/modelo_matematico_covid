@@ -518,3 +518,53 @@ conteo_una_comorbilidad <- function(base){
   # Devuelve c
   return(c)
 }
+
+# 10. Funcion para establecer los rangos de edad en valores numericos estrictamente
+rangos_edades_only_nums <- function (colm) {
+  
+  # Genera un vector vacío
+  re <- c()
+  
+  # Establece un ciclo for, en donde, por cada variable i en 1 hasta la longitud
+  # de la columna:
+  for (i in 1:length(colm)) {
+    
+    # Si la variable i en la columna de edad es mayor o igual a 18 Y menor o 
+    # igual a 29 ...
+    if (colm[[i]] >= 18 & colm[[i]] <= 29) {
+      re <- c(re, 2) #... colocará en el vector el rango de edad "18-29"
+    } else if (colm[[i]] >= 30 & colm[[i]] <= 39) { # Si la variable i en la 
+      # columna de edad es mayor 
+      # o igual a 30 Y menor o 
+      # igual a 39 ...
+      re <- c(re, 3) #... colocará en el vector el rango de edad "30-39"
+    } else if (colm[[i]] >= 40 & colm[[i]] <= 49) { # Si la variable i en la 
+      # columna de edad es mayor 
+      # o igual a 40 Y menor o 
+      # igual a 49 ...
+      re <- c(re, 4) #... colocará en el vector el rango de edad "40-49"
+    } else if (colm[[i]] >= 50 & colm[[i]] <= 59) { # Si la variable i en la 
+      # columna de edad es mayor 
+      # o igual a 50 Y menor o 
+      # igual a 59 ...
+      re <- c(re, 5) #... colocará en el vector el rango de edad "50-59"
+    } else if (colm[[i]] >= 60 & colm[[i]] <= 69) { # Si la variable i en la 
+      # columna de edad es mayor 
+      # o igual a 60 Y menor o 
+      # igual a 69 ...
+      re <- c(re, 6) #... colocará en el vector el rango de edad "60-69"
+    } else if (colm[[i]] >= 70) { # Si la variable i en la columna de edad es 
+      # mayor o igual a 70...
+      re <- c(re, 7) #... colocará en el vector el rango de edad "70+"
+    } else if (colm[[i]] < 18) { # Si la variable i en la columna de edad es 
+      # menor a 18...
+      re <- c(re, 1) #... colocará en el vector el rango de edad "18-"
+    }
+  }
+  
+  # Convierte el vector con los datos en un objeto tipo vector
+  re <- as.vector(re)
+  # Regresa el contenido del vector
+  return(re)
+  
+}
