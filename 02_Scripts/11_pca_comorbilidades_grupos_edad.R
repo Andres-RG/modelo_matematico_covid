@@ -47,23 +47,13 @@ renumeric <- rangos_edades_only_nums(datos_varred$EDAD)
 # 2.1. Se añade la columna de rangos de edad a la base de datos
 datos_varred_re <- mutate(datos_varred, RANGOS = renumeric)
 # save(datos_varred, file = "03_Out/OutData/datos_positivos_reducidos.RData")
-datos_varred <- datos_varred %>% select(-EDAD)
+datos_varred <- datos_varred_re %>% select(-EDAD)
 
 # 3. Estandarización de los datos
 #    mean = 0 ; sd = 1
 datos_estandarizados_varred <- scale(datos_varred)
 
 # 3. PCA / CA (Análisis de Correspondencia)
-pca_result <- PCA(datos_varred, graph = FALSE)
-pca_df <- as.data.frame(pca_result$ind$coord)
-pca_df$RANGOS <- datos_varred_re$RANGOS
 
 # 4. Plot
-ggplot(pca_df, aes(x = Dim.1, y = Dim.2, color = factor(RANGOS))) +
-  geom_point() +
-  labs(title = "Análisis de Componentes Principales (PCA) con Agrupación por Rangos",
-       x = "Dimensión 1", y = "Dimensión 2") +
-  scale_color_discrete(name = "Rangos") +
-  theme_minimal()
-
 
