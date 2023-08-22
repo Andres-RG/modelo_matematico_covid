@@ -48,7 +48,7 @@ renumeric <- rangos_edades_only_nums(datos_varred$EDAD)
 datos_varred_re <- mutate(datos_varred, RANGOS = renumeric)
 # save(datos_varred, file = "03_Out/OutData/datos_positivos_reducidos.RData")
 datos_varred <- datos_varred_re %>% select(c(-EDAD, -RANGOS))
-datos_varred2 <- datos_varred[1:100,]
+datos_varred2 <- datos_varred[1:500,]
 
 # 3. Estandarización de los datos
 #    mean = 0 ; sd = 1
@@ -61,7 +61,9 @@ summary(res.pca)
 # 4. Plot
 fviz_eig(res.pca) #scree plot
 
-groups <- as.factor(datos_varred_re$RANGOS[1:100])
+biplot(res.pca)
+
+groups <- as.factor(datos_varred_re$RANGOS[1:500])
 colores <- c("dodgerblue3", "springgreen3", "firebrick3", 
              "orange", "purple", "darkslategrey", "cyan")
 
@@ -74,3 +76,15 @@ p <- fviz_pca_ind(res.pca,
                   repel = TRUE
 )
 p
+
+
+pca.plot <- autoplot(res.pca,
+                          data = datos_varred_re[1:100,],
+                          colour = 'RANGOS')
+
+pca.plot
+
+plot(res.pca$PC1,
+     res.pca$PC2,
+     col = PC$Label,
+     pch = 19)
