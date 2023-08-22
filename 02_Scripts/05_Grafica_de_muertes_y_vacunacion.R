@@ -144,7 +144,7 @@ plot_positivos_m_vacunacion <- ggplot(casos_solo_positivos_muerte_re,
     labs(y = "Rangos de edades", x = "Tiempo") +
     ggtitle("Densidad de casos positivos que murieron y que no muerieron con las fechas de vacunación")
 # Se guarda el objeto como un png
-png("03_Out/Plots/Grafica de muertes de casos positivos x fechas de vacunacion.png", 
-    width = 550, height = 350)
+#png("03_Out/Plots/Grafica de muertes de casos positivos x fechas de vacunacion.png", 
+#    width = 550, height = 350)
 plot_positivos_m_vacunacion
 dev.off()
