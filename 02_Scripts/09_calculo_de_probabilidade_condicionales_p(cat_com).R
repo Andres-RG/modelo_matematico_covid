@@ -129,13 +129,13 @@ sin_comorbilidades_conteos
 
 # 2.1.2 Conteo de individuos por categoria ----
 # 2.1.2.1      CATEGORIA 1: MENORES DE 18 AÑOS
-c1 <- sum(casos_pos_re_comorbilidad_cat_1$ind)
+c1 <- nrow(casos_pos_re_comorbilidad_cat_1)
 # 2.1.2.2      CATEGIRIA 2: 18 - 39 AÑOS
-c2 <- sum(casos_pos_re_comorbilidad_cat_2$ind)
+c2 <- nrow(casos_pos_re_comorbilidad_cat_2)
 # 2.1.2.3      CATEGORIA 3: 40 - 59 AÑOS
-c3 <- sum(casos_pos_re_comorbilidad_cat_3$ind)
+c3 <- nrow(casos_pos_re_comorbilidad_cat_3)
 # 2.1.2.4      CATEOGIRA 4: 60 AÑOS EN ADELANTE
-c4 <- sum(casos_pos_re_comorbilidad_cat_4$ind)
+c4 <- nrow(casos_pos_re_comorbilidad_cat_4)
 
 # 2.1.3 Determinación de la probabilidad P ( COM_j & CAT_i )----
 #       Se dividen los casos de comorbilidad, por comorbilidad, de cada 
@@ -242,15 +242,15 @@ p_comorb_c4 <- c(p_diab_c4,p_epoc_c4,p_asma_c4,p_inmunsupr_c4,
 #       previamente
 matriz_comor <- matrix(c(p_comorb_c1,p_comorb_c2,p_comorb_c3,p_comorb_c4),
                        ncol = 4, byrow = F)
-rownames(matriz_comor) <- c("p ( diabetes | c_j )",
-                            "p ( epoc | c_j )",
-                            "p ( asma | c_j )", 
-                            "p ( inmunsupr | c_j )",
-                            "p ( hipertension | c_j )", 
+rownames(matriz_comor) <- c("p ( diabetes       | c_j )",
+                            "p ( epoc           | c_j )",
+                            "p ( asma           | c_j )", 
+                            "p ( inmunsupr      | c_j )",
+                            "p ( hipertension   | c_j )", 
                             "p ( cardiovascular | c_j )",
-                            "p ( obesidad | c_j )",
-                            "p ( renal_cronica | c_j )", 
-                            "p ( tabaquismo | c_j )")
+                            "p ( obesidad       | c_j )",
+                            "p ( renal_cronica  | c_j )", 
+                            "p ( tabaquismo     | c_j )")
 colnames(matriz_comor) <-c("CATEGORIA 1", "CATEGORIA 2", "CATEGORIA 3", "CATEGORIA 4")
 matriz_comor
 # 2.1.4.1 Se guarda como archivo 
@@ -307,7 +307,7 @@ names(com_totales) <- c("diabetes"         ,
                         "renal_cronica"    ,
                         "tabaquismo"       )
 # 2.1.5.2 Conteo de casos totales
-n_total <- sum(casos_totales_re_comorbilidad$ind)
+n_total <- nrow(casos_totales_re_comorbilidad)
 # 2.1.5.3 Determinacion de la probabilidad
 # 2.1.5.3.1 P ( DIABETES )
 p_diabetes <- com_totales[1]/n_total
@@ -466,7 +466,7 @@ rownames(mat_2) <- c("Diabetes",
                    "Tabaquismo")
 Heatmap(mat_2, name= "p(com|cat)")
 
-# 2.2 Conteo de casos positivos que tienen al menos una comorbilidad
+# 2.2 Conteo de casos positivos que tienen al menos una comorbilidad ----
 # 2.2.1 Categoria 1: menores de 18 años
 #       Se toma cada renglon de la base de datos, que representa a un individuo 
 #       y con la funcion condicional if(), se busca por cada renglon aquellos que
