@@ -17,9 +17,6 @@ load("03_Out/OutData/casos_positivos_rangos_edades.RData")
 load("03_Out/OutData/conteo_casos_positivos_rango_edad.RData")
 load("03_Out/OutData/casos_positivos_x_dia_rango_edad.RData")
 
-
-
-
 # Tabla de casos positivos totales por dia ====
 
 pos <- c() # crea un vector vacio

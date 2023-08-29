@@ -29,10 +29,8 @@ source("02_Scripts/Functions/Functions.R")
 # ANALISIS DE COMPONENTES PRINCIPALES
 # 1. Se reduce la base de datos a solo las columnas necesarias
 datos_varred <- select(casos_positivos_re, 
-                       c("EDAD","DIABETES", "EPOC", "ASMA", "INMUSUPR",
-                         "HIPERTENSION", "CARDIOVASCULAR", 
-                         "OBESIDAD", "RENAL_CRONICA", 
-                         "TABAQUISMO"))
+                       c("EDAD","DIABETES", "HIPERTENSION", "CARDIOVASCULAR", 
+                         "OBESIDAD", "FECHA_DEF", "TIPO_PACIENTE"))
 
 # 2. Se añaden los rangos de edad pero solamente en terminos numericos
 #    1 == Menores de 18 años
@@ -42,21 +40,31 @@ datos_varred <- select(casos_positivos_re,
 #    5 == 50 - 59 años
 #    6 == 60 - 69 años
 #    7 == Mayores de 70 años
-renumeric <- rangos_edades_only_nums(datos_varred$EDAD)
+#    renumeric <- rangos_edades_only_nums(datos_varred$EDAD)
 
-# 2.1. Se añade la columna de rangos de edad a la base de datos
+# 2.1. Se añade la columna de rangos de edad a la base de datos y se elimina la columna de edad
 datos_varred_re <- mutate(datos_varred, RANGOS = renumeric)
+datos_varred <- datos_varred_re %>% select(c(-EDAD))
+# 2.2. Se añade la columna de muerte y se elimina FECHA_DEF
+#      1 <-------- falleció
+#      0 <-------- no falleció / recuperado
+datos_varred <- mutate(datos_varred,
+                       DEF = c ( ifelse( !is.na(casos_positivos_re$FECHA_DEF),1, 0) ))
+datos_varred <- datos_varred %>% select(c(-FECHA_DEF))
+# 2.3 Se añade la columna de hospitalizados y se elimina TIPO_PACIENTE
+#      1 <-------- hospitalizado
+#      0 <-------- ambulatorio
+datos_varred <- mutate(datos_varred,
+                     HOSP = c ( ifelse (datos_varred$TIPO_PACIENTE == 2, 1, 0)))
+datos_varred <- datos_varred %>% select(c(-TIPO_PACIENTE))
 # save(datos_varred, file = "03_Out/OutData/datos_positivos_reducidos.RData")
-datos_varred <- datos_varred_re %>% select(c(-EDAD, -RANGOS))
 datos_varred2 <- datos_varred[1:500,]
 
-# 3. Estandarización de los datos
-#    mean = 0 ; sd = 1
-datos_estandarizados_varred <- scale(datos_varred)
 
-# 3. PCA 
-res.pca <- prcomp(datos_varred2, scale = TRUE)
-summary(res.pca)
+# 3. MCA (análisis de correspondencia múltiple)
+#    Ayuda en la identificación de un grupo de personas con perfiles comparables y las relaciones 
+#    entre los factores de categoría.
+covid_mca <- MCA(datos_varred2, ncp = 3, graph = F)
 
 # 4. Plot
 fviz_eig(res.pca) #scree plot
