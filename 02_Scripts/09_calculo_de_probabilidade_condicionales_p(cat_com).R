@@ -259,6 +259,7 @@ matriz_comor
 #
 # 2.1.4.2 Visualizacion de la matriz
 
+# BiocManager::install("ComplexHeatmap")
 # install_github("jokergoo/ComplexHeatmap")
 mat = matriz_comor
 rownames(mat) <- c("Diabetes",
