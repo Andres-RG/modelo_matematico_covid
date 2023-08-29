@@ -10,7 +10,7 @@ library(ape)
 library(lubridate)
 
 # Se carga la base de datos
-load("modelo_matematico_covid/03_Out/OutData/casos_positivos_re_m.RData")
+load("03_Out/OutData/casos_positivos_re_m.RData")
 
 #
 plot_positivos_muertes_y_no <- ggplot(casos_solo_positivos_muerte_re, 
