@@ -41,58 +41,33 @@ datos_varred <- select(casos_positivos_re,
 #    6 == 60 - 69 años
 #    7 == Mayores de 70 años
 #    renumeric <- rangos_edades_only_nums(datos_varred$EDAD)
-
+#    renonumeric <- rangos_edades(datos_varred$EDAD)
 # 2.1. Se añade la columna de rangos de edad a la base de datos y se elimina la columna de edad
-datos_varred_re <- mutate(datos_varred, RANGOS = renumeric)
+datos_varred_re <- mutate(datos_varred, "RANGOS" = renonumeric)
 datos_varred <- datos_varred_re %>% select(c(-EDAD))
 # 2.2. Se añade la columna de muerte y se elimina FECHA_DEF
 #      1 <-------- falleció
-#      0 <-------- no falleció / recuperado
+#      2 <-------- no falleció / recuperado
 datos_varred <- mutate(datos_varred,
-                       DEF = c ( ifelse( !is.na(casos_positivos_re$FECHA_DEF),1, 0) ))
+                       "DEF" = c ( ifelse( !is.na(casos_positivos_re$FECHA_DEF),1, 2) ))
 datos_varred <- datos_varred %>% select(c(-FECHA_DEF))
 # 2.3 Se añade la columna de hospitalizados y se elimina TIPO_PACIENTE
-#      1 <-------- hospitalizado
-#      0 <-------- ambulatorio
+#      2 <-------- hospitalizado
+#      1 <-------- ambulatorio
 datos_varred <- mutate(datos_varred,
-                     HOSP = c ( ifelse (datos_varred$TIPO_PACIENTE == 2, 1, 0)))
+                     "HOSP" = c ( ifelse (datos_varred$TIPO_PACIENTE == 2, 2, 1)))
 datos_varred <- datos_varred %>% select(c(-TIPO_PACIENTE))
 # save(datos_varred, file = "03_Out/OutData/datos_positivos_reducidos.RData")
-datos_varred2 <- datos_varred[1:500,]
-
-
-# 3. MCA (análisis de correspondencia múltiple)
-#    Ayuda en la identificación de un grupo de personas con perfiles comparables y las relaciones 
-#    entre los factores de categoría.
-covid_mca <- MCA(datos_varred2, ncp = 3, graph = F)
+datos_varred2 <- datos_varred[1:5000,]
+datos_varred21 <- datos_varred2[ , -5]
+# 3. PCA
+covid_pca <- PCA(datos_varred21, graph = F)
 
 # 4. Plot
-fviz_eig(res.pca) #scree plot
-
-biplot(res.pca)
-
-groups <- as.factor(datos_varred_re$RANGOS[1:500])
-colores <- c("dodgerblue3", "springgreen3", "firebrick3", 
-             "orange", "purple", "darkslategrey", "cyan")
-
-p <- fviz_pca_ind(res.pca,
-                  col.ind = groups, # color by groups
-                  palette = colores,
-                  addEllipses = TRUE, # Concentration ellipses
-                  ellipse.type = "confidence",
-                  legend.title = "Groups",
-                  repel = TRUE
+fviz_pca_ind(covid_pca,
+             geom.ind = "point", # show points only (but not "text")
+             col.ind = datos_varred2$RANGOS, # color by groups
+             addEllipses = TRUE, # Concentration ellipses
+             legend.title = "Groups"
 )
-p
 
-
-pca.plot <- autoplot(res.pca,
-                          data = datos_varred_re[1:100,],
-                          colour = 'RANGOS')
-
-pca.plot
-
-plot(res.pca$PC1,
-     res.pca$PC2,
-     col = PC$Label,
-     pch = 19)
