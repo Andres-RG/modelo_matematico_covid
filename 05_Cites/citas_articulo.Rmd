@@ -1,0 +1,56 @@
+---
+title: "Citas artículo 01"
+author: "Luis Andrés Rojas García"
+date: "2023-07-26"
+output: html_document
+bibliography: articulo_citas.bib
+csl: apa(1).csl
+---
+
+## Citas
+
+[@adiga2020mathematical]
+
+[@ahrenfeldt2021sex]
+
+[@aliseda2020modelos]
+
+[@bhapkar2020revisited]
+
+[@bhopal2021children]
+
+[@bruine2021age]
+
+[@buchholz2020modellierung]
+
+[@costagliola2021age]
+
+[@grassly2008mathematical]
+
+[@gobcdmx]
+
+[@miramontes2020entendamos]
+
+[@MURUGAN20211165]
+
+[@QUESADA2021109]
+
+[@r2022a]
+
+[@r2022b]
+
+[@sharma2021covid]
+
+[@ssalud2020]
+
+[@ssalud2022]
+
+[@desolver2010]
+
+[@worldometers2022]
+
+[@xin2022estimating]
+
+[@zeb2020mathematical]
+
+# Fuentes de consulta

@@ -1,0 +1,1400 @@
+-- ORIGENES DEL SARS-COV-2 -----------------------------------------------------------
+1. A pneumonia outbreak associated with a new coronavirus of probable bat origin
+https://www.nature.com/articles/s41586-020-2012-7%EF%BC%89%E3%80%82
+@article{zhou2020pneumonia,
+author={Zhou, Peng and Yang, Xing-Lou and Wang, Xian-Guang and Hu, Ben and Zhang, Lei and Zhang, Wei and Si, Hao-Rui and Zhu, Yan and Li, Bei and Huang, Chao-Lin and Chen, Hui-Dong and Chen, Jing and Luo, Yun and Guo, Hua and Jiang, Ren-Di and Liu, Mei-Qin and Chen, Ying and Shen, Xu-Rui and Wang, Xi and Zheng, Xiao-Shuang and Zhao, Kai and Chen, Quan-Jiao and Deng, Fei and Liu, Lin-Lin and Yan, Bing and Zhan, Fa-Xian and Wang, Yan-Yi and Xiao, Geng-Fu and Shi, Zheng-Li},
+title={A pneumonia outbreak associated with a new coronavirus of probable bat origin},
+journal={Nature},
+year={2020},
+month={Mar},
+day={01},
+volume={579},
+number={7798},
+pages={270-273},
+abstract={Since the outbreak of severe acute respiratory syndrome (SARS) 18 years ago, a large number of SARS-related coronaviruses (SARSr-CoVs) have been discovered in their natural reservoir host, bats1--4. Previous studies have shown that some bat SARSr-CoVs have the potential to infect humans5--7. Here we report the identification and characterization of a new coronavirus (2019-nCoV), which caused an epidemic of acute respiratory syndrome in humans in Wuhan, China. The epidemic, which started on 12 December 2019, had caused 2,794 laboratory-confirmed infections including 80 deaths by 26 January 2020. Full-length genome sequences were obtained from five patients at an early stage of the outbreak. The sequences are almost identical and share 79.6{\%} sequence identity to SARS-CoV. Furthermore, we show that 2019-nCoV is 96{\%} identical at the whole-genome level to a bat coronavirus. Pairwise protein sequence analysis of seven conserved non-structural proteins domains show that this virus belongs to the species of SARSr-CoV. In addition, 2019-nCoV virus isolated from the bronchoalveolar lavage fluid of a critically ill patient could be neutralized by sera from several patients. Notably, we confirmed that 2019-nCoV uses the same cell entry receptor---angiotensin converting enzyme II (ACE2)---as SARS-CoV.},
+issn={1476-4687},
+doi={10.1038/s41586-020-2012-7},
+url={https://doi.org/10.1038/s41586-020-2012-7}
+}
+
+-- SHARMA ----------------------------------------------------------------------------
+2. COVID-19: A Review on the Novel Coronavirus Disease Evolution, Transmission, Detection, Control and Prevention
+https://www.mdpi.com/1999-4915/13/2/202  
+@Article{sharma2021covid,
+AUTHOR = {Sharma, Anshika and Ahmad Farouk, Isra and Lal, Sunil Kumar},
+TITLE = {COVID-19: A Review on the Novel Coronavirus Disease Evolution, Transmission, Detection, Control and Prevention},
+JOURNAL = {Viruses},
+VOLUME = {13},
+YEAR = {2021},
+NUMBER = {2},
+ARTICLE-NUMBER = {202},
+URL = {https://www.mdpi.com/1999-4915/13/2/202},
+PubMedID = {33572857},
+ISSN = {1999-4915},
+ABSTRACT = {Three major outbreaks of the coronavirus, a zoonotic virus known to cause respiratory disease, have been reported since 2002, including SARS-CoV, MERS-CoV and the most recent 2019-nCoV, or more recently known as SARS-CoV-2. Bats are known to be the primary animal reservoir for coronaviruses. However, in the past few decades, the virus has been able to mutate and adapt to infect humans, resulting in an animal-to-human species barrier jump. The emergence of a novel coronavirus poses a serious global public health threat and possibly carries the potential of causing a major pandemic outbreak in the na&iuml;ve human population. The recent outbreak of COVID-19, the disease caused by SARS-CoV-2, in Wuhan, Hubei Province, China has infected over 36.5 million individuals and claimed over one million lives worldwide, as of 8 October 2020. The novel virus is rapidly spreading across China and has been transmitted to 213 other countries/territories across the globe. Researchers have reported that the virus is constantly evolving and spreading through asymptomatic carriers, further suggesting a high global health threat. To this end, current up-to-date information on the coronavirus evolution and SARS-CoV-2 modes of transmission, detection techniques and current control and prevention strategies are summarized in this review.},
+DOI = {10.3390/v13020202}
+}
+
+-- CORONAVIRUS EN PANGOLINES MALAYOS -------------------------------------------------
+2.1 Isolation and Characterization of 2019-nCoV-like Coronavirus from Malayan Pangolins
+https://www.biorxiv.org/content/10.1101/2020.02.17.951335v1.abstract
+@article{xiao2020isolation,
+  title={Isolation and characterization of 2019-nCoV-like coronavirus from Malayan pangolins},
+  author={Xiao, Kangpeng and Zhai, Junqiong and Feng, Yaoyu and Zhou, Niu and Zhang, Xu and Zou, Jie-Jian and Li, Na and Guo, Yaqiong and Li, Xiaobing and Shen, Xuejuan and others},
+  journal={BioRxiv},
+  pages={2020--02},
+  year={2020},
+  publisher={Cold Spring Harbor Laboratory}
+}
+
+-- MURUGAN ---------------------------------------------------------------------------
+3. COVID-19: A review of newly formed viral clades, pathophysiology, therapeutic strategies and current vaccination tasks
+https://www.sciencedirect.com/science/article/pii/S0141813021023011
+@article{murugan2021covid,
+  title={COVID-19: A review of newly formed viral clades, pathophysiology, therapeutic strategies and current vaccination tasks},
+  author={Murugan, Chandran and Ramamoorthy, Sharmiladevi and Kuppuswamy, Guruprasad and Murugan, Rajesh Kumar and Sivalingam, Yuvaraj and Sundaramurthy, Anandhakumar},
+  journal={International Journal of Biological Macromolecules},
+  volume={193},
+  pages={1165--1200},
+  year={2021},
+  publisher={Elsevier}
+}
+
+-- PERIODO DE INCUBACIÓN -------------------------------------------------------------
+4. The Incubation Period of Coronavirus Disease 2019 (COVID-19) From Publicly Reported Confirmed Cases: Estimation and Application
+https://www.acpjournals.org/doi/full/10.7326/M20-0504
+@article{lauer2020incubation,
+  title={The incubation period of coronavirus disease 2019 (COVID-19) from publicly reported confirmed cases: estimation and application},
+  author={Lauer, Stephen A and Grantz, Kyra H and Bi, Qifang and Jones, Forrest K and Zheng, Qulu and Meredith, Hannah R and Azman, Andrew S and Reich, Nicholas G and Lessler, Justin},
+  journal={Annals of internal medicine},
+  volume={172},
+  number={9},
+  pages={577--582},
+  year={2020},
+  publisher={American College of Physicians}
+}
+
+-- HOSPEDEROS ANIMALES CORONAVIRUS ---------------------------------------------------
+5. Evolutionary history, potential intermediate animal host, and cross-species analyses of SARS-CoV-2
+https://onlinelibrary.wiley.com/doi/full/10.1002/jmv.25731
+@article{li2020evolutionary,
+  title={Evolutionary history, potential intermediate animal host, and cross-species analyses of SARS-CoV-2},
+  author={Li, Xingguang and Zai, Junjie and Zhao, Qiang and Nie, Qing and Li, Yi and Foley, Brian T and Chaillon, Antoine},
+  journal={Journal of medical virology},
+  volume={92},
+  number={6},
+  pages={602--611},
+  year={2020},
+  publisher={Wiley Online Library}
+}
+
+-- BURRELL ---------------------------------------------------------------------------
+6. Chapter 31 - Coronaviruses
+https://www.sciencedirect.com/science/article/pii/B978012375156000031X
+@incollection{BURRELL2017437,
+title = {Chapter 31 - Coronaviruses},
+editor = {Christopher J. Burrell and Colin R. Howard and Frederick A. Murphy},
+booktitle = {Fenner and White's Medical Virology (Fifth Edition)},
+publisher = {Academic Press},
+edition = {Fifth Edition},
+address = {London},
+pages = {437-446},
+year = {2017},
+isbn = {978-0-12-375156-0},
+doi = {https://doi.org/10.1016/B978-0-12-375156-0.00031-X},
+url = {https://www.sciencedirect.com/science/article/pii/B978012375156000031X},
+author = {Christopher J. Burrell and Colin R. Howard and Frederick A. Murphy},
+keywords = {Viral replication, severe acute respiratory virus, Middle East respiratory virus, pathogenesis, immunity, human coronavirus infections},
+abstract = {Coronaviruses possess a distinctive morphology, the name being derived from the outer fringe, or “corona” of embedded envelope protein. Members of the family Coronaviridae cause a broad spectrum of animal and human diseases. Uniquely, replication of the RNA genome proceeds through the generation of a nested set of viral mRNA molecules. Until 2003, coronaviruses attracted little interest beyond causing mild upper respiratory tract infections. This changed dramatically in 2003 with the zoonotic SARS-CoV and the more recent emergence of MERS-CoV has confirmed the coronaviruses as significant causes of severe respiratory disease.}
+}
+
+-- ORIGENES DEL SARS-COV-2 -----------------------------------------------------------
+7. The proximal origin of SARS-CoV-2
+https://www.nature.com/articles/s41591-020-0820-9
+@article{andersen2020proximal,
+  title={The proximal origin of SARS-CoV-2},
+  author={Andersen, Kristian G and Rambaut, Andrew and Lipkin, W Ian and Holmes, Edward C and Garry, Robert F},
+  journal={Nature medicine},
+  volume={26},
+  number={4},
+  pages={450--452},
+  year={2020},
+  publisher={Nature Publishing Group}
+}
+
+-- POLIMERASA DEL SARS-COV-2 ---------------------------------------------------------
+8. Chapter 10 - Polymerases of Coronaviruses: Structure, Function, and Inhibitors
+https://www.sciencedirect.com/science/article/pii/B9780128154229000103
+@incollection{GAURAV2019271,
+title = {Chapter 10 - Polymerases of Coronaviruses: Structure, Function, and Inhibitors},
+editor = {Satya P. Gupta},
+booktitle = {Viral Polymerases},
+publisher = {Academic Press},
+pages = {271-300},
+year = {2019},
+isbn = {978-0-12-815422-9},
+doi = {https://doi.org/10.1016/B978-0-12-815422-9.00010-3},
+url = {https://www.sciencedirect.com/science/article/pii/B9780128154229000103},
+author = {Anand Gaurav and Mayasah Al-Nema},
+keywords = {Coronavirus, severe acute respiratory syndrome coronavirus, Middle East respiratory syndrome coronavirus, RNA-dependent RNA polymerase, nonstructural proteins},
+abstract = {Coronaviruses (CoVs) are a major group of viruses known to be responsible for wide spectrum of diseases in multiple species. The CoVs affecting human population are referred to as human coronaviruses (HCoVs). They lead to multiple respiratory diseases, such as common cold, pneumonia, bronchitis, severe acute respiratory syndrome, and Middle East respiratory syndrome. CoVs are RNA viruses that require RNA-dependent RNA polymerases (RdRPs) for various steps in their life cycle. Action of RdRP is needed in several steps in the life cycle of CoVs and thus RdRPs constitute potential targets for drugs and other therapeutic interventions for the treatment of diseases caused by CoVs. The chapter therefore presents a detailed discussion on the structure and functions of CoV polymerases and the development of their potential inhibitors.}
+}
+
+-- SALIAN ----------------------------------------------------------------------------
+9. COVID-19 transmission, current treatment, and future therapeutic strategies
+https://pubs.acs.org/doi/full/10.1021/acs.molpharmaceut.0c00608#
+@article{salian2021covid,
+author = {Salian, Vrishali S. and Wright, Jessica A. and Vedell, Peter T. and Nair, Sanjana and Li, Chenxu and Kandimalla, Mahathi and Tang, Xiaojia and Carmona Porquera, Eva M. and Kalari, Krishna R. and Kandimalla, Karunya K.},
+title = {COVID-19 Transmission, Current Treatment, and Future Therapeutic Strategies},
+journal = {Molecular Pharmaceutics},
+volume = {18},
+number = {3},
+pages = {754-771},
+year = {2021},
+doi = {10.1021/acs.molpharmaceut.0c00608},
+note ={PMID: 33464914},
+URL = {https://doi.org/10.1021/acs.molpharmaceut.0c00608},
+eprint = {https://doi.org/10.1021/acs.molpharmaceut.0c00608}
+}
+
+-- PIZZATO ---------------------------------------------------------------------------
+10. SARS-CoV-2 and the Host Cell: A Tale of Interactions
+https://www.frontiersin.org/articles/10.3389/fviro.2021.815388/full
+@article{pizzato2022sars,
+  title={SARS-CoV-2 and the host cell: A tale of interactions},
+  author={Pizzato, Massimo and Baraldi, Chiara and Boscato Sopetto, Giulia and Finozzi, Davide and Gentile, Carmelo and Gentile, Michele Domenico and Marconi, Roberta and Paladino, Dalila and Raoss, Alberto and Riedmiller, Ilary and others},
+  journal={Frontiers in Virology},
+  volume={1},
+  year={2022},
+  publisher={Frontiers Media SA}
+}
+
+-- RECEPTORES DE SARS-COV-2 ----------------------------------------------------------
+11. SARS-CoV-2 cell entry depends on ACE2 and TMPRSS2 and is blocked by a clinically proven protease inhibitor
+https://www.sciencedirect.com/science/article/pii/S0092867420302294
+@article{hoffmann2020sars,
+  title={SARS-CoV-2 cell entry depends on ACE2 and TMPRSS2 and is blocked by a clinically proven protease inhibitor},
+  author={Hoffmann, Markus and Kleine-Weber, Hannah and Schroeder, Simon and Kr{\"u}ger, Nadine and Herrler, Tanja and Erichsen, Sandra and Schiergens, Tobias S and Herrler, Georg and Wu, Nai-Huei and Nitsche, Andreas and others},
+  journal={cell},
+  volume={181},
+  number={2},
+  pages={271--280},
+  year={2020},
+  publisher={Elsevier}
+}
+
+-- HARRISON --------------------------------------------------------------------------
+12. Mechanisms of SARS-CoV-2 Transmission and Pathogenesis
+https://www.sciencedirect.com/science/article/pii/S1471490620302337
+@article{harrison2020mechanisms,
+  title={Mechanisms of SARS-CoV-2 transmission and pathogenesis},
+  author={Harrison, Andrew G and Lin, Tao and Wang, Penghua},
+  journal={Trends in immunology},
+  volume={41},
+  number={12},
+  pages={1100--1115},
+  year={2020},
+  publisher={Elsevier}
+}
+
+-- LOTFI -----------------------------------------------------------------------------
+13. COVID-19: Transmission, prevention, and potential therapeutic opportunities
+https://www.sciencedirect.com/science/article/pii/S0009898120302503
+@article{lotfi2020covid,
+  title={COVID-19: Transmission, prevention, and potential therapeutic opportunities},
+  author={Lotfi, Melika and Hamblin, Michael R and Rezaei, Nima},
+  journal={Clinica chimica acta},
+  volume={508},
+  pages={254--266},
+  year={2020},
+  publisher={Elsevier}
+}
+
+-- TRANSMISIÓN POR AIRE --------------------------------------------------------------
+14. Airborne transmission of SARS-CoV-2: The world should face the reality
+https://www.sciencedirect.com/science/article/pii/S016041202031254X
+@article{morawska2020airborne,
+  title={Airborne transmission of SARS-CoV-2: The world should face the reality},
+  author={Morawska, Lidia and Cao, Junji},
+  journal={Environment international},
+  volume={139},
+  pages={105730},
+  year={2020},
+  publisher={Elsevier}
+}
+
+-- TRABAJO Y COVID-19 EN MEXICO ------------------------------------------------------
+15. Ciclos de trabajo-confinamiento para reducir la transmisión de Covid-19: evidencia y recomendaciones en el contexto de México
+https://www.medigraphic.com/pdfs/salpubmex/sal-2021/sal212r.pdf
+@article{perez2021ciclos,
+  title={Ciclos de trabajo-confinamiento para reducir la transmisi{\'o}n de Covid-19: evidencia y recomendaciones en el contexto de M{\'e}xico},
+  author={P{\'e}rez-Ferrer, Carolina and L{\'o}pez-Olmedo, Nancy and Bautista-Arredondo, Sergio and Colchero, M Arantxa and Stern, Dalia and Zepeda-Tello, Rodrigo and Torres-{\'A}lvarez, Rossana and Reyes-S{\'a}nchez, Francisco and Barrientos-Guti{\'e}rrez, Tonatiuh},
+  journal={salud p{\'u}blica de m{\'e}xico},
+  volume={63},
+  number={2},
+  pages={314--321},
+  year={2021}
+}
+
+-- EPIDEMIOLOGÍA MEXICO --------------------------------------------------------------
+16. Epidemiología de COVID-19 en México: del 27 de febrero al 30 de abril de 2020
+https://www.sciencedirect.com/science/article/pii/S0014256520301442
+@article{suarez2020epidemiologia,
+  title={Epidemiolog{\'\i}a de COVID-19 en M{\'e}xico: del 27 de febrero al 30 de abril de 2020},
+  author={Su{\'a}rez, V{\'\i}ctor and Quezada, M Suarez and Ruiz, S Oros and De Jes{\'u}s, E Ronquillo},
+  journal={Revista cl{\'\i}nica espa{\~n}ola},
+  volume={220},
+  number={8},
+  pages={463--471},
+  year={2020},
+  publisher={Elsevier}
+}
+
+-- TRANSMISIÓN EN ESPACIOS PÚBLICOS --------------------------------------------------
+17. Revisión rápida: evidencia de transmisión por Covid-19 e infecciones respiratorias agudas similares en espacios públicos abiertos
+https://www.medigraphic.com/pdfs/salpubmex/sal-2021/sal212i.pdf
+@article{medina2021revision,
+  title={Revisi{\'o}n r{\'a}pida: evidencia de transmisi{\'o}n por Covid-19 e infecciones respiratorias agudas similares en espacios p{\'u}blicos abiertos},
+  author={Medina, Catalina and Chavira, Julissa and Aburto, Tania and Nieto, Claudia and Contreras-Manzano, Alejandra and Segura, Luis and J{\'a}uregui, Alejandra and Barquera, Sim{\'o}n},
+  journal={Salud p{\'u}blica de M{\'e}xico},
+  volume={63},
+  number={2},
+  pages={232--241},
+  year={2021}
+}
+
+-- EDUCACIÓN EN MEXICO COVID-19 ------------------------------------------------------
+18. Retos para la educación médica en México en los tiempos del COVID-19
+https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0016-38132020000300254
+@article{barajas2020retos,
+  title={Retos para la educaci{\'o}n m{\'e}dica en M{\'e}xico en los tiempos del COVID-19},
+  author={Barajas-Ochoa, Aldo and Andrade-Romo, Jorge S and Ramos-Santill{\'a}n, Vicente O},
+  journal={Gaceta m{\'e}dica de M{\'e}xico},
+  volume={156},
+  number={3},
+  pages={254--257},
+  year={2020},
+  publisher={Academia Nacional de Medicina de M{\'e}xico AC}
+}
+
+-- SECRETARIA DE SALUD ---------------------------------------------------------------
+19. Secretaria de Salud. A.
+https://coronavirus.gob.mx/covid-19/
+@online{ssaludcovid,
+  author = {{Secretaría de Salud}},
+  organization = {{Gobierno de México}},
+  title = {Que es el SARS-CoV-2},
+  url = {https://coronavirus.gob.mx/covid-19/},
+  year = {},
+  note = {Ingresado en Mayo 02, 2023}
+}
+
+20. Considerations for diagnostic COVID-19 tests
+https://www.nature.com/articles/s41579-020-00461-z.
+@article{vandenberg2021considerations,
+  title={Considerations for diagnostic COVID-19 tests},
+  author={Vandenberg, Olivier and Martiny, Delphine and Rochas, Olivier and van Belkum, Alex and Kozlakidis, Zisis},
+  journal={Nature Reviews Microbiology},
+  volume={19},
+  number={3},
+  pages={171--183},
+  year={2021},
+  publisher={Nature Publishing Group}
+}
+
+21. Diagnosis of the Coronavirus disease (COVID-19): rRT-PCR or CT?
+https://www.sciencedirect.com/science/article/pii/S0720048X20301509
+@article{long2020diagnosis,
+  title={Diagnosis of the Coronavirus disease (COVID-19): rRT-PCR or CT?},
+  author={Long, Chunqin and Xu, Huaxiang and Shen, Qinglin and Zhang, Xianghai and Fan, Bing and Wang, Chuanhong and Zeng, Bingliang and Li, Zicong and Li, Xiaofen and Li, Honglu},
+  journal={European journal of radiology},
+  volume={126},
+  pages={108961},
+  year={2020},
+  publisher={Elsevier}
+}
+
+22. Diagnostics for SARS-CoV-2 infections
+https://www.nature.com/articles/s41563-020-00906-z
+@article{kevadiya2021diagnostics,
+  title={Diagnostics for SARS-CoV-2 infections},
+  author={Kevadiya, Bhavesh D and Machhi, Jatin and Herskovitz, Jonathan and Oleynikov, Maxim D and Blomberg, Wilson R and Bajwa, Neha and Soni, Dhruvkumar and Das, Srijanee and Hasan, Mahmudul and Patel, Milankumar and others},
+  journal={Nature materials},
+  volume={20},
+  number={5},
+  pages={593--605},
+  year={2021},
+  publisher={Nature Publishing Group UK London}
+}
+
+23. Clinical Characteristics of Coronavirus Disease 2019 in China
+https://www.nejm.org/doi/full/10.1056/neJMoa2002032
+@article{guan2020clinical,
+  title={Clinical characteristics of coronavirus disease 2019 in China},
+  author={Guan, Wei-jie and Ni, Zheng-yi and Hu, Yu and Liang, Wen-hua and Ou, Chun-quan and He, Jian-xing and Liu, Lei and Shan, Hong and Lei, Chun-liang and Hui, David SC and others},
+  journal={New England journal of medicine},
+  volume={382},
+  number={18},
+  pages={1708--1720},
+  year={2020},
+  publisher={Mass Medical Soc}
+}
+
+24. Positive rate of RT-PCR detection of SARS-CoV-2 infection in 4880 cases from one hospital in Wuhan, China, from Jan to Feb 2020
+https://www.sciencedirect.com/science/article/pii/S0009898120301121
+@article{liu2020positive,
+  title={Positive rate of RT-PCR detection of SARS-CoV-2 infection in 4880 cases from one hospital in Wuhan, China, from Jan to Feb 2020},
+  author={Liu, Rui and Han, Huan and Liu, Fang and Lv, Zhihua and Wu, Kailang and Liu, Yingle and Feng, Yong and Zhu, Chengliang},
+  journal={Clinica chimica acta},
+  volume={505},
+  pages={172--175},
+  year={2020},
+  publisher={Elsevier}
+}
+
+25. Epidemiología de COVID-19 en México: del 27 de febrero al 30 de abril de 2020
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7250750/
+@article{SUAREZ2020463,
+title = {Epidemiología de COVID-19 en México: del 27 de febrero al 30 de abril de 2020},
+journal = {Revista Clínica Española},
+volume = {220},
+number = {8},
+pages = {463-471},
+year = {2020},
+issn = {0014-2565},
+doi = {https://doi.org/10.1016/j.rce.2020.05.007},
+url = {https://www.sciencedirect.com/science/article/pii/S0014256520301442},
+author = {V. Suárez and M. {Suarez Quezada} and S. {Oros Ruiz} and E. {Ronquillo De Jesús}},
+keywords = {Coronavirus, COVID-19, SARS-CoV-2, México, Cuarentena, Infección, Coronavirus, COVID-19, SARS-CoV-2, Mexico, Quarantine, Infection}
+
+26. A familial cluster of pneumonia associated with the 2019 novel coronavirus indicating person-to-person transmission: a study of a family cluster
+https://www.sciencedirect.com/science/article/pii/S0140673620301549#cesec10
+@article{chan2020familial,
+  title={A familial cluster of pneumonia associated with the 2019 novel coronavirus indicating person-to-person transmission: a study of a family cluster},
+  author={Chan, Jasper Fuk-Woo and Yuan, Shuofeng and Kok, Kin-Hang and To, Kelvin Kai-Wang and Chu, Hin and Yang, Jin and Xing, Fanfan and Liu, Jieling and Yip, Cyril Chik-Yan and Poon, Rosana Wing-Shan and others},
+  journal={The lancet},
+  volume={395},
+  number={10223},
+  pages={514--523},
+  year={2020},
+  publisher={Elsevier}
+}
+
+27. Detection of 2019 novel coronavirus (2019-nCoV) by real-time RT-PCR
+https://www.eurosurveillance.org/content/10.2807/1560-7917.ES.2020.25.3.2000045;?crawler=true
+@article{corman2020detection,
+  title={Detection of 2019 novel coronavirus (2019-nCoV) by real-time RT-PCR},
+  author={Corman, Victor M and Landt, Olfert and Kaiser, Marco and Molenkamp, Richard and Meijer, Adam and Chu, Daniel KW and Bleicker, Tobias and Br{\"u}nink, Sebastian and Schneider, Julia and Schmidt, Marie Luisa and others},
+  journal={Eurosurveillance},
+  volume={25},
+  number={3},
+  pages={2000045},
+  year={2020},
+  publisher={European Centre for Disease Prevention and Control}
+}
+
+28. SalivaDirect: Simple and sensitive molecular diagnostic test for SARS-CoV-2 surveillance
+https://www.medrxiv.org/content/10.1101/2020.08.03.20167791v2
+@article{vogels2020salivadirect,
+  title={SalivaDirect: Simple and sensitive molecular diagnostic test for SARS-CoV-2 surveillance},
+  author={Vogels, Chantal BF and Brackney, D and Wang, Jianhui and Kalinich, Chaney C and Ott, I and Kudo, Eriko and Lu, Peiwen and Venkataraman, Arvind and Tokuyama, Maria and Moore, Adam J and others},
+  journal={MedRxiv},
+  year={2020},
+  publisher={Cold Spring Harbor Laboratory Press}
+}
+
+29. Review of the chest CT differential diagnosis of ground-glass opacities in the COVID era
+https://erj.ersjournals.com/content/33/4/821?sa=X&ved=2ahUKEwjMoNy5o9vxAhVvo4sKHYcRDvMQ9QF6BAgFEAI
+@article{parekh2020review,
+  title={Review of the chest CT differential diagnosis of ground-glass opacities in the COVID era},
+  author={Parekh, Maansi and Donuru, Achala and Balasubramanya, Rashmi and Kapur, Sangita},
+  journal={Radiology},
+  volume={297},
+  number={3},
+  pages={E289--E302},
+  year={2020},
+  publisher={Radiological Society of North America}
+}
+
+30. Temporal changes of CT findings in 90 patients with COVID-19 pneumonia: a longitudinal study
+https://pubs.rsna.org/doi/full/10.1148/radiol.2020200843
+@article{wang2020temporal,
+  title={Temporal changes of CT findings in 90 patients with COVID-19 pneumonia: a longitudinal study},
+  author={Wang, Yuhui and Dong, Chengjun and Hu, Yue and Li, Chungao and Ren, Qianqian and Zhang, Xin and Shi, Heshui and Zhou, Min},
+  journal={Radiology},
+  volume={296},
+  number={2},
+  pages={E55--E64},
+  year={2020},
+  publisher={Radiological Society of North America}
+}
+
+31. Chest CT findings in coronavirus disease-19 (COVID-19): relationship to duration of infection
+https://pubs.rsna.org/doi/full/10.1148/radiol.2020200463
+@article{bernheim2020chest,
+  title={Chest CT findings in coronavirus disease-19 (COVID-19): relationship to duration of infection},
+  author={Bernheim, Adam and Mei, Xueyan and Huang, Mingqian and Yang, Yang and Fayad, Zahi A and Zhang, Ning and Diao, Kaiyue and Lin, Bin and Zhu, Xiqi and Li, Kunwei and others},
+  journal={Radiology},
+  volume={295},
+  number={3},
+  pages={685--691},
+  year={2020},
+  publisher={Radiological Society of North America}
+}
+
+32. Sensitivity of chest CT for COVID-19: comparison to RT-PCR
+https://pubs.rsna.org/doi/full/10.1148/radiol.2020200432
+@article{fang2020sensitivity,
+  title={Sensitivity of chest CT for COVID-19: comparison to RT-PCR},
+  author={Fang, Yicheng and Zhang, Huangqi and Xie, Jicheng and Lin, Minjie and Ying, Lingjun and Pang, Peipei and Ji, Wenbin},
+  journal={Radiology},
+  volume={296},
+  number={2},
+  pages={E115--E117},
+  year={2020},
+  publisher={Radiological Society of North America}
+}
+
+33. Tools and Techniques for Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2)/COVID-19 Detection
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8142517/
+@article{safiabadi2021tools,
+  title={Tools and techniques for severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)/COVID-19 detection},
+  author={Safiabadi Tali, Seyed Hamid and LeBlanc, Jason J and Sadiq, Zubi and Oyewunmi, Oyejide Damilola and Camargo, Carolina and Nikpour, Bahareh and Armanfard, Narges and Sagan, Selena M and Jahanshahi-Anbuhi, Sana},
+  journal={Clinical microbiology reviews},
+  volume={34},
+  number={3},
+  pages={e00228--20},
+  year={2021},
+  publisher={Am Soc Microbiol}
+}
+
+34. Antibody detection assays for COVID‐19 diagnosis: an early overview
+https://onlinelibrary.wiley.com/doi/full/10.1111/imcb.12397
+@article{ejazi2021antibody,
+  title={Antibody detection assays for COVID-19 diagnosis: an early overview},
+  author={Ejazi, Sarfaraz Ahmad and Ghosh, Sneha and Ali, Nahid},
+  journal={Immunology and cell biology},
+  volume={99},
+  number={1},
+  pages={21--33},
+  year={2021},
+  publisher={Wiley Online Library}
+}
+
+35. Cross-reactive antibody response between SARS-CoV-2 and SARS-CoV infections
+https://www.sciencedirect.com/science/article/pii/S2211124720307026
+@article{lv2020cross,
+  title={Cross-reactive antibody response between SARS-CoV-2 and SARS-CoV infections},
+  author={Lv, Huibin and Wu, Nicholas C and Tsang, Owen Tak-Yin and Yuan, Meng and Perera, Ranawaka APM and Leung, Wai Shing and So, Ray TY and Chan, Jacky Man Chun and Yip, Garrick K and Chik, Thomas Shiu Hong and others},
+  journal={Cell reports},
+  volume={31},
+  number={9},
+  pages={107725},
+  year={2020},
+  publisher={Elsevier}
+}
+
+36. Antibody responses to SARS-CoV-2 in patients with COVID-19
+https://www.nature.com/articles/s41591-020-0897-1
+@article{long2020antibody,
+  title={Antibody responses to SARS-CoV-2 in patients with COVID-19},
+  author={Long, Quan-Xin and Liu, Bai-Zhong and Deng, Hai-Jun and Wu, Gui-Cheng and Deng, Kun and Chen, Yao-Kai and Liao, Pu and Qiu, Jing-Fu and Lin, Yong and Cai, Xue-Fei and others},
+  journal={Nature medicine},
+  volume={26},
+  number={6},
+  pages={845--848},
+  year={2020},
+  publisher={Nature Publishing Group US New York}
+}
+
+37. Prueba RT-QPCR COVID-19
+https://www.chopo.com.mx/queretaro/deteccion-covid-19-por-pcr
+@online{lab2022chopoa,
+  title = {Prueba Diagnostica},
+  url = {https://www.chopo.com.mx/queretaro/deteccion-covid-19-por-pcr},
+  author = {{Laboratorio Médico del Chopo}},
+  year = {2022},
+  note = {Ingresado en Mayo 31, 2023}
+}
+
+38. Radiografia de Torax
+https://www.chopo.com.mx/queretaro/rx-de-torax-postero-anterior
+@online{lab2022chopob,
+  title = {Radiografia de Torax},
+  url = {https://www.chopo.com.mx/queretaro/rx-de-torax-postero-anterior},
+  author = {{Laboratorio Médico del Chopo}},
+  year = {2022},
+  note = {Ingresado en Mayo 31, 2023}
+}
+
+39. Kit de ELISA
+https://www.amunet.com.mx/tienda/elisa-sars-cov-2/
+@online{amunet2022elisa,
+  title = {Kit ELISA anticuerpos},
+  url = {https://www.amunet.com.mx/tienda/elisa-sars-cov-2/},
+  author = {{Amunet Laboratorio}},
+  year = {2022},
+  note = {Ingresado en Mayo 31, 2023}
+}
+
+40. Comparison of Rapid Antigen Tests for COVID-19
+https://www.mdpi.com/1999-4915/12/12/1420
+@article{yamayoshi2020comparison,
+  title={Comparison of rapid antigen tests for COVID-19},
+  author={Yamayoshi, Seiya and Sakai-Tagawa, Yuko and Koga, Michiko and Akasaka, Osamu and Nakachi, Ichiro and Koh, Hidefumi and Maeda, Kenji and Adachi, Eisuke and Saito, Makoto and Nagai, Hiroyuki and others},
+  journal={Viruses},
+  volume={12},
+  number={12},
+  pages={1420},
+  year={2020},
+  publisher={MDPI}
+}
+
+39. Pruebas para hacerse uno mismo en casa o en cualquier lugar
+https://www.amunet.com.mx/tienda/elisa-sars-cov-2/
+@online{cdc2023rat,
+  title = {Pruebas para hacerse uno mismo en casa o en cualquier lugar},
+  url = {https://espanol.cdc.gov/coronavirus/2019-ncov/testing/self-testing.html},
+  author = {{Centers for Disease Control and Prevention}},
+  year = {2023},
+  note = {Ingresado en Junio 12,2023}
+}
+
+40. Pruebas de laboratorio para el nuevo coronavirus de 2019 (‎2019-nCoV)‎ en casos sospechosos de infección en humanos: orientaciones provisionales, 17 de enero de 2020
+https://apps.who.int/iris/handle/10665/330861
+@BOOK{10665-330861,
+	author = {Organización-Mundial-de-la-Salud},
+	title = {Pruebas de laboratorio para el nuevo coronavirus de 2019 (2019-nCoV) en casos sospechosos de infección en humanos: orientaciones provisionales, 17 de enero de 2020},
+	year = {2020},
+	pages = {6 p.},
+	publisher = {Organización Mundial de la Salud},
+	type = {Publications}
+}
+
+41. Surveillance case definitions for human infection with novel coronavirus (nCoV)
+https://apps.who.int/iris/bitstream/handle/10665/330376/WHO-2019-nCoV-Surveillance-v2020.1-eng.pdf
+@BOOK{surveillance2020owho,
+	author = {Organización-Mundial-de-la-Salud},
+	title = {Surveillance case definitions for human infection with novel coronavirus (nCoV)},
+	year = {2020},
+	pages = {2 p.},
+	publisher = {Organización Mundial de la Salud},
+	type = {Publications}
+}
+
+42. Reseña normativa de la OMS: Pruebas de detección de la COVID-19
+https://www.who.int/publications/i/item/WHO-2019-nCoV-Policy_Brief-Testing-2022.1
+@BOOK{WHOpolicybrief2022,
+	author = {Organización-Mundial-de-la-Salud},
+	title = {Reseña normativa de la OMS: Pruebas de detección de la COVID-19},
+	year = {2022},
+	pages = {8 p.},
+	publisher = {Organización Mundial de la Salud},
+	type = {Publications}
+}
+
+-- INTELIGENCIA ARTIFICIAL ----------------------------
+43. A modified deep convolutional neural network for detecting COVID-19 and pneumonia from chest X-ray images based on the concatenation of Xception and ResNet50V2
+https://www.sciencedirect.com/science/article/pii/S2352914820302537
+@article{rahimzadeh2020modified,
+  title={A modified deep convolutional neural network for detecting COVID-19 and pneumonia from chest X-ray images based on the concatenation of Xception and ResNet50V2},
+  author={Rahimzadeh, Mohammad and Attar, Abolfazl},
+  journal={Informatics in medicine unlocked},
+  volume={19},
+  pages={100360},
+  year={2020},
+  publisher={Elsevier}
+}
+
+44. Automated detection of COVID-19 cases using deep neural networks with X-ray images
+https://www.sciencedirect.com/science/article/pii/S0010482520301621
+@article{ozturk2020automated,
+  title={Automated detection of COVID-19 cases using deep neural networks with X-ray images},
+  author={Ozturk, Tulin and Talo, Muhammed and Yildirim, Eylul Azra and Baloglu, Ulas Baran and Yildirim, Ozal and Acharya, U Rajendra},
+  journal={Computers in biology and medicine},
+  volume={121},
+  pages={103792},
+  year={2020},
+  publisher={Elsevier}
+}
+
+45. Within the Lack of Chest COVID-19 X-ray Dataset: A Novel Detection Model Based on GAN and Deep Transfer Learning
+https://www.mdpi.com/2073-8994/12/4/651
+@article{loey2020within,
+  title={Within the lack of chest COVID-19 X-ray dataset: a novel detection model based on GAN and deep transfer learning},
+  author={Loey, Mohamed and Smarandache, Florentin and M. Khalifa, Nour Eldeen},
+  journal={Symmetry},
+  volume={12},
+  number={4},
+  pages={651},
+  year={2020},
+  publisher={MDPI}
+}
+
+46. Artificial intelligence in the diagnosis of COVID-19: challenges and perspectives
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8071762/#:~:text=Artificial%20intelligence%20(AI)%20is%20being,to%20rapidly%20diagnose%20positive%20patients.
+@article{huang2021artificial,
+  title={Artificial intelligence in the diagnosis of COVID-19: challenges and perspectives},
+  author={Huang, Shigao and Yang, Jie and Fong, Simon and Zhao, Qi},
+  journal={International Journal of Biological Sciences},
+  volume={17},
+  number={6},
+  pages={1581},
+  year={2021},
+  publisher={Ivyspring International Publisher}
+}
+-- PRUEBAS EN MEXICO -----------------------------------------------------------------
+47. Identificación de pruebas comerciales de PCR útiles para detectar virus SARS-CoV-2 en el Instituto de Diagnóstico y Referencia Epidemiológicos durante el primer año de pandemia de COVID-19 en México
+http://www.conamed.gob.mx/gobmx/boletin/pdf/Boletin30_Revista2022_02/b30_r202202_artic03_CCpruebascovid.pdf
+@article{palomino2022identificacion,
+  title={Identificaci{\'o}n de pruebas comerciales de PCR {\'u}tiles para detectar virus SARS-CoV-2 en el Instituto de Diagn{\'o}stico y Referencia Epidemiol{\'o}gicos durante el primer a{\~n}o de pandemia de COVID-19 en M{\'e}xico},
+  author={Palomino, Claudia G{\'o}mez and Bracho, Carmen Guzm{\'a}n and Mar{\'\i}n, Maricela Gordillo and Gonz{\'a}lez, J Ernesto Ram{\'\i}rez and Rivas, Luc{\'\i}a Hern{\'a}ndez and Mart{\'\i}nez, Irma L{\'o}pez and Badillo, Gisela Barrera and Escamilla, No{\'e} Escobar and D{\'\i}az, Hiram Olivera},
+  journal={Revista CONAMED},
+  volume={27},
+  number={2},
+  pages={68--79},
+  year={2022},
+  publisher={Comisi{\'o}n Nacional de Arbitraje M{\'e}dico}
+}
+
+-- PATOGENESIS DEL COVID ---------------------------------------------------------
+48. Single-cell landscape of bronchoalveolar immune cells in patients with COVID-19
+https://www.nature.com/articles/s41591-020-0901-9
+@article{liao2020single,
+  title={Single-cell landscape of bronchoalveolar immune cells in patients with COVID-19},
+  author={Liao, Mingfeng and Liu, Yang and Yuan, Jing and Wen, Yanling and Xu, Gang and Zhao, Juanjuan and Cheng, Lin and Li, Jinxiu and Wang, Xin and Wang, Fuxiang and others},
+  journal={Nature medicine},
+  volume={26},
+  number={6},
+  pages={842--844},
+  year={2020},
+  publisher={Nature Publishing Group US New York}
+}
+
+49. Outcomes of cardiovascular magnetic resonance imaging in patients recently recovered from coronavirus disease 2019 (COVID-19)
+https://jamanetwork.com/journals/jamacardiology/article-abstract/2768916
+@article{puntmann2020outcomes,
+  title={Outcomes of cardiovascular magnetic resonance imaging in patients recently recovered from coronavirus disease 2019 (COVID-19)},
+  author={Puntmann, Valentina O and Carerj, M Ludovica and Wieters, Imke and Fahim, Masia and Arendt, Christophe and Hoffmann, Jedrzej and Shchendrygina, Anastasia and Escher, Felicitas and Vasa-Nicotera, Mariuca and Zeiher, Andreas M and others},
+  journal={JAMA cardiology},
+  volume={5},
+  number={11},
+  pages={1265--1273},
+  year={2020},
+  publisher={American Medical Association}
+}
+
+50. Dysregulation of immune response in patients with coronavirus 2019 (COVID-19) in Wuhan, China
+https://academic.oup.com/cid/article-abstract/71/15/762/5803306
+@article{qin2020dysregulation,
+  title={Dysregulation of immune response in patients with coronavirus 2019 (COVID-19) in Wuhan, China},
+  author={Qin, Chuan and Zhou, Luoqi and Hu, Ziwei and Zhang, Shuoqi and Yang, Sheng and Tao, Yu and Xie, Cuihong and Ma, Ke and Shang, Ke and Wang, Wei and others},
+  journal={Clinical infectious diseases},
+  volume={71},
+  number={15},
+  pages={762--768},
+  year={2020},
+  publisher={Oxford University Press US}
+}
+
+51. SARS-CoV-2 activates lung epithelial cell proinflammatory signaling and leads to immune dysregulation in COVID-19 patients
+https://www.thelancet.com/journals/ebiom/article/PIIS2352-3964(21)00293-0/fulltext
+@article{chen2021sars,
+  title={SARS-CoV-2 activates lung epithelial cell proinflammatory signaling and leads to immune dysregulation in COVID-19 patients},
+  author={Chen, Huarong and Liu, Weixin and Wang, Yifei and Liu, Dabin and Zhao, Liuyang and Yu, Jun},
+  journal={EBioMedicine},
+  volume={70},
+  year={2021},
+  publisher={Elsevier}
+}
+
+52. Lung pathology of fatal severe acute respiratory syndrome
+https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(03)13413-7/fulltext
+@article{nicholls2003lung,
+  title={Lung pathology of fatal severe acute respiratory syndrome},
+  author={Nicholls, John M and Poon, Leo LM and Lee, Kam C and Ng, Wai F and Lai, Sik T and Leung, Chung Y and Chu, Chung M and Hui, Pak K and Mak, Kong L and Lim, Wilna and others},
+  journal={The Lancet},
+  volume={361},
+  number={9371},
+  pages={1773--1778},
+  year={2003},
+  publisher={Elsevier}
+}
+
+53. Pathogenic human coronavirus infections: causes and consequences of cytokine storm and immunopathology
+https://link.springer.com/article/10.1007/s00281-017-0629-x
+@inproceedings{channappanavar2017pathogenic,
+  title={Pathogenic human coronavirus infections: causes and consequences of cytokine storm and immunopathology},
+  author={Channappanavar, Rudragouda and Perlman, Stanley},
+  booktitle={Seminars in immunopathology},
+  volume={39},
+  pages={529--539},
+  year={2017},
+  organization={Springer}
+}
+
+54. Endothelial cell infection and endotheliitis in COVID-19
+https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30937-5/fulltext?a=true
+@article{varga2020endothelial,
+  title={Endothelial cell infection and endotheliitis in COVID-19},
+  author={Varga, Zsuzsanna and Flammer, Andreas J and Steiger, Peter and Haberecker, Martina and Andermatt, Rea and Zinkernagel, Annelies S and Mehra, Mandeep R and Schuepbach, Reto A and Ruschitzka, Frank and Moch, Holger},
+  journal={The Lancet},
+  volume={395},
+  number={10234},
+  pages={1417--1418},
+  year={2020},
+  publisher={Elsevier}
+}
+
+55. Impaired type I interferon activity and inflammatory responses in severe COVID-19 patients
+https://www.science.org/doi/abs/10.1126/science.abc6027
+@article{hadjadj2020impaired,
+  title={Impaired type I interferon activity and inflammatory responses in severe COVID-19 patients},
+  author={Hadjadj, J{\'e}r{\^o}me and Yatim, Nader and Barnabei, Laura and Corneau, Aur{\'e}lien and Boussier, Jeremy and Smith, Nika{\"\i}a and P{\'e}r{\'e}, H{\'e}l{\`e}ne and Charbit, Bruno and Bondet, Vincent and Chenevier-Gobeaux, Camille and others},
+  journal={Science},
+  volume={369},
+  number={6504},
+  pages={718--724},
+  year={2020},
+  publisher={American Association for the Advancement of Science}
+}
+
+-- Metareferencia == Terapias --------------------------------------------------------
+56. COVID-19: what is next for public health?
+https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30374-3/fulltext
+@article{heymann2020covid,
+  title={COVID-19: what is next for public health?},
+  author={Heymann, David L and Shindo, Nahoko},
+  journal={The lancet},
+  volume={395},
+  number={10224},
+  pages={542--545},
+  year={2020},
+  publisher={Elsevier}
+}
+
+-- Datos CDC COVID-19 ----------------------------------------------------------------
+58. Estimated COVID-19 Burden
+https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/burden.html
+@online{cdc2022CasesData,
+      author = {{Centers for Disease Control and Prevention}},
+      title = {Estimated COVID-19 Burden},
+      url = {https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/burden.html},
+      year = {2022},
+      note = {Ingresado en Julio 15, 2023},
+}
+
+-- PERIODO DE INCUBACION COVID-19 ----------------------------------------------------
+59. Incubation period of 2019 novel coronavirus (2019-nCoV) infections among travellers from Wuhan, China, 20–28 January 2020
+https://www.eurosurveillance.org/content/10.2807/1560-7917.ES.2020.25.5.2000062;jsessionid?crawler=true
+@article{backer2020incubation,
+  title={Incubation period of 2019 novel coronavirus (2019-nCoV) infections among travellers from Wuhan, China, 20--28 January 2020},
+  author={Backer, Jantien A and Klinkenberg, Don and Wallinga, Jacco},
+  journal={Eurosurveillance},
+  volume={25},
+  number={5},
+  pages={2000062},
+  year={2020},
+  publisher={European Centre for Disease Prevention and Control}
+}
+
+60. Incubation Period and Other Epidemiological Characteristics of 2019 Novel Coronavirus Infections with Right Truncation: A Statistical Analysis of Publicly Available Case Data
+https://www.mdpi.com/2077-0383/9/2/538
+@article{linton2020incubation,
+  title={Incubation period and other epidemiological characteristics of 2019 novel coronavirus infections with right truncation: a statistical analysis of publicly available case data},
+  author={Linton, Natalie M and Kobayashi, Tetsuro and Yang, Yichi and Hayashi, Katsuma and Akhmetzhanov, Andrei R and Jung, Sung-mok and Yuan, Baoyin and Kinoshita, Ryo and Nishiura, Hiroshi},
+  journal={Journal of clinical medicine},
+  volume={9},
+  number={2},
+  pages={538},
+  year={2020},
+  publisher={MDPI}
+}
+
+61. Comparison of incubation period distribution of human infections with MERS-CoV in South Korea and Saudi Arabia
+https://www.nature.com/articles/srep35839
+@article{virlogeux2016comparison,
+  title={Comparison of incubation period distribution of human infections with MERS-CoV in South Korea and Saudi Arabia},
+  author={Virlogeux, Victor and Fang, Vicky J and Park, Minah and Wu, Joseph T and Cowling, Benjamin J},
+  journal={Scientific reports},
+  volume={6},
+  number={1},
+  pages={35839},
+  year={2016},
+  publisher={Nature Publishing Group UK London}
+}
+
+62. Investigation of a nosocomial outbreak of severe acute respiratory syndrome (SARS) in Toronto, Canada
+https://www.cmaj.ca/content/169/4/285.short
+@article{varia2003investigation,
+  title={Investigation of a nosocomial outbreak of severe acute respiratory syndrome (SARS) in Toronto, Canada},
+  author={Varia, Monali and Wilson, Samantha and Sarwal, Shelly and McGeer, Allison and Gournis, Effie and Galanis, Eleni and others},
+  journal={Cmaj},
+  volume={169},
+  number={4},
+  pages={285--292},
+  year={2003},
+  publisher={Can Med Assoc}
+}
+
+-- CASOS ASINTOMATICOS / SINTOMATOLOGIA LEVE -----------------------------------------
+63. Prevalence of asymptomatic SARS-CoV-2 infection: a narrative review
+https://www.acpjournals.org/doi/full/10.7326/M20-3012
+@article{oran2020prevalence,
+  title={Prevalence of asymptomatic SARS-CoV-2 infection: a narrative review},
+  author={Oran, Daniel P and Topol, Eric J},
+  journal={Annals of internal medicine},
+  volume={173},
+  number={5},
+  pages={362--367},
+  year={2020},
+  publisher={American College of Physicians}
+}
+
+64. Proportion of asymptomatic coronavirus disease 2019: A systematic review and meta-analysis
+https://onlinelibrary.wiley.com/doi/full/10.1002/jmv.26326
+@article{he2021proportion,
+  title={Proportion of asymptomatic coronavirus disease 2019: A systematic review and meta-analysis},
+  author={He, Jingjing and Guo, Yifei and Mao, Richeng and Zhang, Jiming},
+  journal={Journal of medical virology},
+  volume={93},
+  number={2},
+  pages={820--830},
+  year={2021},
+  publisher={Wiley Online Library}
+}
+
+65. DATOS COVID MEXICO ---------------------------------------------------------------
+@online{secsalud2021covid,
+      author = {{Secretaria de Salud}},
+      title = {Comunicados Técnicos Diarios COVID 19},
+      url = {https://drive.google.com/file/d/1OHBaZcBJ-izP_VwKaAYYAI2g6HDRbHXM/view?usp=sharing},
+      year = {2021},
+      note = {Ingresado en Julio 15, 2023},
+}
+
+66. LESIONES EN CORAZON DE COVID-19
+https://www.sciencedirect.com/science/article/pii/S0049384820301201
+@article{KLOK2020145,
+title = {Incidence of thrombotic complications in critically ill ICU patients with COVID-19},
+journal = {Thrombosis Research},
+volume = {191},
+pages = {145-147},
+year = {2020},
+issn = {0049-3848},
+doi = {https://doi.org/10.1016/j.thromres.2020.04.013},
+url = {https://www.sciencedirect.com/science/article/pii/S0049384820301201},
+author = {F.A. Klok and M.J.H.A. Kruip and N.J.M. {van der Meer} and M.S. Arbous and D.A.M.P.J. Gommers and K.M. Kant and F.H.J. Kaptein and J. {van Paassen} and M.A.M. Stals and M.V. Huisman and H. Endeman},
+keywords = {COVID-19, Pulmonary embolism, Deep vein thrombosis, Stroke, Thromboprophylaxis},
+}
+
+-- LESIONES DEL HÍGADO EN CASOS HOSPITALARIOS ------------------------------------
+67. Clinical Features of COVID-19-Related Liver Functional Abnormality
+https://www.sciencedirect.com/science/article/pii/S1542356520304821?via%3Dihub
+@article{fan2020clinical,
+title = {Clinical Features of COVID-19-Related Liver Functional Abnormality},
+journal = {Clinical Gastroenterology and Hepatology},
+volume = {18},
+number = {7},
+pages = {1561-1566},
+year = {2020},
+issn = {1542-3565},
+doi = {https://doi.org/10.1016/j.cgh.2020.04.002},
+url = {https://www.sciencedirect.com/science/article/pii/S1542356520304821},
+author = {Zhenyu Fan and Liping Chen and Jun Li and Xin Cheng and Jingmao Yang and Cheng Tian and Yajun Zhang and Shaoping Huang and Zhanju Liu and Jilin Cheng},
+keywords = {Prognosis, Liver Injury, ALP, Antiviral Drug},
+abstract = {Background & Aims
+Some patients with SARS-CoV-2 infection have abnormal liver function. We aimed to clarify the features of COVID-19-related liver damage to provide references for clinical treatment.
+Methods
+We performed a retrospective, single-center study of 148 consecutive patients with confirmed COVID-19 (73 female, 75 male; mean age, 50 years) at the Shanghai Public Health Clinical Center from January 20 through January 31, 2020. Patient outcomes were followed until February 19, 2020. Patients were analyzed for clinical features, laboratory parameters (including liver function tests), medications, and length of hospital stay. Abnormal liver function was defined as increased levels of alanine and aspartate aminotransferase, gamma glutamyltransferase, alkaline phosphatase, and total bilirubin.
+Results
+Fifty-five patients (37.2%) had abnormal liver function at hospital admission; 14.5% of these patients had high fever (14.5%), compared with 4.3% of patients with normal liver function (P = .027). Patients with abnormal liver function were more likely to be male, and had higher levels of procalcitonin and C-reactive protein. There was no statistical difference between groups in medications taken before hospitalization; a significantly higher proportion of patients with abnormal liver function (57.8%) had received lopinavir/ritonavir after admission compared to patients with normal liver function (31.3%). Patients with abnormal liver function had longer mean hospital stays (15.09 ± 4.79 days) than patients with normal liver function (12.76 ± 4.14 days) (P = .021).
+Conclusions
+More than one third of patients admitted to the hospital with SARS-CoV-2 infection have abnormal liver function, and this is associated with longer hospital stay. A significantly higher proportion of patients with abnormal liver function had received lopinavir/ritonavir after admission; these drugs should be given with caution.}
+}
+
+-- Manifestacion clinica -------------------------------------------------------------
+68. Clinical manifestation and disease progression in COVID-19 infection
+https://journals.lww.com/jcma/Fulltext/2021/01000/Clinical_manifestation_and_disease_progression_in.2.aspx
+﻿@article{tsai2021clinical,
+author={Tsai, Ping-Hsing and Lai, Wei-Yi and Lin, Yi-Ying and Luo, Yung-Hung and Lin, Yi-Tsung and Chen, Hsiao-Kang and Chen, Yuh-Min and Lai, Yi-Chun and Kuo, Li-Chiao and Chen, Shew-Dan and Chang, Kao-Jung and Liu, Cheng-Hsuan and Chang, Shih-Chieh and Wang, Fu-Der and Yang, Yi-Ping},
+title={Clinical manifestation and disease progression in COVID-19 infection},
+journal={Journal of the Chinese Medical Association},
+year={2021},
+volume={84},
+number={1},
+keywords={Coronavirus; COVID-19; Severe acute respiratory syndrome coronavirus 2},
+abstract={Coronavirus disease 2019 (COVID-19) is mainly an infectious disease of the respiratory system transmitted through air droplets, and pulmonary symptoms constitute main presentations of this disease. However, COVID-19 demonstrates a clinically diverse manifestation ranging from asymptomatic presentation to critically illness with severe pneumonia, acute respiratory distress syndrome, respiratory failure, or multiple organ failure. Accumulating evidences demonstrated that COVID-19 has extrapulmonary involvement, including neurological, smelling sensation, cardiovascular, digestive, hepatobiliary, renal, endocrinologic, dermatologic system, and others. Over a third of COVID-19 patients manifest a wide range of neurological symptoms involving the central/peripheral nervous system. Underlying cardiovascular comorbidities were associated with detrimental outcomes, meanwhile the occurrence of cardiovascular complications correlate to poor survival. Gastrointestinal symptoms frequently occur and have been associated with a longer period of illness. Impaired hepatic functions were associated with the severity of the disease. Higher rate of acute kidney injury was reported in critically ill patients with COVID-19. Endocrinologic presentations of COVID-19 include exacerbating hyperglycemia, euglycemic ketosis, and diabetic ketoacidosis. The most common cutaneous manifestation was acro-cutaneous (pernio or chilblain-like) lesions, and other skin lesions consist of maculopapular rash, vesicular lesions, livedoid/necrotic lesions, exanthematous rashes, and petechiae. This review article summarized the general clinical signs and symptoms, radiologic features, and disease manifestation with progression in patients with COVID-19.},
+issn={1726-4901},
+url={https://journals.lww.com/jcma/Fulltext/2021/01000/Clinical_manifestation_and_disease_progression_in.2.aspx}
+}
+
+69. COVID-19 Pathogenesis and Clinical Manifestations
+https://www.sciencedirect.com/science/article/pii/S0891552022000137?via%3Dihub
+@article{acosta2022covid,
+title = {COVID-19 Pathogenesis and Clinical Manifestations},
+journal = {Infectious Disease Clinics of North America},
+volume = {36},
+number = {2},
+pages = {231-249},
+year = {2022},
+note = {Covid-19 Infection},
+issn = {0891-5520},
+doi = {https://doi.org/10.1016/j.idc.2022.01.003},
+url = {https://www.sciencedirect.com/science/article/pii/S0891552022000137},
+author = {R. Alfonso {Hernandez Acosta} and Zerelda {Esquer Garrigos} and Jasmine R. Marcelin and Prakhar Vijayvargiya},
+keywords = {COVID-19, Severe acute respiratory syndrome coronavirus 2, Pathogenesis, Clinical manifestations, SARS-CoV-2}
+}
+
+-- SINDROME DE DIFICULTAD RESPIRATORIA AGUDA -----------------------------------------
+70. COVID-19 acute respiratory distress syndrome (ARDS): clinical features and differences from typical pre-COVID-19 ARDS
+https://onlinelibrary.wiley.com/doi/full/10.5694/mja2.50674
+@article{gibson2020covid,
+author = {Gibson, Peter G and Qin, Ling and Puah, Ser Hon},
+title = {COVID-19 acute respiratory distress syndrome (ARDS): clinical features and differences from typical pre-COVID-19 ARDS},
+journal = {Medical Journal of Australia},
+volume = {213},
+number = {2},
+pages = {54-56.e1},
+keywords = {Respiratory system, COVID-19, Severe acute respiratory syndrome},
+doi = {https://doi.org/10.5694/mja2.50674},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.5694/mja2.50674},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.5694/mja2.50674},
+year = {2020}
+}
+
+71. Risk Factors Associated With Acute Respiratory Distress Syndrome and Death in Patients With Coronavirus Disease 2019 Pneumonia in Wuhan, China
+https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2763184
+@article{wu2020risk,
+    author = {Wu, Chaomin and Chen, Xiaoyan and Cai, Yanping and Xia, Jia’an and Zhou, Xing and Xu, Sha and Huang, Hanping and Zhang, Li and Zhou, Xia and Du, Chunling and Zhang, Yuye and Song, Juan and Wang, Sijiao and Chao, Yencheng and Yang, Zeyong and Xu, Jie and Zhou, Xin and Chen, Dechang and Xiong, Weining and Xu, Lei and Zhou, Feng and Jiang, Jinjun and Bai, Chunxue and Zheng, Junhua and Song, Yuanlin},
+    title = "{Risk Factors Associated With Acute Respiratory Distress Syndrome and Death in Patients With Coronavirus Disease 2019 Pneumonia in Wuhan, China}",
+    journal = {JAMA Internal Medicine},
+    volume = {180},
+    number = {7},
+    pages = {934-943},
+    year = {2020},
+    month = {07},
+    abstract = "{Coronavirus disease 2019 (COVID-19) is an emerging infectious disease that was first reported in Wuhan, China, and has subsequently spread worldwide. Risk factors for the clinical outcomes of COVID-19 pneumonia have not yet been well delineated.To describe the clinical characteristics and outcomes in patients with COVID-19 pneumonia who developed acute respiratory distress syndrome (ARDS) or died.Retrospective cohort study of 201 patients with confirmed COVID-19 pneumonia admitted to Wuhan Jinyintan Hospital in China between December 25, 2019, and January 26, 2020. The final date of follow-up was February 13, 2020.Confirmed COVID-19 pneumonia.The development of ARDS and death. Epidemiological, demographic, clinical, laboratory, management, treatment, and outcome data were also collected and analyzed.Of 201 patients, the median age was 51 years (interquartile range, 43-60 years), and 128 (63.7\\%) patients were men. Eighty-four patients (41.8\\%) developed ARDS, and of those 84 patients, 44 (52.4\\%) died. In those who developed ARDS, compared with those who did not, more patients presented with dyspnea (50 of 84 [59.5\\%] patients and 30 of 117 [25.6\\%] patients, respectively [difference, 33.9\\%; 95\\% CI, 19.7\\%-48.1\\%]) and had comorbidities such as hypertension (23 of 84 [27.4\\%] patients and 16 of 117 [13.7\\%] patients, respectively [difference, 13.7\\%; 95\\% CI, 1.3\\%-26.1\\%]) and diabetes (16 of 84 [19.0\\%] patients and 6 of 117 [5.1\\%] patients, respectively [difference, 13.9\\%; 95\\% CI, 3.6\\%-24.2\\%]). In bivariate Cox regression analysis, risk factors associated with the development of ARDS and progression from ARDS to death included older age (hazard ratio [HR], 3.26; 95\\% CI 2.08-5.11; and HR, 6.17; 95\\% CI, 3.26-11.67, respectively), neutrophilia (HR, 1.14; 95\\% CI, 1.09-1.19; and HR, 1.08; 95\\% CI, 1.01-1.17, respectively), and organ and coagulation dysfunction (eg, higher lactate dehydrogenase [HR, 1.61; 95\\% CI, 1.44-1.79; and HR, 1.30; 95\\% CI, 1.11-1.52, respectively] and D-dimer [HR, 1.03; 95\\% CI, 1.01-1.04; and HR, 1.02; 95\\% CI, 1.01-1.04, respectively]). High fever (≥39 °C) was associated with higher likelihood of ARDS development (HR, 1.77; 95\\% CI, 1.11-2.84) and lower likelihood of death (HR, 0.41; 95\\% CI, 0.21-0.82). Among patients with ARDS, treatment with methylprednisolone decreased the risk of death (HR, 0.38; 95\\% CI, 0.20-0.72).Older age was associated with greater risk of development of ARDS and death likely owing to less rigorous immune response. Although high fever was associated with the development of ARDS, it was also associated with better outcomes among patients with ARDS. Moreover, treatment with methylprednisolone may be beneficial for patients who develop ARDS.}",
+    issn = {2168-6106},
+    doi = {10.1001/jamainternmed.2020.0994},
+    url = {https://doi.org/10.1001/jamainternmed.2020.0994},
+    eprint = {https://jamanetwork.com/journals/jamainternalmedicine/articlepdf/2763184/jamainternal\_wu\_2020\_oi\_200022.pdf},
+}
+
+-- FACTORES DE RIESGO, MORBILIDAD Y MORTALIDAD ---------------------------------------
+72. Risk and Protective Factors for COVID-19 Morbidity, Severity, and Mortality
+https://link.springer.com/article/10.1007/s12016-022-08921-5
+﻿@article{zhang2023risk,
+author={Zhang, Jin-jin and Dong, Xiang and Liu, Guang-hui and Gao, Ya-dong},
+title={Risk and Protective Factors for COVID-19 Morbidity, Severity, and Mortality},
+journal={Clinical Reviews in Allergy {\&} Immunology},
+year={2023},
+month={Feb},
+day={01},
+volume={64},
+number={1},
+pages={90-107},
+abstract={The outbreak of the coronavirus disease 2019 (COVID-19), caused by the novel severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), has become an evolving global health crisis. Currently, a number of risk factors have been identified to have a potential impact on increasing the morbidity of COVID-19 in adults, including old age, male sex, pre-existing comorbidities, and racial/ethnic disparities. In addition to these factors, changes in laboratory indices and pro-inflammatory cytokines, as well as possible complications, could indicate the progression of COVID-19 into a severe and critical stage. Children predominantly suffer from mild illnesses due to COVID-19. Similar to adults, the main risk factors in pediatric patients include age and pre-existing comorbidities. In contrast, supplementation with a healthy diet and sufficient nutrition, COVID-19 vaccination, and atopic conditions may act as protective factors against the infection of SARS-CoV-2. COVID-19 vaccination not only protects vulnerable individuals from SARS-CoV-2 infection, more importantly, it may also reduce the development of severe disease and death due to COVID-19. Currently used therapies for COVID-19 are off-label and empiric, and their impacts on the severity and mortality of COVID-19 are still unclear. The interaction between asthma and COVID-19 may be bidirectional and needs to be clarified in more studies. In this review, we highlight the clinical evidence supporting the rationale for the risk and protective factors for the morbidity, severity, and mortality of COVID-19.},
+issn={1559-0267},
+doi={10.1007/s12016-022-08921-5},
+url={https://doi.org/10.1007/s12016-022-08921-5}
+}
+
+73. Estimating clinical severity of COVID-19 from the transmission dynamics in Wuhan, China
+https://www.nature.com/articles/s41591%20-020-0822-7#citeas
+﻿@article{wu2020estimating,
+author={Wu, Joseph T. and Leung, Kathy and Bushman, Mary and Kishore, Nishant and Niehus, Rene and de Salazar, Pablo M. and Cowling, Benjamin J. and Lipsitch, Marc and Leung, Gabriel M.},
+title={Estimating clinical severity of COVID-19 from the transmission dynamics in Wuhan, China},
+journal={Nature Medicine},
+year={2020},
+month={Apr},
+day={01},
+volume={26},
+number={4},
+pages={506-510},
+abstract={As of 29 February 2020 there were 79,394 confirmed cases and 2,838 deaths from COVID-19 in mainland China. Of these, 48,557 cases and 2,169 deaths occurred in the epicenter, Wuhan. A key public health priority during the emergence of a novel pathogen is estimating clinical severity, which requires properly adjusting for the case ascertainment rate and the delay between symptoms onset and death. Using public and published information, we estimate that the overall symptomatic case fatality risk (the probability of dying after developing symptoms) of COVID-19 in Wuhan was 1.4{\%} (0.9--2.1{\%}), which is substantially lower than both the corresponding crude or na{\"i}ve confirmed case fatality risk (2,169/48,557{\thinspace}={\thinspace}4.5{\%}) and the approximator1 of deaths/deaths{\thinspace}+{\thinspace}recoveries (2,169/2,169{\thinspace}+{\thinspace}17,572{\thinspace}={\thinspace}11{\%}) as of 29 February 2020. Compared to those aged 30--59{\thinspace}years, those aged below 30 and above 59 years were 0.6 (0.3--1.1) and 5.1 (4.2--6.1) times more likely to die after developing symptoms. The risk of symptomatic infection increased with age (for example, at {\textasciitilde}4{\%} per year among adults aged 30--60 years).},
+issn={1546-170X},
+doi={10.1038/s41591-020-0822-7},
+url={https://doi.org/10.1038/s41591-020-0822-7}
+}
+
+-- ORIGEN DE LAS VARIANTES DE SARS-COV-2 -----------------------------------------------------------
+74. Global emerging Omicron variant of SARS-CoV-2: Impacts, challenges and strategies
+https://www.sciencedirect.com/science/article/pii/S1876034122003161#sec0010
+@article{dhama2022global,
+title = {Global emerging Omicron variant of SARS-CoV-2: Impacts, challenges and strategies},
+journal = {Journal of Infection and Public Health},
+volume = {16},
+number = {1},
+pages = {4-14},
+year = {2023},
+issn = {1876-0341},
+doi = {https://doi.org/10.1016/j.jiph.2022.11.024},
+url = {https://www.sciencedirect.com/science/article/pii/S1876034122003161},
+author = {Kuldeep Dhama and Firzan Nainu and Andri Frediansyah and Mohd. Iqbal Yatoo and Ranjan K. Mohapatra and Sandip Chakraborty and Hao Zhou and Md. Rabiul Islam and Sukamto S. Mamada and Hendrix Indra Kusuma and Ali A. Rabaan and Saad Alhumaid and Abbas Al Mutair and Muhammad Iqhrammullah and Jaffar A. Al-Tawfiq and Mohammed Al Mohaini and Abdulkhaliq J. Alsalman and Hardeep Singh Tuli and Chiranjib Chakraborty and Harapan Harapan},
+keywords = {SARS-CoV-2, COVID-19, Omicron, Emerging variance, Variant of concern},
+abstract = {Newly emerging variants of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) are continuously posing high global public health concerns and panic resulting in waves of coronavirus disease 2019 (COVID-19) pandemic. Depending on the extent of genomic variations, mutations and adaptation, few of the variants gain the ability to spread quickly across many countries, acquire higher virulency and ability to cause severe disease, morbidity and mortality. These variants have been implicated in lessening the efficacy of the current COVID-19 vaccines and immunotherapies resulting in break-through viral infections in vaccinated individuals and recovered patients. Altogether, these could hinder the protective herd immunity to be achieved through the ongoing progressive COVID-19 vaccination. Currently, the only variant of interest of SARS-CoV-2 is Omicron that was first identified in South Africa. In this review, we present the overview on the emerging SARS-CoV-2 variants with a special focus on the Omicron variant, its lineages and hybrid variants. We discuss the hypotheses of the origin, genetic change and underlying molecular mechanism behind higher transmissibility and immune escape of Omicron variant. Major concerns related to Omicron including the efficacy of the current available immunotherapeutics and vaccines, transmissibility, disease severity, and mortality are discussed. In the last part, challenges and strategies to counter Omicron variant, its lineages and hybrid variants amid the ongoing COVID-19 pandemic are presented.}
+}
+
+75. The biological and clinical significance of emerging SARS-CoV-2 variants
+https://www.nature.com/articles/s41576-021-00408-x
+﻿@article{tao2021biological,
+author={Tao, Kaiming and Tzou, Philip L. and Nouhin, Janin and Gupta, Ravindra K. and de Oliveira, Tulio and Kosakovsky Pond, Sergei L. and Fera, Daniela and Shafer, Robert W.},
+title={The biological and clinical significance of emerging SARS-CoV-2 variants},
+journal={Nature Reviews Genetics},
+year={2021},
+month={Dec},
+day={01},
+volume={22},
+number={12},
+pages={757-773},
+abstract={The past several months have witnessed the emergence of SARS-CoV-2 variants with novel spike protein mutations that are influencing the epidemiological and clinical aspects of the COVID-19 pandemic. These variants can increase rates of virus transmission and/or increase the risk of reinfection and reduce the protection afforded by neutralizing monoclonal antibodies and vaccination. These variants can therefore enable SARS-CoV-2 to continue its spread in the face of rising population immunity while maintaining or increasing its replication fitness. The identification of four rapidly expanding virus lineages since December 2020, designated variants of concern, has ushered in a new stage of the pandemic. The four variants of concern, the Alpha variant (originally identified in the UK), the Beta variant (originally identified in South Africa), the Gamma variant (originally identified in Brazil) and the Delta variant (originally identified in India), share several mutations with one another as well as with an increasing number of other recently identified SARS-CoV-2 variants. Collectively, these SARS-CoV-2 variants complicate the COVID-19 research agenda and necessitate additional avenues of laboratory, epidemiological and clinical research.},
+issn={1471-0064},
+doi={10.1038/s41576-021-00408-x},
+url={https://doi.org/10.1038/s41576-021-00408-x}
+}
+
+-- PRUEBAS APROBADAS EN MÉXICO -------------------------------------------------------
+76. Pruebas autorizadas para COVID-19
+https://www.gob.mx/cofepris/acciones-y-programas/pruebas-autorizadas-para-covid-19
+@online{cofepris2022pruebas,
+author = {{Comisión Federal para la Protección contra Riesgos Sanitarios}},
+organization = {{Gobierno de México}},
+title = {Pruebas autorizadas para COVID-19},
+year = {2022},
+url = {https://www.gob.mx/cofepris/acciones-y-programas/pruebas-autorizadas-para-covid-19},
+note = {Ingresado en Junio 22, 2023}
+}
+
+77. LISTA DE PRUEBAS SEROLÓGICAS APROBADAS AL 14 DE AGOSTO DE 2020 PARA DETERMINAR IGG E IGM PARA COVID-19 (ACTUALIZACIÓN DEL 040820)
+https://www.gob.mx/cofepris/es/articulos/lista-de-pruebas-serologicas-aprobadas-al-04-de-agosto-2020-para-determinar-igg-e-igm-para-covid-19?idiom=es
+@online{cofepris2020pruebas,
+author = {{Comisión Federal para la Protección contra Riesgos Sanitarios}},
+organization = {{Gobierno de México}},
+title = {LISTA DE PRUEBAS SEROLÓGICAS APROBADAS AL 14 DE AGOSTO DE 2020 PARA DETERMINAR IGG E IGM PARA COVID-19 (ACTUALIZACIÓN DEL 040820)},
+year = {2020}
+url = {https://www.gob.mx/cofepris/es/articulos/lista-de-pruebas-serologicas-aprobadas-al-04-de-agosto-2020-para-determinar-igg-e-igm-para-covid-19?idiom=es},
+note = {Ingresado en Junio 22, 2023}
+}
+
+78. Laboratorios con reconocimiento por parte del InDRE, para realizar el diagnóstico de COVID-19, con fines de Vigilancia Epidemiológica
+https://www.gob.mx/cms/uploads/attachment/file/688705/LISTADO_DE_LABORATORIOS_QUE_REALIZAN_EL_DIAGN_STICO_DE_COVID-19_14-02-2022.pdf
+@online{indrelaboratorios,
+author = {{Instituto de Diagnóstico y Referencia Epidemológicos}},
+organization = {{Subsecretaría de Prevención y Promoción de la Salud. Secretaría de Salud}},
+title = {Laboratorios con reconocimiento por parte del InDRE, para realizar el diagnóstico de COVID-19, con fines de Vigilancia Epidemiológica},
+url = {https://www.gob.mx/cms/uploads/attachment/file/688705/LISTADO_DE_LABORATORIOS_QUE_REALIZAN_EL_DIAGN_STICO_DE_COVID-19_14-02-2022.pdf},
+note = {Ingresado en Junio 22, 2023}
+}
+
+
+-- MEDIDAS PREVENTIVAS Y EPIDEMIOLÓGICAS ---------------------------------------------
+79. Medidas preventivas
+https://coronavirus.gob.mx/prevencion/
+@online{secsaludprevencion,
+author = {{Secretaría de Salud}},
+organization = {{Gobierno de México}},
+title = {Medidas Preventivas},
+url = {https://coronavirus.gob.mx/prevencion/},
+note = {Ingresado en Agosto 10, 2023}
+}
+
+80. Cómo protegerse y proteger a los demás
+https://espanol.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/prevention.html
+@online{cdc2023proteccion,
+author = {{Centers for Disease Control and Prevention}},
+title = {Cómo protegerse y proteger a los demás},
+year = {2023},
+url = {https://espanol.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/prevention.html},
+note = {Ingresado en Agosto 10, 2023}
+}
+
+81. Coronavirus
+https://www.who.int/es/health-topics/coronavirus#tab=tab_2
+@online{whocoronavirus,
+author = {{World Health Organization}},
+title = {Coronavirus},
+url = {https://www.who.int/es/health-topics/coronavirus#tab=tab_2},
+note = {Ingresado en Agosto 10, 2023}
+}
+
+82. COVID-19 and preventive strategy
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9490164/
+@article{krittanawong2022covid,
+  title={COVID-19 and preventive strategy},
+  author={Krittanawong, Chayakrit and Maitra, Neil and Kumar, Anirudh and Hahn, Joshua and Wang, Zhen and Carrasco, Daniela and Zhang, Hong Ju and Sun, Tao and Jneid, Hani and Virani, Salim S},
+  journal={American Journal of Cardiovascular Disease},
+  volume={12},
+  number={4},
+  pages={153},
+  year={2022},
+  publisher={e-Century Publishing Corporation},
+  url = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9490164/}
+}
+
+-- VACUNACION ------------------------------------------------------------------------
+83. Two Years into the COVID-19 Pandemic: Lessons Learned
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9380879/
+@article{da2022two,
+author = {da Silva, Severino Jefferson Ribeiro and do Nascimento, Jessica Catarine Frutuoso and Germano Mendes, Renata Pessôa and Guarines, Klarissa Miranda and Targino Alves da Silva, Caroline and da Silva, Poliana Gomes and de Magalhães, Jurandy Júnior Ferraz and Vigar, Justin R. J. and Silva-Júnior, Abelardo and Kohl, Alain and Pardee, Keith and Pena, Lindomar},
+title = {Two Years into the COVID-19 Pandemic: Lessons Learned},
+journal = {ACS Infectious Diseases},
+volume = {8},
+number = {9},
+pages = {1758-1814},
+year = {2022},
+doi = {10.1021/acsinfecdis.2c00204},
+note ={PMID: 35940589},
+URL = {https://doi.org/10.1021/acsinfecdis.2c00204},
+eprint = {https://doi.org/10.1021/acsinfecdis.2c00204}
+}
+
+84. Vacunas OMS
+https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/coronavirus-disease-(covid-19)-vaccines?adgroupsurvey={adgroupsurvey}&gclid=CjwKCAjw5_GmBhBIEiwA5QSMxG0BDgIXYKEND2iURuAXjvAUGISepzK3v_CHkEZN1xDJ-IY_CjYmVRoCKIcQAvD_BwE
+@online{who2023vaccines,
+author = {{World Health Organization}},
+title = {Enfermedad por el coronavirus (COVID-19): Vacunas},
+year = {2023},
+url = {https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/coronavirus-disease-(covid-19)-vaccines?adgroupsurvey={adgroupsurvey}&gclid=CjwKCAjw5_GmBhBIEiwA5QSMxG0BDgIXYKEND2iURuAXjvAUGISepzK3v_CHkEZN1xDJ-IY_CjYmVRoCKIcQAvD_BwE},
+note = {Ingresado en Agosto, 17, 2023}
+}
+
+-- FACTORES DE RIESGO Y PROTECTORES --------------------------------------------------
+85. Demographic risk factors for COVID-19 infection, severity, ICU admission and death: a meta-analysis of 59 studies 
+https://bmjopen.bmj.com/content/11/1/e044640
+@article {pijls2021demographic,
+	author = {Bart G Pijls and Shahab Jolani and Anique Atherley and Raissa T Derckx and Janna I R Dijkstra and Gregor H L Franssen and Stevie Hendriks and Anke Richters and Annemarie Venemans-Jellema and Saurabh Zalpuri and Maurice P Zeegers},
+	title = {Demographic risk factors for COVID-19 infection, severity, ICU admission and death: a meta-analysis of 59 studies},
+	volume = {11},
+	number = {1},
+	elocation-id = {e044640},
+	year = {2021},
+	doi = {10.1136/bmjopen-2020-044640},
+	publisher = {British Medical Journal Publishing Group},
+	abstract = {Objective We aimed to describe the associations of age and sex with the risk of COVID-19 in different severity stages ranging from infection to death.Design Systematic review and meta-analysis.Data sources PubMed and Embase through 4 May 2020.Study selection We considered cohort and case{\textendash}control studies that evaluated differences in age and sex on the risk of COVID-19 infection, disease severity, intensive care unit (ICU) admission and death.Data extraction and synthesis We screened and included studies using standardised electronic data extraction forms and we pooled data from published studies and data acquired by contacting authors using random effects meta-analysis. We assessed the risk of bias using the Newcastle-Ottawa Scale.Results We screened 11.550 titles and included 59 studies comprising 36.470 patients in the analyses. The methodological quality of the included papers was high (8.2 out of 9). Men had a higher risk for infection with COVID-19 than women (relative risk (RR) 1.08, 95\% CI 1.03 to 1.12). When infected, they also had a higher risk for severe COVID-19 disease (RR 1.18, 95\% CI 1.10 to 1.27), a higher need for intensive care (RR 1.38, 95\% CI 1.09 to 1.74) and a higher risk of death (RR 1.50, 95\% CI 1.18 to 1.91). The analyses also showed that patients aged 70 years and above have a higher infection risk (RR 1.65, 95\% CI 1.50 to 1.81), a higher risk for severe COVID-19 disease (RR 2.05, 95\% CI 1.27 to 3.32), a higher need for intensive care (RR 2.70, 95\% CI 1.59 to 4.60) and a higher risk of death once infected (RR 3.61, 95\% CI 2.70 to 4.84) compared with patients younger than 70 years.Conclusions Meta-analyses on 59 studies comprising 36.470 patients showed that men and patients aged 70 and above have a higher risk for COVID-19 infection, severe disease, ICU admission and death.PROSPERO registration number CRD42020180085.},
+	issn = {2044-6055},
+	URL = {https://bmjopen.bmj.com/content/11/1/e044640},
+	eprint = {https://bmjopen.bmj.com/content/11/1/e044640.full.pdf},
+	journal = {BMJ Open}
+}
+
+86. Characterizing key attributes of COVID-19 transmission dynamics in China's original outbreak: Model-based estimations
+https://www.sciencedirect.com/science/article/pii/S2590113320300262?via%3Dihub
+@article{ayoub2020characterizing,
+title = {Characterizing key attributes of COVID-19 transmission dynamics in China's original outbreak: Model-based estimations},
+journal = {Global Epidemiology},
+volume = {2},
+pages = {100042},
+year = {2020},
+issn = {2590-1133},
+doi = {https://doi.org/10.1016/j.gloepi.2020.100042},
+url = {https://www.sciencedirect.com/science/article/pii/S2590113320300262},
+author = {Houssein H. Ayoub and Hiam Chemaitelly and Ghina R. Mumtaz and Shaheen Seedat and Susanne F. Awad and Monia Makhoul and Laith J. Abu-Raddad},
+keywords = {SARS-CoV-2, COVID-19, Coronavirus, Epidemiology, China, Mathematical model},
+abstract = {A novel coronavirus strain, severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), emerged in China. This study aims to characterize key attributes of SARS-CoV-2 epidemiology as the infection emerged in China. An age-stratified mathematical model was constructed to describe transmission dynamics and estimate age-specific differences in biological susceptibility to infection, age-assortativeness in transmission mixing, and transition in rate of infectious contacts (and reproduction number R0) following introduction of mass interventions. The model estimated the infectious contact rate in early epidemic at 0.59 contacts/day (95% uncertainty interval-UI = 0.48–0.71). Relative to those 60–69 years, susceptibility was 0.06 in those ≤19 years, 0.34 in 20–29 years, 0.57 in 30–39 years, 0.69 in 40–49 years, 0.79 in 50–59 years, 0.94 in 70–79 years, and 0.88 in ≥80 years. Assortativeness in transmission mixing by age was limited at 0.004 (95% UI = 0.002–0.008). R0 rapidly declined from 2.1 (95% UI = 1.8–2.4) to 0.06 (95% UI = 0.05–0.07) following interventions' onset. Age appears to be a principal factor in explaining the transmission patterns in China. The biological susceptibility to infection seems limited among children but high among those >50 years. There was no evidence for differential contact mixing by age.}
+}
+
+87. Positive rate of RT-PCR detection of SARS-CoV-2 infection in 4880 cases from one hospital in Wuhan, China, from Jan to Feb 2020
+https://www.sciencedirect.com/science/article/pii/S0009898120301121?via%3Dihub
+@article{liu2020positive,
+title = {Positive rate of RT-PCR detection of SARS-CoV-2 infection in 4880 cases from one hospital in Wuhan, China, from Jan to Feb 2020},
+journal = {Clinica Chimica Acta},
+volume = {505},
+pages = {172-175},
+year = {2020},
+issn = {0009-8981},
+doi = {https://doi.org/10.1016/j.cca.2020.03.009},
+url = {https://www.sciencedirect.com/science/article/pii/S0009898120301121},
+author = {Rui Liu and Huan Han and Fang Liu and Zhihua Lv and Kailang Wu and Yingle Liu and Yong Feng and Chengliang Zhu},
+keywords = {SARS-CoV-2, COVID-19, Nucleic acid test, Positive rate},
+abstract = {Background
+There’s an outbreak of a novel coronavirus (SARS-CoV-2) infection since December 2019, first in China, and currently with more than 80 thousand confirmed infection globally in 29 countries till March 2, 2020. Identification, isolation and caring for patients early are essential to limit human-to-human transmission including reducing secondary infections among close contacts and health care workers, preventing transmission amplification events. The RT-PCR detection of viral nucleic acid test (NAT) was one of the most quickly established laboratory diagnosis method in a novel viral pandemic, just as in this COVID-19 outbreak.
+Methods
+4880 cases that had respiratory infection symptoms or close contact with COVID-19 patients in hospital in Wuhan, China, were tested for SARS-CoV-2 infection by use of quantitative RT-PCR (qRT-PCR) on samples from the respiratory tract. Positive rates were calculated in groups divided by genders or ages.
+Results
+The positive rate was about 38% for the total 4880 specimens. Male and older population had a significant higher positive rates. However, 57% was positive among the specimens from the Fever Clinics. Binary logistic regression analysis showed that age, not gender, was the risk factor for SARS-CoV-2 infection in fever clinics.
+Conclusions
+Therefore, we concluded that viral NAT played an important role in identifying SARS-CoV-2 infection.}
+}
+
+88. Epidemiology of COVID-19: A systematic review and meta-analysis of clinical characteristics, risk factors, and outcomes
+https://onlinelibrary.wiley.com/doi/10.1002/jmv.26424
+@article{li2021epidemiology,
+author = {Li, Jie and Huang, Daniel Q. and Zou, Biyao and Yang, Hongli and Hui, Wan Zi and Rui, Fajuan and Yee, Natasha Tang Sook and Liu, Chuanli and Nerurkar, Sanjna Nilesh and Kai, Justin Chua Ying and Teng, Margaret Li Peng and Li, Xiaohe and Zeng, Hua and Borghi, John A. and Henry, Linda and Cheung, Ramsey and Nguyen, Mindie H.},
+title = {Epidemiology of COVID-19: A systematic review and meta-analysis of clinical characteristics, risk factors, and outcomes},
+journal = {Journal of Medical Virology},
+volume = {93},
+number = {3},
+pages = {1449-1458},
+keywords = {clinical characteristics, COVID-19, mortality, risk factors, severe},
+doi = {https://doi.org/10.1002/jmv.26424},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/jmv.26424},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/jmv.26424},
+abstract = {Abstract Coronavirus disease 2019 (COVID-19) has become a pandemic, but its reported characteristics and outcomes vary greatly amongst studies. We determined pooled estimates for clinical characteristics and outcomes in COVID-19 patients including subgroups by disease severity (based on World Health Organization Interim Guidance Report or Infectious Disease Society of America/American Thoracic Society criteria) and by country/region. We searched Pubmed, Embase, Scopus, Cochrane, Chinese Medical Journal, and preprint databases from 1 January 2020 to 6 April 2020. Studies of laboratory-confirmed COVID-19 patients with relevant data were included. Two reviewers independently performed study selection and data extraction. From 6007 articles, 212 studies from 11 countries/regions involving 281 461 individuals were analyzed. Overall, mean age was 46.7 years, 51.8\% were male, 22.9\% had severe disease, and mortality was 5.6\%. Underlying immunosuppression, diabetes, and malignancy were most strongly associated with severe COVID-19 (coefficient =  53.9, 23.4, 23.4, respectively, all P < .0007), while older age, male gender, diabetes, and hypertension were also associated with higher mortality (coefficient = 0.05 per year, 5.1, 8.2, 6.99, respectively; P = .006-.0002). Gastrointestinal (nausea, vomiting, abdominal pain) and respiratory symptoms (shortness of breath, chest pain) were associated with severe COVID-19, while pneumonia and end-organ failure were associated with mortality. COVID-19 is associated with a severe disease course in about 23\% and mortality in about 6\% of infected persons. Individuals with comorbidities and clinical features associated with severity should be monitored closely, and preventive efforts should especially target those with diabetes, malignancy, and immunosuppression.},
+year = {2021}
+}
+
+89. Comorbidity and its impact on 1590 patients with COVID-19 in China: a nationwide analysis
+https://erj.ersjournals.com/content/55/5/2000547
+@article{guan2020comorbidity,
+	author = {Wei-jie Guan and Wen-hua Liang and Yi Zhao and Heng-rui Liang and Zi-sheng Chen and Yi-min Li and Xiao-qing Liu and Ru-chong Chen and Chun-li Tang and Tao Wang and Chun-quan Ou and Li Li and Ping-yan Chen and Ling Sang and Wei Wang and Jian-fu Li and Cai-chen Li and Li-min Ou and Bo Cheng and Shan Xiong and Zheng-yi Ni and Jie Xiang and Yu Hu and Lei Liu and Hong Shan and Chun-liang Lei and Yi-xiang Peng and Li Wei and Yong Liu and Ya-hua Hu and Peng Peng and Jian-ming Wang and Ji-yang Liu and Zhong Chen and Gang Li and Zhi-jian Zheng and Shao-qin Qiu and Jie Luo and Chang-jiang Ye and Shao-yong Zhu and Lin-ling Cheng and Feng Ye and Shi-yue Li and Jin-ping Zheng and Nuo-fu Zhang and Nan-shan Zhong and Jian-xing He},
+	editor = {,},
+	title = {Comorbidity and its impact on 1590 patients with COVID-19 in China: a nationwide analysis},
+	volume = {55},
+	number = {5},
+	elocation-id = {2000547},
+	year = {2020},
+	doi = {10.1183/13993003.00547-2020},
+	publisher = {European Respiratory Society},
+	abstract = {Background The coronavirus disease 2019 (COVID-19) outbreak is evolving rapidly worldwide.Objective To evaluate the risk of serious adverse outcomes in patients with COVID-19 by stratifying the comorbidity status.Methods We analysed data from 1590 laboratory confirmed hospitalised patients from 575 hospitals in 31 provinces/autonomous regions/provincial municipalities across mainland China between 11 December 2019 and 31 January 2020. We analysed the composite end-points, which consisted of admission to an intensive care unit, invasive ventilation or death. The risk of reaching the composite end-points was compared according to the presence and number of comorbidities.Results The mean age was 48.9 years and 686 (42.7\%) patients were female. Severe cases accounted for 16.0\% of the study population. 131 (8.2\%) patients reached the composite end-points. 399 (25.1\%) reported having at least one comorbidity. The most prevalent comorbidity was hypertension (16.9\%), followed by diabetes (8.2\%). 130 (8.2\%) patients reported having two or more comorbidities. After adjusting for age and smoking status, COPD (HR (95\% CI) 2.681 (1.424{\textendash}5.048)), diabetes (1.59 (1.03{\textendash}2.45)), hypertension (1.58 (1.07{\textendash}2.32)) and malignancy (3.50 (1.60{\textendash}7.64)) were risk factors of reaching the composite end-points. The hazard ratio (95\% CI) was 1.79 (1.16{\textendash}2.77) among patients with at least one comorbidity and 2.59 (1.61{\textendash}4.17) among patients with two or more comorbidities.Conclusion Among laboratory confirmed cases of COVID-19, patients with any comorbidity yielded poorer clinical outcomes than those without. A greater number of comorbidities also correlated with poorer clinical outcomes.The presence and number of comorbidities predict clinical outcomes of COVID-19 http://bit.ly/3b9ibw5},
+	issn = {0903-1936},
+	URL = {https://erj.ersjournals.com/content/55/5/2000547},
+	eprint = {https://erj.ersjournals.com/content/55/5/2000547.full.pdf},
+	journal = {European Respiratory Journal}
+}
+
+90. Impact of cardiovascular disease and risk factors on fatal outcomes in patients with COVID-19 according to age: a systematic review and meta-analysis
+https://heart.bmj.com/content/107/5/373
+@article{bae2021impact,
+	author = {SungA Bae and So Ree Kim and Mi-Na Kim and Wan Joo Shim and Seong-Mi Park},
+	title = {Impact of cardiovascular disease and risk factors on fatal outcomes in patients with COVID-19 according to age: a systematic review and meta-analysis},
+	volume = {107},
+	number = {5},
+	pages = {373--380},
+	year = {2021},
+	doi = {10.1136/heartjnl-2020-317901},
+	publisher = {BMJ Publishing Group Ltd},
+	abstract = {Objective Previous studies that evaluated cardiovascular risk factors considered age as a potential confounder. We aimed to investigate the impact of cardiovascular disease (CVD) and its risk factors on fatal outcomes according to age in patients with COVID-19.Methods A systematic literature review and meta-analysis was performed on data collected from PubMed and Embase databases up to 11 June 2020. All observational studies (case series or cohort studies) that assessed in-hospital patients were included, except those involving the paediatric population. Prevalence rates of comorbid diseases and clinical outcomes were stratified by mean patient age in each study (ranges: \&lt;50 years, 50{\textendash}60 years and >=60 years). The primary outcome measure was a composite fatal outcome of severe COVID-19 or death.Results We included 51 studies with a total of 48 317 patients with confirmed COVID-19 infection. Overall, the relative risk of developing severe COVID-19 or death was significantly higher in patients with risk factors for CVD (hypertension: OR 2.50, 95\% CI 2.15 to 2.90; diabetes: 2.25, 95\% CI 1.89 to 2.69) and CVD (3.11, 95\% 2.55 to 3.79). Younger patients had a lower prevalence of hypertension, diabetes and CVD compared with older patients; however, the relative risk of fatal outcomes was higher among the former.Conclusions The results of the meta-analysis suggest that CVD and its risk factors (hypertension and diabetes) were closely related to fatal outcomes in COVID-19 for patients across all ages. Although young patients had lower prevalence rates of cardiovascular comorbidities than elderly patients, relative risk of fatal outcome in young patients with hypertension, diabetes and CVD was higher than in elderly patients.Prospero registration number CRD42020198152.},
+	issn = {1355-6037},
+	URL = {https://heart.bmj.com/content/107/5/373},
+	eprint = {https://heart.bmj.com/content/107/5/373.full.pdf},
+	journal = {Heart}
+}
+
+91. Risk factors for severe and critically ill COVID-19 patients: A review
+https://onlinelibrary.wiley.com/doi/10.1111/all.14657
+@article{gao2021risk,
+author = {Gao, Ya-dong and Ding, Mei and Dong, Xiang and Zhang, Jin-jin and Kursat Azkur, Ahmet and Azkur, Dilek and Gan, Hui and Sun, Yuan-li and Fu, Wei and Li, Wei and Liang, Hui-ling and Cao, Yi-yuan and Yan, Qi and Cao, Can and Gao, Hong-yu and Brüggen, Marie-Charlotte and van de Veen, Willem and Sokolowska, Milena and Akdis, Mübeccel and Akdis, Cezmi A.},
+title = {Risk factors for severe and critically ill COVID-19 patients: A review},
+journal = {Allergy},
+volume = {76},
+number = {2},
+pages = {428-455},
+keywords = {COVID-19, critical illness, risk factors, SARS-CoV-2, severity},
+doi = {https://doi.org/10.1111/all.14657},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/all.14657},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/all.14657},
+abstract = {Abstract The pandemic of coronavirus disease 2019 (COVID-19), caused by the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), has caused an unprecedented global social and economic impact, and high numbers of deaths. Many risk factors have been identified in the progression of COVID-19 into a severe and critical stage, including old age, male gender, underlying comorbidities such as hypertension, diabetes, obesity, chronic lung diseases, heart, liver and kidney diseases, tumors, clinically apparent immunodeficiencies, local immunodeficiencies, such as early type I interferon secretion capacity, and pregnancy. Possible complications include acute kidney injury, coagulation disorders, thoromboembolism. The development of lymphopenia and eosinopenia are laboratory indicators of COVID-19. Laboratory parameters to monitor disease progression include lactate dehydrogenase, procalcitonin, high-sensitivity C-reactive protein, proinflammatory cytokines such as interleukin (IL)-6, IL-1β, Krebs von den Lungen-6 (KL-6), and ferritin. The development of a cytokine storm and extensive chest computed tomography imaging patterns are indicators of a severe disease. In addition, socioeconomic status, diet, lifestyle, geographical differences, ethnicity, exposed viral load, day of initiation of treatment, and quality of health care have been reported to influence individual outcomes. In this review, we highlight the scientific evidence on the risk factors of severity of COVID-19.},
+year = {2021}
+}
+
+92. Type 2 diabetes prevalence among Canadian adults — dietary habits and sociodemographic risk factors
+https://cdnsciencepub.com/doi/10.1139/apnm-2018-0567
+@article{hosseini2019type,
+author = {Hosseini, Zeinab and Whiting, Susan J. and Vatanparast, Hassan},
+title = {Type 2 diabetes prevalence among Canadian adults — dietary habits and sociodemographic risk factors},
+journal = {Applied Physiology, Nutrition, and Metabolism},
+volume = {44},
+number = {10},
+pages = {1099-1104},
+year = {2019},
+doi = {10.1139/apnm-2018-0567},
+note ={PMID: 31386561},
+URL = {https://doi.org/10.1139/apnm-2018-0567},
+eprint = {https://doi.org/10.1139/apnm-2018-0567},
+abstract = { Patients with diagnosed diabetes receive recommendations by their healthcare providers about lifestyle modification, particularly on diet. The aim of this study was to determine the prevalence of type 2 diagnosed diabetes, undetected (undiagnosed) type 2 diabetes, and prediabetes of Canadian adults, and to evaluate whether individuals with diagnosed diabetes have different dietary intakes compared with the other groups. We used nationally representative data from Canadian Health Measures Survey Cycles 1 and 2 (n = 6807, representing estimated population of 23 022 890). We evaluated prevalence of diagnosed diabetes, undetected diabetes, and prediabetes and their distribution across sociodemographic and lifestyle factors. The intake from different food/food groups was compared between those with diagnosed diabetes and the rest of the population. Among Canadians 20–79 years of age, 12.4\% had prediabetes, and 7.5\% had diabetes. Among all diabetes cases, 37.3\% were undiagnosed. All 3 diabetic categories were more prevalent among older age groups (60–79 years) compared with younger age (20–39 years) groups. Diagnosed diabetes and prediabetes were more prevalent among less educated individuals compared with the higher educated ones. Diagnosed diabetes was more common among individuals with lower-middle income level compared with the highest income level. Diagnosed diabetes individuals had lower intake from juice and ice cream and higher intake from potatoes and diet soft drinks compared with other groups. More than 600 000 adults were unaware of their diabetes status; the aware ones had lower intakes of sugar-containing foods. In evaluating the association between dietary intake and risk of chronic diseases in populations, diagnosed diabetes cases should be evaluated separately. }
+}
+
+93. What defines an efficacious COVID-19 vaccine? A review of the challenges assessing the clinical efficacy of vaccines against SARS-CoV-2
+https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30773-8/fulltext
+﻿@article{hodgson2021defines,
+author={Hodgson, Susanne H. and Mansatta, Kushal and Mallett, Garry and Harris, Victoria and Emary, Katherine R. W. and Pollard, Andrew J.},
+title={What defines an efficacious COVID-19 vaccine? A review of the challenges assessing the clinical efficacy of vaccines against SARS-CoV-2},
+journal={The Lancet Infectious Diseases},
+year={2021},
+month={Feb},
+day={01},
+publisher={Elsevier},
+volume={21},
+number={2},
+pages={e26-e35},
+issn={1473-3099},
+doi={10.1016/S1473-3099(20)30773-8},
+url={https://doi.org/10.1016/S1473-3099(20)30773-8}
+}
+
+94. Safety, tolerability, and immunogenicity of an inactivated SARS-CoV-2 vaccine in healthy adults aged 18–59 years: a randomised, double-blind, placebo-controlled, phase 1/2 clinical trial
+https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30843-4/fulltext
+﻿@article{zhang2021safety,
+author={Zhang, Yanjun and Zeng, Gang and Pan, Hongxing and Li, Changgui and Hu, Yaling and Chu, Kai and Han, Weixiao and Chen, Zhen and Tang, Rong and Yin, Weidong and Chen, Xin and Hu, Yuansheng and Liu, Xiaoyong and Jiang, Congbing and Li, Jingxin and Yang, Minnan and Song, Yan and Wang, Xiangxi and Gao, Qiang and Zhu, Fengcai},
+title={Safety, tolerability, and immunogenicity of an inactivated SARS-CoV-2 vaccine in healthy adults aged 18{\&}{\#}x2013;59 years: a randomised, double-blind, placebo-controlled, phase 1/2 clinical trial},
+journal={The Lancet Infectious Diseases},
+year={2021},
+month={Feb},
+day={01},
+publisher={Elsevier},
+volume={21},
+number={2},
+pages={181-192},
+issn={1473-3099},
+doi={10.1016/S1473-3099(20)30843-4},
+url={https://doi.org/10.1016/S1473-3099(20)30843-4}
+}
+
+95. Safety, tolerability, and immunogenicity of an inactivated SARS-CoV-2 vaccine (CoronaVac) in healthy adults aged 60 years and older: a randomised, double-blind, placebo-controlled, phase 1/2 clinical trial
+https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30987-7/fulltext
+@article{wu2021safety,
+author={Wu, Zhiwei and Hu, Yaling and Xu, Miao and Chen, Zhen and Yang, Wanqi and Jiang, Zhiwei and Li, Minjie and Jin, Hui and Cui, Guoliang and Chen, Panpan and Wang, Lei and Zhao, Guoqing and Ding, Yuzhu and Zhao, Yuliang and Yin, Weidong},
+title={Safety, tolerability, and immunogenicity of an inactivated SARS-CoV-2 vaccine (CoronaVac) in healthy adults aged 60 years and older: a randomised, double-blind, placebo-controlled, phase 1/2 clinical trial},
+journal={The Lancet Infectious Diseases},
+year={2021},
+month={Jun},
+day={01},
+publisher={Elsevier},
+volume={21},
+number={6},
+pages={803-812},
+issn={1473-3099},
+doi={10.1016/S1473-3099(20)30987-7},
+url={https://doi.org/10.1016/S1473-3099(20)30987-7}
+}
+
+96. FDA-authorized COVID-19 vaccines are effective per real-world evidence synthesized across a multi-state health system
+https://www.medrxiv.org/content/10.1101/2021.02.15.21251623v3
+@article{pawlowski2021fda,
+	author = {Colin Pawlowski and Patrick Lenehan and Arjun Puranik and Vineet Agarwal and AJ Venkatakrishnan and Michiel J.M. Niesen and John C. O{\textquoteright}Horo and Abinash Virk and Melanie D. Swift and Andrew D. Badley and John Halamka and Venky Soundararajan},
+	title = {FDA-authorized COVID-19 vaccines are effective per real-world evidence synthesized across a multi-state health system},
+	elocation-id = {2021.02.15.21251623},
+	year = {2021},
+	doi = {10.1101/2021.02.15.21251623},
+	publisher = {Cold Spring Harbor Laboratory Press},
+	abstract = {Large Phase 3 clinical trials of the two FDA-authorized COVID-19 vaccines, mRNA-1273 (Moderna) and BNT162b2 (Pfizer/BioNTech), have demonstrated efficacies of 94.1\% (n = 30,420, 95\% CI: 89.3-96.8) and 95\% (n = 43,448, 95\% CI: 90.3-97.6) in preventing symptomatic COVID-19, respectively. Given the ongoing vaccine rollout to healthcare personnel and residents of long-term care facilities, here we provide a preliminary assessment of real-world vaccination efficacy in 62,138 individuals from the Mayo Clinic and associated health system (Arizona, Florida, Minnesota, Wisconsin) between December 1st 2020 and February 8th 2021. Our retrospective analysis contrasts 31,069 individuals receiving at least one dose of either vaccine with 31,069 unvaccinated individuals who are propensity-matched based on demographics, location (zip code), and number of prior SARS-CoV-2 PCR tests. 8,041 individuals received two doses of a COVID-19 vaccine and were at risk for infection at least 36 days after their first dose. Administration of two COVID-19 vaccine doses was 88.7\% effective in preventing SARS-CoV-2 infection (95\% CI: 68.4-97.1\%) with onset at least 36 days after the first dose. Furthermore, vaccinated patients who were subsequently diagnosed with COVID-19 had significantly lower 14-day hospital admission rates than propensity-matched unvaccinated COVID-19 patients (3.7\% vs. 9.2\%; Relative Risk: 0.4; p-value: 0.007). Building upon the previous randomized trials of these vaccines, this study demonstrates their real-world effectiveness in reducing the rates of SARS-CoV-2 infection and COVID-19 severity among individuals at highest risk for infection.Competing Interest StatementCP, PL, AP, VA, AV, MN, and VS are employees of nference and have financial interests in the company and in the successful application of this research. JCO receives personal fees from Elsevier and Bates College, and receives small grants from nference, Inc, outside the submitted work. ADB is a consultant for Abbvie, is on scientific advisory boards for nference and Zentalis, and is founder and President of Splissen therapeutics. JH, JCO, and ADB are employees of the Mayo Clinic. The Mayo Clinic may stand to gain financially from the successful outcome of the research. This research has been reviewed by the Mayo Clinic Conflict of Interest Review Board and is being conducted in compliance with Mayo Clinic Conflict of Interest policies. Funding StatementThis research was funded by nference.Author DeclarationsI confirm all relevant ethical guidelines have been followed, and any necessary IRB and/or ethics committee approvals have been obtained.YesThe details of the IRB/oversight body that provided approval or exemption for the research described are given below:This study was reviewed and approved by the Mayo Clinic Institutional Review Board (IRB 20-003278) as a minimal risk study. Subjects were excluded if they did not have a research authorization on file. The IRB approved was titled: Study of COVID-19 patient characteristics with augmented curation of Electronic Health Records (EHR) to inform strategic and operational decisions with the Mayo Clinic. The following resource provides further information on the Mayo Clinic{\textquoteright}s institutional review board and adherence to basic ethical principles underlying the conduct of research, and ensuring that the rights and well-being of potential research subjects are adequately protected(https://www.mayo.edu/research/institutional-review-board/overview).All necessary patient/participant consent has been obtained and the appropriate institutional forms have been archived.YesI understand that all clinical trials and any other prospective interventional studies must be registered with an ICMJE-approved registry, such as ClinicalTrials.gov. I confirm that any such study reported in the manuscript has been registered and the trial registration ID is provided (note: if posting a prospective study registered retrospectively, please provide a statement in the trial ID field explaining why the study was not registered in advance).Yes I have followed all appropriate research reporting guidelines and uploaded the relevant EQUATOR Network research reporting checklist(s) and other pertinent material as supplementary files, if applicable.YesAfter publication, the data will be made available to others upon reasonable requests to the corresponding author (venky@nference.net). A proposal with a detailed description of study objectives and the statistical analysis plan will be needed for evaluation of the reasonability of requests. Deidentified data will be provided after approval from the corresponding author and the Mayo Clinic.},
+	URL = {https://www.medrxiv.org/content/early/2021/02/27/2021.02.15.21251623},
+	eprint = {https://www.medrxiv.org/content/early/2021/02/27/2021.02.15.21251623.full.pdf},
+	journal = {medRxiv}
+}
+
+97. Interim Estimates of Vaccine Effectiveness of BNT162b2 and mRNA-1273 COVID-19 Vaccines in Preventing SARS-CoV-2 Infection Among Health Care Personnel, First Responders, and Other Essential and Frontline Workers — Eight U.S. Locations, December 2020–March 2021
+https://www.cdc.gov/mmwr/volumes/70/wr/mm7013e3.htm?s_cid=mm7013e3_w#suggestedcitation
+@article{thompson2021interim,
+  title={Interim estimates of vaccine effectiveness of BNT162b2 and mRNA-1273 COVID-19 vaccines in preventing SARS-CoV-2 infection among health care personnel, first responders, and other essential and frontline workers—eight US locations, December 2020--March 2021},
+  author={Thompson, Mark G and Burgess, Jefferey L and Naleway, Allison L and Tyner, Harmony L and Yoon, Sarang K and Meece, Jennifer and Olsho, Lauren EW and Caban-Martinez, Alberto J and Fowlkes, Ashley and Lutrick, Karen and others},
+  journal={Morbidity and Mortality Weekly Report},
+  volume={70},
+  number={13},
+  pages={495-500},
+  year={2021},
+  publisher={Centers for Disease Control and Prevention},
+  url = {http://dx.doi.org/10.15585/mmwr.mm7013e3}
+}
+
+
+
+
+
+
+
+
+https://www.sciencedirect.com/topics/biochemistry-genetics-and-molecular-biology/coronavirinae
+
+https://www.nature.com/articles/s41598-021-94609-3 == Matrices de interacción

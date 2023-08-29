@@ -1,0 +1,32 @@
+#1 (Zhou et al., 2020)
+@article{zhou2020pneumonia,
+author={Zhou, Peng and Yang, Xing-Lou and Wang, Xian-Guang and Hu, Ben and Zhang, Lei and Zhang, Wei and Si, Hao-Rui and Zhu, Yan and Li, Bei and Huang, Chao-Lin and Chen, Hui-Dong and Chen, Jing and Luo, Yun and Guo, Hua and Jiang, Ren-Di and Liu, Mei-Qin and Chen, Ying and Shen, Xu-Rui and Wang, Xi and Zheng, Xiao-Shuang and Zhao, Kai and Chen, Quan-Jiao and Deng, Fei and Liu, Lin-Lin and Yan, Bing and Zhan, Fa-Xian and Wang, Yan-Yi and Xiao, Geng-Fu and Shi, Zheng-Li},
+title={A pneumonia outbreak associated with a new coronavirus of probable bat origin},
+journal={Nature},
+year={2020},
+month={Mar},
+day={01},
+volume={579},
+number={7798},
+pages={270-273},
+abstract={Since the outbreak of severe acute respiratory syndrome (SARS) 18 years ago, a large number of SARS-related coronaviruses (SARSr-CoVs) have been discovered in their natural reservoir host, bats1--4. Previous studies have shown that some bat SARSr-CoVs have the potential to infect humans5--7. Here we report the identification and characterization of a new coronavirus (2019-nCoV), which caused an epidemic of acute respiratory syndrome in humans in Wuhan, China. The epidemic, which started on 12 December 2019, had caused 2,794 laboratory-confirmed infections including 80 deaths by 26 January 2020. Full-length genome sequences were obtained from five patients at an early stage of the outbreak. The sequences are almost identical and share 79.6{\%} sequence identity to SARS-CoV. Furthermore, we show that 2019-nCoV is 96{\%} identical at the whole-genome level to a bat coronavirus. Pairwise protein sequence analysis of seven conserved non-structural proteins domains show that this virus belongs to the species of SARSr-CoV. In addition, 2019-nCoV virus isolated from the bronchoalveolar lavage fluid of a critically ill patient could be neutralized by sera from several patients. Notably, we confirmed that 2019-nCoV uses the same cell entry receptor---angiotensin converting enzyme II (ACE2)---as SARS-CoV.},
+issn={1476-4687},
+doi={10.1038/s41586-020-2012-7},
+url={https://doi.org/10.1038/s41586-020-2012-7}
+}
+
+#2 (Sharma et al., 2021)
+@Article{sharma2021covid,
+AUTHOR = {Sharma, Anshika and Ahmad Farouk, Isra and Lal, Sunil Kumar},
+TITLE = {COVID-19: A Review on the Novel Coronavirus Disease Evolution, Transmission, Detection, Control and Prevention},
+JOURNAL = {Viruses},
+VOLUME = {13},
+YEAR = {2021},
+NUMBER = {2},
+ARTICLE-NUMBER = {202},
+URL = {https://www.mdpi.com/1999-4915/13/2/202},
+PubMedID = {33572857},
+ISSN = {1999-4915},
+ABSTRACT = {Three major outbreaks of the coronavirus, a zoonotic virus known to cause respiratory disease, have been reported since 2002, including SARS-CoV, MERS-CoV and the most recent 2019-nCoV, or more recently known as SARS-CoV-2. Bats are known to be the primary animal reservoir for coronaviruses. However, in the past few decades, the virus has been able to mutate and adapt to infect humans, resulting in an animal-to-human species barrier jump. The emergence of a novel coronavirus poses a serious global public health threat and possibly carries the potential of causing a major pandemic outbreak in the na&iuml;ve human population. The recent outbreak of COVID-19, the disease caused by SARS-CoV-2, in Wuhan, Hubei Province, China has infected over 36.5 million individuals and claimed over one million lives worldwide, as of 8 October 2020. The novel virus is rapidly spreading across China and has been transmitted to 213 other countries/territories across the globe. Researchers have reported that the virus is constantly evolving and spreading through asymptomatic carriers, further suggesting a high global health threat. To this end, current up-to-date information on the coronavirus evolution and SARS-CoV-2 modes of transmission, detection techniques and current control and prevention strategies are summarized in this review.},
+DOI = {10.3390/v13020202}
+}

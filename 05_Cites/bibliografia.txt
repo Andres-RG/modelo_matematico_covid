@@ -1,0 +1,193 @@
+@article{sharma2021covid,
+  title={COVID-19: A review on the novel coronavirus disease evolution, transmission, 
+detection, control and prevention},
+  author={Sharma, Anshika and Ahmad Farouk, Isra and Lal, Sunil Kumar},
+  journal={Viruses},
+  volume={13},
+  number={2},
+  pages={202},
+  year={2021},
+  publisher={MDPI}
+}
+
+@article{murugan2021covid,
+  title={COVID-19: A review of newly formed viral clades, pathophysiology, therapeutic 
+strategies and current vaccination tasks},
+  author={Murugan, Chandran and Ramamoorthy, Sharmiladevi and Kuppuswamy, Guruprasad and 
+Murugan, Rajesh Kumar and Sivalingam, Yuvaraj and Sundaramurthy, Anandhakumar},
+  journal={International Journal of Biological Macromolecules},
+  volume={193},
+  pages={1165--1200},
+  year={2021},
+  publisher={Elsevier}
+}
+
+@article{grassly2008mathematical,
+  title={Mathematical models of infectious disease transmission},
+  author={Grassly, Nicholas C and Fraser, Christophe},
+  journal={Nature Reviews Microbiology},
+  volume={6},
+  number={6},
+  pages={477--487},
+  year={2008},
+  publisher={Nature Publishing Group}
+}
+
+@article{zeb2020mathematical,
+  title={Mathematical model for coronavirus disease 2019 (COVID-19) containing isolation 
+class},
+  author={Zeb, Anwar and Alzahrani, Ebraheem and Erturk, Vedat Suat and Zaman, Gul},
+  journal={BioMed research international},
+  volume={2020},
+  year={2020},
+  publisher={Hindawi}
+}
+
+@article{adiga2020mathematical,
+  title={Mathematical models for covid-19 pandemic: a comparative analysis},
+  author={Adiga, Aniruddha and Dubhashi, Devdatt and Lewis, Bryan and Marathe, Madhav and 
+Venkatramanan, Srinivasan and Vullikanti, Anil},
+  journal={Journal of the Indian Institute of Science},
+  volume={100},
+  number={4},
+  pages={793--807},
+  year={2020},
+  publisher={Springer}
+}
+
+@article{desolver2010,
+    title = {Solving Differential Equations in {R}: Package de{S}olve},
+    author = {Karline Soetaert and Thomas Petzoldt and R. Woodrow Setzer},
+    journal = {Journal of Statistical Software},
+    volume = {33},
+    number = {9},
+    pages = {1--25},
+    year = {2010},
+    doi = {10.18637/jss.v033.i09},
+    keywords = {ordinary differential equations, partial differential
+    equations, differential algebraic equations, initial value problems,
+    R, FORTRAN, C},
+}
+
+@article{miramontes2020entendamos,
+  title={Entendamos el COVID-19 en M{\'e}xico},
+  author={Miramontes, Octavio},
+  journal={COVID-19 en M{\'e}xico},
+  year={2020}
+}
+
+@article{buchholz2020modellierung,
+  title={Modellierung von Beispielszenarien der SARS-CoV-2-Ausbreitung und Schwere in 
+Deutschland},
+  author={Buchholz, Udo and others},
+  year={2020},
+  publisher={Robert Koch-Institut}
+}
+
+@article{bhapkar2020revisited,
+  title={Revisited COVID-19 mortality and recovery rates: are we missing recovery time 
+period?},
+  author={Bhapkar, HR and Mahalle, Parikshit N and Dey, Nilanjan and Santosh, KC},
+  journal={Journal of Medical Systems},
+  volume={44},
+  number={12},
+  pages={1--5},
+  year={2020},
+  publisher={Springer}
+}
+
+@article{xin2022estimating,
+  title={Estimating the latent period of coronavirus disease 2019 (COVID-19)},
+  author={Xin, Hualei and Li, Yu and Wu, Peng and Li, Zhili and Lau, Eric HY and Qin, Ying and 
+Wang, Liping and Cowling, Benjamin J and Tsang, Tim K and Li, Zhongjie},
+  journal={Clinical Infectious Diseases},
+  volume={74},
+  number={9},
+  pages={1678--1681},
+  year={2022},
+  publisher={Oxford University Press US}
+}
+
+@article{quesada2021incubation,
+  title={Incubation period of COVID-19: A systematic review and meta-analysis},
+  author={Quesada, JA and L{\'o}pez-Pineda, A and Gil-Guill{\'e}n, VF and Arriero-Mar{\'\i}n, 
+JM and Guti{\'e}rrez, F and Carratala-Munuera, C},
+  journal={Revista Cl{\'\i}nica Espa{\~n}ola (English Edition)},
+  volume={221},
+  number={2},
+  pages={109--117},
+  year={2021},
+  publisher={Elsevier}
+}
+
+@article{ahrenfeldt2021sex,
+  title={Sex and age differences in COVID-19 mortality in Europe},
+  author={Ahrenfeldt, Linda Juel and Otavova, Martina and Christensen, Kaare and 
+Lindahl-Jacobsen, Rune},
+  journal={Wiener klinische Wochenschrift},
+  volume={133},
+  number={7},
+  pages={393--398},
+  year={2021},
+  publisher={Springer}
+}
+
+@article{bruine2021age,
+  title={Age differences in COVID-19 risk perceptions and mental health: Evidence from a 
+national US survey conducted in March 2020},
+  author={Bruine de Bruin, W{\"a}ndi},
+  journal={The Journals of Gerontology: Series B},
+  volume={76},
+  number={2},
+  pages={e24--e29},
+  year={2021},
+  publisher={Oxford University Press US}
+}
+
+@article{costagliola2021age,
+  title={Age-related differences in the immune response could contribute to determine the 
+spectrum of severity of COVID-19},
+  author={Costagliola, Giorgio and Spada, Erika and Consolini, Rita},
+  journal={Immunity, inflammation and disease},
+  volume={9},
+  number={2},
+  pages={331--339},
+  year={2021},
+  publisher={Wiley Online Library}
+}
+
+@article{bhopal2021children,
+  title={Children and young people remain at low risk of COVID-19 mortality},
+  author={Bhopal, Sunil S and Bagaria, Jayshree and Olabi, Bayanne and Bhopal, Raj},
+  journal={The Lancet Child \& Adolescent Health},
+  volume={5},
+  number={5},
+  pages={e12--e13},
+  year={2021},
+  publisher={Elsevier}
+}
+
+@misc{gdlineamiento,
+  title={Lineamiento para la atenci{\'o}n de pacientes por COVID-2019: Secretar{\'\i}a de 
+Salud; 2020},
+  author={Gd, M{\'e}xico}
+}
+
+@Manual{rcitation,
+    title = {R: A Language and Environment for Statistical Computing},
+    author = {{R Core Team}},
+    organization = {R Foundation for Statistical Computing},
+    address = {Vienna, Austria},
+    year = {2022},
+    url = {https://www.R-project.org/},
+  }
+
+@Manual{hclust_stats,
+    title = {R: A Language and Environment for Statistical Computing},
+    author = {{R Core Team}},
+    organization = {R Foundation for Statistical Computing},
+    address = {Vienna, Austria},
+    year = {2022},
+    url = {https://www.R-project.org/},
+  }
+

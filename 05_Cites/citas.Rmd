@@ -1,0 +1,443 @@
+---
+title: "Protocolo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-11-17"
+output: 
+    html_document:
+        toc: true
+        toc_depth: 6
+        collapsed: false
+        smooth_scroll: true
+bibliography: referencias.bib
+csl: apa.csl
+---
+
+# Referencias para la tesis
+
+# 2. Antecedentes
+
+## 2.1. Características de los coronavirus y de SARS-CoV-2
+
+### 2.1.1. Origen de la COVID-19
+
+1. [@zhou2020pneumonia]
+
+2. [@sharma2021covid]
+
+3. [@sharma2021covid]
+
+4. [@li2020evolutionary; @sharma2021covid]
+
+### 2.1.2. Familia *coronaviridae*
+
+5. [@GAURAV2019271; @BURRELL2017437]
+
+6. [@BURRELL2017437; @murugan2021covid]
+
+7. [@BURRELL2017437]
+
+8. [@BURRELL2017437]
+
+9. [@BURRELL2017437]
+
+10. [@BURRELL2017437; @andersen2020proximal; @murugan2021covid]
+
+### 2.1.3. Estructura los Coronavirus
+
+11. [@GAURAV2019271; @BURRELL2017437]
+
+### 2.1.4. Genoma de SARS-CoV-2
+
+12. [@GAURAV2019271; @murugan2021covid]
+
+13. [@GAURAV2019271; @murugan2021covid; @BURRELL2017437]
+
+14. [@BURRELL2017437]
+
+15. [@BURRELL2017437]
+
+16. [@GAURAV2019271; @BURRELL2017437]
+
+17. [@BURRELL2017437]
+
+18. [@BURRELL2017437; @murugan2021covid]
+
+19. [@dhama2022global; @tao2021biological]
+
+### 2.1.5 Ciclo de replicación de SARS-CoV-2
+
+20. [@salian2021covid; @pizzato2022sars; @harrison2020mechanisms]
+
+21. [@salian2021covid]
+
+22. [@salian2021covid; @harrison2020mechanisms; @pizzato2022sars; @BURRELL2017437]
+
+23. [@salian2021covid; @pizzato2022sars]
+
+24. [@BURRELL2017437]
+
+25. [@harrison2020mechanisms; @pizzato2022sars; @BURRELL2017437]
+
+26. [@harrison2020mechanisms]
+
+27. [@harrison2020mechanisms; @pizzato2022sars]
+
+28. [@BURRELL2017437; @harrison2020mechanisms]
+
+29. [@BURRELL2017437]
+
+30. [@harrison2020mechanisms; @pizzato2022sars]
+
+### 2.1.6. Aparición del SARS-CoV-2
+
+31. [@salian2021covid]
+
+32. [@li2020evolutionary]
+
+33. [@salian2021covid]
+
+34. [@li2020evolutionary]
+
+35. [@salian2021covid]
+
+36. [@salian2021covid]
+
+37. [@xiao2020isolation] en [@sharma2021covid]
+
+38. [@xiao2020isolation] en [@sharma2021covid]
+
+## 2.2. Pandemia por COVID-19
+
+### 2.2.1 Transmisión del SARS-CoV-2
+
+39. [@harrison2020mechanisms]
+
+40. [@harrison2020mechanisms; @salian2021covid; @lotfi2020covid; @sharma2021covid]
+
+41. [@morawska2020airborne]
+
+42. [@morawska2020airborne]
+
+43. [@salian2021covid; @sharma2021covid]
+
+44. [@sharma2021covid; @lotfi2020covid; @harrison2020mechanisms]
+
+45. [@sharma2021covid]
+
+46. [@sharma2021covid]
+
+47. [@sharma2021covid; @harrison2020mechanisms]
+
+### 2.2.2. Manifestaciones clínicas
+
+48. [@salian2021covid]
+
+49. [@lotfi2020covid]
+
+50. [@salian2021covid; @lotfi2020covid]
+
+51. [@salian2021covid]
+
+52. [@lotfi2020covid]
+
+53. [@harrison2020mechanisms]
+
+54. [@ssaludcovid]
+
+#### 2.2.2.1. Respuestas inmunitarias ante el SARS-CoV-2
+
+55. [@murugan2021covid]
+
+56. [@murugan2021covid; @BURRELL2017437; @harrison2020mechanisms]
+
+#### 2.2.2.2. Patogenesis del SARS-CoV-2
+
+57. [@pizzato2022sars]
+
+58. [@harrison2020mechanisms]
+
+59. [@liao2020single; @harrison2020mechanisms]
+
+60. [@harrison2020mechanisms]
+
+61. [@puntmann2020outcomes; @liao2020single; @qin2020dysregulation; @chen2021sars; @nicholls2003lung; @channappanavar2017pathogenic; @varga2020endothelial; @hadjadj2020impaired; @harrison2020mechanisms]
+
+#### 2.2.2.2. Etapas de la enfermedad
+
+62. [@lauer2020incubation]
+
+##### 2.2.2.2.1. Periodo de incubación
+
+63. [@cdc2022CasesData]
+
+64. [@murugan2021covid; @lauer2020incubation; @salian2021covid; @pizzato2022sars; @harrison2020mechanisms]
+
+65. [@backer2020incubation; @lauer2020incubation]
+
+66. [@linton2020incubation; @lauer2020incubation]
+
+67. [@virlogeux2016comparison; @varia2003investigation; @lauer2020incubation]
+
+68. [@acosta2022covid]
+
+##### 2.2.2.2.2. Pacientes con sintomatología leve
+
+69. [@lauer2020incubation]
+
+70. [@oran2020prevalence]
+
+71. [@he2021proportion]
+
+##### 2.2.2.2.3. Infección clínica
+
+72. [@salian2021covid]
+
+73. [@cdc2022CasesData]
+
+74. [@secsalud2021covid]
+
+75. [@tsai2021clinical]
+
+
+##### 2.2.2.2.4. Casos hospitalizados
+
+76. [@cdc2022CasesData]
+
+77. [@murugan2021covid]
+
+78. [@fan2020clinical]
+
+##### 2.2.2.2.5. Asistencia respiratoria
+
+79. [@salian2021covid]
+
+80. [@gibson2020covid; @acosta2022covid]
+
+##### 2.2.2.2.6. Fallecimiento de los pacientes
+
+81. [@cdc2022CasesData; @secsalud2021covid]
+
+82. [@KLOK2020145; @murugan2021covid]
+
+83. [@gibson2020covid]
+
+84. [@wu2020risk; @gibson2020covid]
+
+85. [@zhang2023risk]
+
+86. [@wu2020estimating; @zhang2023risk]
+
+### 2.2.3. Técnicas de diagnóstico y detección
+
+87. [@kevadiya2021diagnostics]
+
+88. [@murugan2021covid; @sharma2021covid]
+
+89. [@guan2020clinical; @murugan2021covid]
+
+90. [@guan2020clinical]
+
+91. [@vandenberg2021considerations]
+
+92. [@long2020diagnosis]
+
+#### 2.2.3.1. Principales técnicas de detección de SARS-CoV-2
+
+##### 2.2.3.1.1. RT-PCR
+
+93. [@kevadiya2021diagnostics]
+
+94. [@vandenberg2021considerations]
+
+95. [@sharma2021covid]
+
+96. [@chan2020familial]
+
+97. [@corman2020detection]
+
+98. [@sharma2021covid]
+
+99. [@murugan2021covid]
+
+100. [@vogels2020salivadirect]
+
+101. [@murugan2021covid; @kevadiya2021diagnostics; @vandenberg2021considerations; @long2020diagnosis]
+
+102. [@kevadiya2021diagnostics; @vandenberg2021considerations]
+
+103. [@murugan2021covid]
+
+##### 2.2.3.1.2. Radiología
+
+104. [@murugan2021covid; @sharma2021covid]
+
+105. [@murugan2021covid]
+
+106. [@murugan2021covid; @sharma2021covid; @kevadiya2021diagnostics; @long2020diagnosis]
+
+107. [@parekh2020review]
+
+108. [@murugan2021covid; @kevadiya2021diagnostics]
+
+109. [@wang2020temporal]
+
+110. [@bernheim2020chest]
+
+111. [@long2020diagnosis]
+
+112. [@fang2020sensitivity]
+
+113. [@sharma2021covid]
+
+114. [@murugan2021covid]
+
+115. [@loey2020within; @ozturk2020automated; @rahimzadeh2020modified; @huang2021artificial]
+
+##### 2.2.3.1.3. Ensayos inmunológicos
+
+116. [@murugan2021covid]
+
+117. [@sharma2021covid]
+
+118. [@kevadiya2021diagnostics]
+
+119. [@safiabadi2021tools]
+
+120. [@ejazi2021antibody]
+
+121. [@murugan2021covid; @kevadiya2021diagnostics]
+
+122. [@lv2020cross; @long2020antibody; @murugan2021covid]
+
+123. [@kevadiya2021diagnostics]
+
+124. [@kevadiya2021diagnostics]
+
+125. [@safiabadi2021tools]
+
+126. [@safiabadi2021tools]
+
+127. [@safiabadi2021tools]
+
+128. [@lab2022chopoa]
+
+129. [@lab2022chopob]
+
+130. [@amunet2022elisa]
+
+##### 2.2.3.1.4. Kits de pruebas rápidas
+
+131. [@sharma2021covid]
+
+132. [@kevadiya2021diagnostics]
+
+133. [@cdc2023rat]
+
+134. [@yamayoshi2020comparison]
+
+135. [@sharma2021covid; @cdc2023rat]
+
+#### 2.2.3.2 Consideraciones de la OMS
+
+136. [@10665-330861]
+
+137. [@murugan2021covid; @kevadiya2021diagnostics; @liu2020positive]
+
+138. [@surveillance2020owho]
+
+139. [@10665-330861]
+
+140. [@10665-330861]
+
+141. [@10665-330861]
+
+142. [@10665-330861]
+
+143. [@10665-330861]
+
+144. [@10665-330861]
+
+145. [@10665-330861]
+
+146. [@WHOpolicybrief2022]
+
+#### 2.2.3.3 Técnicas aprobadas e implementadas en México
+
+147. [@palomino2022identificacion]
+
+148. [@cofepris2022pruebas]
+
+149. [@cofepris2020pruebas]
+
+150. [@indrelaboratorios]
+
+### 2.2.4. Principales tratamientos y terapias implementados
+
+148. [@murugan2021covid]
+
+149. [@heymann2020covid; @sharma2021covid]
+
+150. [@salian2021covid]
+
+151. [@lotfi2020covid]
+
+152. [@sharma2021covid]
+
+### 2.2.5. Epidemiología de COVID-19
+
+#### 2.2.5.1. Medidas de prevención epidemiológica para la detención de la pandemia
+
+153. [@cdc2023proteccion]
+
+154. [@secsaludprevencion]
+
+155. [@whocoronavirus]
+
+156. [@krittanawong2022covid]
+
+##### 2.2.5.1.1. Vacunación
+
+157. [@da2022two]
+
+158. [@who2023vaccines]
+
+#### 2.2.5.2. Factores de riesgo y protección
+
+159. [@zhang2023risk]
+
+160. [@pijls2021demographic; @zhang2023risk]
+
+161. [@ayoub2020characterizing; @zhang2023risk]
+
+162. [@wu2020estimating; @zhang2023risk]
+
+163. [@liu2020positive; @zhang2023risk]
+
+164. [@li2021epidemiology; @zhang2023risk]
+
+165. [@guan2020comorbidity; @zhang2023risk]
+
+166. [@bae2021impact; @zhang2023risk]
+
+167. [@gao2021risk; @zhang2023risk]
+
+168. [@hosseini2019type; @zhang2023risk]
+
+169. [@hodgson2021defines; @zhang2023risk]
+
+170. [@zhang2021safety; @wu2021safety; @zhang2023risk]
+
+171. [@pawlowski2021fda; @zhang2023risk; @thompson2021interim]
+
+<br>
+
+## 3. Fuentes de consulta
+
+<br>
+
+
+
+
+
+
+

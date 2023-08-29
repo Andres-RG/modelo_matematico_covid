@@ -1,0 +1,61 @@
+1. https://www.sciencedirect.com/topics/biochemistry-genetics-and-molecular-biology/coronavirinae
+2. https://www.mdpi.com/1999-4915/13/2/202 <---------------------------------------------------------------------------------------
+3. https://www.biorxiv.org/content/10.1101/2020.02.17.951335v1.full
+4. https://www.sciencedirect.com/science/article/pii/S0140673620301549
+5. https://www.sciencedirect.com/science/article/pii/S0141813021023011 <-----------------------------------------------------------
+6. https://www.sciencedirect.com/science/article/pii/B9780128154229000103 
+7. https://www.sciencedirect.com/science/article/pii/B978012375156000031X#s0035
+8. https://www.nature.com/articles/s41591-020-0820-9
+9. https://www.nature.com/articles/s41586-020-2012-7%EF%BC%89%E3%80%82
+10. https://www.acpjournals.org/doi/full/10.7326/M20-0504 
+11. https://onlinelibrary.wiley.com/doi/full/10.1002/jmv.25731
+12. https://www.frontiersin.org/articles/10.3389/fviro.2021.815388/full 
+13. https://www.sciencedirect.com/science/article/pii/S0009898120302503 
+14. https://pubs.acs.org/doi/full/10.1021/acs.molpharmaceut.0c00608# 
+15. https://www.sciencedirect.com/science/article/pii/S0092867420302294
+16. https://www.sciencedirect.com/science/article/pii/S016041202031254X
+17. https://www.sciencedirect.com/science/article/pii/S1471490620302337#s0015 
+18. https://www.nature.com/articles/s41579-020-00461-z. <--------------------------------------------------------------------------
+19. https://www.sciencedirect.com/science/article/pii/S0720048X20301509 <----------------------------------------------------------
+20. https://www.nejm.org/doi/full/10.1056/neJMoa2002032 <--------------------------------------------------------------------------
+21. https://www.sciencedirect.com/science/article/pii/S0009898120301121 <----------------------------------------------------------
+22. https://apps.who.int/iris/handle/10665/330861 <--------------------------------------------------------------------------------
+23. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7250750/ <------------------------------------------------------------------------
+https://www.sciencedirect.com/science/article/pii/S0009898120301121#s0020  ==  Tasa de positivos en SARS-CoV-2 de un hospital de Wuhan 
+24. https://www.eurosurveillance.org/content/10.2807/1560-7917.ES.2020.25.3.2000045;?crawler=true <--------------------------------
+25. https://www.sciencedirect.com/science/article/pii/S0140673620301549#cesec10 <--------------------------------------------------
+26. https://www.medrxiv.org/content/10.1101/2020.08.03.20167791v2 == SalivaDirect
+27. https://www.nature.com/articles/s41563-020-00906-z <---------------------------------------------------------------------------
+28. https://erj.ersjournals.com/content/33/4/821?sa=X&ved=2ahUKEwjMoNy5o9vxAhVvo4sKHYcRDvMQ9QF6BAgFEAI == Ground-Glass pacity <----
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7233482/  == Cambios temporales de los hallazgos de la TC en 90 pacientes con neumonía por COVID-19 
+29. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8142517/ == Técnicas de Diagnóstico <---------------------------------------------
+30. https://onlinelibrary.wiley.com/doi/full/10.1111/imcb.12397 == Ensayos Inmunológicos <-----------------------------------------
+31. https://www.gob.mx/cofepris/es/articulos/lista-de-pruebas-serologicas-aprobadas-al-04-de-agosto-2020-para-determinar-igg-e-igm-para-covid-19?idiom=es  == Pruebas aprobadas en Mexico Pt. 1 <---
+32. https://www.gob.mx/cofepris/acciones-y-programas/pruebas-autorizadas-para-covid-19  == Pruebas aprobadas en México Pt. 2 <-----
+33. https://www.mdpi.com/1999-4915/12/12/1420 == Pruebas rapidas COVID
+34. https://espanol.cdc.gov/coronavirus/2019-ncov/testing/self-testing.html  == Pruebas rápidas CDC
+35. https://apps.who.int/iris/bitstream/handle/10665/330376/WHO-2019-nCoV-Surveillance-v2020.1-eng.pdf  == Casos sospechosos OMS
+36. https://apps.who.int/iris/bitstream/handle/10665/330861/9789240001237-spa.pdf?sequence=1&isAllowed=y ==   Pruebas laboratorio
+    https://apps.who.int/iris/handle/10665/330861?locale-attribute=en&
+37. https://www.who.int/publications/i/item/WHO-2019-nCoV-Policy_Brief-Testing-2022.1  == Reseña Normativa OMS Pruebas 
+38, http://www.conamed.gob.mx/gobmx/boletin/pdf/Boletin30_Revista2022_02/b30_r202202_artic03_CCpruebascovid.pdf === Pruebas COVID Mexico
+39. https://www.gob.mx/cms/uploads/attachment/file/688705/LISTADO_DE_LABORATORIOS_QUE_REALIZAN_EL_DIAGN_STICO_DE_COVID-19_14-02-2022.pdf === Laboratorios autorizados
+40 https://www.gob.mx/cms/uploads/attachment/file/647401/LVL_VR-E_RT-PCR_en_tiempo_real_para_el_diagn_stico_de_SARS-CoV-2_Protocolo_de_Berlin.pdf === RT-PCR Protocolo Berlín
+41. https://www.nature.com/articles/s41591-020-0901-9   == Patogenesis de SARS-COV-2
+42. https://www.frontiersin.org/articles/10.3389/fpubh.2020.00473/full?s=09   == Modelo de Markov para los sintomas de COVID-19
+43. https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(23)00005-8/fulltext#:~:text=Initial%20estimates%20based%20on%20meta,1%20and%206%C2%B75%20days. 
+44. https://www.sciencedirect.com/science/article/pii/S2254887420301466
+45. https://jamanetwork.com/journals/jamaotolaryngology/article-abstract/2767781 
+46. https://www.frontiersin.org/articles/10.3389/fcimb.2021.777070/full?utm_source=dlvr.it&utm_medium=twitter
+47. Post COVID
+48. https://link.springer.com/article/10.1007/s12016-022-08921-5
+49. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8142517/ === R0
+
+
+
+
+
+
+
+
+
