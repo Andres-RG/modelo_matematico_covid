@@ -59,14 +59,14 @@ datos_varred <- mutate(datos_varred,
 datos_varred <- datos_varred %>% select(c(-TIPO_PACIENTE))
 # save(datos_varred, file = "03_Out/OutData/datos_positivos_reducidos.RData")
 datos_varred2 <- datos_varred[1:5000,]
-datos_varred21 <- datos_varred2[ , -5]
+datos_varred12 <- datos_varred[ , -5]
 # 3. PCA
-covid_pca <- PCA(datos_varred21, graph = F)
+covid_pca <- PCA(datos_varred12, graph = F)
 
 # 4. Plot
 fviz_pca_ind(covid_pca,
              geom.ind = "point", # show points only (but not "text")
-             col.ind = datos_varred2$RANGOS, # color by groups
+             col.ind = datos_varred$RANGOS, # color by groups
              addEllipses = TRUE, # Concentration ellipses
              legend.title = "Groups"
 )
