@@ -19,8 +19,9 @@ library(factoextra)
 library(tidyr)
 library(FactoMineR)
 library(vcd)
+library(vegan)
 
- # Se carga la base de datos
+# Se carga la base de datos
 load("03_Out/OutData/casos_positivos_rangos_edades.RData")
 
 # Se cargan las funciones
@@ -71,3 +72,43 @@ fviz_pca_ind(covid_pca,
              legend.title = "Groups"
 )
 
+# 40 entradas ----
+d1 <- filter(datos_varred, RANGOS == "18-")
+d2 <- filter(datos_varred, RANGOS == "70+")
+
+#m1 <- sample(nrow(d1),20, replace = F)
+#m2 <- sample(nrow(d2),20, replace = F)
+
+c1 <- c(d1[m1,])
+c2 <- c(d2[m2,])
+
+df1 <- data.frame(c1)
+df2 <- data.frame(c2)
+
+combined_df <- rbind(df1, df2)
+
+pca <- PCA(combined_df[,-5], graph = F)
+sp <- fviz_eig(pca)
+pcaplot <- fviz_pca_ind(pca,
+             geom.ind = "point", # show points only (but not "text")
+             col.ind = combined_df$RANGOS, # color by groups
+             legend.title = "Groups"
+)
+pcaplot
+
+#nmds estimador de distancia para datos discretos jaccard sorensen ----
+#cuanta variacion explica los dos primeros ejes, screeplot, eigenvector para ver si las variables originales explican la mayor variación
+
+set.seed(0)#Para que los resultados no se brinden aleatorios
+nmds1 <- metaMDS(combined_df[,-5], distance = "jaccard")
+nmds1
+stressplot(nmds1)
+plot(nmds1)
+coordenadas <- as.data.frame(scores(nmds1)$sites)
+coordenadas
+coordenadas$RANGOS = combined_df$RANGOS
+head(coordenadas)
+gr2<- ggplot(coordenadas, aes(x = NMDS1, y = NMDS2))+ 
+  geom_point(size = 4, aes( shape = RANGOS, colour = RANGOS))+
+  geom_text(hjust=0.5, vjust=1.5, label=combined_df$RANGOS)
+gr2
