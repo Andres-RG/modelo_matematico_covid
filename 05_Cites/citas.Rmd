@@ -433,6 +433,14 @@ csl: apa.csl
 
 172. [@suarez2020epidemiologia]
 
+### 2.2.6. Efectos de la pandemia en la población
+
+#### 2.2.6.1. Diferencias en la edad
+
+173. [@zhang2023risk]
+
+174. [@kauhanen2023systematic]
+
 
 <br>
 
