@@ -64,14 +64,7 @@ datos_varred12 <- datos_varred[ , -5]
 # 3. PCA
 covid_pca <- PCA(datos_varred12, graph = F)
 
-# 4. Plot
-fviz_pca_ind(covid_pca,
-             geom.ind = "point", # show points only (but not "text")
-             col.ind = datos_varred$RANGOS, # color by groups
-             addEllipses = TRUE, # Concentration ellipses
-             legend.title = "Groups"
-)
-
+# 4. NMDS 
 # 40 entradas ----
 d1 <- filter(datos_varred, RANGOS == "18-")
 d2 <- filter(datos_varred, RANGOS == "70+")
@@ -82,19 +75,10 @@ d2 <- filter(datos_varred, RANGOS == "70+")
 c1 <- c(d1[m1,])
 c2 <- c(d2[m2,])
 
-df1 <- data.frame(c1)
-df2 <- data.frame(c2)
+df1 <- data.frame(d1)
+df2 <- data.frame(d2)
 
 combined_df <- rbind(df1, df2)
-
-pca <- PCA(combined_df[,-5], graph = F)
-sp <- fviz_eig(pca)
-pcaplot <- fviz_pca_ind(pca,
-             geom.ind = "point", # show points only (but not "text")
-             col.ind = combined_df$RANGOS, # color by groups
-             legend.title = "Groups"
-)
-pcaplot
 
 #nmds estimador de distancia para datos discretos jaccard sorensen ----
 #cuanta variacion explica los dos primeros ejes, screeplot, eigenvector para ver si las variables originales explican la mayor variación
