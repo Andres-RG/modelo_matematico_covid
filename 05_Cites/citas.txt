@@ -1477,6 +1477,17 @@ https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0238678#abstra
 
 }
 
+102. Disasters Newsletter N.131 - Mental Health Supplement - October 2021
+https://www.paho.org/en/disasters-newsletter-no131-impact-covid-19-pandemic-mental-health-population
+@online{paho2021disasters,
+  author = {{Pan American Health Organization}},
+  organization = {{Pan American Health Organization}},
+  title = {Disasters Newsletter N.131 - Mental Health Supplement - October 2021},
+  url = {https://www.paho.org/en/disasters-newsletter-no131-impact-covid-19-pandemic-mental-health-population},	
+  year = {2021},
+  note = {Ingresado en Septiembre 04, 2023}
+}
+
 
 
 https://www.sciencedirect.com/topics/biochemistry-genetics-and-molecular-biology/coronavirinae
