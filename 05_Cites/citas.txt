@@ -1426,8 +1426,17 @@ doi={10.1007/s00787-022-02060-0},
 url={https://doi.org/10.1007/s00787-022-02060-0}
 }
 
-
-
+--CIFRAS FALLECIMIENTOS INEGI -------------------------...............................
+ESTADÍSTICAS DE DEFUNCIONES REGISTRADAS 2021
+https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2022/EDR/EDR2021_10.pdf
+@online{inegi2022estadisticas,
+  author = {{INEGI}},
+  organization = {{INEGI}},
+  title = {Estadísticas de defunciones registradas 2021},
+  url = {https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2022/EDR/EDR2021_10.pdf},	
+  year = {2022},
+  note = {Ingresado en Septiembre 04, 2023}
+}
 
 
 
