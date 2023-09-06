@@ -1552,7 +1552,7 @@ https://academic.oup.com/jid/article/226/9/1593/6569364
 
 107. Post-COVID-19 Syndrome
 https://journals.lww.com/nursingresearchonline/Fulltext/2022/03000/Post_COVID_19_Syndrome.13.aspx
-﻿@article{pierce2022post
+﻿@article{pierce2022post,
 author={Pierce, Janet D. and Shen, Qiuhua and Cintron, Samantha A. and Hiebert, John B.},
 title={Post-COVID-19 Syndrome},
 journal={Nursing Research},
