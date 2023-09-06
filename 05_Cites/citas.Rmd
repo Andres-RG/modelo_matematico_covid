@@ -229,7 +229,7 @@ csl: apa.csl
 
 #### 2.2.2.4. Post-Covid-19
 
-
+87. [@oronsky2023review; @salamanna2021post; @pierce2022post; @chen2022global; @ncird2023afecciones]
 
 ### 2.2.3. Técnicas de diagnóstico y detección
 

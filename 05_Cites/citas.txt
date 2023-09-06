@@ -1532,6 +1532,72 @@ https://espanol.cdc.gov/coronavirus/2019-ncov/long-term-effects/index.html
   note = {Ingresado en Septiembre 05, 2023}
 }
 
+106. Global Prevalence of Post-Coronavirus Disease 2019 (COVID-19) Condition or Long COVID: A Meta-Analysis and Systematic Review
+https://academic.oup.com/jid/article/226/9/1593/6569364
+@article{chen2022global,
+    author = {Chen, Chen and Haupert, Spencer R and Zimmermann, Lauren and Shi, Xu and Fritsche, Lars G and Mukherjee, Bhramar},
+    title = "{Global Prevalence of Post-Coronavirus Disease 2019 (COVID-19) Condition or Long COVID: A Meta-Analysis and Systematic Review }",
+    journal = {The Journal of Infectious Diseases},
+    volume = {226},
+    number = {9},
+    pages = {1593-1607},
+    year = {2022},
+    month = {04},
+    abstract = "{This study aims to examine the worldwide prevalence of post-coronavirus disease 2019 (COVID-19) condition, through a systematic review and meta-analysis.PubMed, Embase, and iSearch were searched on July 5, 2021 with verification extending to March 13, 2022. Using a random-effects framework with DerSimonian-Laird estimator, we meta-analyzed post-COVID-19 condition prevalence at 28+ days from infection.Fifty studies were included, and 41 were meta-analyzed. Global estimated pooled prevalence of post-COVID-19 condition was 0.43 (95\\% confidence interval [CI], .39–.46). Hospitalized and nonhospitalized patients had estimates of 0.54 (95\\% CI, .44–.63) and 0.34 (95\\% CI, .25–.46), respectively. Regional prevalence estimates were Asia (0.51; 95\\% CI, .37–.65), Europe (0.44; 95\\% CI, .32–.56), and United States of America (0.31; 95\\% CI, .21–.43). Global prevalence for 30, 60, 90, and 120 days after infection were estimated to be 0.37 (95\\% CI, .26–.49), 0.25 (95\\% CI, .15–.38), 0.32 (95\\% CI, .14–.57), and 0.49 (95\\% CI, .40–.59), respectively. Fatigue was the most common symptom reported with a prevalence of 0.23 (95\\% CI, .17–.30), followed by memory problems (0.14; 95\\% CI, .10–.19).This study finds post-COVID-19 condition prevalence is substantial; the health effects of COVID-19 seem to be prolonged and can exert stress on the healthcare system.}",
+    issn = {0022-1899},
+    doi = {10.1093/infdis/jiac136},
+    url = {https://doi.org/10.1093/infdis/jiac136},
+    eprint = {https://academic.oup.com/jid/article-pdf/226/9/1593/46717505/jiac136.pdf},
+}
+
+107. Post-COVID-19 Syndrome
+https://journals.lww.com/nursingresearchonline/Fulltext/2022/03000/Post_COVID_19_Syndrome.13.aspx
+﻿@article{pierce2022post
+author={Pierce, Janet D. and Shen, Qiuhua and Cintron, Samantha A. and Hiebert, John B.},
+title={Post-COVID-19 Syndrome},
+journal={Nursing Research},
+year={2022},
+volume={71},
+number={2},
+keywords={immunologic abnormalities; inflammatory damage; long-term symptoms of COVID-19; oxidative stress; post-COVID-19 syndrome},
+abstract={Background Since the beginning of the coronavirus disease 2019 (COVID-19) pandemic, many individuals have reported persistent symptoms and/or complications lasting beyond 4 weeks, which is now called post-COVID-19 syndrome. SARS-CoV-2 is a respiratory coronavirus that causes COVID-19, and injury to the lungs is expected; however, there is often damage to numerous other cells and organs, leading to an array of symptoms. These long-term symptoms occur in patients with mild to severe COVID-19; currently, there is limited literature on the potential pathophysiological mechanisms of this syndrome. Objectives  The purpose of this integrative review is to summarize and evaluate post-COVID-19 syndrome from a biological perspective. Methods  An integrative review was conducted using Whittemore and Knafl's methodology for literature published through August 30, 2021. The PubMed, CINAHL, and Web of Science databases were searched for articles published as of August 30, 2021, using combinations of the following key words: post-COVID-19 syndrome, post-SARS-CoV-2, long COVID-19, long COVID-19 syndrome, and pathophysiology of post-COVID-19. Data were analyzed using the constant comparison method. Results  The search generated 27,929 articles. After removing duplicates and screening abstracts and full-text reviews, we retained 68 articles and examined 54 specific articles related to the pathophysiology of post-COVID-19 syndrome. The findings from our review indicated that there were four pathophysiological categories involved: virus-specific pathophysiological variations, oxidative stress, immunologic abnormalities, and inflammatory damage. Discussion  Although studies examining the pathophysiology of post-COVID-19 syndrome are still relatively few, there is growing evidence that this is a complex and multifactorial syndrome involving virus-specific pathophysiological variations that affect many mechanisms but specifically oxidative stress, immune function, and inflammation. Further research is needed to elucidate the pathophysiology, pathogenesis, and longer term consequences involved in post-COVID-19 syndrome.},
+issn={0029-6562},
+url={https://journals.lww.com/nursingresearchonline/fulltext/2022/03000/post_covid_19_syndrome.13.aspx}
+}
+
+108. Post-COVID-19 Syndrome: The Persistent Symptoms at the Post-viral Stage of the Disease. A Systematic Review of the Current Data
+https://www.frontiersin.org/articles/10.3389/fmed.2021.653516/full
+@article{salamanna2021post,
+AUTHOR={Salamanna, Francesca and Veronesi, Francesca and Martini, Lucia and Landini, Maria Paola and Fini, Milena},
+TITLE={Post-COVID-19 Syndrome: The Persistent Symptoms at the Post-viral Stage of the Disease. A Systematic Review of the Current Data},
+JOURNAL={Frontiers in Medicine},
+VOLUME={8},
+YEAR={2021},
+URL={https://www.frontiersin.org/articles/10.3389/fmed.2021.653516},
+DOI={10.3389/fmed.2021.653516},
+ISSN={2296-858X},
+ABSTRACT={Whilst the entire world is battling the second wave of COVID-19, a substantial proportion of patients who have suffered from the condition in the past months are reporting symptoms that last for months after recovery, i. e., long-term COVID-19 symptoms. We aimed to assess the current evidence on the long-term symptoms in COVID-19 patients. We did a systematic review on PubMed, Web of Science, EMBASE, and Google Scholar from database inception to February 15, 2021, for studies on long-term COVID-19 symptoms. We included all type of papers that reported at least one long-term COVID-19 symptom. We screened studies using a standardized data collection form and pooled data from published studies. Cohort cross-sectional, case-report, cases-series, case-control studies, and review were graded using specific quality assessment tools. Of 11,361 publications found following our initial search we assessed 218 full-text articles, of which 145 met all selection criteria. We found that 20.70% of reports on long-term COVID-19 symptoms were on abnormal lung functions, 24.13% on neurologic complaints and olfactory dysfunctions, and 55.17% on specific widespread symptoms, mainly chronic fatigue, and pain. Despite the relatively high heterogeneity of the reviewed studies, our findings highlighted that a noteworthy proportion of patients who have suffered from SARS-CoV-2 infection present a “post-COVID syndrome.” The multifaceted understanding of all aspects of the COVID-19 pandemic, including these long-term symptoms, will allow us to respond to all the global health challenges, thus paving the way to a stronger public health.}
+}
+
+109. Post-COVID-19 Syndrome: The Persistent Symptoms at the Post-viral Stage of the Disease. A Systematic Review of the Current Data
+https://www.frontiersin.org/articles/10.3389/fmed.2021.653516/full
+﻿@article{oronsky2023review, 
+author={Oronsky, Bryan and Larson, Christopher and Hammond, Terese C. and Oronsky, Arnold and Kesari, Santosh and Lybeck, Michelle and Reid, Tony R.},
+title={A Review of Persistent Post-COVID Syndrome (PPCS)},
+journal={Clinical Reviews in Allergy {\&} Immunology},
+year={2023},
+month={Feb},
+day={01},
+volume={64},
+number={1},
+pages={66-74},
+abstract={Persistent post-COVID syndrome, also referred to as long COVID, is a pathologic entity, which involves persistent physical, medical, and cognitive sequelae following COVID-19, including persistent immunosuppression as well as pulmonary, cardiac, and vascular fibrosis. Pathologic fibrosis of organs and vasculature leads to increased mortality and severely worsened quality of life. Inhibiting transforming growth factor beta (TGF-$\beta$), an immuno- and a fibrosis modulator, may attenuate these post-COVID sequelae. Current preclinical and clinical efforts are centered on the mechanisms and manifestations of COVID-19 and its presymptomatic and prodromal periods; by comparison, the postdrome, which occurs in the aftermath of COVID-19, which we refer to as persistent post-COVID-syndrome, has received little attention. Potential long-term effects from post-COVID syndrome will assume increasing importance as a surge of treated patients are discharged from the hospital, placing a burden on healthcare systems, patients' families, and society in general to care for these medically devastated COVID-19 survivors. This review explores underlying mechanisms and possible manifestations of persistent post-COVID syndrome, and presents a framework of strategies for the diagnosis and management of patients with suspected or confirmed persistent post-COVID syndrome.},
+issn={1559-0267},
+doi={10.1007/s12016-021-08848-3},
+url={https://doi.org/10.1007/s12016-021-08848-3}
+}
+
+
 
 
 
