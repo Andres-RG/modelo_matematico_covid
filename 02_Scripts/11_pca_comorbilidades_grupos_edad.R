@@ -95,7 +95,12 @@ nmds1_resultados #---
 #jpeg("03_Out/Plots/stressplot_nmds1.jpeg", width = 395, height = 265, res = 300, units = "mm")
 stressplot(nmds1_resultados)
 #dev.off()
+# plot
 plot(nmds1_resultados)
+ordiplot(nmds1_resultados,type="n")
+orditorp(nmds1_resultados,display="species",col="red",air=0.01)
+orditorp(nmds1_resultados,display="sites",cex=1.25,air=0.01)
+#
 coordenadas <- as.data.frame(scores(nmds1_resultados)$sites)
 coordenadas
 coordenadas$RANGOS = combined_df$RANGOS
