@@ -23,7 +23,7 @@ library(vegan)
 
 # Se carga la base de datos
 load("03_Out/OutData/casos_positivos_rangos_edades.RData")
-nmds1 <- readRDS("03_Out/OutData/nmds1_resultados.rds")
+nmds1_resultados <- readRDS("03_Out/OutData/nmds1_resultados.rds")
 
 # Se cargan las funciones
 source("02_Scripts/Functions/Functions.R")
@@ -85,13 +85,13 @@ combined_df <- rbind(df1, df2)
 #cuanta variacion explica los dos primeros ejes, screeplot, eigenvector para ver si las variables originales explican la mayor variación
 
 set.seed(0)#Para que los resultados no se brinden aleatorios
-nmds1 <- metaMDS(combined_df[,-5], distance = "jaccard")
-saveRDS(nmds1, file = "03_Out/OutData/nmds1_resultados.rds",
-        compress = T) #GUARDAR OBJETO
-nmds1
-stressplot(nmds1)
-plot(nmds1)
-coordenadas <- as.data.frame(scores(nmds1)$sites)
+#nmds1 <- metaMDS(combined_df[,-5], distance = "jaccard")
+#saveRDS(nmds1, file = "03_Out/OutData/nmds1_resultados.rds",
+#        compress = "xz") #GUARDAR OBJETO
+nmds1_resultados
+stressplot(nmds1_resultados)
+plot(nmds1_resultados)
+coordenadas <- as.data.frame(scores(nmds1_resultados)$sites)
 coordenadas
 coordenadas$RANGOS = combined_df$RANGOS
 head(coordenadas)
