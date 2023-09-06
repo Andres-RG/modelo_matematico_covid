@@ -85,7 +85,7 @@ combined_df <- rbind(df1, df2)
 #cuanta variacion explica los dos primeros ejes, screeplot, eigenvector para ver si las variables originales explican la mayor variación
 
 set.seed(0)#Para que los resultados no se brinden aleatorios
-#nmds1 <- metaMDS(combined_df[,-5], distance = "jaccard")
+nmds1 <- metaMDS(combined_df[,-5], distance = "jaccard")
 saveRDS(nmds1, file = "03_Out/OutData/nmds1_resultados.rds",
         compress = T) #GUARDAR OBJETO
 nmds1
