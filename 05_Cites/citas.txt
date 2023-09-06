@@ -1520,6 +1520,20 @@ keywords = {COVID-19, Pandemics, Preparedness, Society, Emerging diseases},
 abstract = {The whole human society was caught unprepared by the emergence of SARS-CoV-2 and the related COVID-19 pandemic. This should have not been. We already had on hand all information to organize properly and prevent this emergence. However, this information was never translated into preparedness because the current system of sanitary crises management is not adapted. We keep implementing a medical, symptomatic, post-emergence approach which cannot stop an emerging pandemic. The only preventive action considered is the screening for viruses in the wild but it is not efficient since pandemic viruses do not exist in the wild, and indeed, have never been found. The emergence of a viral pandemic is the result of a double accident: the in-host evolution of the causative virus and its amplification to the epidemic threshold by societal factors. To be prepared the society should target this societal dimension of emerging diseases and organize accordingly. Unfortunately, the society is not organized that way and is still unprepared and vulnerable.}
 }
 
+--POST-COVID-19-----------------------------------------------------------------------------
+105. Afecciones persistentes al COVID-19 y afecciones posteriores al COVID-19
+https://espanol.cdc.gov/coronavirus/2019-ncov/long-term-effects/index.html
+@online{ncird2023afecciones,
+  author = {{National Center for Immunization and Respiratory Diseases}},
+  organization = {{Centers for Disease Control and Prevention}},
+  title = {Afecciones persistentes al COVID-19 y afecciones posteriores al COVID-19},
+  url = {https://espanol.cdc.gov/coronavirus/2019-ncov/long-term-effects/index.html},	
+  year = {July, 20, 2023},
+  note = {Ingresado en Septiembre 05, 2023}
+}
+
+
+
 
 https://www.sciencedirect.com/topics/biochemistry-genetics-and-molecular-biology/coronavirinae
 

@@ -162,11 +162,11 @@ csl: apa.csl
 
 61. [@puntmann2020outcomes; @liao2020single; @qin2020dysregulation; @chen2021sars; @nicholls2003lung; @channappanavar2017pathogenic; @varga2020endothelial; @hadjadj2020impaired; @harrison2020mechanisms]
 
-#### 2.2.2.2. Etapas de la enfermedad
+#### 2.2.2.3. Etapas de la enfermedad
 
 62. [@lauer2020incubation]
 
-##### 2.2.2.2.1. Periodo de incubación
+##### 2.2.2.3.1. Periodo de incubación
 
 63. [@cdc2022CasesData]
 
@@ -180,7 +180,7 @@ csl: apa.csl
 
 68. [@acosta2022covid]
 
-##### 2.2.2.2.2. Pacientes con sintomatología leve
+##### 2.2.2.3.2. Pacientes con sintomatología leve
 
 69. [@lauer2020incubation]
 
@@ -188,7 +188,7 @@ csl: apa.csl
 
 71. [@he2021proportion]
 
-##### 2.2.2.2.3. Infección clínica
+##### 2.2.2.3.3. Infección clínica
 
 72. [@salian2021covid]
 
@@ -199,7 +199,7 @@ csl: apa.csl
 75. [@tsai2021clinical]
 
 
-##### 2.2.2.2.4. Casos hospitalizados
+##### 2.2.2.3.4. Casos hospitalizados
 
 76. [@cdc2022CasesData]
 
@@ -207,13 +207,13 @@ csl: apa.csl
 
 78. [@fan2020clinical]
 
-##### 2.2.2.2.5. Asistencia respiratoria
+##### 2.2.2.3.5. Asistencia respiratoria
 
 79. [@salian2021covid]
 
 80. [@gibson2020covid; @acosta2022covid]
 
-##### 2.2.2.2.6. Fallecimiento de los pacientes
+##### 2.2.2.3.6. Fallecimiento de los pacientes
 
 81. [@cdc2022CasesData; @secsalud2021covid]
 
@@ -226,6 +226,10 @@ csl: apa.csl
 85. [@zhang2023risk]
 
 86. [@wu2020estimating; @zhang2023risk]
+
+#### 2.2.2.4. Post-Covid-19
+
+
 
 ### 2.2.3. Técnicas de diagnóstico y detección
 
