@@ -86,8 +86,8 @@ combined_df <- rbind(df1, df2)
 
 set.seed(0)#Para que los resultados no se brinden aleatorios
 #nmds1 <- metaMDS(combined_df[,-5], distance = "jaccard")
-#saveRDS(nmds1, file = "03_Out/OutData/nmds1_resultados.rds",
-#        compress = T) #GUARDAR OBJETO
+saveRDS(nmds1, file = "03_Out/OutData/nmds1_resultados.rds",
+        compress = T) #GUARDAR OBJETO
 nmds1
 stressplot(nmds1)
 plot(nmds1)
