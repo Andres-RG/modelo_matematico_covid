@@ -24,6 +24,7 @@ library(vegan)
 # Se carga la base de datos
 load("03_Out/OutData/casos_positivos_rangos_edades.RData")
 nmds1_resultados <- readRDS("03_Out/OutData/nmds1_resultados.rds")
+load("03_Out/OutData/df_menores_mayores.RData")
 
 # Se cargan las funciones
 source("02_Scripts/Functions/Functions.R")
@@ -80,16 +81,20 @@ df1 <- data.frame(d1)
 df2 <- data.frame(d2)
 
 combined_df <- rbind(df1, df2)
-
+# save(combined_df, file = "03_Out/OutData/df_menores_mayores.RData")
 #nmds estimador de distancia para datos discretos jaccard sorensen ----
 #cuanta variacion explica los dos primeros ejes, screeplot, eigenvector para ver si las variables originales explican la mayor variación
 
-set.seed(0)#Para que los resultados no se brinden aleatorios
+# NMDS---
+#set.seed(0)#Para que los resultados no se brinden aleatorios
 #nmds1 <- metaMDS(combined_df[,-5], distance = "jaccard")
 #saveRDS(nmds1, file = "03_Out/OutData/nmds1_resultados.rds",
 #        compress = "xz") #GUARDAR OBJETO
-nmds1_resultados
+nmds1_resultados #---
+# stressplot
+#jpeg("03_Out/Plots/stressplot_nmds1.jpeg", width = 395, height = 265, res = 300, units = "mm")
 stressplot(nmds1_resultados)
+#dev.off()
 plot(nmds1_resultados)
 coordenadas <- as.data.frame(scores(nmds1_resultados)$sites)
 coordenadas
