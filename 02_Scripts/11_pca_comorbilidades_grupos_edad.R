@@ -23,7 +23,7 @@ library(vegan)
 
 # Se carga la base de datos
 load("03_Out/OutData/casos_positivos_rangos_edades.RData")
-readRDS("03_Out/OutData/nmds1_resultados.rds")
+nmds1 <- readRDS("03_Out/OutData/nmds1_resultados.rds")
 
 # Se cargan las funciones
 source("02_Scripts/Functions/Functions.R")
@@ -85,9 +85,9 @@ combined_df <- rbind(df1, df2)
 #cuanta variacion explica los dos primeros ejes, screeplot, eigenvector para ver si las variables originales explican la mayor variación
 
 set.seed(0)#Para que los resultados no se brinden aleatorios
-nmds1 <- metaMDS(combined_df[,-5], distance = "jaccard")
-saveRDS(nmds1, file = "03_Out/OutData/nmds1_resultados.rds",
-        compress = T) #GUARDAR OBJETO
+#nmds1 <- metaMDS(combined_df[,-5], distance = "jaccard")
+#saveRDS(nmds1, file = "03_Out/OutData/nmds1_resultados.rds",
+#        compress = T) #GUARDAR OBJETO
 nmds1
 stressplot(nmds1)
 plot(nmds1)
@@ -98,4 +98,6 @@ head(coordenadas)
 gr2<- ggplot(coordenadas, aes(x = NMDS1, y = NMDS2))+ 
   geom_point(size = 4, aes( shape = RANGOS, colour = RANGOS))+
   geom_text(hjust=0.5, vjust=1.5, label=combined_df$RANGOS)
+#jpeg("03_Out/Plots/nmds1.jpeg",width = 365, height = 265, res = 300, units = "mm")
 gr2
+#dev.off()
