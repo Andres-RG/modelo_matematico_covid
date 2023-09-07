@@ -1528,8 +1528,8 @@ https://espanol.cdc.gov/coronavirus/2019-ncov/long-term-effects/index.html
   organization = {{Centers for Disease Control and Prevention}},
   title = {Afecciones persistentes al COVID-19 y afecciones posteriores al COVID-19},
   url = {https://espanol.cdc.gov/coronavirus/2019-ncov/long-term-effects/index.html},	
-  year = {July, 20, 2023},
-  note = {Ingresado en Septiembre 05, 2023}
+  year = {2023},
+  note = {Ingresado en Septiembre 05, 2023. Última actualización: Julio 20, 2023}
 }
 
 106. Global Prevalence of Post-Coronavirus Disease 2019 (COVID-19) Condition or Long COVID: A Meta-Analysis and Systematic Review
@@ -1598,7 +1598,9 @@ url={https://doi.org/10.1007/s12016-021-08848-3}
 }
 
 --MATEMATICAS Y EPIDEMIOLOGIA---------------------------------------------------------
-﻿@article{grassly2008mathematical,
+﻿110. Mathematical models of infectious disease transmission
+https://www.nature.com/articles/nrmicro1845#Bib1
+@article{grassly2008mathematical,
 author={Grassly, Nicholas C. and Fraser, Christophe},
 title={Mathematical models of infectious disease transmission},
 journal={Nature Reviews Microbiology},
@@ -1614,6 +1616,8 @@ doi={10.1038/nrmicro1845},
 url={https://doi.org/10.1038/nrmicro1845}
 }
 
+111. Mathematical Models for COVID-19 Pandemic: A Comparative Analysis
+https://link.springer.com/article/10.1007/s41745-020-00200-6#citeas
 ﻿@article{adiga2020mathematical,
 author={Adiga, Aniruddha and Dubhashi, Devdatt and Lewis, Bryan and Marathe, Madhav and Venkatramanan, Srinivasan and Vullikanti, Anil},
 title={Mathematical Models for COVID-19 Pandemic: A Comparative Analysis},
@@ -1628,6 +1632,16 @@ abstract={COVID-19 pandemic represents an unprecedented global health crisis in 
 issn={0019-4964},
 doi={10.1007/s41745-020-00200-6},
 url={https://doi.org/10.1007/s41745-020-00200-6}
+}
+
+112. Matemática Biológica
+PDF
+@unpublished{alvarez2023matematica,
+  author    = {Álvarez-Martínez, Roberto},
+  title     = {Matemática Biológica},
+  note      = {Documento no publicado. Disponible mediante contacto con el autor o la institución. Última actualización: Marzo, 2023},
+  year      = {2023},
+  organization = {{Universidad Autónoma de Querétaro}}
 }
 
 
