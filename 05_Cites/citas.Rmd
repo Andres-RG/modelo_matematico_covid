@@ -488,6 +488,8 @@ csl: apa.csl
 
 [@grassly2008mathematical]
 
+[@adiga2020mathematical]
+
 ### 2.3.4. Probabilidad y estadística en epidemiología
 
 #### 2.3.4.1. Probabilidades de transición
