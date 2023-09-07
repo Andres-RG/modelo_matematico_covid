@@ -1614,6 +1614,21 @@ doi={10.1038/nrmicro1845},
 url={https://doi.org/10.1038/nrmicro1845}
 }
 
+﻿@article{adiga2020mathematical,
+author={Adiga, Aniruddha and Dubhashi, Devdatt and Lewis, Bryan and Marathe, Madhav and Venkatramanan, Srinivasan and Vullikanti, Anil},
+title={Mathematical Models for COVID-19 Pandemic: A Comparative Analysis},
+journal={Journal of the Indian Institute of Science},
+year={2020},
+month={Oct},
+day={01},
+volume={100},
+number={4},
+pages={793-807},
+abstract={COVID-19 pandemic represents an unprecedented global health crisis in the last 100 years. Its economic, social and health impact continues to grow and is likely to end up as one of the worst global disasters since the 1918 pandemic and the World Wars. Mathematical models have played an important role in the ongoing crisis; they have been used to inform public policies and have been instrumental in many of the social distancing measures that were instituted worldwide. In this article, we review some of the important mathematical models used to support the ongoing planning and response efforts. These models differ in their use, their mathematical form and their scope.},
+issn={0019-4964},
+doi={10.1007/s41745-020-00200-6},
+url={https://doi.org/10.1007/s41745-020-00200-6}
+}
 
 
 
