@@ -1,0 +1,17 @@
+TY  - JOUR
+AU  - Grassly, Nicholas C.
+AU  - Fraser, Christophe
+PY  - 2008
+DA  - 2008/06/01
+TI  - Mathematical models of infectious disease transmission
+JO  - Nature Reviews Microbiology
+SP  - 477
+EP  - 487
+VL  - 6
+IS  - 6
+AB  - Mathematical analysis and modelling is an important part of infectious disease epidemiology. Application of mathematical models to disease surveillance data can be used to address both scientific hypotheses and disease-control policy questions.The link between the biology of an infectious disease, the process of transmission and the mathematics that are used to describe them is not always clear in published research. An understanding of this link is needed to critically interpret these publications and the policy recommendations and scientific conclusions that are contained within them.This Review describes the biology of the transmission process and how it can be represented mathematically. It shows how this representation leads to a mathematical model of infectious disease epidemics as a function of underlying disease natural history and ecology. The mathematical description of disease epidemics immediately leads to several useful results, including the expected size of an epidemic and the critical level that is needed for an intervention to achieve effective disease control.Statistical methods to fit mathematical models of disease surveillance data are outlined and the fundamental importance of the concept of likelihood is highlighted. The fit of mathematical models to surveillance data can provide estimates of key model parameters that determine a disease's natural history or the impact of an intervention, and are crucially dependent on the appropriate choice of mathematical model.The Review ends with four outstanding challenges in mathematical infectious disease epidemiology that are essential for progress in our understanding of the ecology and evolution of infectious diseases. This understanding could lead to improvements in disease control.
+SN  - 1740-1534
+UR  - https://doi.org/10.1038/nrmicro1845
+DO  - 10.1038/nrmicro1845
+ID  - Grassly2008
+ER  - 

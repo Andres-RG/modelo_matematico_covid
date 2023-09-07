@@ -491,6 +491,26 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9613797/
 - https://www.sciencedirect.com/science/article/pii/S0022519321004033?via%3Dihub
 -  
 
+### 2.3.1. Matemáticas en biología
+
+### 2.3.2. Uso de modelos matemáticos
+
+### 2.3.3. Matemáticas y epidemiología
+
+[@grassly2008mathematical]
+
+### 2.3.4. Probabilidad y estadística en epidemiología
+
+#### 2.3.4.1. Probabilidades de transición
+
+#### 2.3.4.2. Probabilidades condicionales
+
+### 2.3.5. Modelos heterogéneos
+
+#### 2.3.5.1. Modelos que describen la dinámica de COVID-19
+
+
+
 
 <br>
 
