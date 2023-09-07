@@ -1,0 +1,16 @@
+TY  - JOUR
+AU  - Ram, Vishaal
+AU  - Schaposnik, Laura P.
+PY  - 2021
+DA  - 2021/07/26
+TI  - A modified age-structured SIR model for COVID-19 type viruses
+JO  - Scientific Reports
+SP  - 15194
+VL  - 11
+IS  - 1
+AB  - We present a modified age-structured SIR model based on known patterns of social contact and distancing measures within Washington, USA. We find that population age-distribution has a significant effect on disease spread and mortality rate, and contribute to the efficacy of age-specific contact and treatment measures. We consider the effect of relaxing restrictions across less vulnerable age-brackets, comparing results across selected groups of varying population parameters. Moreover, we analyze the mitigating effects of vaccinations and examine the effectiveness of age-targeted distributions. Lastly, we explore how our model can applied to other states to reflect social-distancing policy based on different parameters and metrics.
+SN  - 2045-2322
+UR  - https://doi.org/10.1038/s41598-021-94609-3
+DO  - 10.1038/s41598-021-94609-3
+ID  - Ram2021
+ER  - 

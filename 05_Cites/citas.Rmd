@@ -484,23 +484,33 @@ csl: apa.csl
 
 186. [@alvarez2023matematica]
 
-### 2.3.2. Uso de modelos matemáticos
+#### 2.3.1.1. Uso de modelos matemáticos
 
-### 2.3.3. Matemáticas y epidemiología
+### 2.3.2. Modelos matemáticss epidemiológicos
 
-[@grassly2008mathematical]
+187. [@grassly2008mathematical]
 
-[@adiga2020mathematical]
+188. [@adiga2020mathematical]
 
-### 2.3.4. Probabilidad y estadística en epidemiología
+#### 2.3.2.1. Modelo SIR
 
-#### 2.3.4.1. Probabilidades de transición
+189. [@ram2021modified]
 
-#### 2.3.4.2. Probabilidades condicionales
+https://www.nature.com/articles/s41598-021-94609-3
+https://www.sciencedirect.com/science/article/pii/S0960077922008505
 
-### 2.3.5. Modelos heterogéneos
 
-#### 2.3.5.1. Modelos que describen la dinámica de COVID-19
+#### 2.3.2.2. El caso de COVID-19
+
+### 2.3.3. Probabilidad y estadística en epidemiología
+
+#### 2.3.3.1. Probabilidades de transición
+
+#### 2.3.3.2. Probabilidades condicionales
+
+### 2.3.4. Modelos heterogéneos
+
+#### 2.3.4.1. Modelos que describen la dinámica de COVID-19
 
 
 
