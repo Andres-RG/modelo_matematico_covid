@@ -492,6 +492,8 @@ csl: apa.csl
 
 188. [@adiga2020mathematical]
 
+189. [@al2023mathematical]
+
 #### 2.3.2.1. Modelo SIR
 
 189. [@ram2021modified]
