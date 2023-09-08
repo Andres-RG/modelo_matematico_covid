@@ -1637,13 +1637,14 @@ url={https://doi.org/10.1007/s41745-020-00200-6}
 112. Matemática Biológica
 PDF
 @unpublished{alvarez2023matematica,
-  author    = {Álvarez-Martínez, Roberto},
+  author    = {Álvarez Martínez, Roberto},
   title     = {Matemática Biológica},
   note      = {Documento no publicado. Disponible mediante contacto con el autor o la institución. Última actualización: Marzo, 2023},
   year      = {2023},
   organization = {{Universidad Autónoma de Querétaro}}
 }
 
+--MODELOS SIR-------------------------------------------------------------------------
 113. A modified age-structured SIR model for COVID-19 type viruses
 https://www.nature.com/articles/s41598-021-94609-3
 ﻿@article{ram2021modified,
@@ -1661,6 +1662,99 @@ issn={2045-2322},
 doi={10.1038/s41598-021-94609-3},
 url={https://doi.org/10.1038/s41598-021-94609-3}
 }
+
+--MODELOS DE COVID-19-----------------------------------------------------------------
+114. MODELO EPIDEMIOLÓGICO COVID-19 DEL GOBIERNO DE LA CIUDAD DE MÉXICO
+https://modelo.covid19.cdmx.gob.mx/modelo-epidemico
+@online{cdmxmodelo,
+  author = {{Dirección General de Gobierno Electrónico de la Agencia Digital de Innovación Pública del Gobierno de la Ciudad de México}},
+  organization = {{Gobierno de la Ciudad de México}},
+  title = {MODELO EPIDEMIOLÓGICO COVID-19 DEL GOBIERNO DE LA CIUDAD DE MÉXICO},
+  url = {https://modelo.covid19.cdmx.gob.mx/modelo-epidemico},
+  note = {Ingresado en Septiembre 08, 2023}
+}
+
+115. Early dynamics of transmission and control of COVID-19: a mathematical modelling study
+https://www.sciencedirect.com/science/article/pii/S1473309920301444?via%3Dihub
+@article{kucharski2020early,
+title = {Early dynamics of transmission and control of COVID-19: a mathematical modelling study},
+journal = {The Lancet Infectious Diseases},
+volume = {20},
+number = {5},
+pages = {553-558},
+year = {2020},
+issn = {1473-3099},
+doi = {https://doi.org/10.1016/S1473-3099(20)30144-4},
+url = {https://www.sciencedirect.com/science/article/pii/S1473309920301444},
+author = {Adam J Kucharski and Timothy W Russell and Charlie Diamond and Yang Liu and John Edmunds and Sebastian Funk and Rosalind M Eggo and Fiona Sun and Mark Jit and James D Munday and Nicholas Davies and Amy Gimma and Kevin {van Zandvoort} and Hamish Gibbs and Joel Hellewell and Christopher I Jarvis and Sam Clifford and Billy J Quilty and Nikos I Bosse and Sam Abbott and Petra Klepac and Stefan Flasche},
+abstract = {Summary
+Background
+An outbreak of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) has led to 95 333 confirmed cases as of March 5, 2020. Understanding the early transmission dynamics of the infection and evaluating the effectiveness of control measures is crucial for assessing the potential for sustained transmission to occur in new areas. Combining a mathematical model of severe SARS-CoV-2 transmission with four datasets from within and outside Wuhan, we estimated how transmission in Wuhan varied between December, 2019, and February, 2020. We used these estimates to assess the potential for sustained human-to-human transmission to occur in locations outside Wuhan if cases were introduced.
+Methods
+We combined a stochastic transmission model with data on cases of coronavirus disease 2019 (COVID-19) in Wuhan and international cases that originated in Wuhan to estimate how transmission had varied over time during January, 2020, and February, 2020. Based on these estimates, we then calculated the probability that newly introduced cases might generate outbreaks in other areas. To estimate the early dynamics of transmission in Wuhan, we fitted a stochastic transmission dynamic model to multiple publicly available datasets on cases in Wuhan and internationally exported cases from Wuhan. The four datasets we fitted to were: daily number of new internationally exported cases (or lack thereof), by date of onset, as of Jan 26, 2020; daily number of new cases in Wuhan with no market exposure, by date of onset, between Dec 1, 2019, and Jan 1, 2020; daily number of new cases in China, by date of onset, between Dec 29, 2019, and Jan 23, 2020; and proportion of infected passengers on evacuation flights between Jan 29, 2020, and Feb 4, 2020. We used an additional two datasets for comparison with model outputs: daily number of new exported cases from Wuhan (or lack thereof) in countries with high connectivity to Wuhan (ie, top 20 most at-risk countries), by date of confirmation, as of Feb 10, 2020; and data on new confirmed cases reported in Wuhan between Jan 16, 2020, and Feb 11, 2020.
+Findings
+We estimated that the median daily reproduction number (Rt) in Wuhan declined from 2·35 (95% CI 1·15–4·77) 1 week before travel restrictions were introduced on Jan 23, 2020, to 1·05 (0·41–2·39) 1 week after. Based on our estimates of Rt, assuming SARS-like variation, we calculated that in locations with similar transmission potential to Wuhan in early January, once there are at least four independently introduced cases, there is a more than 50% chance the infection will establish within that population.
+Interpretation
+Our results show that COVID-19 transmission probably declined in Wuhan during late January, 2020, coinciding with the introduction of travel control measures. As more cases arrive in international locations with similar transmission potential to Wuhan before these control measures, it is likely many chains of transmission will fail to establish initially, but might lead to new outbreaks eventually.
+Funding
+Wellcome Trust, Health Data Research UK, Bill & Melinda Gates Foundation, and National Institute for Health Research.}
+}
+
+116. Transmission dynamics of COVID-19 in Wuhan, China: effects of lockdown and medical resources
+https://link.springer.com/article/10.1007/s11071-020-05770-9#citeas
+﻿@article{sun2020transmission,
+author={Sun, Gui-Quan and Wang, Shi-Fu and Li, Ming-Tao and Li, Li and Zhang, Juan and Zhang, Wei and Jin, Zhen and Feng, Guo-Lin},
+title={Transmission dynamics of COVID-19 in Wuhan, China: effects of lockdown and medical resources},
+journal={Nonlinear Dynamics},
+year={2020},
+month={Aug},
+day={01},
+volume={101},
+number={3},
+pages={1981-1993},
+abstract={Due to the strong infectivity of COVID-19, it spread all over the world in about three months and thus has been studied from different aspects including its source of infection, pathological characteristics, diagnostic technology and treatment. Yet, the influences of control strategies on the transmission dynamics of COVID-19 are far from being well understood. In order to reveal the mechanisms of disease spread, we present dynamical models to show the propagation of COVID-19 in Wuhan. Based on mathematical analysis and data analysis, we systematically explore the effects of lockdown and medical resources on the COVID-19 transmission in Wuhan. It is found that the later lockdown is adopted by Wuhan, the fewer people will be infected in Wuhan, and nevertheless it will have an impact on other cities in China and even the world. Moreover, the richer the medical resources, the higher the peak of new infection, but the smaller the final scale. These findings well indicate that the control measures taken by the Chinese government are correct and timely.},
+issn={1573-269X},
+doi={10.1007/s11071-020-05770-9},
+url={https://doi.org/10.1007/s11071-020-05770-9}
+}
+
+117. Mathematical modeling of COVID-19 transmission dynamics with a case study of Wuhan
+https://www.sciencedirect.com/science/article/pii/S0960077920302460
+@article{ndairou2020mathematical,
+title = {Mathematical modeling of COVID-19 transmission dynamics with a case study of Wuhan},
+journal = {Chaos, Solitons & Fractals},
+volume = {135},
+pages = {109846},
+year = {2020},
+issn = {0960-0779},
+doi = {https://doi.org/10.1016/j.chaos.2020.109846},
+url = {https://www.sciencedirect.com/science/article/pii/S0960077920302460},
+author = {Faïçal Ndaïrou and Iván Area and Juan J. Nieto and Delfim F.M. Torres},
+keywords = {Mathematical modeling of COVID-19 pandemic, Wuhan case study, Basic reproduction number, Stability, Sensitivity analysis, Numerical simulations},
+abstract = {We propose a compartmental mathematical model for the spread of the COVID-19 disease with special focus on the transmissibility of super-spreaders individuals. We compute the basic reproduction number threshold, we study the local stability of the disease free equilibrium in terms of the basic reproduction number, and we investigate the sensitivity of the model with respect to the variation of each one of its parameters. Numerical simulations show the suitability of the proposed COVID-19 model for the outbreak that occurred in Wuhan, China.}
+}
+
+118. A mathematical model for COVID-19 transmission dynamics with a case study of India
+https://www.sciencedirect.com/science/article/pii/S0960077920305695
+@article{samui2020mathematical,
+title = {A mathematical model for COVID-19 transmission dynamics with a case study of India},
+journal = {Chaos, Solitons & Fractals},
+volume = {140},
+pages = {110173},
+year = {2020},
+issn = {0960-0779},
+doi = {https://doi.org/10.1016/j.chaos.2020.110173},
+url = {https://www.sciencedirect.com/science/article/pii/S0960077920305695},
+author = {Piu Samui and Jayanta Mondal and Subhas Khajanchi},
+keywords = {COVID-19, Mathematical model, Reported and unreported cases, Sensitivity analysis, Isolation},
+abstract = {The ongoing COVID-19 has precipitated a major global crisis, with 968,117 total confirmed cases, 612,782 total recovered cases and 24,915 deaths in India as of July 15, 2020. In absence of any effective therapeutics or drugs and with an unknown epidemiological life cycle, predictive mathematical models can aid in understanding of both coronavirus disease control and management. In this study, we propose a compartmental mathematical model to predict and control the transmission dynamics of COVID-19 pandemic in India with epidemic data up to April 30, 2020. We compute the basic reproduction number R0, which will be used further to study the model simulations and predictions. We perform local and global stability analysis for the infection free equilibrium point E0 as well as an endemic equilibrium point E* with respect to the basic reproduction number R0. Moreover, we showed the criteria of disease persistence for R0 > 1. We conduct a sensitivity analysis in our coronavirus model to determine the relative importance of model parameters to disease transmission. We compute the sensitivity indices of the reproduction number R0 (which quantifies initial disease transmission) to the estimated parameter values. For the estimated model parameters, we obtained R0=1.6632, which shows the substantial outbreak of COVID-19 in India. Our model simulation demonstrates that the disease transmission rate βs is more effective to mitigate the basic reproduction number R0. Based on estimated data, our model predict that about 60 days the peak will be higher for COVID-19 in India and after that the curve will plateau but the coronavirus diseases will persist for a long time.}
+}
+
+
+
+
+
+
 
 
 

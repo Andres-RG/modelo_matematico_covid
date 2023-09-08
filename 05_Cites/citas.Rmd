@@ -496,11 +496,22 @@ csl: apa.csl
 
 189. [@ram2021modified]
 
-https://www.nature.com/articles/s41598-021-94609-3
-https://www.sciencedirect.com/science/article/pii/S0960077922008505
+#### 2.3.2.2. Modelos de COVID-19
 
+- https://www.sciencedirect.com/science/article/pii/S1473309920301444?via%3Dihub
+- https://link.springer.com/article/10.1007/s11071-020-05770-9
+- https://www.sciencedirect.com/science/article/pii/S0960077920302460
+- https://www.sciencedirect.com/science/article/pii/S0960077920305695
 
-#### 2.3.2.2. El caso de COVID-19
+[@kucharski2020early]
+
+[@sun2020transmission]
+
+[@ndairou2020mathematical]
+
+[@samui2020mathematical]
+
+[@cdmxmodelo]
 
 ### 2.3.3. Probabilidad y estadística en epidemiología
 
