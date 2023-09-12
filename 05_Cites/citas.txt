@@ -1750,8 +1750,26 @@ keywords = {COVID-19, Mathematical model, Reported and unreported cases, Sensiti
 abstract = {The ongoing COVID-19 has precipitated a major global crisis, with 968,117 total confirmed cases, 612,782 total recovered cases and 24,915 deaths in India as of July 15, 2020. In absence of any effective therapeutics or drugs and with an unknown epidemiological life cycle, predictive mathematical models can aid in understanding of both coronavirus disease control and management. In this study, we propose a compartmental mathematical model to predict and control the transmission dynamics of COVID-19 pandemic in India with epidemic data up to April 30, 2020. We compute the basic reproduction number R0, which will be used further to study the model simulations and predictions. We perform local and global stability analysis for the infection free equilibrium point E0 as well as an endemic equilibrium point E* with respect to the basic reproduction number R0. Moreover, we showed the criteria of disease persistence for R0 > 1. We conduct a sensitivity analysis in our coronavirus model to determine the relative importance of model parameters to disease transmission. We compute the sensitivity indices of the reproduction number R0 (which quantifies initial disease transmission) to the estimated parameter values. For the estimated model parameters, we obtained R0=1.6632, which shows the substantial outbreak of COVID-19 in India. Our model simulation demonstrates that the disease transmission rate βs is more effective to mitigate the basic reproduction number R0. Based on estimated data, our model predict that about 60 days the peak will be higher for COVID-19 in India and after that the curve will plateau but the coronavirus diseases will persist for a long time.}
 }
 
+119. Mathematical Model for Coronavirus Disease 2019 (COVID-19) Containing Isolation Class
+https://www.hindawi.com/journals/bmri/2020/3452402/
+﻿@article{zeb2020mathematical,
+author={Zeb, Anwar and Alzahrani, Ebraheem and Erturk, Vedat Suat and Zaman, Gul},
+title={Mathematical Model for Coronavirus Disease 2019 (COVID-19) Containing Isolation Class},
+journal={BioMed Research International},
+year={2020},
+month={Jun},
+day={29},
+publisher={Hindawi},
+volume={2020},
+pages={3452402},
+abstract={The deadly coronavirus continues to spread across the globe, and mathematical models can be used to show suspected, recovered, and deceased coronavirus patients, as well as how many people have been tested. Researchers still do not know definitively whether surviving a COVID-19 infection means you gain long-lasting immunity and, if so, for how long? In order to understand, we think that this study may lead to better guessing the spread of this pandemic in future. We develop a mathematical model to present the dynamical behavior of COVID-19 infection by incorporating isolation class. First, the formulation of model is proposed; then, positivity of the model is discussed. The local stability and global stability of proposed model are presented, which depended on the basic reproductive. For the numerical solution of the proposed model, the nonstandard finite difference (NSFD) scheme and Runge-Kutta fourth order method are used. Finally, some graphical results are presented. Our findings show that human to human contact is the potential cause of outbreaks of COVID-19. Therefore, isolation of the infected human overall can reduce the risk of future COVID-19 spread.},
+issn={2314-6133},
+doi={10.1155/2020/3452402},
+url={https://doi.org/10.1155/2020/3452402}
+}
+
 --MODELO MALARIA----------------------------------------------------------------------
-119. Mathematical Modelling and Optimal Control of Malaria Using Awareness-Based Interventions
+120. Mathematical Modelling and Optimal Control of Malaria Using Awareness-Based Interventions
 https://www.mdpi.com/2227-7390/11/7/1687
 @article{al2023mathematical,
 AUTHOR = {Al Basir, Fahad and Abraha, Teklebirhan},

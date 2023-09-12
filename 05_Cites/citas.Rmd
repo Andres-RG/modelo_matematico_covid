@@ -463,23 +463,6 @@ csl: apa.csl
 
 ## 2.3. Modelos matemáticos
 
-- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7097581/
-- https://pubmed.ncbi.nlm.nih.gov/32685469/
-- https://pubmed.ncbi.nlm.nih.gov/33144763/
-- https://www.fisica.unam.mx/personales/mir/corona19/index.html
-- https://edoc.rki.de/handle/176904/6547
-- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7585674/
-- https://academic.oup.com/cid/article/74/9/1678/6359063
-- https://pubmed.ncbi.nlm.nih.gov/33024342/
-- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7444295/
-- https://pubmed.ncbi.nlm.nih.gov/32470120/
-- https://pubmed.ncbi.nlm.nih.gov/33566457/#:~:text=As%20the%20immune%20system%20undergoes,of%20severity%20of%20COVID%2D19. 
-- https://pubmed.ncbi.nlm.nih.gov/33713603/
-- https://e-epih.org/journal/view.php?doi=10.4178/epih.e2021059
-- https://www.sciencedirect.com/science/article/pii/S0022519322002508
-- https://www.sciencedirect.com/science/article/pii/S0022519321004033?via%3Dihub
--  
-
 ### 2.3.1. Matemáticas en biología
 
 186. [@alvarez2023matematica]
@@ -500,30 +483,42 @@ csl: apa.csl
 
 #### 2.3.2.2. Modelos de COVID-19
 
-- https://www.sciencedirect.com/science/article/pii/S1473309920301444?via%3Dihub
-- https://link.springer.com/article/10.1007/s11071-020-05770-9
-- https://www.sciencedirect.com/science/article/pii/S0960077920302460
-- https://www.sciencedirect.com/science/article/pii/S0960077920305695
+190. [@kucharski2020early]
 
-[@kucharski2020early]
+191. [@sun2020transmission]
 
-[@sun2020transmission]
+192. [@ndairou2020mathematical]
 
-[@ndairou2020mathematical]
+193. [@samui2020mathematical]
 
-[@samui2020mathematical]
+194. [@cdmxmodelo]
 
-[@cdmxmodelo]
+195. [@zeb2020mathematical]
 
-### 2.3.3. Probabilidad y estadística en epidemiología
+### 2.3.3. Modelos heterogéneos
 
-#### 2.3.3.1. Probabilidades de transición
+#### 2.3.3.1. Ejemplos de modelos heterogéneos
 
-#### 2.3.3.2. Probabilidades condicionales
+#### 2.3.4.1. Modelos heterogéneos para COVID-19
 
-### 2.3.4. Modelos heterogéneos
+# M
 
-#### 2.3.4.1. Modelos que describen la dinámica de COVID-19
+- https://academic.oup.com/cid/article/74/9/1678/6359063 : Parámetros
+
+# D
+
+- https://pubmed.ncbi.nlm.nih.gov/32685469/ : Modelo
+- https://www.fisica.unam.mx/personales/mir/corona19/index.html
+- https://edoc.rki.de/handle/176904/6547 : Deutschland
+- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7585674/
+- https://pubmed.ncbi.nlm.nih.gov/33024342/ : Periodo de incubación
+- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7444295/ : Diferencias en la mortalidad de edad y sexo en Europa
+- https://pubmed.ncbi.nlm.nih.gov/32470120/ : Diferencias de edad en riesgo COVID-19 y la salud mental
+- https://pubmed.ncbi.nlm.nih.gov/33566457/#:~:text=As%20the%20immune%20system%20undergoes,of%20severity%20of%20COVID%2D19. : Diferencias en la edad
+- https://pubmed.ncbi.nlm.nih.gov/33713603/ : Bajo riesgo de mortalidad en niños
+- https://e-epih.org/journal/view.php?doi=10.4178/epih.e2021059 : Modelo heterogéneo COVID-19 Corea
+- https://www.sciencedirect.com/science/article/pii/S0022519322002508 : Modelo heterogéneo COVID-19
+- https://www.sciencedirect.com/science/article/pii/S0022519321004033?via%3Dihub : Modelo heterogéneo COVID-19
 
 
 
