@@ -497,6 +497,10 @@ csl: apa.csl
 
 ### 2.3.3. Modelos heterogéneos
 
+196. [@wang2023mathematical]
+
+197. [@berestycki2023epidemic]
+
 #### 2.3.3.1. Ejemplos de modelos heterogéneos
 
 #### 2.3.4.1. Modelos heterogéneos para COVID-19

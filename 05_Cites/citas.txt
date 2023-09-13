@@ -1786,7 +1786,44 @@ DOI = {10.3390/math11071687}
 }
 
 --MODELOS HETEROGENEOS----------------------------------------------------------------
-121.
+121. Mathematical Analysis of Epidemic Models with Treatment in Heterogeneous Networks
+https://link.springer.com/article/10.1007/s11538-022-01116-1#Abs1
+﻿@article{wang2023mathematical,
+author={Wang, Yi and Cao, Jinde and Xue, Changfeng and Li, Li},
+title={Mathematical Analysis of Epidemic Models with Treatment in Heterogeneous Networks},
+journal={Bulletin of Mathematical Biology},
+year={2023},
+month={Jan},
+day={05},
+volume={85},
+number={2},
+pages={11},
+abstract={In this paper, we formulate two different network-based epidemic models to investigate the effect of partly effective treatment on disease dynamics. The first network model represents the individuals with heterogeneous number of contacts in a population as choosing a new partner at each moment, whereas the second one assumes the individuals have fixed or stable neighbors. The basic reproduction number {\$}{\$}R{\_}{\{}0{\}}{\$}{\$}is computed for each model, using the next generation matrix method. In particular, the critical treatment rate is defined for the model, above which the disease can be eliminated through the treatment. The final epidemic size relations are derived, and the solvability of these implicit equations is studied. In particular, a unique solution of the implicit equation for the final epidemic size is determined, and by rewriting the implicit equation as a suitable fixed point problem, it is proved that the iteration of the fixed point problem converges to the unique solution. Stochastic simulations and numerical simulations, including in comparison with the model outputs and the joint influence of network topology and treatment on the final epidemic size, are conducted to illustrate the theoretical results.},
+issn={1522-9602},
+doi={10.1007/s11538-022-01116-1},
+url={https://doi.org/10.1007/s11538-022-01116-1}
+}
+
+122. Epidemic modeling with heterogeneity and social diffusion
+https://link.springer.com/article/10.1007/s00285-022-01861-w#citeas
+﻿@article{berestycki2023epidemic,
+author={Berestycki, Henri and Desjardins, Beno{\^i}t and Weitz, Joshua S. and Oury, Jean-Marc},
+title={Epidemic modeling with heterogeneity and social diffusion},
+journal={Journal of Mathematical Biology},
+year={2023},
+month={Mar},
+day={25},
+volume={86},
+number={4},
+pages={60},
+abstract={We propose and analyze a family of epidemiological models that extend the classic Susceptible-Infectious-Recovered/Removed (SIR)-like framework to account for dynamic heterogeneity in infection risk. The family of models takes the form of a system of reaction--diffusion equations given populations structured by heterogeneous susceptibility to infection. These models describe the evolution of population-level macroscopic quantities S, I, R as in the classical case coupled with a microscopic variable f, giving the distribution of individual behavior in terms of exposure to contagion in the population of susceptibles. The reaction terms represent the impact of sculpting the distribution of susceptibles by the infection process. The diffusion and drift terms that appear in a Fokker--Planck type equation represent the impact of behavior change both during and in the absence of an epidemic. We first study the mathematical foundations of this system of reaction--diffusion equations and prove a number of its properties. In particular, we show that the system will converge back to the unique equilibrium distribution after an epidemic outbreak. We then derive a simpler system by seeking self-similar solutions to the reaction--diffusion equations in the case of Gaussian profiles. Notably, these self-similar solutions lead to a system of ordinary differential equations including classic SIR-like compartments and a new feature: the average risk level in the remaining susceptible population. We show that the simplified system exhibits a rich dynamical structure during epidemics, including plateaus, shoulders, rebounds and oscillations. Finally, we offer perspectives and caveats on ways that this family of models can help interpret the non-canonical dynamics of emerging infectious diseases, including COVID-19.},
+issn={1432-1416},
+doi={10.1007/s00285-022-01861-w},
+url={https://doi.org/10.1007/s00285-022-01861-w}
+}
+
+
+
 
 
 
