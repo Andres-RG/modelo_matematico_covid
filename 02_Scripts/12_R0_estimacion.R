@@ -30,3 +30,4 @@ plot(res_parametric_si, legend = FALSE)
 #jpeg("03_Out/Plots/r0_epiestim.jpeg", width = 365, height = 265, res = 300, units = "mm")
 #plot(res_parametric_si, legend = FALSE)
 #dev.off()
+
