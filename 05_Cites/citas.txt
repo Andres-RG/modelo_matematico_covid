@@ -1785,6 +1785,9 @@ ABSTRACT = {Malaria is a serious illness caused by a parasite, called Plasmodium
 DOI = {10.3390/math11071687}
 }
 
+--MODELOS HETEROGENEOS----------------------------------------------------------------
+121.
+
 
 
 

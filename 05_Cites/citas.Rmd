@@ -504,6 +504,9 @@ csl: apa.csl
 # M
 
 - https://academic.oup.com/cid/article/74/9/1678/6359063 : Parámetros
+- https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-021-05950-x
+- https://search.bvsalud.org/global-literature-on-novel-coronavirus-2019-ncov/resource/es/covidwho-606040
+- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7258488/
 
 # D
 
