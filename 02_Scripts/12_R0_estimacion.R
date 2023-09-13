@@ -4,19 +4,20 @@ library(EpiEstim)
 library(incidence)
 
 # Se cargan los datos
-load("03_Out/OutData/casos_solo_fecha.RData")
-head(casos_por_fecha)
+load("03_Out/OutData/conteo_casos_positivos_rango_edad.RData")
+head(casos_positivos_re_conteo)
 
 # Se cargan las funciones
 source("02_Scripts/Functions/Functions.R")
 
 # Visucalización de datos
-incidencia <- casos_por_fecha[1:80, -c(2:3)]
+incidencia <- casos_positivos_re_conteo[1:80, -3]
 incidencia <- as.data.frame(incidencia)
 colnames(incidencia) <- c("date", "I")
 head(incidencia)
+#jpeg("03_Out/Plots/incidencia_covid_qro.jpeg", width = 395, height = 285, res = 300, units = "mm")
 plot(as.incidence(incidencia$I))
-
+#dev.off()
 # EpiEstim R0
 res_parametric_si <- estimate_R(incidencia, 
                                 method="parametric_si",
