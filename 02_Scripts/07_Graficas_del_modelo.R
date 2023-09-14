@@ -41,9 +41,9 @@ grafica_infectados <- ggmatplot(x = out_all_groups[,1], out_all_groups[,c(4,12,2
               axis.line = element_line(colour = "black", size = 0.75))
 
 
-ggsave("03_Out/Plots/grafica_infectados_inferidos.jpeg", 
-       plot = grafica_infectados, 
-       width = 2487, height = 1791,units = "px")
+#ggsave("03_Out/Plots/grafica_infectados_inferidos.jpeg", 
+#       plot = grafica_infectados, 
+#       width = 2487, height = 1791,units = "px")
 
 
 
@@ -63,9 +63,9 @@ grafica_recuperados <- ggmatplot(x = out_all_groups[,1], out_all_groups[,c(9,17,
               axis.line = element_line(colour = "black", size = 0.75))
 
 
-ggsave("03_Out/Plots/grafica_recuperados_inferidos.jpeg", 
-       plot = grafica_recuperados, 
-       width = 2487, height = 1791, units = "px")
+#ggsave("03_Out/Plots/grafica_recuperados_inferidos.jpeg", 
+#       plot = grafica_recuperados, 
+#       width = 2487, height = 1791, units = "px")
 
 
 # Gráfica de Muertos ====
@@ -84,9 +84,9 @@ grafica_muertos <- ggmatplot(x = out_all_groups[,1], out_all_groups[,c(8,16,24,3
               axis.line = element_line(colour = "black", size = 0.75))
 
 
-ggsave("03_Out/Plots/grafica_muertos_inferidos.jpeg", 
-       plot = grafica_muertos, 
-       width = 2487, height = 1791, units = "px")
+#ggsave("03_Out/Plots/grafica_muertos_inferidos.jpeg", 
+#       plot = grafica_muertos, 
+#       width = 2487, height = 1791, units = "px")
 
 
 # Grafica de Infectados, Recuperados y Muertos totales inferidos ====
