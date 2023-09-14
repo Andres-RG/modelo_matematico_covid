@@ -766,3 +766,15 @@ Los datos se visualizaron en heatmaps. Se hizo uso del paquete "*ComplexHeatmap*
 
 ![Heatmap categoria 4 v3](03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c4_v3.jpeg)
 
+## 8.4 Bigmatrix
+
+Se elaboró una bigmatrix con la conjunción de todos los datos de probabilidades, de comorbilidades individuales y de combinaciones de dos comorbilidades
+
+```{r}
+source("02_Scripts/10_calculo_de_probabilidades_condicionales_con_combinacion_de_comorbilidades.R")
+print(bm)
+```
+
+Con la matriz, se generó un heatmap para visualizar los datos
+
+![Heatmap bigmatrix](03_Out/Plots/bm_heatmap.jpeg)
