@@ -214,7 +214,7 @@ p_comorb_c3 <- c(p_diab_c3,p_epoc_c3,p_asma_c3,p_inmunsupr_c3,
                  p_renal_cronica_c3,p_tabaquismo_c3)
 
 
-# 2.1.3.4 ---- CATEGORIA 3
+# 2.1.3.4 ---- CATEGORIA 4
 # 2.1.3.4.1 p( diabetes | c4 )
 p_diab_c4 <- comorbilidades_conteos[1,4]/c4
 # 2.1.3.4.2 p( epoc | c4 )
