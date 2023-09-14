@@ -46,8 +46,8 @@ plot(as.incidence(incidencia_all$I))
 res_parametric_si_all <- estimate_R(incidencia_all, 
                                 method="parametric_si",
                                 config = make_config(list(
-                                  mean_si = 4.0, 
-                                  std_si = 1.5))
+                                  mean_si = 5.6, 
+                                  std_si = 4.2))
 )
 
 head(res_parametric_si_all$R)
