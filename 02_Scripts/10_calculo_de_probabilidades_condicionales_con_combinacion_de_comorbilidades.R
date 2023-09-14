@@ -465,6 +465,6 @@ bm_heatmap <- Heatmap(mat_combinaciones_bm,
                       )
 bm_heatmap
 #jpeg("03_Out/Plots/bm_heatmap.jpeg",
-#     width = 565, height = 365, res = 300, units = "mm")
+#     width = 465, height = 365, res = 300, units = "mm")
 bm_heatmap
 #dev.off()
