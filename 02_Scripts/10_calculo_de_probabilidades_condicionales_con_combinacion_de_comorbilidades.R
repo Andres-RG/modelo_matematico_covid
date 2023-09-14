@@ -367,3 +367,104 @@ heatmap_c4_v2 <- Heatmap(mat_combinaciones_c4,
 #     width = 265, height = 265, res = 300, units = "mm")
 heatmap_c4_v2
 #dev.off()
+
+# BIG MATRIX -----
+## probabilidades combinadas
+probabilidades_combinadas_cat_1
+probabilidades_combinadas_cat_2
+probabilidades_combinadas_cat_3
+probabilidades_combinadas_cat_4
+##hacer una nueva matriz
+bm <- matrix(nrow = 4, ncol = 9)
+rownames(bm) <- c("Menores 18", "18-39", "40-59", "Mayores 60")
+colnames(bm) <- nm
+##llenar los valores de la matriz
+for (i in 1:ncol(t(matriz_comor)) ) {
+  bm[,i] <- t(matriz_comor)[,i]
+}
+bm
+#****
+nr <- nrow(probabilidades_combinadas_cat_1)
+##valores combinados CATEGORA 1
+valores_sin_diagonal_1 <- c()
+for (i in 1:nr) {
+  for (j in 1:nr) {
+    if (i != j && i < j) {  # Asegura que no estamos en la diagonal y que no duplicamos
+      valores_sin_diagonal_1 <- c(valores_sin_diagonal_1,probabilidades_combinadas_cat_1[i, j])
+    }
+  }
+}
+valores_sin_diagonal_1
+##valores combinados CATEGORA 2
+valores_sin_diagonal_2 <- c()
+for (i in 1:nr) {
+  for (j in 1:nr) {
+    if (i != j && i < j) {  # Asegura que no estamos en la diagonal y que no duplicamos
+      valores_sin_diagonal_2 <- c(valores_sin_diagonal_2,probabilidades_combinadas_cat_2[i, j])
+    }
+  }
+}
+valores_sin_diagonal_2
+##valores combinados CATEGORA 3
+valores_sin_diagonal_3 <- c()
+for (i in 1:nr) {
+  for (j in 1:nr) {
+    if (i != j && i < j) {  # Asegura que no estamos en la diagonal y que no duplicamos
+      valores_sin_diagonal_3 <- c(valores_sin_diagonal_3,probabilidades_combinadas_cat_3[i, j])
+    }
+  }
+}
+valores_sin_diagonal_3
+##valores combinados CATEGORA 4
+valores_sin_diagonal_4 <- c()
+for (i in 1:nr) {
+  for (j in 1:nr) {
+    if (i != j && i < j) {  # Asegura que no estamos en la diagonal y que no duplicamos
+      valores_sin_diagonal_4 <- c(valores_sin_diagonal_4,probabilidades_combinadas_cat_4[i, j])
+    }
+  }
+}
+valores_sin_diagonal_4
+##llenar los valores en la matriz
+combin <- rbind(valores_sin_diagonal_1,
+                valores_sin_diagonal_2,
+                valores_sin_diagonal_3,
+                valores_sin_diagonal_4)
+bm <- cbind(bm, combin)
+bm
+colnames(bm) <- c("Diabetes","EPOC","Asma","Inmunsupr","Hipertension",
+                  "Cardiovascular","Obesidad","Renal Crónica","Tabaquismo",
+                  "Diabetes X EPOC", "Diabetes X Asma", "Diabetes X Inmunsupr",
+                  "Diabetes X Hipertension", "Diabetes X Cadiovascular", 
+                  "Diabetes X Obesidad", "Diabetes X Renal Cronica", 
+                  "Diabetes X Tabaquismo", "EPOC X Asma", "EPOC X Inmunsupr",
+                  "EPOC X Hipertension", "EPOC X Cardiovascular", 
+                  "EPOC X Obesidad", "EPOC X Renal Cronica", 
+                  "EPOC X Tabaquismo", "Asma X Inmunsupr", 
+                  "Asma X Hipertension", "Asma X Cardiovascular", 
+                  "Asma X Obesidad", "Asma X Renal Cronica", 
+                  "Asma X Tabaquismo","Inmunsupr X Hipertension", 
+                  "Inmunsupr X Cardiovascular", "Inmunsupr X Obesidad", 
+                  "Inmunsupr X Renal Cronica", "Inmunsupr X Tabaquismo",
+                  "Hipertension X Cardiovascular", "Hipertension X Obesidad", 
+                  "Hipertension X Renal Cronica", "Hipertension X Tabaquismo",
+                  "Cardiovascular X Obesidad", "Cardiovascular X Renal Cronica",
+                  "Cardiovascular X Tabaquismo","Obesidad X Renal Cronica",
+                  "Obesidad X Tabaquismo","Renal Cronica X Tabaquismo")
+bm
+mat_combinaciones_bm = bm
+bm_heatmap <- Heatmap(mat_combinaciones_bm,
+                      name = "p",col = viridis(45),
+                      column_title = "Heatmap Big Matrix",
+                      rect_gp = gpar(col = "white", lwd = 2),
+                      column_title_gp = gpar(fontsize = 12, fontface = "bold"),
+                      cluster_rows = FALSE, cluster_columns = FALSE,
+                      column_names_side = "top", column_dend_side = "bottom",
+                      column_names_gp = gpar(fontsize = 6),
+                      row_names_side = "left"
+                      )
+bm_heatmap
+#jpeg("03_Out/Plots/bm_heatmap.jpeg",
+#     width = 565, height = 365, res = 300, units = "mm")
+bm_heatmap
+#dev.off()
