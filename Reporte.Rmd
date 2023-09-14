@@ -778,3 +778,11 @@ print(bm)
 Con la matriz, se generó un heatmap para visualizar los datos
 
 ![Heatmap bigmatrix](03_Out/Plots/bm_heatmap.jpeg)
+
+# 9. NMDS para reducir dimensiones
+
+Se realizó un NMDS tomando en cuenta los datos categoricos de comorbilidades y el rango de edad, para ver como se agrupan los datos de acuerdo a las comorbilidades
+
+Se realizó primero para ver las diferencias en los grupos menores de 18 años y mayores de 70 años. Los extremos en los rangos de edad
+
+![NMDS 1](03_Out/Plots/nmds1.jpeg)
