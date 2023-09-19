@@ -1822,7 +1822,110 @@ doi={10.1007/s00285-022-01861-w},
 url={https://doi.org/10.1007/s00285-022-01861-w}
 }
 
+--MODELOS HETEROGENEOS DE COVID-19----------------------------------------------------
+123. Risk of COVID-19 transmission in heterogeneous age groups and effective vaccination strategy in Korea: a mathematical modeling study
+https://e-epih.org/journal/view.php?doi=10.4178/epih.e2021059
+@article{ko2021risk,
+author={Ko, Youngsuk and Lee, Jacob and Seo, Yubin and Jung, Eunok},
+title={Risk of {COVID-19} transmission in heterogeneous age groups and effective vaccination strategy in Korea: a mathematical modeling study},
+journal={Epidemiology and Health},
+year={2021},
+month={Sep},
+volume={43},
+publisher={Korean Society of Epidemiology},
+abstract={OBJECTIVES: This study aims to analyze the possibility and conditions of maintaining an effective reproductive number below 1 using a mathematical model. METHODS: The total population was divided into five age groups (0-17, 18-29, 30-59, 60-74, and $\geq$75 years). Maximum likelihood estimation (MLE) was used to estimate the transmission rate of each age group. Mathematical model simulation was conducted until December 31, 2021, by establishing various strategies for vaccination and social distancing without considering variants. RESULTS: MLE results revealed that the group aged 0-17 years had a lower risk of transmission than other age groups, and the older age group had relatively high risks of infection. If 70\% of the population will be vaccinated by the end of 2021, then simulations showed that even if social distancing was eased, the effective reproductive number would remain below 1 near August if it was not at the level of the third re-spreading period. However, if social distancing was eased and it reached the level of the re-spreading period, the effective reproductive number could be below 1 at the end of 2021. CONCLUSIONS: Considering both stable and worsened situations, simulation results emphasized that sufficient vaccine supply and control of the epidemic by maintaining social distancing to prevent an outbreak at the level of the re-spreading period are necessary to minimize mortality and maintain the effective reproductive number below 1.},
+keywords={COVID-19; Physical distancing; Republic of Korea; Theoretical models; Vaccination},
+doi={10.4178/epih.e2021059}
+}
 
+124. The heterogeneous mixing model of COVID-19 with interventions
+https://www.sciencedirect.com/science/article/pii/S0022519322002508
+@article{duan2022heterogeneous,
+title = {The heterogeneous mixing model of COVID-19 with interventions},
+journal = {Journal of Theoretical Biology},
+volume = {553},
+pages = {111258},
+year = {2022},
+issn = {0022-5193},
+doi = {https://doi.org/10.1016/j.jtbi.2022.111258},
+url = {https://www.sciencedirect.com/science/article/pii/S0022519322002508},
+author = {Moran Duan and Zhen Jin},
+keywords = {COVID-19, Heterogeneous mixing, Prevent infection, Control reproduction number, Vaccination strategies},
+abstract = {The emergence of mutant strains of COVID-19 reduces the effectiveness of vaccines in preventing infection, but remains effective in preventing severe illness and death. This paper established a heterogeneous mixing model of age groups with pharmaceutical and non-pharmaceutical interventions by analyzing the transmission mechanism of breakthrough infection caused by the heterogeneity of protection period under the action of vaccine-preventable infection with the original strain. The control reproduction number Rc of the system is analyzed, and the existence and stability of equilibrium are given by the comparison principle. Numerical simulation was conducted to evaluate the vaccination program and intervention measures in the customized scenario, demonstrating that the group-3 coverage rate p3 plays a key role in Rc. It is proposed that accelerating the rate of admission and testing is conducive to epidemic control by further fitting data of COVID-19 transmission in real scenarios. The findings provide a general modeling idea for the emergence of new vaccines to prevent infection by mutant strains, as well as a solid theoretical foundation for mainland China to formulate future vaccination strategies for new vaccines. This manuscript was submitted as part of a theme issue on “Modelling COVID-19 and Preparedness for Future Pandemics”.}
+}
+
+125. Effects of latency and age structure on the dynamics and containment of COVID-19
+https://www.sciencedirect.com/science/article/abs/pii/S0022519321000096
+@article{blyuss2021effects,
+title = {Effects of latency and age structure on the dynamics and containment of COVID-19},
+journal = {Journal of Theoretical Biology},
+volume = {513},
+pages = {110587},
+year = {2021},
+issn = {0022-5193},
+doi = {https://doi.org/10.1016/j.jtbi.2021.110587},
+url = {https://www.sciencedirect.com/science/article/pii/S0022519321000096},
+author = {K.B. Blyuss and Y.N. Kyrychko},
+keywords = {COVID-19, SEIR-type epidemic model, Latency, Age structure},
+abstract = {In this paper we develop an SEIR-type model of COVID-19, with account for two particular aspects: non-exponential distribution of incubation and recovery periods, as well as age structure of the population. For the mean-field model, which does not distinguish between different age groups, we demonstrate that including a more realistic Gamma distribution of incubation and recovery periods may not have an effect on the total number of deaths and the overall size of an epidemic, but it has a major effect in terms of increasing the peak numbers of infected and critical care cases, as well as on changing the timescales of an epidemic, both in terms of time to reach the peak, and the overall duration of an outbreak. In order to obtain more accurate estimates of disease progression and investigate different strategies for introducing and lifting the lockdown, we have also considered an age-structured version of the model, which has allowed us to include more accurate data on age-specific rates of hospitalisation and COVID-19 related mortality. Applying this model to three comparable neighbouring regions in the UK has delivered some fascinating insights regarding the effect of lockdown in regions with different population structure. We have discovered that for a fixed lockdown duration, the timing of its start is very important in the sense that the second epidemic wave after lifting the lockdown can be significantly smaller or larger depending on the specific population structure. Also, the later the fixed-duration lockdown is introduced, the smaller is the resulting final number of deaths at the end of the outbreak. When the lockdown is introduced simultaneously for all regions, increasing lockdown duration postpones and slightly reduces the epidemic peak, though without noticeable differences in peak magnitude between different lockdown durations.}
+}
+
+126. Estimating local outbreak risks and the effects of non-pharmaceutical interventions in age-structured populations: SARS-CoV-2 as a case study
+https://www.sciencedirect.com/science/article/pii/S0022519321004033?via%3Dihub#s0060
+@article{lovell2022estimating,
+title = {Estimating local outbreak risks and the effects of non-pharmaceutical interventions in age-structured populations: SARS-CoV-2 as a case study},
+journal = {Journal of Theoretical Biology},
+volume = {535},
+pages = {110983},
+year = {2022},
+issn = {0022-5193},
+doi = {https://doi.org/10.1016/j.jtbi.2021.110983},
+url = {https://www.sciencedirect.com/science/article/pii/S0022519321004033},
+author = {Francesca A. Lovell-Read and Silvia Shen and Robin N. Thompson},
+keywords = {Mathematical modelling, Infectious disease epidemiology, Outbreak probability, SARS-CoV-2, COVID-19, Age-structured models, Non-pharmaceutical interventions},
+abstract = {During the COVID-19 pandemic, non-pharmaceutical interventions (NPIs) including school closures, workplace closures and social distancing policies have been employed worldwide to reduce transmission and prevent local outbreaks. However, transmission and the effectiveness of NPIs depend strongly on age-related factors including heterogeneities in contact patterns and pathophysiology. Here, using SARS-CoV-2 as a case study, we develop a branching process model for assessing the risk that an infectious case arriving in a new location will initiate a local outbreak, accounting for the age distribution of the host population. We show that the risk of a local outbreak depends on the age of the index case, and we explore the effects of NPIs targeting individuals of different ages. Social distancing policies that reduce contacts outside of schools and workplaces and target individuals of all ages are predicted to reduce local outbreak risks substantially, whereas school closures have a more limited impact. In the scenarios considered here, when different NPIs are used in combination the risk of local outbreaks can be eliminated. We also show that heightened surveillance of infectious individuals reduces the level of NPIs required to prevent local outbreaks, particularly if enhanced surveillance of symptomatic cases is combined with efforts to find and isolate nonsymptomatic infected individuals. Our results reflect real-world experience of the COVID-19 pandemic, during which combinations of intense NPIs have reduced transmission and the risk of local outbreaks. The general modelling framework that we present can be used to estimate local outbreak risks during future epidemics of a range of pathogens, accounting fully for age-related factors.}
+}
+
+127. Are children less susceptible to COVID-19?
+https://www.clinicalkey.es/#!/content/playContent/1-s2.0-S1684118220300396?scrollTo=%23top
+@article{lee2020children,
+  title={Are children less susceptible to COVID-19?},
+  author={Lee, Ping-Ing and Hu, Ya-Li and Chen, Po-Yen and Huang, Yhu-Chering and Hsueh, Po-Ren},
+  journal={Journal of Microbiology, Immunology, and Infection},
+  volume={53},
+  number={3},
+  pages={371},
+  year={2020},
+  month={Jun},
+  publisher={Elsevier},
+  doi={10.1016/j.jmii.2020.02.011.}
+}
+
+128. Clinical features of COVID-19 in elderly patients: A comparison with young and middle-aged patients
+https://www.sciencedirect.com/science/article/pii/S016344532030116X?via%3Dihub#sec0011
+@article{liu2020clinical,
+title = {Clinical features of COVID-19 in elderly patients: A comparison with young and middle-aged patients},
+journal = {Journal of Infection},
+volume = {80},
+number = {6},
+pages = {e14-e18},
+year = {2020},
+issn = {0163-4453},
+doi = {https://doi.org/10.1016/j.jinf.2020.03.005},
+url = {https://www.sciencedirect.com/science/article/pii/S016344532030116X},
+author = {Kai Liu and Ying Chen and Ruzheng Lin and Kunyuan Han},
+keywords = {Clinical feature, COVID-19, Elderly patients, Young and middle-aged patients},
+abstract = {Background
+Due to the general susceptibility of new coronaviruses, the clinical characteristics and outcomes of elderly and young patients may be different.
+Objective
+To analyze the clinical characteristics of elderly patients with 2019 new-type coronavirus pneumonia (COVID-19).
+Methods
+This is a retrospective study of patients with new coronavirus pneumonia (COVID-19) who were hospitalized in Hainan Provincial People's Hospital from January 15, 2020 to February 18, 2020. Compare the clinical characteristics of elderly with Young and Middle-aged patients.
+Results
+A total of 56 patients were enrolled 18 elderly patients (32.14%), and 38 young and middle-aged patients (67.86%). The most common symptoms in both groups were fever, followed by cough and sputum. Four patients in the elderly group received negative pressure ICU for mechanical ventilation, and five patients in the young and middle-aged group. One patient died in the elderly group (5.56%), and two patients died in the young and middle-aged group (5.26%). The PSI score of the elderly group was higher than that of the young and middle-aged group (P < 0.001). The proportion of patients with PSI grades IV and V was significantly higher in the elderly group than in the young and middle-aged group (P < 0.05). The proportion of multiple lobe involvement in the elderly group was higher than that in the young and middle-aged group (P < 0.001), and there was no difference in single lobe lesions between the two groups. The proportion of lymphocytes in the elderly group was significantly lower than that in the young and middle-aged group (P < 0.001), and the C-reactive protein was significantly higher in the young group (P < 0.001). The Lopinavir and Ritonavir Tablets, Chinese medicine, oxygen therapy, and mechanical ventilation were statistically different in the elderly group and the young and middle-aged group, and the P values were all <0.05.
+Interpretation
+The mortality of elderly patients with COVID-19 is higher than that of young and middle-aged patients, and the proportion of patients with PSI grade IV and V is significantly higher than that of young and middle-aged patients. Elderly patients with COVID-19 are more likely to progress to severe disease.}
+}
 
 
 
