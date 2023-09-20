@@ -509,6 +509,16 @@ csl: apa.csl
 
 200. [@ram2021modified; @ko2021risk; @duan2022heterogeneous; @blyuss2021effects; @lovell2022estimating; @lee2020children; @liu2020clinical; @chikina2020modeling; @pezzullo2023age]
 
+# 3. Justificación del proyecto
+
+201. [@pezzullo2023age]
+
+202. [@santana2021covid]
+
+203. [@kretzschmar2022challenges]
+
+204. [@gozzi2021importance]
+
 # M
 
 - https://academic.oup.com/cid/article/74/9/1678/6359063 : Parámetros

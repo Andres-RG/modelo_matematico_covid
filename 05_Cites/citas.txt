@@ -1960,6 +1960,54 @@ keywords = {COVID-19, Infection fatality rate, Seroprevalence, Bias, Epidemics},
 abstract = {The largest burden of COVID-19 is carried by the elderly, and persons living in nursing homes are particularly vulnerable. However, 94% of the global population is younger than 70 years and 86% is younger than 60 years. The objective of this study was to accurately estimate the infection fatality rate (IFR) of COVID-19 among non-elderly people in the absence of vaccination or prior infection. In systematic searches in SeroTracker and PubMed (protocol: https://osf.io/xvupr), we identified 40 eligible national seroprevalence studies covering 38 countries with pre-vaccination seroprevalence data. For 29 countries (24 high-income, 5 others), publicly available age-stratified COVID-19 death data and age-stratified seroprevalence information were available and were included in the primary analysis. The IFRs had a median of 0.034% (interquartile range (IQR) 0.013–0.056%) for the 0–59 years old population, and 0.095% (IQR 0.036–0.119%) for the 0–69 years old. The median IFR was 0.0003% at 0–19 years, 0.002% at 20–29 years, 0.011% at 30–39 years, 0.035% at 40–49 years, 0.123% at 50–59 years, and 0.506% at 60–69 years. IFR increases approximately 4 times every 10 years. Including data from another 9 countries with imputed age distribution of COVID-19 deaths yielded median IFR of 0.025–0.032% for 0–59 years and 0.063–0.082% for 0–69 years. Meta-regression analyses also suggested global IFR of 0.03% and 0.07%, respectively in these age groups. The current analysis suggests a much lower pre-vaccination IFR in non-elderly populations than previously suggested. Large differences did exist between countries and may reflect differences in comorbidities and other factors. These estimates provide a baseline from which to fathom further IFR declines with the widespread use of vaccination, prior infections, and evolution of new variants.}
 }
 
+131. COVID-19 epidemic scenarios into 2021 based on observed key superspreading events
+https://www.medrxiv.org/content/10.1101/2021.04.14.21255436v2.full-text
+@article{santana2021covid,
+	author = {Mario Santana-Cibrian and M. Adrian Acu{\~n}a-Zegarra and Carlos E. Rodr{\'\i}guez and Rams{\'e}s H. Mena and Jorge X. Velasco-Hernandez},
+	title = {COVID-19 epidemic scenarios into 2021 based on observed key superspreading events},
+	elocation-id = {2021.04.14.21255436},
+	year = {2021},
+	doi = {10.1101/2021.04.14.21255436},
+	publisher = {Cold Spring Harbor Laboratory Press},
+	abstract = {Key high transmission dates for the year 2020 are used to create scenarios of the evolution of the COVID-19 pandemic in several states of Mexico for 2021. These scenarios are obtained through the estimation of a time-dependent contact rate, where the main assumption is that disease behavior is heavily determined by the mobility and social activity of the population during holidays and other important calendar dates. First, changes in the effective contact rate on predetermined dates of 2020 are estimated. Then, this information is used to propose different scenarios for the number of cases and deaths for 2021. The fundamental assumptions behind this methodology are that the effective contact rate incorporates the main superspreading transmission events during last year, that each region has an independent epidemic not explicitly interconnected with other regions and, finally, that there are no new highly transmissible SARS-CoV-2 variants active during the timeline of the forecasts. Also, several levels of vaccination are considered to analyze their impact on the projections of the epidemic curve. The objective is to generate a range of scenarios that could be useful to evaluate the possible evolution of the epidemic and its likely impact on incidence and mortality.Competing Interest StatementThe authors have declared no competing interest.Funding StatementNoneAuthor DeclarationsI confirm all relevant ethical guidelines have been followed, and any necessary IRB and/or ethics committee approvals have been obtained.YesThe details of the IRB/oversight body that provided approval or exemption for the research described are given below:NoneAll necessary patient/participant consent has been obtained and the appropriate institutional forms have been archived.YesI understand that all clinical trials and any other prospective interventional studies must be registered with an ICMJE-approved registry, such as ClinicalTrials.gov. I confirm that any such study reported in the manuscript has been registered and the trial registration ID is provided (note: if posting a prospective study registered retrospectively, please provide a statement in the trial ID field explaining why the study was not registered in advance).YesI have followed all appropriate research reporting guidelines and uploaded the relevant EQUATOR Network research reporting checklist(s) and other pertinent material as supplementary files, if applicable.YesAll the data used in this work is publicly available. https://www.gob.mx/salud/documentos/datos-abiertos-152127},
+	URL = {https://www.medrxiv.org/content/early/2021/06/02/2021.04.14.21255436},
+	eprint = {https://www.medrxiv.org/content/early/2021/06/02/2021.04.14.21255436.full.pdf},
+	journal = {medRxiv}
+}
+
+132. Challenges for modelling interventions for future pandemics
+https://www.sciencedirect.com/science/article/pii/S1755436522000081?via%3Dihub
+@article{kretzschmar2022challenges,
+title = {Challenges for modelling interventions for future pandemics},
+journal = {Epidemics},
+volume = {38},
+pages = {100546},
+year = {2022},
+issn = {1755-4365},
+doi = {https://doi.org/10.1016/j.epidem.2022.100546},
+url = {https://www.sciencedirect.com/science/article/pii/S1755436522000081},
+author = {Mirjam E. Kretzschmar and Ben Ashby and Elizabeth Fearon and Christopher E. Overton and Jasmina Panovska-Griffiths and Lorenzo Pellis and Matthew Quaife and Ganna Rozhnova and Francesca Scarabel and Helena B. Stage and Ben Swallow and Robin N. Thompson and Michael J. Tildesley and Daniel Villela},
+keywords = {Mathematical models, Pandemics, Pharmaceutical interventions, Non-pharmaceutical interventions, Policy support},
+abstract = {Mathematical modelling and statistical inference provide a framework to evaluate different non-pharmaceutical and pharmaceutical interventions for the control of epidemics that has been widely used during the COVID-19 pandemic. In this paper, lessons learned from this and previous epidemics are used to highlight the challenges for future pandemic control. We consider the availability and use of data, as well as the need for correct parameterisation and calibration for different model frameworks. We discuss challenges that arise in describing and distinguishing between different interventions, within different modelling structures, and allowing both within and between host dynamics. We also highlight challenges in modelling the health economic and political aspects of interventions. Given the diversity of these challenges, a broad variety of interdisciplinary expertise is needed to address them, combining mathematical knowledge with biological and social insights, and including health economics and communication skills. Addressing these challenges for the future requires strong cross-disciplinary collaboration together with close communication between scientists and policy makers.}
+}
+
+133. The importance of non-pharmaceutical interventions during the COVID-19 vaccine rollout
+https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009346#sec007
+@article{gozzi2021importance,
+    doi = {10.1371/journal.pcbi.1009346},
+    author = {Gozzi, Nicolò AND Bajardi, Paolo AND Perra, Nicola},
+    journal = {PLOS Computational Biology},
+    publisher = {Public Library of Science},
+    title = {The importance of non-pharmaceutical interventions during the COVID-19 vaccine rollout},
+    year = {2021},
+    month = {09},
+    volume = {17},
+    url = {https://doi.org/10.1371/journal.pcbi.1009346},
+    pages = {1-24},
+    abstract = {The promise of efficacious vaccines against SARS-CoV-2 is fulfilled and vaccination campaigns have started worldwide. However, the fight against the pandemic is far from over. Here, we propose an age-structured compartmental model to study the interplay of disease transmission, vaccines rollout, and behavioural dynamics. We investigate, via in-silico simulations, individual and societal behavioural changes, possibly induced by the start of the vaccination campaigns, and manifested as a relaxation in the adoption of non-pharmaceutical interventions. We explore different vaccination rollout speeds, prioritization strategies, vaccine efficacy, as well as multiple behavioural responses. We apply our model to six countries worldwide (Egypt, Peru, Serbia, Ukraine, Canada, and Italy), selected to sample diverse socio-demographic and socio-economic contexts. To isolate the effects of age-structures and contacts patterns from the particular pandemic history of each location, we first study the model considering the same hypothetical initial epidemic scenario in all countries. We then calibrate the model using real epidemiological and mobility data for the different countries. Our findings suggest that early relaxation of safe behaviours can jeopardize the benefits brought by the vaccine in the short term: a fast vaccine distribution and policies aimed at keeping high compliance of individual safe behaviours are key to mitigate disease resurgence.},
+    number = {9},
+}
+
 
 
 
