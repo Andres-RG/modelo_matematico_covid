@@ -786,3 +786,60 @@ Se realizó un NMDS tomando en cuenta los datos categoricos de comorbilidades y 
 Se realizó primero para ver las diferencias en los grupos menores de 18 años y mayores de 70 años. Los extremos en los rangos de edad
 
 ![NMDS 1](03_Out/Plots/nmds1.jpeg)
+
+# 10. Estimación del $R_0$
+
+Teniendo en cuenta las ecuaciones, el valor del $R_0$ se puede estimar como:
+
+```{r}
+beta_1  <- 0.3771645
+beta_2  <- 0.4473864
+beta_3  <- 0.5090940
+beta_4  <- 0.5638485
+    
+alpha   <- 1/5.6
+    
+pl_1    <- 0.9746533
+pl_2    <- 0.9610823
+pl_3    <- 0.8420886
+pl_4    <- 0.5567019
+
+ph_1    <- 0.02534672
+ph_2    <- 0.03891768
+ph_3    <- 0.15791136
+ph_4    <- 0.44329812
+
+delta_l <- 1/5.5
+
+delta_h <- 1/4
+
+gamma_R <- 1/14
+
+pi_1    <- 0.09433962
+pi_2    <- 0.11152620
+pi_3    <- 0.18827911
+pi_4    <- 0.21197680
+
+delta_i <- 1/1
+
+gamma_h <- 1/12
+
+mu_1    <- 0.5000000
+mu_2    <- 0.6896226
+mu_3    <- 0.8224699
+mu_4    <- 0.8972645
+
+delta_m <- 1/8
+
+gamma_i <- 1/7
+
+N1       <- 782000
+N2       <- 801000
+N3       <- 539000
+N4       <- 242000
+```
+
+
+
+
+
