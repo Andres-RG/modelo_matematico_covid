@@ -503,7 +503,11 @@ csl: apa.csl
 
 #### 2.3.1.1. Modelos heterogéneos para COVID-19
 
-198. [@ram2021modified; @ko2021risk; @duan2022heterogeneous; @lee2020children; @liu2020clinical]
+198. [@ram2021modified; @ko2021risk; @duan2022heterogeneous; @blyuss2021effects; @lovell2022estimating; @lee2020children; @liu2020clinical; @chikina2020modeling; @zhang2023risk; @pezzullo2023age]
+
+199. [@zhang2023risk; @secsalud2021covid]
+
+200. [@ram2021modified; @ko2021risk; @duan2022heterogeneous; @blyuss2021effects; @lovell2022estimating; @lee2020children; @liu2020clinical; @chikina2020modeling; @pezzullo2023age]
 
 # M
 
