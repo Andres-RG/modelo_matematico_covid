@@ -791,6 +791,10 @@ Se realizó primero para ver las diferencias en los grupos menores de 18 años y
 
 Teniendo en cuenta las ecuaciones, el valor del $R_0$ se puede estimar como:
 
+$$\begin{array}{ll}
+R_0 = \sum_{j=1}^{4} {\frac{\alpha \, \, p_{lj} \, \delta_l}{ \gamma_R } + \frac{\alpha \, p_{hj} \, \delta_h}{(p_{ij} \, \delta_i)( \, (1-p_{ij}) \, \gamma_h)} }
+\end{array}$$
+
 ```{r}
 beta_1  <- 0.3771645
 beta_2  <- 0.4473864
@@ -828,7 +832,7 @@ mu_1    <- 0.5000000
 mu_2    <- 0.6896226
 mu_3    <- 0.8224699
 mu_4    <- 0.8972645
-
+   
 delta_m <- 1/8
 
 gamma_i <- 1/7
@@ -837,9 +841,21 @@ N1       <- 782000
 N2       <- 801000
 N3       <- 539000
 N4       <- 242000
+
+r_0 <- ( ( (alpha*pl_1*delta_l)/(gamma_R) ) + 
+           ( (alpha*ph_1*delta_h)/((pi_1*delta_i)*((1-pi_1)*gamma_h)) ) +
+           ##
+           ( (alpha*pl_2*delta_l)/(gamma_R) ) + 
+           ( (alpha*ph_2*delta_h)/((pi_2*delta_i)*((1-pi_2)*gamma_h)) ) +
+           ##
+           ( (alpha*pl_3*delta_l)/(gamma_R) ) + 
+           ( (alpha*ph_3*delta_h)/((pi_3*delta_i)*((1-pi_3)*gamma_h)) ) +
+           ##
+           ( (alpha*pl_4*delta_l)/(gamma_R) ) + 
+           ( (alpha*ph_4*delta_h)/((pi_4*delta_i)*((1-pi_4)*gamma_h)) ) )
+
+r_0  ## VALORE DE R_0 a partir de los parámetros
 ```
-
-
 
 
 
