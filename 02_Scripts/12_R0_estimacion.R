@@ -2,6 +2,7 @@
 
 library(EpiEstim)
 library(incidence)
+library(ggplot2)
 
 # Se cargan los datos
 load("03_Out/OutData/conteo_casos_positivos_rango_edad.RData")
@@ -12,7 +13,7 @@ source("02_Scripts/Functions/Functions.R")
 
 # DATOS AL INICIO
 # Visucalización de datos
-incidencia <- casos_positivos_re_conteo[1:80, -3]
+incidencia <- casos_positivos_re_conteo[1:100, -3]
 incidencia <- as.data.frame(incidencia)
 colnames(incidencia) <- c("date", "I")
 head(incidencia)
@@ -52,6 +53,6 @@ res_parametric_si_all <- estimate_R(incidencia_all,
 
 head(res_parametric_si_all$R)
 plot(res_parametric_si_all, legend = FALSE)
-#jpeg("03_Out/Plots/r0_epiestim_all.jpeg", width = 365, height = 265, res = 300, units = "mm")
-#plot(res_parametric_si, legend = FALSE)
-#dev.off()
+jpeg("03_Out/Plots/r0_epiestim_all.jpeg", width = 365, height = 265, res = 300, units = "mm")
+plot(res_parametric_si_all, legend = FALSE)
+dev.off()
