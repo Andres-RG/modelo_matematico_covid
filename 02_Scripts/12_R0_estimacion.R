@@ -44,15 +44,14 @@ head(incidencia_all)
 plot(as.incidence(incidencia_all$I, dates = incidencia_all$dates))
 #dev.off()
 # EpiEstim R0
-res_parametric_si_all <- estimate_R(incidencia_all, 
-                                method="parametric_si",
-                                config = make_config(list(
-                                  mean_si = 5.6, 
-                                  std_si = 4.2))
-)
+res_parametric_si_all <- estimate_R(incid  = incidencia_all,
+                                    method = "parametric_si",
+                                    config = make_config(list(mean_si = 5.6,
+                                                              std_si = 4.2))
+                                    )
 
 head(res_parametric_si_all$R)
 plot(res_parametric_si_all, legend = FALSE)
-jpeg("03_Out/Plots/r0_epiestim_all.jpeg", width = 365, height = 265, res = 300, units = "mm")
+#jpeg("03_Out/Plots/r0_epiestim_all.jpeg", width = 365, height = 265, res = 300, units = "mm")
 plot(res_parametric_si_all, legend = FALSE)
-dev.off()
+#dev.off()
