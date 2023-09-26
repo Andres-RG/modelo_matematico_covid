@@ -453,6 +453,11 @@ colnames(bm) <- c("Diabetes","EPOC","Asma","Inmunsupr","Hipertension",
                   "Obesidad X Tabaquismo","Renal Cronica X Tabaquismo")
 bm
 mat_combinaciones_bm = bm
+#
+cell_width <- unit(10, "mm")
+cell_height <- unit(10, "mm") 
+#
+set.seed(123)
 bm_heatmap <- Heatmap(mat_combinaciones_bm,
                       name = "p",col = viridis(45),
                       column_title = "Heatmap Big Matrix",
@@ -460,12 +465,12 @@ bm_heatmap <- Heatmap(mat_combinaciones_bm,
                       column_title_gp = gpar(fontsize = 12, fontface = "bold"),
                       cluster_rows = FALSE, cluster_columns = FALSE,
                       column_names_side = "top", column_dend_side = "bottom",
-                      column_names_gp = gpar(fontsize = 6),
-                      row_names_side = "left"
+                      column_names_gp = gpar(fontsize = 10),
+                      row_names_side = "left",
+                      width = ncol(mat_combinaciones_bm)*unit(4.5, "mm"), 
+                      height = nrow(mat_combinaciones_bm)*unit(15, "mm")
                       )
 bm_heatmap
-
-heatmap(mat_combinaciones_bm)
 
 #jpeg("03_Out/Plots/bm_heatmap.jpeg",
 #     width = 465, height = 365, res = 300, units = "mm")
