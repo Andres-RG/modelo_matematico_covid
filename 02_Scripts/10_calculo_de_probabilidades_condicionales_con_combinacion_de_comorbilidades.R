@@ -467,12 +467,12 @@ bm_heatmap <- Heatmap(mat_combinaciones_bm,
                       column_names_side = "top", column_dend_side = "bottom",
                       column_names_gp = gpar(fontsize = 10),
                       row_names_side = "left",
-                      width = ncol(mat_combinaciones_bm)*unit(4.5, "mm"), 
-                      height = nrow(mat_combinaciones_bm)*unit(15, "mm")
+                      width = ncol(mat_combinaciones_bm)*unit(9, "mm"), 
+                      height = nrow(mat_combinaciones_bm)*unit(30, "mm")
                       )
 bm_heatmap
 
-#jpeg("03_Out/Plots/bm_heatmap.jpeg",
-#     width = 465, height = 365, res = 300, units = "mm")
+jpeg("03_Out/Plots/bm_heatmap.jpeg",
+     width = 465, height = 365, res = 300, units = "mm")
 bm_heatmap
-#dev.off()
+dev.off()
