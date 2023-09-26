@@ -38,10 +38,10 @@ plot(res_parametric_si, legend = FALSE)
 # Visucalización de datos
 incidencia_all <- casos_positivos_re_conteo[, -3]
 incidencia_all <- as.data.frame(incidencia_all)
-colnames(incidencia_all) <- c("date", "I")
+colnames(incidencia_all) <- c("dates", "I")
 head(incidencia_all)
 #jpeg("03_Out/Plots/incidencia_covid_qro_all.jpeg", width = 395, height = 285, res = 300, units = "mm")
-plot(as.incidence(incidencia_all$I))
+plot(as.incidence(incidencia_all$I, dates = incidencia_all$dates))
 #dev.off()
 # EpiEstim R0
 res_parametric_si_all <- estimate_R(incidencia_all, 
