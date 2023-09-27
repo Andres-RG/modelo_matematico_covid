@@ -857,5 +857,11 @@ r_0 <- ( ( (alpha*pl_1*delta_l)/(gamma_R) ) +
 r_0  ## VALORE DE R_0 a partir de los parámetros
 ```
 
+Además de esto, se realizó la estimación de $R_t$ con los datos de incidencia de COVID-19 para el estado de Querétaro.
+
+![Incidencia COVID-19](03_Out/Plots/incidencia_covid_qro.jpeg)
+
+![Estimación Rt](03_Out/Plots/r0_epiestim.jpeg)
+
 
 
