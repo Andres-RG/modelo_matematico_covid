@@ -2008,6 +2008,26 @@ https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009346#s
     number = {9},
 }
 
+--METODOLOGÍA-------------------------------------------------------------------------
+134. DATOS ABIERTOS
+https://www.gob.mx/salud/documentos/datos-abiertos-152127
+@misc{datos2022covid,
+author = {{Dirección General de Epidemiología}},
+title = {Datos Abiertos Dirección General de Epidemiología},
+organization = {{Secretaría de Salud}},
+year = {2022},
+note = {Ingresado en Noviembre 15, 2022}
+}
+
+135. R
+@Manual{r2022a,
+    title = {R: A Language and Environment for Statistical Computing},
+    author = {{R Core Team}},
+    organization = {R Foundation for Statistical Computing},
+    address = {Vienna, Austria},
+    year = {2022},
+    url = {https://www.R-project.org/},
+  }
 
 
 

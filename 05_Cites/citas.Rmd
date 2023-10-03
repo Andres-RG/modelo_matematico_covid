@@ -519,7 +519,13 @@ csl: apa.csl
 
 204. [@gozzi2021importance]
 
-# M
+# 5. Metodología
+
+205. [@datos2022covid]
+
+206. [@r2022a]
+
+207. [@cdmxmodelo]
 
 - https://academic.oup.com/cid/article/74/9/1678/6359063 : Parámetros
 - https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-021-05950-x
