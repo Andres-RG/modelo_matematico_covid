@@ -2029,6 +2029,20 @@ note = {Ingresado en Noviembre 15, 2022}
     url = {https://www.R-project.org/},
   }
 
+136. DeSolve
+@article{desolve2010R,
+    title = {Solving Differential Equations in {R}: Package de{S}olve},
+    author = {{Karline Soetaert} and {Thomas Petzoldt} and {R. Woodrow Setzer}},
+    journal = {Journal of Statistical Software},
+    volume = {33},
+    number = {9},
+    pages = {1--25},
+    year = {2010},
+    doi = {10.18637/jss.v033.i09},
+    keywords = {ordinary differential equations, partial differential
+    equations, differential algebraic equations, initial value problems,
+    R, FORTRAN, C},
+  }
 
 
 

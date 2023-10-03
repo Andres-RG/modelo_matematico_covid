@@ -523,9 +523,11 @@ csl: apa.csl
 
 205. [@datos2022covid]
 
-206. [@r2022a]
+206. [@r2022]
 
 207. [@cdmxmodelo]
+
+208. [@desolve2010R]
 
 - https://academic.oup.com/cid/article/74/9/1678/6359063 : Parámetros
 - https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-021-05950-x
