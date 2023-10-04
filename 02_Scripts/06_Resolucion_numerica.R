@@ -89,7 +89,7 @@ t <- seq (0, 300, by = 1)
 
 parameters <- c(
     
-    beta  <- 0.4646          , #https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7434626/
+    beta    <- 0.4646        , #https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7434626/
     
     alpha   <- 1/5.6         ,
     
@@ -210,7 +210,7 @@ grafica_modelo <- ggmatplot(x = out[,1],
     theme(plot.title = element_text(hjust = 0.5))+
     theme(panel.background = element_rect(fill = "white"), 
           axis.line = element_line(colour = "black", size = 0.75))
-    
+grafica_modelo
 
 #ggsave("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.jpeg", 
 #       plot = grafica_modelo, width = 2887, height = 1464, units = "px")
