@@ -40,8 +40,8 @@ casos_positivos_re <- filter(casos_totales_re, CLASIFICACION_FINAL == 1 |
 
 # Se elabora la grafica de casos positivos separados por rango de edades
 plot_positivos_re <- ggplot(casos_positivos_re, 
-                            aes(x=FECHA_SINTOMAS, y=EDAD, fill = rango_de_edad)) + 
-    geom_bar(position="stack", stat="identity") + 
+                            aes(x=FECHA_SINTOMAS, fill = rango_de_edad)) + 
+    geom_bar(position="stack", stat="count") + 
     ggtitle("Casos positivos a COVID por rangos de edades 
           para el estado de Queretaro") + 
     labs(x="Tiempo", y="Casos") +
@@ -50,15 +50,11 @@ plot_positivos_re <- ggplot(casos_positivos_re,
     theme(panel.background = element_rect(fill = "white"), 
           axis.line = element_line(colour = "black", size = 1)) +
     scale_fill_viridis(discrete = T)
-
-# El objeto que contiene la grafica se guarda como una imagen png
-#pdf("03_Out/Plots/Casos positivos a COVID por rangos de edades para el estado de Queretaro.pdf",
-#    paper = "a4r", width = 12, height = 9)
+plot_positivos_re
+# El objeto que contiene la grafica se guarda como una imagen jpeg
+#jpeg("03_Out/Plots/Casos positivos a COVID por rangos de edades para el estado de Queretaro.jpeg",
+#     width = 365, height = 265, res = 300, units = "mm")
 plot_positivos_re
 #dev.off()
 
 
-#png("03_Out/Plots/Casos positivos a COVID por rangos de edades para el estado de Queretaro.png",
-#    width = 365, height = 225, res = 300, units = "mm")
-#plot_positivos_re
-#dev.off()
