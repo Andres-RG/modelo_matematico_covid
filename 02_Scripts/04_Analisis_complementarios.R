@@ -17,6 +17,7 @@ load("03_Out/OutData/casos_positivos_rangos_edades.RData")
 load("03_Out/OutData/conteo_casos_positivos_rango_edad.RData")
 load("03_Out/OutData/casos_positivos_x_dia_rango_edad.RData")
 load("03_Out/OutData/casos_totales_rangos_edades.RData")
+load("03_Out/OutData/casos_solo_fecha.RData")
 
 
 # Tabla de casos positivos totales por dia ====
@@ -37,7 +38,7 @@ casos_positivos_re_conteo <- aggregate(positivos~FECHA_SINTOMAS,
                                        data = casos_positivos_re_conteo,
                                        FUN = sum)
 
-# Genera otra columna en elobjeto para agregar el numero de dia
+# Genera otra columna en el objeto para agregar el numero de dia
 casos_positivos_re_conteo [,3] <- c(1:length(casos_positivos_re_conteo$FECHA_SINTOMAS))
 colnames(casos_positivos_re_conteo)[3] <- "num.dia" 
 casos_positivos_re_conteo
@@ -203,20 +204,6 @@ rownames(parms_estructura_edad) <- c("Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4")
 
 # Grafica de casos positivos por rangos de edad. Geom_density ====
 
-## Librerias necesarias 
-library(ggplot2)
-library(ggridges)
-library(tidyverse)
-library(viridisLite)
-library(viridis)
-library(deSolve)
-library(ape)
-library(lubridate)
-
-## Bases de datos
-load("03_Out/OutData/casos_totales_rangos_edades.RData")
-load("03_Out/OutData/casos_positivos_rangos_edades.RData")
-
 ## Grafica 1
 plot_positivos_re <- ggplot(casos_positivos_re, 
                             aes(x=FECHA_SINTOMAS, fill = rango_de_edad)) + 
@@ -253,7 +240,7 @@ ggsave("03_Out/Plots/plot_casos_positivos_geom_density_2.jpeg",
 
 # GRAFICA CASOS POSITIVOS -----
 plot_pos_re <- ggplot(casos_positivos_re, 
-                            aes(x=FECHA_SINTOMAS, 
+                            aes(x = FECHA_SINTOMAS, 
                                 fill = rango_de_edad)) + 
   geom_bar(position="fill", stat="count") + 
   ggtitle("Casos positivos a COVID por rangos de edades 
@@ -273,12 +260,13 @@ plot_pos_re
 dev.off()
 
 
-plot_pos_re_v3 <- ggplot(casos_positivos_re, 
-                      aes(x=FECHA_SINTOMAS, 
-                          fill = rango_de_edad)) + 
-  geom_bar(position="dodge", stat="count") + 
-  ggtitle("Casos positivos a COVID por rangos de edades 
-          para el estado de Queretaro") + 
+
+casos <- casos_positivos_re_conteo[, -3]
+plot_casos <- ggplot(casos, 
+                     aes(x = FECHA_SINTOMAS,
+                         y = positivos)) +
+  geom_line(col = "#CD6839") +
+  ggtitle("Casos positivos totales") + 
   labs(x = "Tiempo", y = "Casos") +
   labs(fill = "Rangos de Edad") +
   theme(plot.title = element_text(hjust = 0.5))+
@@ -287,8 +275,9 @@ plot_pos_re_v3 <- ggplot(casos_positivos_re,
         axis.text.x = element_text(angle = 45, hjust = 1)) +
   scale_fill_viridis(discrete = T) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "1 month")
-plot_pos_re_v3
-jpeg("03_Out/Plots/plot_casos_positivos_v3.jpeg",
-     width = 365, height = 265, res = 300, units = "mm")
-plot_pos_re_v3
-dev.off()
+plot_casos
+#jpeg("03_Out/Plots/plot_casos_positivos_totales.jpeg",
+#     width = 365, height = 265, res = 300, units = "mm")
+plot_casos
+#dev.off()
+
