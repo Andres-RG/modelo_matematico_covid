@@ -16,6 +16,8 @@ source("02_Scripts/Functions/Functions.R")
 load("03_Out/OutData/casos_positivos_rangos_edades.RData")
 load("03_Out/OutData/conteo_casos_positivos_rango_edad.RData")
 load("03_Out/OutData/casos_positivos_x_dia_rango_edad.RData")
+load("03_Out/OutData/casos_totales_rangos_edades.RData")
+
 
 # Tabla de casos positivos totales por dia ====
 
@@ -249,3 +251,44 @@ plot_positivos_re
 ggsave("03_Out/Plots/plot_casos_positivos_geom_density_2.jpeg", 
        plot = plot_positivos_re, width = 2887, height = 1464, units = "px")
 
+# GRAFICA CASOS POSITIVOS -----
+plot_pos_re <- ggplot(casos_positivos_re, 
+                            aes(x=FECHA_SINTOMAS, 
+                                fill = rango_de_edad)) + 
+  geom_bar(position="fill", stat="count") + 
+  ggtitle("Casos positivos a COVID por rangos de edades 
+          para el estado de Queretaro") + 
+  labs(x = "Tiempo", y = "Casos") +
+  labs(fill = "Rangos de Edad") +
+  theme(plot.title = element_text(hjust = 0.5))+
+  theme(panel.background = element_rect(fill = "white"), 
+        axis.line = element_line(colour = "black", size = 1),
+        axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_viridis(discrete = T) +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month")
+plot_pos_re
+jpeg("03_Out/Plots/plot_casos_positivos_v2.jpeg",
+     width = 365, height = 265, res = 300, units = "mm")
+plot_pos_re
+dev.off()
+
+
+plot_pos_re_v3 <- ggplot(casos_positivos_re, 
+                      aes(x=FECHA_SINTOMAS, 
+                          fill = rango_de_edad)) + 
+  geom_bar(position="dodge", stat="count") + 
+  ggtitle("Casos positivos a COVID por rangos de edades 
+          para el estado de Queretaro") + 
+  labs(x = "Tiempo", y = "Casos") +
+  labs(fill = "Rangos de Edad") +
+  theme(plot.title = element_text(hjust = 0.5))+
+  theme(panel.background = element_rect(fill = "white"), 
+        axis.line = element_line(colour = "black", size = 1),
+        axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_viridis(discrete = T) +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month")
+plot_pos_re_v3
+jpeg("03_Out/Plots/plot_casos_positivos_v3.jpeg",
+     width = 365, height = 265, res = 300, units = "mm")
+plot_pos_re_v3
+dev.off()
