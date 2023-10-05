@@ -23,7 +23,7 @@ source("02_Scripts/06.5_Resolucion_numerica_modificacion_betas.R")
 # Se cargan los datos de COVID
 load("03_Out/OutData/casos_positivos_x_dia_rango_edad.RData")
 
-colores <- c("#00BFFF", "#CD9B1D", "#7CCD7C", "#6A5ACD")
+colores <- c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD")
 
 # Gráfica de Infectados ====
 # Esta gráfica se obtiene a partir de los datos del modelo
@@ -34,6 +34,7 @@ grafica_infectados <- ggmatplot(x = out[,1],
                                 fill = colores,
                                 linetype = 1, 
                                 xlab = "Tiempo", ylab = "Población",
+                                main = "Infectados",
                                 legend_title = "Grupos", 
                                 legend_label = c("Infectados Menores 18 años",
                                                  "Infectados 18 - 39 años",
@@ -43,7 +44,7 @@ grafica_infectados <- ggmatplot(x = out[,1],
         theme(plot.title = element_text(hjust = 0.5))+
         theme(panel.background = element_rect(fill = "white"), 
               axis.line = element_line(colour = "black", size = 0.75))
-
+grafica_infectados
 
 #ggsave("03_Out/Plots/grafica_infectados_inferidos.jpeg", 
 #       plot = grafica_infectados, 
@@ -60,6 +61,7 @@ grafica_recuperados <- ggmatplot(x = out[,1],
                                  fill = colores,
                                  linetype = 1, 
                                  xlab = "Tiempo", ylab = "Población",
+                                 main = "Recuperados",
                                  legend_title = "Grupos",
                                  legend_label = c("Recuperados Menores 18 años",
                                                   "Recuperados 18 - 39 años",
@@ -69,10 +71,10 @@ grafica_recuperados <- ggmatplot(x = out[,1],
         theme(plot.title = element_text(hjust = 0.5))+
         theme(panel.background = element_rect(fill = "white"), 
               axis.line = element_line(colour = "black", size = 0.75))
-
+grafica_recuperados
 
 #ggsave("03_Out/Plots/grafica_recuperados_inferidos.jpeg", 
-#       plot = grafica_recuperados, 
+#       plot = grafica_recuperados,
 #       width = 2487, height = 1791, units = "px")
 
 
@@ -85,6 +87,7 @@ grafica_muertos <- ggmatplot(x = out[,1],
                              fill = colores,
                              linetype = 1, 
                              xlab = "Tiempo", ylab = "Población",
+                             main = "Fallecidos",
                              legend_title = "Grupos", 
                              legend_label = c("Muertos Menores 18 años",
                                               "Muertos 18 - 39 años",
@@ -94,7 +97,7 @@ grafica_muertos <- ggmatplot(x = out[,1],
         theme(plot.title = element_text(hjust = 0.5))+
         theme(panel.background = element_rect(fill = "white"), 
               axis.line = element_line(colour = "black", size = 0.75))
-
+grafica_muertos
 
 #ggsave("03_Out/Plots/grafica_muertos_inferidos.jpeg", 
 #       plot = grafica_muertos, 
@@ -141,6 +144,7 @@ grafica_infectados_mod <- ggmatplot(x = out_betas[,1],
                                     fill = colores,
                                     linetype = 1,
                                     xlab = "Tiempo", ylab = "Población",
+                                    main = "Infectados",
                                     legend_title = "Grupos",
                                     legend_label = c("Infectados Menores 18 años",
                                                      "Infectados 18 - 39 años",
@@ -150,7 +154,7 @@ grafica_infectados_mod <- ggmatplot(x = out_betas[,1],
   theme(plot.title = element_text(hjust = 0.5))+
   theme(panel.background = element_rect(fill = "white"), 
         axis.line = element_line(colour = "black", size = 0.75))
-
+grafica_infectados_mod
 
 #ggsave("03_Out/Plots/grafica_infectados_inferidos_MODIFICADOS.jpeg", 
 #       plot = grafica_infectados_mod, 
@@ -166,6 +170,7 @@ grafica_recuperados_mod <- ggmatplot(x = out_betas[,1],
                                      fill = colores,
                                      linetype = 1,
                                      xlab = "Tiempo", ylab = "Población",
+                                     main = "Recuperados",
                                      legend_title = "Grupos",
                                      legend_label = c("Recuperados Menores 18 años",
                                                       "Recuperados 18 - 39 años",
@@ -175,7 +180,7 @@ grafica_recuperados_mod <- ggmatplot(x = out_betas[,1],
   theme(plot.title = element_text(hjust = 0.5))+
   theme(panel.background = element_rect(fill = "white"), 
         axis.line = element_line(colour = "black", size = 0.75))
-
+grafica_recuperados_mod
 
 #ggsave("03_Out/Plots/grafica_recuperados_inferidos_MODIFICADOS.jpeg", 
 #       plot = grafica_recuperados_mod, 
@@ -190,6 +195,7 @@ grafica_muertos_mod <- ggmatplot(x = out_betas[,1],
                                  fill = colores,
                                  linetype = 1,
                                  xlab = "Tiempo", ylab = "Población",
+                                 main = "Fallecidos",
                                  legend_title = "Grupos",
                                  legend_label = c("Muertos Menores 18 años",
                                                   "Muertos 18 - 39 años",
@@ -199,7 +205,7 @@ grafica_muertos_mod <- ggmatplot(x = out_betas[,1],
   theme(plot.title = element_text(hjust = 0.5))+
   theme(panel.background = element_rect(fill = "white"), 
         axis.line = element_line(colour = "black", size = 0.75))
-
+grafica_muertos_mod
 
 #ggsave("03_Out/Plots/grafica_muertos_inferidos_MODIFICADOS.jpeg", 
 #       plot = grafica_muertos_mod, 
@@ -232,3 +238,156 @@ plot_irm_mod
 #       plot = plot_irm_mod, 
 #       width = 2487, height = 1791, units = "px")
 
+# Gráfica de Susceptibles ====
+# Esta gráfica se obtiene a partir de los datos del modelo
+grafica_susceptibles_mod <- ggmatplot(x = out_betas[,1],
+                                      y = out_betas[,c(2,10,18,26)],
+                                      plot_type = "line",
+                                      color = colores,
+                                      fill = colores,
+                                      linetype = 1,
+                                      xlab = "Tiempo", ylab = "Población",
+                                      main = "Susceptibles",
+                                      legend_title = "Grupos",
+                                      legend_label = c("Susceptibles Menores 18 años",
+                                                       "Susceptibles 18 - 39 años",
+                                                       "Susceptibles 40 - 59 años",
+                                                       "Susceptibles Mayores de 60 años"),
+                                      lwd = 1) + 
+  theme(plot.title = element_text(hjust = 0.5))+
+  theme(panel.background = element_rect(fill = "white"), 
+        axis.line = element_line(colour = "black", size = 0.75))
+grafica_susceptibles_mod
+
+
+
+
+
+
+
+
+
+
+
+# GRAFICAS MODIFICADAS DATOS COREA
+# Gráfica de Infectados ====
+grafica_infectados_mod_v2 <- ggmatplot(x = out_betas_v2[,1],
+                                    y = out_betas_v2[,c(4,12,20,28)],
+                                    plot_type = "line",
+                                    color = colores,
+                                    fill = colores,
+                                    linetype = 1,
+                                    xlab = "Tiempo", ylab = "Población",
+                                    main = "Infectados datos Corea",
+                                    legend_title = "Grupos",
+                                    legend_label = c("Infectados Menores 18 años",
+                                                     "Infectados 18 - 39 años",
+                                                     "Infectados 40 - 59 años",
+                                                     "Infectados Mayores de 60 años"),
+                                    lwd = 1) + 
+  theme(plot.title = element_text(hjust = 0.5))+
+  theme(panel.background = element_rect(fill = "white"), 
+        axis.line = element_line(colour = "black", size = 0.75))
+grafica_infectados_mod_v2
+
+#ggsave("03_Out/Plots/grafica_infectados_inferidos_MODIFICADOS_Corea.jpeg", 
+#       plot = grafica_infectados_mod_v2, 
+#       width = 2487, height = 1791,units = "px")
+
+# determinar porcentajes infectados
+time_i <- out_betas_v2[,1]
+I1 <- out_betas_v2[,4]
+I2 <- out_betas_v2[,12]
+I3 <- out_betas_v2[,20]
+I4 <- out_betas_v2[,28]
+dat_inf <- data.frame(time_i, I1, I2, I3, I4)
+head(dat_inf)
+
+
+# grafica de porcentajes
+ggplot(dat_inf, aes(x = time_i)) +
+  geom_line(aes(y = I1), color = "#00BFFF", linetype = "solid", size = 1) +
+  geom_line(aes(y = I2), color = "#FFB90F", linetype = "dashed", size = 1) +
+  geom_line(aes(y = I3), color = "#7CCD7C", linetype = "dotted", size = 1) +
+  geom_line(aes(y = I4), color = "#6A5ACD", linetype = "dotdash", size = 1) +
+  labs(x = "Tiempo", y = "Porcentaje de casos", main = "P de casos infectados") +
+  scale_y_continuous(breaks = seq(0, 1, by = 0.1),
+                     limits = c(0,1))
+
+
+
+# Gráfica de Recuperados ====
+grafica_recuperados_mod_v2 <- ggmatplot(x = out_betas_v2[,1],
+                                     y = out_betas_v2[,c(9,17,25,33)],
+                                     plot_type = "line",
+                                     color = colores,
+                                     fill = colores,
+                                     linetype = 1,
+                                     xlab = "Tiempo", ylab = "Población",
+                                     main = "Recuperados datos Corea",
+                                     legend_title = "Grupos",
+                                     legend_label = c("Recuperados Menores 18 años",
+                                                      "Recuperados 18 - 39 años",
+                                                      "Recuperados 40 - 59 años",
+                                                      "Recuperados Mayores de 60 años"),
+                                     lwd = 1) + 
+  theme(plot.title = element_text(hjust = 0.5))+
+  theme(panel.background = element_rect(fill = "white"), 
+        axis.line = element_line(colour = "black", size = 0.75))
+grafica_recuperados_mod_v2
+
+#ggsave("03_Out/Plots/grafica_recuperados_inferidos_MODIFICADOS_Corea.jpeg", 
+#       plot = grafica_recuperados_mod_v2, 
+#       width = 2487, height = 1791, units = "px")
+
+
+# Gráfica de Muertos ====
+grafica_muertos_mod_v2 <- ggmatplot(x = out_betas_v2[,1],
+                                 y = out_betas_v2[,c(8,16,24,32)],
+                                 plot_type = "line",
+                                 color = colores,
+                                 fill = colores,
+                                 linetype = 1,
+                                 xlab = "Tiempo", ylab = "Población",
+                                 main = "Fallecidos datos Corea",
+                                 legend_title = "Grupos",
+                                 legend_label = c("Muertos Menores 18 años",
+                                                  "Muertos 18 - 39 años",
+                                                  "Muertos 40 - 59 años",
+                                                  "Muertos Mayores de 60 años"),
+                                 lwd = 1) +
+  theme(plot.title = element_text(hjust = 0.5))+
+  theme(panel.background = element_rect(fill = "white"), 
+        axis.line = element_line(colour = "black", size = 0.75))
+grafica_muertos_mod_v2
+
+#ggsave("03_Out/Plots/grafica_muertos_inferidos_MODIFICADOS_Corea.jpeg", 
+#       plot = grafica_muertos_mod_v2, 
+#       width = 2487, height = 1791, units = "px")
+
+
+# Grafica de Infectados, Recuperados y Muertos totales inferidos ====
+inferidos_totales_mod_v2 <- mutate(out_betas_v2,
+                                infectados_totales_inf = I1 + I2 + I3 + I4)
+inferidos_totales_mod_v2 <- mutate(inferidos_totales_mod_v2,
+                                recuperados_totales_inf = R1 + R2 + R3 + R4)
+inferidos_totales_mod_v2 <- mutate(inferidos_totales_mod_v2,
+                                muertos_totales_inf = M1 + M2 + M3 + M4)
+
+
+plot_irm_mod_v2 <- ggmatplot(x = inferidos_totales_mod_v2[,1],
+                          y = inferidos_totales_mod_v2[,c(34,35,36)],
+                          plot_type = "line",
+                          linetype = 1, lwd = 1.5,
+                          main = "Infectados, Recuperados y Muertos inferidos por el modelo con BETAS modificadas datos Corea",
+                          xlab = "Tiempo", ylab = "Población",
+                          legend_label = c("Infectados", "Recuperados", "Muertos"),
+                          legend_title = "Grupos") +
+  theme(plot.title = element_text(hjust = 0.5))+
+  theme(panel.background = element_rect(fill = "white"), 
+        axis.line = element_line(colour = "black", size = 1))
+
+plot_irm_mod_v2
+#ggsave("03_Out/Plots/grafica_inferidos_totales_MODIFICADOS_datos_Corea.jpeg", 
+#       plot = plot_irm_mod_v2, 
+#       width = 2487, height = 1791, units = "px")
