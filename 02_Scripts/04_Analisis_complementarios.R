@@ -265,7 +265,7 @@ casos <- casos_positivos_re_conteo[, -3]
 plot_casos <- ggplot(casos, 
                      aes(x = FECHA_SINTOMAS,
                          y = positivos)) +
-  geom_line(col = "#CD6839") +
+  geom_line(col = "#FF4500", size = 0.6) +
   ggtitle("Casos positivos totales") + 
   labs(x = "Tiempo", y = "Casos") +
   labs(fill = "Rangos de Edad") +
