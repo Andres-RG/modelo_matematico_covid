@@ -60,3 +60,9 @@ plot(res_parametric_si_inicio, legend = FALSE)
 plot(res_parametric_si_inicio, legend = FALSE)
 #dev.off()
 
+
+
+
+
+
+
