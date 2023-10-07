@@ -27,6 +27,8 @@ casos_solo_positivos_muerte_re <- casos_solo_positivos_muerte_re[,c("ID_REGISTRO
 casos_por_fecha <- casos_solo_positivos_muerte_re %>%
     count(FECHA_SINTOMAS, rango_de_edad, Muerte, name = "NumCasos")
 max_cases <- max(casos_por_fecha$NumCasos)
+str(casos_solo_positivos_muerte_re)
+str(casos_por_fecha)
 # La base de datos generada contiene solo los casos positivos, con la columna
 # que indica si fallecio o no, y rangos de edades. Se guarada como un objeto 
 # .RData
@@ -148,3 +150,13 @@ plot_positivos_m_vacunacion <- ggplot(casos_solo_positivos_muerte_re,
 #    width = 550, height = 350)
 plot_positivos_m_vacunacion
 dev.off()
+
+
+
+#
+plot_positivos_muertes_y_no <- ggplot(casos_solo_positivos_muerte_re, 
+                                      aes(x = FECHA_SINTOMAS,
+                                          fill = Muerte)) +
+    geom_bar(stat = "fill")
+plot_positivos_muertes_y_no
+
