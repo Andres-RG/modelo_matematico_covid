@@ -133,4 +133,3 @@ plot_pos_fill
 
 #ggsave("03_Out/Plots/plot_casos_positivos_proporción.jpeg",
 #       plot = plot_pos_fill, width = 2287, height = 1464, units = "px")
-
