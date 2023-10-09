@@ -50,8 +50,9 @@ casos_positivos_re_conteo
 
 
 # Grafica del total de casos positivos con tail probability ====
-# Esta grafica contiene EL TOTAL de positivos por fecha de inciio de síntomas separado
-# por rango de edades. Se guarda al mismo tiempo como un objeto png
+# Esta grafica contiene EL TOTAL de positivos por fecha de inciio de síntomas 
+# separado por rango de edades. Se guarda al mismo tiempo como un objeto png
+
 #png("03_Out/Plots/grafica de casos positivos tail probability.png", 
 #    width = 550, height = 350)
 plot_casos_positivos_tail_probability <- ggplot(casos_positivos_re, 
@@ -90,13 +91,6 @@ casos_positivos_x_dia_re
 
 # Se guarda el objeto como un objeto .RData
 # save(casos_positivos_x_dia_re, file = "03_Out/OutData/casos_positivos_x_dia_rango_edad.RData")
-
-plot_pos_x_dia_re <- ggplot(casos_positivos_x_dia_re) +
-  geom_point(mapping = aes(x = FECHA_SINTOMAS, y = casos_totales, color = rango_de_edad))
-plot_pos_x_dia_re
-
-#ggsave("03_Out/Plots/conteo_casos_totales_x_re.jpeg",
-#       plot = plot_pos_x_dia_re, width = 2887, height = 1464, units = "px")
 
 plot_pos_x_dia_re_2 <- ggplot(casos_positivos_x_dia_re, 
                               aes(x = FECHA_SINTOMAS, 
