@@ -102,4 +102,35 @@ plot_pos_dot
 #ggsave("03_Out/Plots/plot_casos_positivos_dotplot.jpeg",
 #       plot = plot_pos_dot, width = 2287, height = 1464, units = "px")
 
+##FILL | PROPORCION =======
+plot_pos_fill <- ggplot(casos_positivos_re,
+                        aes(x = FECHA_SINTOMAS,
+                            fill = rango_de_edad)) +
+    geom_bar(position = "fill") +
+    labs(x = "Tiempo", y = "Casos positivos",
+         title = "Variación de proporción de casos positivos a COVID-19",
+         fill = "Rango de edad") +
+    scale_fill_manual(values = viridis(7)) +
+    theme(
+        plot.title = element_text(size = 14, hjust = 0.5),
+        axis.text.x = element_text(size = 7,angle = 45, hjust = 1),
+        axis.line = element_line(colour = "black", size = 0.75),
+        # leyenda
+        legend.position = "right",  # Posición de la leyenda
+        legend.title = element_text(size = 10),  # Título de la leyenda
+        legend.text = element_text(size = 10),  # Texto de la leyenda
+        legend.spacing = unit(0.5, "cm"),
+        # background
+        panel.grid.major.y = element_line(color = "black", size = 0.5, 
+                                          linetype = 2),  # Líneas horizontales al eje x
+        panel.grid.minor = element_blank(),  # Eliminar líneas de cuadrícula menores
+        panel.background = element_blank(),
+        panel.grid.major.x = element_blank()
+    ) +
+    scale_x_date(date_labels = "%b %Y", date_breaks = "1 month")
+
+plot_pos_fill
+
+#ggsave("03_Out/Plots/plot_casos_positivos_proporción.jpeg",
+#       plot = plot_pos_fill, width = 2287, height = 1464, units = "px")
 
