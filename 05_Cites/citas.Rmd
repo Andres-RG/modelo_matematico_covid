@@ -529,6 +529,8 @@ csl: apa.csl
 
 208. [@desolve2010R]
 
+209. [@prem2017projecting]
+
 - https://academic.oup.com/cid/article/74/9/1678/6359063 : Parámetros
 - https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-021-05950-x
 - https://search.bvsalud.org/global-literature-on-novel-coronavirus-2019-ncov/resource/es/covidwho-606040
@@ -561,6 +563,7 @@ csl: apa.csl
 
 
 
-
+$$\dot S_i = - \beta_0 *\frac{\sum_{j=1}^4 \, \beta_{ij} \, S_i \, I_j }{N} \\
+\dot E_i = \beta_0 *\frac{\sum_{j=1}^4 \, \beta_{ij} \, S_i \, I_j }{N} - \alpha \, E_i$$
 
 
