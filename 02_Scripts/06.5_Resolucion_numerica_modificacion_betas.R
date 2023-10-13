@@ -142,7 +142,7 @@ modelo_covid_mod <- function(t, state, parameters){
 
 ## Tiempo ====
 
-t <- seq (0, 300, by = 1)
+t <- seq (0, 200, by = 0.1)
 
 ## Parametros ====
 
@@ -259,16 +259,16 @@ out_betas <- as.data.frame(ode(y     = state,
 
 ## Grafica ====
 
-grafica_modelo_betas <- ggmatplot(x = out_betas[,1],
-                                  y = out_betas[,2:33],
-                                  plot_type = "line", color = viridis(32),
-                                  fill =viridis(32),
-                                  linetype = 1, xlab = "Tiempo", ylab = "Población",
-                                  main = "Modelo COVID con Estructura Etaria para el estado de Queretaro con BETAS modificadas",
-                                  legend_title = "Variables", lwd = 1) + 
-  theme(plot.title = element_text(hjust = 0.5))+
-  theme(panel.background = element_rect(fill = "white"), 
-        axis.line = element_line(colour = "black", size = 0.75))
+#grafica_modelo_betas <- ggmatplot(x = out_betas[,1],
+#                                  y = out_betas[,2:33],
+#                                  plot_type = "line", color = viridis(32),
+#                                  fill =viridis(32),
+#                                  linetype = 1, xlab = "Tiempo", ylab = "Población",
+#                                  main = "Modelo COVID con Estructura Etaria para el estado de Queretaro con BETAS modificadas",
+#                                  legend_title = "Variables", lwd = 1) + 
+#  theme(plot.title = element_text(hjust = 0.5))+
+#  theme(panel.background = element_rect(fill = "white"), 
+#        axis.line = element_line(colour = "black", size = 0.75))
 grafica_modelo_betas
 
 #ggsave("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro con BETAS modificadas.jpeg", 
