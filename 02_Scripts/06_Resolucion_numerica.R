@@ -89,7 +89,8 @@ t <- seq (0, 300, by = 1)
 
 parameters <- c(
     
-    beta    <- 0.4646        , #https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7434626/
+    #beta    <- 0.4646       , #https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7434626/
+    beta    <- 0.8           , #https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1405-55462021000200287
     
     alpha   <- 1/5.6         ,
     
