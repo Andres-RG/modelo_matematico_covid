@@ -29,17 +29,16 @@ colores <- c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD")
 # Esta gráfica se obtiene a partir de los datos del modelo
 grafica_infectados <- ggmatplot(x = out[,1], 
                                 out[,c(4,12,20,28)],
-                                plot_type = "line", 
-                                color = colores, 
+                                plot_type = "line",
                                 fill = colores,
                                 linetype = 1, 
                                 xlab = "Tiempo", ylab = "Población",
-                                main = "Infectados",
+                                main = "Casos Infectados Inferidos",
                                 legend_title = "Grupos", 
-                                legend_label = c("Infectados Menores 18 años",
-                                                 "Infectados 18 - 39 años",
-                                                 "Infectados 40 - 59 años",
-                                                 "Infectados Mayores de 60 años"),
+                                legend_label = c("Menores 18 años",
+                                                 "18 - 39 años",
+                                                 "40 - 59 años",
+                                                 "Mayores de 60 años"),
                                 lwd = 1) + 
         theme(plot.title = element_text(hjust = 0.5))+
         theme(panel.background = element_rect(fill = "white"), 
@@ -63,17 +62,16 @@ grafica_infectados
 # Esta gráfica se obtiene a partir de los datos del modelo
 grafica_recuperados <- ggmatplot(x = out[,1], 
                                  out[,c(9,17,25,33)],
-                                 plot_type = "line", 
-                                 color = colores,
+                                 plot_type = "line",
                                  fill = colores,
                                  linetype = 1, 
                                  xlab = "Tiempo", ylab = "Población",
-                                 main = "Recuperados",
+                                 main = "Casos Recuperados Inferidos",
                                  legend_title = "Grupos",
-                                 legend_label = c("Recuperados Menores 18 años",
-                                                  "Recuperados 18 - 39 años",
-                                                  "Recuperados 40 - 59 años",
-                                                  "Recuperados Mayores de 60 años"),
+                                 legend_label = c("Menores 18 años",
+                                                  "18 - 39 años",
+                                                  "40 - 59 años",
+                                                  "Mayores de 60 años"),
                                  lwd = 1) + 
         theme(plot.title = element_text(hjust = 0.5))+
         theme(panel.background = element_rect(fill = "white"), 
@@ -96,17 +94,16 @@ grafica_recuperados
 # Esta gráfica se obtiene a partir de los datos del modelo
 grafica_muertos <- ggmatplot(x = out[,1], 
                              y = out[,c(8,16,24,32)],
-                             plot_type = "line", 
-                             color = colores, 
+                             plot_type = "line",
                              fill = colores,
                              linetype = 1, 
                              xlab = "Tiempo", ylab = "Población",
-                             main = "Fallecidos",
+                             main = "Casos Fallecidos Inferidos",
                              legend_title = "Grupos", 
-                             legend_label = c("Muertos Menores 18 años",
-                                              "Muertos 18 - 39 años",
-                                              "Muertos 40 - 59 años",
-                                              "Muertos Mayores de 60 años"),
+                             legend_label = c("Menores 18 años",
+                                              "18 - 39 años",
+                                              "40 - 59 años",
+                                              "Mayores de 60 años"),
                              lwd = 1) +
         theme(plot.title = element_text(hjust = 0.5))+
         theme(panel.background = element_rect(fill = "white"), 
@@ -138,10 +135,10 @@ plot_irm <- ggmatplot(x = inferidos_totales[,1],
                       y = inferidos_totales[,c(34,35,36)],
                       plot_type = "line",
                       linetype = 1, lwd = 1.5,
-                      main = "Infectados, Recuperados y Muertos inferidos por el modelo",
+                      main = "Total de Casos Infectados, Recuperados y Muertos Inferidos",
                       xlab = "Tiempo", ylab = "Población", 
-                      legend_label = c("Infectados", "Recuperados", "Muertos"),
-                      legend_title = "Grupos") +
+                      legend_label = c("Infectados", "Recuperados", "Fallecidos"),
+                      legend_title = "Casos") +
         theme(plot.title = element_text(hjust = 0.5))+
         theme(panel.background = element_rect(fill = "white"), 
               axis.line = element_line(colour = "black", size = 1)) +
@@ -152,9 +149,8 @@ plot_irm <- ggmatplot(x = inferidos_totales[,1],
   ) + 
   geom_hline(yintercept = seq(0, 2200000, by = 200000), 
              linetype = "dashed", color = "gray")
-
-        
 plot_irm
+        
 #ggsave("03_Out/Plots/grafica_inferidos_totales.jpeg", 
 #       plot = plot_irm, 
 #       width = 2487, height = 1791, units = "px")
