@@ -292,8 +292,8 @@ plot_irm_mod <- ggmatplot(x = inferidos_totales_mod[,1],
   geom_hline(yintercept = seq(0, 2300000, by = 200000), 
              linetype = "dashed", color = "gray")
 
-plot_irm_mod
-#ggsave("03_Out/Plots/grafica_inferidos_totales_MODIFICADOS.jpeg", 
+
+#ggsave("03_Out/Plots/beta_modificada_grafica_inferidos_totales.jpeg", 
 #       plot = plot_irm_mod, 
 #       width = 2487, height = 1791, units = "px")
 
