@@ -224,7 +224,7 @@ grafica_recuperados_mod <- ggmatplot(x = out_betas[,1],
              linetype = "dashed", color = "gray")
 
 
-#ggsave("03_Out/Plots/beta_modificada_grafica_recuperados_inferidos_MODIFICADOS.jpeg", 
+#ggsave("03_Out/Plots/beta_modificada_grafica_recuperados_inferidos.jpeg", 
 #       plot = grafica_recuperados_mod, 
 #       width = 2487, height = 1791, units = "px")
 
@@ -258,7 +258,7 @@ grafica_muertos_mod <- ggmatplot(x = out_betas[,1],
 
 
 
-#ggsave("03_Out/Plots/beta_modificada_grafica_muertos_inferidos_MODIFICADOS.jpeg", 
+#ggsave("03_Out/Plots/beta_modificada_grafica_muertos_inferidos.jpeg", 
 #       plot = grafica_muertos_mod, 
 #       width = 2487, height = 1791, units = "px")
 
