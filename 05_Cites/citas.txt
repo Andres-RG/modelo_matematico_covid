@@ -2063,6 +2063,22 @@ https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005697
     number = {9},
 }
 
+--BETA--------------------------------------------------------------------------------
+138. An SEIARD epidemic model for COVID-19 in Mexico: Mathematical analysis and state-level forecast
+https://www.sciencedirect.com/science/article/abs/pii/S0960077920305610
+@article{de2020seiard,
+title = {An SEIARD epidemic model for COVID-19 in Mexico: Mathematical analysis and state-level forecast},
+journal = {Chaos, Solitons & Fractals},
+volume = {140},
+pages = {110165},
+year = {2020},
+issn = {0960-0779},
+doi = {10.1016/j.chaos.2020.110165},
+url = {https://www.sciencedirect.com/science/article/pii/S0960077920305610},
+author = {Ugo {Avila-Ponce de León} and Ángel G.C. Pérez and Eric Avila-Vales},
+keywords = {COVID-19, Disease dynamics, Mexico, Effective daily reproduction ratio, Sensitivity analysis},
+abstract = {We propose an SEIARD mathematical model to investigate the current outbreak of coronavirus disease (COVID-19) in Mexico. Our model incorporates the asymptomatic infected individuals, who represent the majority of the infected population (with symptoms or not) and could play an important role in spreading the virus without any knowledge. We calculate the basic reproduction number (R0) via the next-generation matrix method and estimate the per day infection, death and recovery rates. The local stability of the disease-free equilibrium is established in terms of R0. A sensibility analysis is performed to determine the relative importance of the model parameters to the disease transmission. We calibrate the parameters of the SEIARD model to the reported number of infected cases, fatalities and recovered cases for several states in Mexico by minimizing the sum of squared errors and attempt to forecast the evolution of the outbreak until November 2020.}
+}
 
 
 
