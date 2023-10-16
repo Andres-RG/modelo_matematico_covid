@@ -316,7 +316,7 @@ bij_v2[1,4] <- (betas_korea[1,4]+betas_korea[1,5])/2 #1x4
 bij_v2[2,4] <- (betas_korea[2,4]+betas_korea[2,5])/2 #2x4
 bij_v2[3,4] <- (betas_korea[3,4]+betas_korea[3,5])/2 #3x4
 bij_v2[4,4] <- (betas_korea[4,4]+betas_korea[4,5]+betas_korea[5,4]+betas_korea[5,5])/4 #4x4
-bij_v2*1.5
+bij_v2
 #save(bij, file = "03_Out/OutData/matriz_interacciones_corea_categorias.RData")
 
 # Resolucion ====
@@ -406,13 +406,13 @@ modelo_covid_mod_v2 <- function(t, state, parameters){
 
 ## Tiempo ====
 
-t <- seq (0, 300, by = 0.1)
+t <- seq (0, 250, by = 1)
 
 ## Parametros ====
 
 parameters <- c(
   
-  beta    <- 1.5        , #https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7434626/
+  beta    <- 2             ,
   
   alpha   <- 1/5.6         ,
   
@@ -528,12 +528,12 @@ grafica_modelo_betas_v2 <- ggmatplot(x = out_betas_v2[,1],
                                      plot_type = "line", color = viridis(32),
                                      fill =viridis(32),
                                      linetype = 1, xlab = "Tiempo", ylab = "Población",
-                                     main = "Modelo COVID con Estructura Etaria para el estado de Queretaro con BETAS modificadas datos Corea",
+                                     main = "Modelo con BETAS modificadas con matrices de interacción con datos Corea",
                                      legend_title = "Variables", lwd = 1) + 
   theme(plot.title = element_text(hjust = 0.5))+
   theme(panel.background = element_rect(fill = "white"), 
         axis.line = element_line(colour = "black", size = 0.75))
 grafica_modelo_betas_v2
 
-#ggsave("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro con BETAS modificadas datos Corea.jpeg", 
+#ggsave("03_Out/Plots/Modelo con betas modificadas por matricez de interacción condatos Corea.jpeg", 
 #       plot = grafica_modelo_betas, width = 2887, height = 1464, units = "px")
