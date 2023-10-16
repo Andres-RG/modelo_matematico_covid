@@ -567,3 +567,15 @@ $$\dot S_i = - \beta_0 *\frac{\sum_{j=1}^4 \, \beta_{ij} \, S_i \, I_j }{N} \\
 \dot E_i = \beta_0 *\frac{\sum_{j=1}^4 \, \beta_{ij} \, S_i \, I_j }{N} - \alpha \, E_i$$
 
 
+$$
+\dot S_i = - \frac{\beta \, \sum_{j=1} ^4 S_i \, I_j}{N} \\
+\dot E_i = \frac{\beta \, \sum_{j=1} ^4 S_i \, I_j}{N} - \alpha \, E_i \\
+\dot I_i = \alpha \, E_i - p_{Li} \, \delta_L \, I_i - p_{Hi} \, \delta_H \, I_i \\
+\dot I_{Li} = p_{Li} \, \delta_L \, I_i - \gamma_R \, I_{Li} \\
+\dot I_{Hi} = p_{Hi} \, \delta_H \, I_i - p_{Ii} \, \delta_I \, I_{Hi} - (1 - p_{Ii}) \, \gamma_H \, I_{Hi} \\
+\dot I_{Ii} = p_{Ii} \, \delta_I \, I_{Hi} - \mu_i \, \delta_{\mu} \, I_{Ii} - (1 - \mu_i) \, \gamma_I \, I_{Ii} \\
+\dot M_i = \mu_i \, \delta_{\mu} \, I_{Ii} \\
+\dot R_i = \gamma_R \, I_{Li} \, + (1 - p_{Ii}) \, \gamma_H \, I_{Hi} + (1 - \mu_i) \, \gamma_I \, I_{Ii}
+$$
+
+
