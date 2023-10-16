@@ -406,7 +406,7 @@ modelo_covid_mod_v2 <- function(t, state, parameters){
 
 ## Tiempo ====
 
-t <- seq (0, 250, by = 1)
+t <- seq (0, 250, by = 0.1)
 
 ## Parametros ====
 
