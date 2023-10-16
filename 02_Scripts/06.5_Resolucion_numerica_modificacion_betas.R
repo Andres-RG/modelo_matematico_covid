@@ -259,19 +259,26 @@ out_betas <- as.data.frame(ode(y     = state,
 
 ## Grafica ====
 
-#grafica_modelo_betas <- ggmatplot(x = out_betas[,1],
-#                                  y = out_betas[,2:33],
-#                                  plot_type = "line", color = viridis(32),
-#                                  fill =viridis(32),
-#                                  linetype = 1, xlab = "Tiempo", ylab = "Población",
-#                                  main = "Modelo COVID con Estructura Etaria para el estado de Queretaro con BETAS modificadas",
-#                                  legend_title = "Variables", lwd = 1) + 
-#  theme(plot.title = element_text(hjust = 0.5))+
-#  theme(panel.background = element_rect(fill = "white"), 
-#        axis.line = element_line(colour = "black", size = 0.75))
+grafica_modelo_betas <- ggmatplot(x = out_betas[,1],
+                                  y = out_betas[,2:33],
+                                  plot_type = "line", color = viridis(32),
+                                  fill =viridis(32),
+                                  linetype = 1, xlab = "Tiempo", ylab = "Población",
+                                  main = "Modelo COVID con Estructura Etaria para el estado de Queretaro con BETAS modificadas",
+                                  legend_title = "Variables", lwd = 1) + 
+  theme(plot.title = element_text(hjust = 0.5))+
+  theme(panel.background = element_rect(fill = "white"), 
+        axis.line = element_line(colour = "black", size = 0.75)) +
+  scale_y_continuous(
+    limits = c(0, 800000),  # Establece los límites
+    breaks = seq(0, 800000, by = 100000),  # Establece divisiones cada 100 unidades
+    minor_breaks = NULL  # No se utilizan divisiones menores en este caso
+  ) + 
+  geom_hline(yintercept = seq(0, 800000, by = 100000), 
+             linetype = "dashed", color = "gray")
 grafica_modelo_betas
 
-#ggsave("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro con BETAS modificadas.jpeg", 
+#ggsave("03_Out/Plots/Modelo COVID con Estructura Etaria con betas modificadas por matrices de interacción.jpeg", 
 #       plot = grafica_modelo_betas, width = 2887, height = 1464, units = "px")
 
 
