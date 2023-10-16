@@ -200,23 +200,23 @@ out <- as.data.frame(ode(y     = state,
 
 ## Grafica ====
 
-#grafica_modelo <- ggmatplot(x = out[,1],
-#                            y = out[,2:33],
-#                            plot_type = "line",
-#                            fill =viridis(32),
-#                            linetype = 1, xlab = "Tiempo", ylab = "Población",
-#                            main = "Modelo COVID con Estructura Etaria para el estado de Queretaro",
-#                            legend_title = "Variables", lwd = 1) + 
-#    theme(plot.title = element_text(hjust = 0.5))+
-#    theme(panel.background = element_rect(fill = "white"), 
-#          axis.line = element_line(colour = "black", size = 0.75)) +
-#    scale_y_continuous(
-#        limits = c(0, 800000),  # Establece los límites
-#        breaks = seq(0, 800000, by = 100000),  # Establece divisiones cada 100 unidades
-#        minor_breaks = NULL  # No se utilizan divisiones menores en este caso
-#    ) + 
-#    geom_hline(yintercept = seq(0, 800000, by = 100000), 
-#               linetype = "dashed", color = "gray")
+grafica_modelo <- ggmatplot(x = out[,1],
+                            y = out[,2:33],
+                            plot_type = "line",
+                            fill =viridis(32),
+                            linetype = 1, xlab = "Tiempo", ylab = "Población",
+                            main = "Modelo COVID con Estructura Etaria para el estado de Queretaro",
+                            legend_title = "Variables", lwd = 1) + 
+    theme(plot.title = element_text(hjust = 0.5))+
+    theme(panel.background = element_rect(fill = "white"), 
+          axis.line = element_line(colour = "black", size = 0.75)) +
+    scale_y_continuous(
+        limits = c(0, 800000),  # Establece los límites
+        breaks = seq(0, 800000, by = 100000),  # Establece divisiones cada 100 unidades
+        minor_breaks = NULL  # No se utilizan divisiones menores en este caso
+    ) + 
+    geom_hline(yintercept = seq(0, 800000, by = 100000), 
+               linetype = "dashed", color = "gray")
 grafica_modelo
 
 #ggsave("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.jpeg", 
