@@ -50,7 +50,7 @@ grafica_infectados <- ggmatplot(x = out[,1],
   ) +
   geom_hline(yintercept = seq(0, 160000, by = 40000), 
              linetype = "dashed", color = "gray")
-grafica_infectados
+
 
 #ggsave("03_Out/Plots/grafica_infectados_inferidos.jpeg", 
 #       plot = grafica_infectados, 
@@ -83,11 +83,12 @@ grafica_recuperados <- ggmatplot(x = out[,1],
   ) +
   geom_hline(yintercept = seq(0, 800000, by = 100000), 
              linetype = "dashed", color = "gray")
-grafica_recuperados
+
 
 #ggsave("03_Out/Plots/grafica_recuperados_inferidos.jpeg", 
 #       plot = grafica_recuperados,
 #       width = 2487, height = 1791, units = "px")
+
 
 
 # Gráfica de Muertos ====
@@ -115,7 +116,7 @@ grafica_muertos <- ggmatplot(x = out[,1],
   ) +
   geom_hline(yintercept = seq(0, 90000, by = 10000), 
              linetype = "dashed", color = "gray")
-grafica_muertos
+
 
 #ggsave("03_Out/Plots/grafica_muertos_inferidos.jpeg", 
 #       plot = grafica_muertos, 
@@ -149,7 +150,7 @@ plot_irm <- ggmatplot(x = inferidos_totales[,1],
   ) + 
   geom_hline(yintercept = seq(0, 2200000, by = 200000), 
              linetype = "dashed", color = "gray")
-plot_irm
+
         
 #ggsave("03_Out/Plots/grafica_inferidos_totales.jpeg", 
 #       plot = plot_irm, 
@@ -171,7 +172,7 @@ grafica_infectados_mod <- ggmatplot(x = out_betas[,1],
                                     fill = colores,
                                     linetype = 1,
                                     xlab = "Tiempo", ylab = "Población",
-                                    main = "Casos Infectados Inferidos con tasas de imteracción",
+                                    main = "Casos Infectados Inferidos con tasas de interacción",
                                     legend_title = "Grupos",
                                     legend_label = c("Menores 18 años",
                                                      "18 - 39 años",
@@ -188,9 +189,9 @@ grafica_infectados_mod <- ggmatplot(x = out_betas[,1],
   ) + 
   geom_hline(yintercept = seq(0, 200000, by = 20000), 
              linetype = "dashed", color = "gray")
-grafica_infectados_mod
 
-#ggsave("03_Out/Plots/grafica_infectados_inferidos_MODIFICADOS.jpeg", 
+
+#ggsave("03_Out/Plots/beta_modificada_grafica_infectados_inferidos.jpeg", 
 #       plot = grafica_infectados_mod, 
 #       width = 2487, height = 1791,units = "px")
 
@@ -221,11 +222,12 @@ grafica_recuperados_mod <- ggmatplot(x = out_betas[,1],
   ) + 
   geom_hline(yintercept = seq(0, 800000, by = 100000), 
              linetype = "dashed", color = "gray")
-grafica_recuperados_mod
 
-#ggsave("03_Out/Plots/grafica_recuperados_inferidos_MODIFICADOS.jpeg", 
+
+#ggsave("03_Out/Plots/beta_modificada_grafica_recuperados_inferidos_MODIFICADOS.jpeg", 
 #       plot = grafica_recuperados_mod, 
 #       width = 2487, height = 1791, units = "px")
+
 
 
 # Gráfica de Muertos ====
@@ -253,12 +255,13 @@ grafica_muertos_mod <- ggmatplot(x = out_betas[,1],
   ) + 
   geom_hline(yintercept = seq(0, 63000, by = 10000), 
              linetype = "dashed", color = "gray")
-  
-grafica_muertos_mod
 
-#ggsave("03_Out/Plots/grafica_muertos_inferidos_MODIFICADOS.jpeg", 
+
+
+#ggsave("03_Out/Plots/beta_modificada_grafica_muertos_inferidos_MODIFICADOS.jpeg", 
 #       plot = grafica_muertos_mod, 
 #       width = 2487, height = 1791, units = "px")
+
 
 
 # Grafica de Infectados, Recuperados y Muertos totales inferidos ====
