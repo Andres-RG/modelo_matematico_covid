@@ -577,7 +577,7 @@ $$\begin{aligned}
 & \dot M_j = \mu_j \, \delta_{\mu} \, I_{ij} \\
 & \dot R_j = \gamma_R \, I_{lj} \, + (1 - p_{ij}) \, \gamma_h \, I_{hj} + (1 - \mu_j) \, \gamma_i \, I_{ij} \\
 \\
-& j \forall = 1,2,3,4
+& j \, \forall = 1,2,3,4
 \end{aligned}$$
 
 
