@@ -316,7 +316,7 @@ grafica_susceptibles_mod <- ggmatplot(x = out_betas[,1],
   theme(plot.title = element_text(hjust = 0.5))+
   theme(panel.background = element_rect(fill = "white"), 
         axis.line = element_line(colour = "black", size = 0.75))
-grafica_susceptibles_mod
+
 
 
 
@@ -331,71 +331,85 @@ grafica_susceptibles_mod
 # GRAFICAS MODIFICADAS DATOS COREA
 # Gráfica de Infectados ====
 grafica_infectados_mod_v2 <- ggmatplot(x = out_betas_v2[,1],
-                                    y = out_betas_v2[,c(4,12,20,28)],
-                                    plot_type = "line",
-                                    color = colores,
-                                    fill = colores,
-                                    linetype = 1,
-                                    xlab = "Tiempo", ylab = "Población",
-                                    main = "Infectados datos Corea",
-                                    legend_title = "Grupos",
-                                    legend_label = c("Infectados Menores 18 años",
-                                                     "Infectados 18 - 39 años",
-                                                     "Infectados 40 - 59 años",
-                                                     "Infectados Mayores de 60 años"),
-                                    lwd = 1) + 
+                                       y = out_betas_v2[,c(4,12,20,28)],
+                                       plot_type = "line",
+                                       fill = colores,
+                                       linetype = 1,
+                                       xlab = "Tiempo", ylab = "Población",
+                                       main = "Infectados con datos Corea",
+                                       legend_title = "Grupos",
+                                       legend_label = c("Menores 18 años",
+                                                        "18 - 39 años",
+                                                        "40 - 59 años",
+                                                        "Mayores de 60 años"),
+                                       lwd = 1) +
   theme(plot.title = element_text(hjust = 0.5))+
   theme(panel.background = element_rect(fill = "white"), 
-        axis.line = element_line(colour = "black", size = 0.75))
-grafica_infectados_mod_v2
+        axis.line = element_line(colour = "black", size = 0.75)) +
+  scale_y_continuous(
+    limits = c(0, 120000),  # Establece los límites
+    breaks = seq(0, 120000, by = 20000),  # Establece divisiones cada 100 unidades
+    minor_breaks = NULL  # No se utilizan divisiones menores en este caso
+  ) + 
+  geom_hline(yintercept = seq(0, 120000, by = 20000), 
+             linetype = "dashed", color = "gray")
 
-#ggsave("03_Out/Plots/grafica_infectados_inferidos_MODIFICADOS_Corea.jpeg", 
+
+
+#ggsave("03_Out/Plots/beta_modificada_corea_grafica_infectados_inferidos.jpeg", 
 #       plot = grafica_infectados_mod_v2, 
 #       width = 2487, height = 1791,units = "px")
 
+
 # determinar porcentajes infectados
-time_i <- out_betas_v2[,1]
-I1 <- out_betas_v2[,4]
-I2 <- out_betas_v2[,12]
-I3 <- out_betas_v2[,20]
-I4 <- out_betas_v2[,28]
-dat_inf <- data.frame(time_i, I1, I2, I3, I4)
-head(dat_inf)
+#time_i <- out_betas_v2[,1]
+#I1 <- out_betas_v2[,4]
+#I2 <- out_betas_v2[,12]
+#I3 <- out_betas_v2[,20]
+#I4 <- out_betas_v2[,28]
+#dat_inf <- data.frame(time_i, I1, I2, I3, I4)
+#head(dat_inf)
 
 
 # grafica de porcentajes
-ggplot(dat_inf, aes(x = time_i)) +
-  geom_line(aes(y = I1), color = "#00BFFF", linetype = "solid", size = 1) +
-  geom_line(aes(y = I2), color = "#FFB90F", linetype = "dashed", size = 1) +
-  geom_line(aes(y = I3), color = "#7CCD7C", linetype = "dotted", size = 1) +
-  geom_line(aes(y = I4), color = "#6A5ACD", linetype = "dotdash", size = 1) +
-  labs(x = "Tiempo", y = "Porcentaje de casos", main = "P de casos infectados") +
-  scale_y_continuous(breaks = seq(0, 1, by = 0.1),
-                     limits = c(0,1))
+#ggplot(dat_inf, aes(x = time_i)) +
+#  geom_line(aes(y = I1), color = "#00BFFF", linetype = "solid", size = 1) +
+#  geom_line(aes(y = I2), color = "#FFB90F", linetype = "dashed", size = 1) +
+#  geom_line(aes(y = I3), color = "#7CCD7C", linetype = "dotted", size = 1) +
+#  geom_line(aes(y = I4), color = "#6A5ACD", linetype = "dotdash", size = 1) +
+#  labs(x = "Tiempo", y = "Porcentaje de casos", main = "P de casos infectados") +
+#  scale_y_continuous(breaks = seq(0, 1, by = 0.1),
+#                     limits = c(0,1))
 
 
 
 # Gráfica de Recuperados ====
 grafica_recuperados_mod_v2 <- ggmatplot(x = out_betas_v2[,1],
-                                     y = out_betas_v2[,c(9,17,25,33)],
-                                     plot_type = "line",
-                                     color = colores,
-                                     fill = colores,
-                                     linetype = 1,
-                                     xlab = "Tiempo", ylab = "Población",
-                                     main = "Recuperados datos Corea",
-                                     legend_title = "Grupos",
-                                     legend_label = c("Recuperados Menores 18 años",
-                                                      "Recuperados 18 - 39 años",
-                                                      "Recuperados 40 - 59 años",
-                                                      "Recuperados Mayores de 60 años"),
-                                     lwd = 1) + 
+                                        y = out_betas_v2[,c(9,17,25,33)],
+                                        plot_type = "line",
+                                        fill = colores,
+                                        linetype = 1,
+                                        xlab = "Tiempo", ylab = "Población",
+                                        main = "Recuperados datos Corea",
+                                        legend_title = "Grupos",
+                                        legend_label = c("Menores 18 años",
+                                                         "18 - 39 años",
+                                                         "40 - 59 años",
+                                                         "Mayores de 60 años"),
+                                        lwd = 1) + 
   theme(plot.title = element_text(hjust = 0.5))+
   theme(panel.background = element_rect(fill = "white"), 
-        axis.line = element_line(colour = "black", size = 0.75))
-grafica_recuperados_mod_v2
+        axis.line = element_line(colour = "black", size = 0.75)) +
+  scale_y_continuous(
+    limits = c(0, 800000),  # Establece los límites
+    breaks = seq(0, 800000, by = 100000),  # Establece divisiones cada 100 unidades
+    minor_breaks = NULL  # No se utilizan divisiones menores en este caso
+  ) + 
+  geom_hline(yintercept = seq(0, 800000, by = 100000), 
+             linetype = "dashed", color = "gray")
 
-#ggsave("03_Out/Plots/grafica_recuperados_inferidos_MODIFICADOS_Corea.jpeg", 
+
+#ggsave("03_Out/Plots/beta_modificada_corea_grafica_recuperados_inferidos.jpeg", 
 #       plot = grafica_recuperados_mod_v2, 
 #       width = 2487, height = 1791, units = "px")
 
@@ -404,7 +418,6 @@ grafica_recuperados_mod_v2
 grafica_muertos_mod_v2 <- ggmatplot(x = out_betas_v2[,1],
                                  y = out_betas_v2[,c(8,16,24,32)],
                                  plot_type = "line",
-                                 color = colores,
                                  fill = colores,
                                  linetype = 1,
                                  xlab = "Tiempo", ylab = "Población",
@@ -417,10 +430,17 @@ grafica_muertos_mod_v2 <- ggmatplot(x = out_betas_v2[,1],
                                  lwd = 1) +
   theme(plot.title = element_text(hjust = 0.5))+
   theme(panel.background = element_rect(fill = "white"), 
-        axis.line = element_line(colour = "black", size = 0.75))
-grafica_muertos_mod_v2
+        axis.line = element_line(colour = "black", size = 0.75)) +
+  scale_y_continuous(
+    limits = c(0, 40000),  # Establece los límites
+    breaks = seq(0, 40000, by = 5000),  # Establece divisiones cada 100 unidades
+    minor_breaks = NULL  # No se utilizan divisiones menores en este caso
+  ) + 
+  geom_hline(yintercept = seq(0, 40000, by = 5000), 
+             linetype = "dashed", color = "gray")
 
-#ggsave("03_Out/Plots/grafica_muertos_inferidos_MODIFICADOS_Corea.jpeg", 
+
+#ggsave("03_Out/Plots/beta_modificada_corea_grafica_muertos_inferidos.jpeg", 
 #       plot = grafica_muertos_mod_v2, 
 #       width = 2487, height = 1791, units = "px")
 
@@ -438,15 +458,22 @@ plot_irm_mod_v2 <- ggmatplot(x = inferidos_totales_mod_v2[,1],
                           y = inferidos_totales_mod_v2[,c(34,35,36)],
                           plot_type = "line",
                           linetype = 1, lwd = 1.5,
-                          main = "Infectados, Recuperados y Muertos inferidos por el modelo con BETAS modificadas datos Corea",
+                          main = "Casos Infectados, Recuperados y Muertos con betas modificadas con datos Corea",
                           xlab = "Tiempo", ylab = "Población",
                           legend_label = c("Infectados", "Recuperados", "Muertos"),
-                          legend_title = "Grupos") +
+                          legend_title = "Casos") +
   theme(plot.title = element_text(hjust = 0.5))+
   theme(panel.background = element_rect(fill = "white"), 
-        axis.line = element_line(colour = "black", size = 1))
+        axis.line = element_line(colour = "black", size = 1)) +
+  scale_y_continuous(
+    limits = c(0, 2000000),  # Establece los límites
+    breaks = seq(0, 2000000, by = 200000),  # Establece divisiones cada 100 unidades
+    minor_breaks = NULL  # No se utilizan divisiones menores en este caso
+  ) + 
+  geom_hline(yintercept = seq(0, 2000000, by = 200000), 
+             linetype = "dashed", color = "gray")
 
-plot_irm_mod_v2
-#ggsave("03_Out/Plots/grafica_inferidos_totales_MODIFICADOS_datos_Corea.jpeg", 
+
+#ggsave("03_Out/Plots/beta_modificada_corea_grafica_inferidos_totales.jpeg", 
 #       plot = plot_irm_mod_v2, 
 #       width = 2487, height = 1791, units = "px")
