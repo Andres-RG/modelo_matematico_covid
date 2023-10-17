@@ -32,7 +32,7 @@ load("03_Out/OutData/casos_totales_rangos_edades.RData")
 # Probabilidad de pasar de Suceptible a Infectado
 # Toma todos los casos positivos y se dividen entre el total de todos los casos
 # registrados, siendo positivos o negativos. 
-ps_i <- probabilidades(casos_positivos_re, casos_totales_re)
+# ps_i <- probabilidades(casos_positivos_re, casos_totales_re)
 
 
 
@@ -108,9 +108,8 @@ picu_m <- probabilidades(casos_positivos_muerte_re, casos_positivos_intubados_re
 
 
 
-probabilidades_de_transicion <- data.frame(ps_i, pi_l, pi_h, ph_icu, picu_m)
-colnames(probabilidades_de_transicion) <- c("Suceptible --> Infectado",
-                                            "Infectado --> Ambulatorio",
+probabilidades_de_transicion <- data.frame(pi_l, pi_h, ph_icu, picu_m)
+colnames(probabilidades_de_transicion) <- c("Infectado --> Ambulatorio",
                                             "Infectado --> Grave",
                                             "Grave --> ICU",
                                             "ICU --> Muerte")

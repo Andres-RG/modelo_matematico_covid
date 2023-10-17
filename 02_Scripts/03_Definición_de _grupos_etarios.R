@@ -60,7 +60,7 @@ agroup8 <- hclust(distancias_pt, method = "centroid", members = NULL)
 
 # Los resultados de este análisis se visualizan mediante un dendograma, al mismo
 # tiempo, se guardan los dendogramas en conjunto como un archivo png
-#jpeg("03_Out/Plots/analisis_de_cluster_probabilidades_de_transicion.jpeg",
+#peg("03_Out/Plots/analisis_de_cluster_probabilidades_de_transicion.jpeg",
 #    width = 265, height = 265, res = 300, units = "mm")
 layout ( matrix ( c( 1 : 9 ), 3, 3))
 plot(agroup1)
@@ -71,7 +71,7 @@ plot(agroup5)
 plot(agroup6) 
 plot(agroup7)
 plot(agroup8)
-layout(matrix (c (1), 1, 1))
+layout(matrix (c ( 1 : 9 ), 3, 3))
 #dev.off()
 
 # Con la visualizacion de los diferentes dendogramas, se encuentra que hay 
