@@ -9,7 +9,6 @@ library(deSolve)
 library(ape)
 library(lubridate)
 library(ggmatplot)
-library(wesanderson)
 library(simecol)
 library(plotly)
 
@@ -22,22 +21,26 @@ load("03_Out/OutData/probabilidades_de_transicion.RData")
 load("03_Out/OutData/Tabla de parametros obtendos por estructura de edad.RData")
 valores_beta_t <- readRDS("01_RawData/beta_t.RDS")
 
-#Grafica beta:t-----------
+##Grafica beta_t
 g <- ggplot(valores_beta_t, aes(x = dias, y = beta))+
-  geom_line() +
-  geom_point(shape=17, size=3, colour="blue", fill="yellow")
-
+  geom_line(alpha = 0.4) + 
+  geom_point(col = "firebrick", shape = 2)
+g
 #ggplotly(g)
+#funciones beta_t
+beta_interpol <- approxfun(x = valores_beta_t$dias,
+                           y = valores_beta_t$beta,
+                           method = "linear")
 # Resolucion ====
-##Definicion de beta_t
-beta_interpol <- approxfun(x = valores_beta_t$dias, 
-                              y = valores_beta_t$beta, 
-                              method = "linear")
 ## Funcion del modelo ====
-modelo_covid_beta_t <- function(t, state, parameters){
+beta_t_modelo_covid <- function(t, state, parameters){
   
-  for (i in t){
-    beta_t <- beta_interpol(t)
+  #función de beta
+  beta_interpol <- approxfun(x = valores_beta_t$dias,
+                             y = valores_beta_t$beta,
+                             method = "linear")
+  #valor de beta_t
+  beta_t <- beta_interpol(t)
   
   with(as.list(c(state, parameters)), {
     
@@ -93,9 +96,8 @@ modelo_covid_beta_t <- function(t, state, parameters){
            dS2, dE2, dI2, dI_l2, dI_h2, dI_i2, dM2, dR2,
            dS3, dE3, dI3, dI_l3, dI_h3, dI_i3, dM3, dR3,
            dS4, dE4, dI4, dI_l4, dI_h4, dI_i4, dM4, dR4))
-  
+    
   })
-  }
 }
 
 ## Tiempo ====
@@ -208,19 +210,22 @@ state <- c(
 )
 
 ## Out ====
-out_beta_t <- as.data.frame(ode(y     = state,
-                         times = t,
-                         func  = modelo_covid,
-                         parms = parameters))
-
+beta_t_out <- as.data.frame(ode(y     = state,
+                                times = t,
+                                func  = beta_t_modelo_covid,
+                                parms = parameters))
+for (tiempo in t) {
+  beta_valor <- beta_interpol(tiempo)
+  cat("Tiempo:", tiempo, " - Valor de Beta:", beta_valor, "\n")
+}
 ## Grafica ====
 
-beta_t_grafica_modelo <- ggmatplot(x = out[,1],
-                            y = out[,2:33],
+beta_t_grafica_modelo <- ggmatplot(x = beta_t_out[,1],
+                            y = beta_t_out[,2:33],
                             plot_type = "line",
                             fill =viridis(32),
                             linetype = 1, xlab = "Tiempo", ylab = "Población",
-                            main = "Modelo COVID con Estructura Etaria para el estado de Queretaro",
+                            main = "Modelo COVID beta_t",
                             legend_title = "Variables", lwd = 1) + 
   theme(plot.title = element_text(hjust = 0.5))+
   theme(panel.background = element_rect(fill = "white"), 

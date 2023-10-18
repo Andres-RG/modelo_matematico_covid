@@ -486,8 +486,8 @@ plot_irm_mod_v2 <- ggmatplot(x = inferidos_totales_mod_v2[,1],
 
 
 ## beta_t ----------------------
-beta_t_grafica_infectados <- ggmatplot(x = out_beta_t[,1],
-                                       y = out_beta_t[,c(4,12,20,28)],
+beta_t_grafica_infectados <- ggmatplot(x = beta_t_out[,1],
+                                       y = beta_t_out[,c(4,12,20,28)],
                                        plot_type = "line",
                                        fill = colores,
                                        linetype = 1,
@@ -501,32 +501,25 @@ beta_t_grafica_infectados <- ggmatplot(x = out_beta_t[,1],
                                        lwd = 1) + 
   theme(plot.title = element_text(hjust = 0.5))+
   theme(panel.background = element_rect(fill = "white"), 
-        axis.line = element_line(colour = "black", size = 0.75)) +
-  scale_y_continuous(
-    limits = c(0, 160000),  # Establece los límites
-    breaks = seq(0, 160000, by = 40000),  # Establece divisiones cada 100 unidades
-    minor_breaks = NULL  # No se utilizan divisiones menores en este caso
-  ) +
-  geom_hline(yintercept = seq(0, 160000, by = 40000), 
-             linetype = "dashed", color = "gray")
+        axis.line = element_line(colour = "black", size = 0.75))
 beta_t_grafica_infectados
 
 
 
 
-beta_t_grafica_recuperados <- ggmatplot(x = out_beta_t[,1], 
-                                 out_beta_t[,c(9,17,25,33)],
-                                 plot_type = "line",
-                                 fill = colores,
-                                 linetype = 1, 
-                                 xlab = "Tiempo", ylab = "Población",
-                                 main = "Casos Recuperados beta_t",
-                                 legend_title = "Grupos",
-                                 legend_label = c("Menores 18 años",
-                                                  "18 - 39 años",
-                                                  "40 - 59 años",
-                                                  "Mayores de 60 años"),
-                                 lwd = 1) + 
+beta_t_grafica_recuperados <- ggmatplot(x = beta_t_out[,1], 
+                                        y = beta_t_out[,c(9,17,25,33)],
+                                        plot_type = "line",
+                                        fill = colores,
+                                        linetype = 1,
+                                        xlab = "Tiempo", ylab = "Población",
+                                        main = "Casos Recuperados beta_t",
+                                        legend_title = "Grupos",
+                                        legend_label = c("Menores 18 años",
+                                                         "18 - 39 años",
+                                                         "40 - 59 años",
+                                                         "Mayores de 60 años"),
+                                        lwd = 1) + 
   theme(plot.title = element_text(hjust = 0.5))+
   theme(panel.background = element_rect(fill = "white"), 
         axis.line = element_line(colour = "black", size = 0.75)) +
@@ -541,8 +534,8 @@ beta_t_grafica_recuperados
 
 
 
-beta_t_grafica_muertos <- ggmatplot(x = out_beta_t[,1], 
-                             y = out_beta_t[,c(8,16,24,32)],
+beta_t_grafica_muertos <- ggmatplot(x = beta_t_out[,1], 
+                             y = beta_t_out[,c(8,16,24,32)],
                              plot_type = "line",
                              fill = colores,
                              linetype = 1, 
@@ -565,3 +558,44 @@ beta_t_grafica_muertos <- ggmatplot(x = out_beta_t[,1],
   geom_hline(yintercept = seq(0, 75000, by = 5000), 
              linetype = "dashed", color = "gray")
 beta_t_grafica_muertos
+
+
+
+beta_t_grafica_susceptibles <- ggmatplot(x = beta_t_out[,1], 
+                                    y = beta_t_out[,c(2,10,18,26)],
+                                    plot_type = "line",
+                                    fill = colores,
+                                    linetype = 1, 
+                                    xlab = "Tiempo", ylab = "Población",
+                                    main = "Casos Susceptibles beta_t",
+                                    legend_title = "Grupos", 
+                                    legend_label = c("Menores 18 años",
+                                                     "18 - 39 años",
+                                                     "40 - 59 años",
+                                                     "Mayores de 60 años"),
+                                    lwd = 1) +
+  theme(plot.title = element_text(hjust = 0.5))+
+  theme(panel.background = element_rect(fill = "white"), 
+        axis.line = element_line(colour = "black", size = 0.75)) 
+beta_t_grafica_susceptibles
+
+
+
+
+beta_t_grafica_hospitalizados <- ggmatplot(x = beta_t_out[,1], 
+                                         y = beta_t_out[,c(6,14,22,30)],
+                                         plot_type = "line",
+                                         fill = colores,
+                                         linetype = 1, 
+                                         xlab = "Tiempo", ylab = "Población",
+                                         main = "Casos Hospitalizados beta_t",
+                                         legend_title = "Grupos", 
+                                         legend_label = c("Menores 18 años",
+                                                          "18 - 39 años",
+                                                          "40 - 59 años",
+                                                          "Mayores de 60 años"),
+                                         lwd = 1) +
+  theme(plot.title = element_text(hjust = 0.5))+
+  theme(axis.line = element_line(colour = "black", size = 0.75)) 
+beta_t_grafica_hospitalizados
+
