@@ -11,6 +11,7 @@ library(lubridate)
 library(ggmatplot)
 library(wesanderson)
 library(simecol)
+library(plotly)
 
 # Cargar las funciones
 source("02_Scripts/Functions/Functions.R")
@@ -21,6 +22,12 @@ load("03_Out/OutData/probabilidades_de_transicion.RData")
 load("03_Out/OutData/Tabla de parametros obtendos por estructura de edad.RData")
 valores_beta_t <- readRDS("01_RawData/beta_t.RDS")
 
+#Grafica beta:t-----------
+g <- ggplot(valores_beta_t, aes(x = dias, y = beta))+
+  geom_line() +
+  geom_point(shape=17, size=3, colour="blue", fill="yellow")
+
+#ggplotly(g)
 # Resolucion ====
 ##Definicion de beta_t
 beta_interpol <- approxfun(x = valores_beta_t$dias, 
