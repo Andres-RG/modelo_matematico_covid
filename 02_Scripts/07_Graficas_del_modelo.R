@@ -55,7 +55,7 @@ grafica_infectados <- ggmatplot(x = out[,1],
 
 #ggsave("03_Out/Plots/grafica_infectados_inferidos.jpeg", 
 #       plot = grafica_infectados, 
-#       width = 2487, height = 1791,units = "px")
+#       width = 2787, height = 1791,units = "px")
 
 
 
@@ -88,7 +88,7 @@ grafica_recuperados <- ggmatplot(x = out[,1],
 
 #ggsave("03_Out/Plots/grafica_recuperados_inferidos.jpeg", 
 #       plot = grafica_recuperados,
-#       width = 2487, height = 1791, units = "px")
+#       width = 2787, height = 1791, units = "px")
 
 
 
@@ -121,7 +121,7 @@ grafica_muertos <- ggmatplot(x = out[,1],
 
 #ggsave("03_Out/Plots/grafica_muertos_inferidos.jpeg", 
 #       plot = grafica_muertos, 
-#       width = 2487, height = 1791, units = "px")
+#       width = 2787, height = 1791, units = "px")
 
 
 # Grafica de Infectados, Recuperados y Muertos totales inferidos ====
@@ -155,7 +155,7 @@ plot_irm <- ggmatplot(x = inferidos_totales[,1],
         
 #ggsave("03_Out/Plots/grafica_inferidos_totales.jpeg", 
 #       plot = plot_irm, 
-#       width = 2487, height = 1791, units = "px")
+#       width = 2787, height = 1791, units = "px")
 
 
 
