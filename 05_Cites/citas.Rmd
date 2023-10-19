@@ -533,6 +533,8 @@ csl: apa.csl
 
 210. [@de2020seiard]
 
+211. [@acuna2022methodology]
+
 - https://academic.oup.com/cid/article/74/9/1678/6359063 : Parámetros
 - https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-021-05950-x
 - https://search.bvsalud.org/global-literature-on-novel-coronavirus-2019-ncov/resource/es/covidwho-606040
@@ -570,14 +572,14 @@ $$\dot S_i = - \beta_0 *\frac{\sum_{j=1}^4 \, \beta_{ij} \, S_i \, I_j }{N} \\
 
 
 $$\begin{aligned}
-& \dot S_j = - \frac{\beta \, \sum_{k=1} ^4 S_j \, I_k}{N} \\
+& \dot S_j = - \frac{\beta \, \sum_{k=1} ^4 S_j \, I_k}{N} + \omega \, R_j\\
 & \dot E_i = \frac{\beta \, \sum_{k=1} ^4 S_j \, I_k}{N} - \alpha \, E_j \\
 & \dot I_j = \alpha \, E_j - p_{lj} \, \delta_l \, I_j - p_{hj} \, \delta_h \, I_j \\
 & \dot I_{lj} = p_{lj} \, \delta_l \, I_j - \gamma_R \, I_{lj} \\
 & \dot I_{hj} = p_{hj} \, \delta_h \, I_j - p_{ij} \, \delta_i \, I_{hj} - (1 - p_{ij}) \, \gamma_h \, I_{hj} \\
 & \dot I_{ij} = p_{ij} \, \delta_i \, I_{hj} - \mu_j \, \delta_{\mu} \, I_{ij} - (1 - \mu_j) \, \gamma_i \, I_{ij} \\
 & \dot M_j = \mu_j \, \delta_{\mu} \, I_{ij} \\
-& \dot R_j = \gamma_R \, I_{lj} \, + (1 - p_{ij}) \, \gamma_h \, I_{hj} + (1 - \mu_j) \, \gamma_i \, I_{ij} \\
+& \dot R_j = \gamma_R \, I_{lj} \, + (1 - p_{ij}) \, \gamma_h \, I_{hj} + (1 - \mu_j) \, \gamma_i \, I_{ij} - \omega \, R_j \\
 \\
 & j \, \forall = 1,2,3,4
 \end{aligned}$$
