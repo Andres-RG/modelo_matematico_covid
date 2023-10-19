@@ -26,50 +26,50 @@ modelo_covid <- function(t, state, parameters){
     with(as.list(c(state, parameters)), {
         
         ## GRUPO 1
-        dS1   <- - (beta/(N1+N2+N3+N4)) * S1 * (I1 + I2 + I3 + I4)
+        dS1   <- - ((beta/(N1+N2+N3+N4)) * S1 * (I1 + I2 + I3 + I4)) + (omega * R1)
         dE1   <- ( (beta/(N1+N2+N3+N4)) * S1 * (I1 + I2 + I3 + I4) ) - ( alpha * E1 )
         dI1   <- ( alpha * E1 ) - ( ph_1 * delta_h * I1 ) - ( pl_1 * delta_l * I1 )
         dI_l1 <- ( pl_1 * delta_l * I1 ) - ( gamma_R * I_l1 )
         dI_h1 <- ( ph_1 * delta_h * I1 ) - ( pi_1 * delta_i * I_h1 ) - ( (1 - pi_1) * gamma_h * I_h1 )
         dI_i1 <- ( pi_1 * delta_i * I_h1 ) - ( mu_1 * delta_m * I_i1 ) - ( (1 - mu_1) * gamma_i * I_i1 )
         dM1   <-  mu_1 * delta_m * I_i1
-        dR1   <- ( gamma_R * I_l1 ) + ( (1 - pi_1) * gamma_h * I_h1 ) + ( (1 - mu_1) * gamma_i * I_i1 )
+        dR1   <- ( gamma_R * I_l1 ) + ( (1 - pi_1) * gamma_h * I_h1 ) + ( (1 - mu_1) * gamma_i * I_i1 ) - (omega * R1)
         
         
         
         ## GRUPO 2
-        dS2   <- - (beta/(N1+N2+N3+N4)) * S2 * (I1 + I2 + I3 + I4)
+        dS2   <- - ((beta/(N1+N2+N3+N4)) * S2 * (I1 + I2 + I3 + I4)) + (omega * R2)
         dE2   <- ( (beta/(N1+N2+N3+N4)) * S2 * (I1 + I2 + I3 + I4) ) - ( alpha * E2 )
         dI2   <- ( alpha * E2 ) - ( ph_2 * delta_h * I2 ) - ( pl_2 * delta_l * I2 )
         dI_l2 <- ( pl_2 * delta_l * I2 ) - ( gamma_R * I_l2 )
         dI_h2 <- ( ph_2 * delta_h * I2 ) - ( pi_2 * delta_i * I_h2 ) - ( (1 - pi_2) * gamma_h * I_h2 )
         dI_i2 <- ( pi_2 * delta_i * I_h2 ) - ( mu_2 * delta_m * I_i2 ) - ( (1 - mu_2) * gamma_i * I_i2 )
         dM2   <-  mu_2 * delta_m * I_i2
-        dR2   <- ( gamma_R * I_l2 ) + ( (1 - pi_2) * gamma_h * I_h2 ) + ( (1 - mu_2) * gamma_i * I_i2 )
+        dR2   <- ( gamma_R * I_l2 ) + ( (1 - pi_2) * gamma_h * I_h2 ) + ( (1 - mu_2) * gamma_i * I_i2 ) - (omega * R2)
         
         
         
         ## GRUPO 3
-        dS3   <- - (beta/(N1+N2+N3+N4)) * S3 * (I1 + I2 + I3 + I4)
+        dS3   <- - ((beta/(N1+N2+N3+N4)) * S3 * (I1 + I2 + I3 + I4)) + (omega * R3)
         dE3   <- ( (beta/(N1+N2+N3+N4)) * S3 * (I1 + I2 + I3 + I4) ) - ( alpha * E3 )
         dI3   <- ( alpha * E3 ) - ( ph_3 * delta_h * I3 ) - ( pl_3 * delta_l * I3 )
         dI_l3 <- ( pl_3 * delta_l * I3 ) - ( gamma_R * I_l3 )
         dI_h3 <- ( ph_3 * delta_h * I3 ) - ( pi_3 * delta_i * I_h3 ) - ( (1 - pi_3) * gamma_h * I_h3 )
         dI_i3 <- ( pi_3 * delta_i * I_h3 ) - ( mu_3 * delta_m * I_i3 ) - ( (1 - mu_3) * gamma_i * I_i3 )
         dM3   <-  mu_3 * delta_m * I_i3
-        dR3   <- ( gamma_R * I_l3 ) + ( (1 - pi_3) * gamma_h * I_h3 ) + ( (1 - mu_3) * gamma_i * I_i3 )
+        dR3   <- ( gamma_R * I_l3 ) + ( (1 - pi_3) * gamma_h * I_h3 ) + ( (1 - mu_3) * gamma_i * I_i3 ) - (omega * R3)
         
         
         
         ## GRUPO 4
-        dS4   <- - (beta/(N1+N2+N3+N4)) * S4 * (I1 + I2 + I3 + I4)
+        dS4   <- - ((beta/(N1+N2+N3+N4)) * S4 * (I1 + I2 + I3 + I4)) + (omega * R4)
         dE4   <- ( (beta/(N1+N2+N3+N4)) * S4 * (I1 + I2 + I3 + I4) ) - ( alpha * E4 )
         dI4   <- ( alpha * E4 ) - ( ph_4 * delta_h * I4 ) - ( pl_4 * delta_l * I4 )
         dI_l4 <- ( pl_4 * delta_l * I4 ) - ( gamma_R * I_l4 )
         dI_h4 <- ( ph_4 * delta_h * I4 ) - ( pi_4 * delta_i * I_h4 ) - ( (1 - pi_4) * gamma_h * I_h4 )
         dI_i4 <- ( pi_4 * delta_i * I_h4 ) - ( mu_4 * delta_m * I_i4 ) - ( (1 - mu_4) * gamma_i * I_i4 )
         dM4   <-  mu_4 * delta_m * I_i4
-        dR4   <- ( gamma_R * I_l4 ) + ( (1 - pi_4) * gamma_h * I_h4 ) + ( (1 - mu_4) * gamma_i * I_i4 )
+        dR4   <- ( gamma_R * I_l4 ) + ( (1 - pi_4) * gamma_h * I_h4 ) + ( (1 - mu_4) * gamma_i * I_i4 ) - (omega * R4)
         
         
         
@@ -83,7 +83,7 @@ modelo_covid <- function(t, state, parameters){
 
 ## Tiempo ====
 
-t <- seq (0, 200, by = 0.1)
+t <- seq (0, 800, by = 1)
 
 ## Parametros ====
 
@@ -126,6 +126,8 @@ parameters <- c(
     delta_m <- 1/8           ,
     
     gamma_i <- 1/7           ,
+    
+    omega   <- 1/166         ,
     
     N1       <- 782000       ,
     N2       <- 801000       ,
@@ -199,7 +201,6 @@ out <- as.data.frame(ode(y     = state,
                          parms = parameters))
 
 ## Grafica ====
-
 grafica_modelo <- ggmatplot(x = out[,1],
                             y = out[,2:33],
                             plot_type = "line",
