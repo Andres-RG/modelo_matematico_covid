@@ -634,11 +634,22 @@ beta_t_grafica_hospitalizados
 ## MODELO CON REINFECCION ===============
 reinfeccion_grafica_infectados <- ggplot(reinfeccion_out,
                                          aes(x = time)) +
-  geom_line(aes(y = I1), col = "#00BFFF", size = 1) +
-  geom_line(aes(y = I2), col = "#FFB90F", size = 1) +
-  geom_line(aes(y = I3), col = "#7CCD7C", size = 1) + 
-  geom_line(aes(y = I4), col = "#6A5ACD", size = 1) +
-  labs(x = "Tiempo", y = "Población", title = "Casos Infectados Reinfección") +
-  theme(axis.line = element_line(colour = "black", size = 0.75),
-        plot.title = element_text(hjust = 0.5))
+  geom_line(aes(y = I1, color = "Menores de 18 años"), size = 1) +
+  geom_line(aes(y = I2, color = "18 a 19 años"), size = 1) +
+  geom_line(aes(y = I3, color = "40 a 59 años"), size = 1) + 
+  geom_line(aes(y = I4, color = "Mayores de 60 años"), size = 1) +
+  labs(x = "Tiempo", y = "Población", title = "Casos Infectados Reinfección",
+       color = "Grupos") +
+  theme(axis.line = element_line(colour = "black", size = 0.6),
+        plot.title = element_text(hjust = 0.5, size = 13, face = "bold"),
+        panel.background = element_rect("lightgrey"),
+        legend.text = element_text(size = 11),
+        legend.title = element_text(size = 11, face = "bold")) +
+  scale_color_manual(values = c("Menores de 18 años" = colores[1],
+                                "18 a 19 años" = colores[2],
+                                "40 a 59 años" = colores[3],
+                                "Mayores de 60 años" = colores[4]))
 reinfeccion_grafica_infectados
+
+
+ggsave("03_Out/Plots/reinfeccion_grafica_infectados_inferidos.jpeg", plot = reinfeccion_grafica_infectados, width = 3187, height = 1791,units = "px")
