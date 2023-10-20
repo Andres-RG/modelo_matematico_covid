@@ -89,8 +89,9 @@ t <- seq (0, 500, by = 1)
 
 parameters <- c(
     
-    beta    <- 0.716         , #https://www.sciencedirect.com/science/article/pii/S0960077920305610
-    
+    #beta    <- 0.716         , #https://www.sciencedirect.com/science/article/pii/S0960077920305610
+    beta <- 0.65           ,
+   
     alpha   <- 1/5.6         ,
     
     pl_1    <- 0.9746533     ,
