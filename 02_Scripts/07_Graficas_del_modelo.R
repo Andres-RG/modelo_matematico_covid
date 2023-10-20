@@ -626,3 +626,19 @@ beta_t_grafica_hospitalizados <- ggmatplot(x = beta_t_out[,1],
   theme(axis.line = element_line(colour = "black", size = 0.75)) 
 beta_t_grafica_hospitalizados
 
+
+
+
+
+
+## MODELO CON REINFECCION ===============
+reinfeccion_grafica_infectados <- ggplot(reinfeccion_out,
+                                         aes(x = time)) +
+  geom_line(aes(y = I1), col = "#00BFFF", size = 1) +
+  geom_line(aes(y = I2), col = "#FFB90F", size = 1) +
+  geom_line(aes(y = I3), col = "#7CCD7C", size = 1) + 
+  geom_line(aes(y = I4), col = "#6A5ACD", size = 1) +
+  labs(x = "Tiempo", y = "Población", title = "Casos Infectados Reinfección") +
+  theme(axis.line = element_line(colour = "black", size = 0.75),
+        plot.title = element_text(hjust = 0.5))
+reinfeccion_grafica_infectados
