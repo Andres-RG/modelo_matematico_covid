@@ -191,6 +191,9 @@ grafica_susceptibles <- ggmatplot(x = out[,1],
 
 
 
+
+
+
 # GRAFICAS DE MODELO CON BETAS MODIFICADAS
 # Gráfica de Infectados ====
 grafica_infectados_mod <- ggmatplot(x = out_betas[,1],
@@ -632,6 +635,7 @@ beta_t_grafica_hospitalizados
 
 
 ## MODELO CON REINFECCION ===============
+###INFECTADOS
 reinfeccion_grafica_infectados <- ggplot(reinfeccion_out,
                                          aes(x = time)) +
   geom_line(aes(y = I1, color = "Menores de 18 años"), size = 1) +
@@ -642,7 +646,6 @@ reinfeccion_grafica_infectados <- ggplot(reinfeccion_out,
        color = "Grupos") +
   theme(axis.line = element_line(colour = "black", size = 0.6),
         plot.title = element_text(hjust = 0.5, size = 13, face = "bold"),
-        panel.background = element_rect("lightgrey"),
         legend.text = element_text(size = 11),
         legend.title = element_text(size = 11, face = "bold")) +
   scale_color_manual(values = c("Menores de 18 años" = colores[1],
@@ -650,6 +653,75 @@ reinfeccion_grafica_infectados <- ggplot(reinfeccion_out,
                                 "40 a 59 años" = colores[3],
                                 "Mayores de 60 años" = colores[4]))
 reinfeccion_grafica_infectados
+#ggsave("03_Out/Plots/reinfeccion_grafica_infectados_inferidos.jpeg", plot = reinfeccion_grafica_infectados, width = 3187, height = 1791,units = "px")
 
 
-ggsave("03_Out/Plots/reinfeccion_grafica_infectados_inferidos.jpeg", plot = reinfeccion_grafica_infectados, width = 3187, height = 1791,units = "px")
+
+###RECUPERADOS
+reinfeccion_grafica_recuperados <- ggplot(reinfeccion_out,
+                                         aes(x = time)) +
+  geom_line(aes(y = R1, color = "Menores de 18 años"), size = 1) +
+  geom_line(aes(y = R2, color = "18 a 19 años"), size = 1) +
+  geom_line(aes(y = R3, color = "40 a 59 años"), size = 1) + 
+  geom_line(aes(y = R4, color = "Mayores de 60 años"), size = 1) +
+  labs(x = "Tiempo", y = "Población", title = "Casos Recuperados Reinfección",
+       color = "Grupos") +
+  theme(axis.line = element_line(colour = "black", size = 0.6),
+        plot.title = element_text(hjust = 0.5, size = 13, face = "bold"),
+        legend.text = element_text(size = 11),
+        legend.title = element_text(size = 11, face = "bold")) +
+  scale_color_manual(values = c("Menores de 18 años" = colores[1],
+                                "18 a 19 años" = colores[2],
+                                "40 a 59 años" = colores[3],
+                                "Mayores de 60 años" = colores[4]))
+reinfeccion_grafica_recuperados
+#ggsave("03_Out/Plots/reinfeccion_grafica_recuperados_inferidos.jpeg", plot = reinfeccion_grafica_recuperados, width = 3187, height = 1791,units = "px")
+
+
+
+###MUERTOS
+reinfeccion_grafica_fallecidos <- ggplot(reinfeccion_out,
+                                          aes(x = time)) +
+  geom_line(aes(y = M1, color = "Menores de 18 años"), size = 1) +
+  geom_line(aes(y = M2, color = "18 a 19 años"), size = 1) +
+  geom_line(aes(y = M3, color = "40 a 59 años"), size = 1) + 
+  geom_line(aes(y = M4, color = "Mayores de 60 años"), size = 1) +
+  labs(x = "Tiempo", y = "Población", title = "Casos Fallecidos Reinfección",
+       color = "Grupos") +
+  theme(axis.line = element_line(colour = "black", size = 0.6),
+        plot.title = element_text(hjust = 0.5, size = 13, face = "bold"),
+        legend.text = element_text(size = 11),
+        legend.title = element_text(size = 11, face = "bold")) +
+  scale_color_manual(values = c("Menores de 18 años" = colores[1],
+                                "18 a 19 años" = colores[2],
+                                "40 a 59 años" = colores[3],
+                                "Mayores de 60 años" = colores[4]))
+reinfeccion_grafica_fallecidos
+#ggsave("03_Out/Plots/reinfeccion_grafica_fallecidos_inferidos.jpeg", plot = reinfeccion_grafica_fallecidos, width = 3187, height = 1791,units = "px")
+
+
+
+##TOTALES
+reinfeccion_inferidos_totales <- mutate(reinfeccion_out,
+                                        infectados_totales = I1 + I2 + I3 + I4)
+reinfeccion_inferidos_totales <- mutate(reinfeccion_inferidos_totales,
+                                        recuperados_totales = R1 + R2 + R3 + R4)
+reinfeccion_inferidos_totales <- mutate(reinfeccion_inferidos_totales,
+                                        muertos_totales = M1 + M2 + M3 + M4)
+
+reinfeccion_grafica_totales <- ggplot(reinfeccion_inferidos_totales,
+                                      aes(x = time)) +
+  geom_line(aes(y = infectados_totales, col = "Infectados"), 
+            size = 1) +
+  geom_line(aes(y = recuperados_totales, col = "Recuperados"), 
+            size = 1) +
+  geom_line(aes(y = muertos_totales, col = "Fallecidos"), 
+            size = 1) +
+  labs(x = "Tiempo", y = "Población", title = "Casos Totales Reinfección",
+       color = "Casos") +
+  theme(axis.line = element_line(colour = "black", size = 0.6),
+        plot.title = element_text(hjust = 0.5, size = 13, face = "bold"),
+        legend.text = element_text(size = 11),
+        legend.title = element_text(size = 11, face = "bold"))
+reinfeccion_grafica_totales
+#ggsave("03_Out/Plots/reinfeccion_grafica_totales_inferidos.jpeg", plot = reinfeccion_grafica_totales, width = 3187, height = 1791,units = "px")
