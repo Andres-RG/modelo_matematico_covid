@@ -45,15 +45,15 @@ grafica_infectados <- ggmatplot(x = out[,1],
         theme(panel.background = element_rect(fill = "white"), 
               axis.line = element_line(colour = "black", size = 0.75)) +
   scale_y_continuous(
-    limits = c(0, 160000),  # Establece los límites
-    breaks = seq(0, 160000, by = 20000),  # Establece divisiones cada 100 unidades
+    limits = c(0, 150000),  # Establece los límites
+    breaks = seq(0, 150000, by = 50000),  # Establece divisiones cada 100 unidades
     minor_breaks = NULL  # No se utilizan divisiones menores en este caso
   ) +
-  geom_hline(yintercept = seq(0, 160000, by = 20000), 
+  geom_hline(yintercept = seq(0, 150000, by = 50000), 
              linetype = "dashed", color = "gray")
 
 
-#ggsave("03_Out/Plots/reinfeccion_grafica_infectados_inferidos.jpeg", 
+#ggsave("03_Out/Plots/grafica_infectados_inferidos.jpeg", 
 #       plot = grafica_infectados, 
 #       width = 2787, height = 1791,units = "px")
 
@@ -78,15 +78,15 @@ grafica_recuperados <- ggmatplot(x = out[,1],
         theme(panel.background = element_rect(fill = "white"), 
               axis.line = element_line(colour = "black", size = 0.75)) +
   scale_y_continuous(
-    limits = c(0, 650000),  # Establece los límites
-    breaks = seq(0, 650000, by = 100000),  # Establece divisiones cada 100 unidades
+    limits = c(0, 800000),  # Establece los límites
+    breaks = seq(0, 800000, by = 100000),  # Establece divisiones cada 100 unidades
     minor_breaks = NULL  # No se utilizan divisiones menores en este caso
   ) +
-  geom_hline(yintercept = seq(0, 650000, by = 100000), 
+  geom_hline(yintercept = seq(0, 800000, by = 100000), 
              linetype = "dashed", color = "gray")
 
 
-#ggsave("03_Out/Plots/reinfeccion_grafica_recuperados_inferidos.jpeg", 
+#ggsave("03_Out/Plots/grafica_recuperados_inferidos.jpeg", 
 #       plot = grafica_recuperados,
 #       width = 2787, height = 1791, units = "px")
 
@@ -111,16 +111,16 @@ grafica_muertos <- ggmatplot(x = out[,1],
         theme(panel.background = element_rect(fill = "white"), 
               axis.line = element_line(colour = "black", size = 0.75)) +
   scale_y_continuous(
-    limits = c(0, 200000),  # Establece los límites
-    breaks = seq(0, 200000, by = 25000),  # Establece divisiones cada 100 unidades
+    limits = c(0, 90000),  # Establece los límites
+    breaks = seq(0, 90000, by = 10000),  # Establece divisiones cada 100 unidades
     minor_breaks = NULL  # No se utilizan divisiones menores en este caso
   ) +
-  geom_hline(yintercept = seq(0, 200000, by = 25000), 
+  geom_hline(yintercept = seq(0, 90000, by = 10000), 
              linetype = "dashed", color = "gray")
 
 
 
-#ggsave("03_Out/Plots/reinfeccion_grafica_muertos_inferidos.jpeg", 
+#ggsave("03_Out/Plots/grafica_muertos_inferidos.jpeg", 
 #       plot = grafica_muertos, 
 #       width = 2787, height = 1791, units = "px")
 
@@ -146,15 +146,15 @@ plot_irm <- ggmatplot(x = inferidos_totales[,1],
         theme(panel.background = element_rect(fill = "white"), 
               axis.line = element_line(colour = "black", size = 1)) +
   scale_y_continuous(
-    limits = c(0, 1800000),  # Establece los límites
-    breaks = seq(0, 1800000, by = 200000),  # Establece divisiones cada 100 unidades
+    limits = c(0, 2200000),  # Establece los límites
+    breaks = seq(0, 2200000, by = 200000),  # Establece divisiones cada 100 unidades
     minor_breaks = NULL  # No se utilizan divisiones menores en este caso
   ) + 
-  geom_hline(yintercept = seq(0, 1800000, by = 200000), 
+  geom_hline(yintercept = seq(0, 2200000, by = 200000), 
              linetype = "dashed", color = "gray")
 
         
-#ggsave("03_Out/Plots/reinfeccion_grafica_inferidos_totales.jpeg", 
+#ggsave("03_Out/Plots/grafica_inferidos_totales.jpeg", 
 #       plot = plot_irm, 
 #       width = 2787, height = 1791, units = "px")
 
