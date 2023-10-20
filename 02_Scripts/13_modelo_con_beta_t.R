@@ -32,6 +32,43 @@ beta_interpol <- approxfun(x = valores_beta_t$dias,
                            y = valores_beta_t$beta,
                            method = "linear")
 # Resolucion ====
+
+##Funcion -----
+recta<-function(p1,p2,x){
+  m<-(p2[2]-p1[2])/(p2[1]-p1[2])
+  return(m*x  + p1[2])
+}
+#------
+f <- function ( t, b = valores_beta_t ){
+  if( t < 83 - 59 ){ b [1,2] } #1
+  else if ( 84 - 59 <= t & t <= 90  - 59 ){ #2
+    recta( c(83- 59,0.38),  c(90- 59,0.625), t) }
+  else if ( 91 - 59 <= t & t <= 120 - 59 ){ #3
+    recta( c(90- 59,0.625), c(120- 59,0.65), t) }
+  else if ( 121 - 59 <= t & t <= 135 - 59 ){ #4
+    recta( c(120- 59,0.65), c(135- 59,0.37), t) }
+  else if ( 136 - 59 <= t & t <= 150 - 59 ){ #5
+    recta( c(135- 59,0.37), c(150- 59,0.2), t) }
+  else if ( 151 - 59 <= t & t <= 250 - 59 ){ #6
+    recta( c(150- 59,0.2), c(250- 59,0.18), t) }
+  else if ( 251 - 59 <= t & t <= 295 - 59 ){ #7
+    recta( c(250- 59,0.18), c(295- 59,0.27), t) }
+  else if ( 296 - 59 <= t & t <= 305 - 59 ){ #8
+    recta( c(295- 59,0.27), c(305- 59,0.54), t) }
+  else if ( 306 - 59 <= t & t <= 325 - 59 ){ #9
+    recta( c(305- 59,0.54), c(325- 59,0.22), t) }
+  else if ( 326 - 59 <= t & t <= 340 - 59 ){ #10
+    recta( c(325- 59,0.22), c(340- 59,0.18), t) }
+  else if ( 341 - 59 <= t & t <= 365 - 59 ){ #11
+    recta( c(340- 59,0.18), c(340- 59,0.47), t) }
+  else if ( 366 - 59 <= t & t <= 371 - 59 ){ #12
+    recta( c(340- 59,0.47), c(371- 59,0.13), t) }
+  else if ( 372 - 59 <= t & t <= 395 - 59 ){ #13
+    recta( c(371- 59,0.13), c(395- 59,0.17), t) }
+  else if ( 396 - 59 <= t & t <= 423 - 59 ){ #14
+    recta( c(395- 59,0.17), c(423- 59,0.18), t) }
+}
+
 ## Funcion del modelo ====
 beta_t_modelo_covid <- function(t, state, parameters){
   
