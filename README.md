@@ -1,4 +1,4 @@
-# Modeloa Matemático de COVID-19 con Estructura Etaria para el Estado de Querétaro
+# Modelo Matemático de COVID-19 con Estructura Etaria para el Estado de Querétaro
 
 Este repositorio contiene el trabajo de la tesis de licenciatura en microbiología de Luis Andrés Rojas García.
 
