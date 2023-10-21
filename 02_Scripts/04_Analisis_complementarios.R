@@ -275,3 +275,42 @@ plot_casos
 plot_casos
 #dev.off()
 
+
+
+
+head(casos_positivos_x_dia_re)
+####
+#colores <- c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD")
+casos_x_grupos <- casos_positivos_x_dia_re %>%
+  mutate(grupos = case_when(
+    rango_de_edad == "18-" ~ "Menores de 18 años",
+    rango_de_edad %in% c("18-29", "30-39") ~ "18-39 años",
+    rango_de_edad %in% c("40-49", "50-59") ~ "40-59 años",
+    rango_de_edad %in% c("60-69", "70+") ~ "Mayores de 60 años",
+  )) %>%
+  group_by(grupos, FECHA_SINTOMAS) %>%
+  summarise(casos_totales = sum(casos_totales))
+### Ordenar los grupos etarios.
+casos_x_grupos$grupos <- factor(casos_x_grupos$grupos,
+                                levels = c("Menores de 18 años",
+                                           "18-39 años",
+                                           "40-59 años",
+                                           "Mayores de 60 años"))
+###CORTE 398 dias
+casos_x_grupos_corte <- casos_x_grupos %>%
+  filter(FECHA_SINTOMAS <= as.Date("2021-04-3"))
+###
+plot_casos_x_grupos <- ggplot(casos_x_grupos_corte, 
+                              aes(x = FECHA_SINTOMAS)) + 
+  geom_line(aes(y = casos_totales, color = grupos), size = 0.8) +
+  labs(x = "Tiempo", y = "No. Casos", title = "Casos por grupos etarios",
+       color = "Grupos") +
+  theme(axis.text.x = element_text(size = 7,angle = 45, hjust = 1),
+        axis.line = element_line(colour = "black", size = 0.65),
+        plot.title = element_text(hjust = 0.5, size = 13, face = "bold"),
+        legend.text = element_text(size = 11),
+        legend.title = element_text(size = 11, face = "bold")) +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+  scale_color_manual(values = c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD"))
+plot_casos_x_grupos
+#ggsave("03_Out/Plots/casos_por_grupos.jpeg", plot = plot_casos_x_grupos, width = 2487, height = 1791,units = "px")

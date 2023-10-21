@@ -27,63 +27,16 @@ g <- ggplot(valores_beta_t, aes(x = dias, y = beta))+
   geom_point(col = "firebrick", shape = 2)
 g
 #ggplotly(g)
-#funciones beta_t
-beta_interpol <- approxfun(x = valores_beta_t$dias,
-                           y = valores_beta_t$beta,
-                           method = "linear")
 # Resolucion ====
-
-##Funcion -----
-recta<-function(p1,p2,x){
-  m<-(p2[2]-p1[2])/(p2[1]-p1[2])
-  return(m*x  + p1[2])
-}
-#------
-f <- function ( t, b = valores_beta_t ){
-  if( t < 83 - 59 ){ b [1,2] } #1
-  else if ( 84 - 59 <= t & t <= 90  - 59 ){ #2
-    recta( c(83- 59,0.38),  c(90- 59,0.625), t) }
-  else if ( 91 - 59 <= t & t <= 120 - 59 ){ #3
-    recta( c(90- 59,0.625), c(120- 59,0.65), t) }
-  else if ( 121 - 59 <= t & t <= 135 - 59 ){ #4
-    recta( c(120- 59,0.65), c(135- 59,0.37), t) }
-  else if ( 136 - 59 <= t & t <= 150 - 59 ){ #5
-    recta( c(135- 59,0.37), c(150- 59,0.2), t) }
-  else if ( 151 - 59 <= t & t <= 250 - 59 ){ #6
-    recta( c(150- 59,0.2), c(250- 59,0.18), t) }
-  else if ( 251 - 59 <= t & t <= 295 - 59 ){ #7
-    recta( c(250- 59,0.18), c(295- 59,0.27), t) }
-  else if ( 296 - 59 <= t & t <= 305 - 59 ){ #8
-    recta( c(295- 59,0.27), c(305- 59,0.54), t) }
-  else if ( 306 - 59 <= t & t <= 325 - 59 ){ #9
-    recta( c(305- 59,0.54), c(325- 59,0.22), t) }
-  else if ( 326 - 59 <= t & t <= 340 - 59 ){ #10
-    recta( c(325- 59,0.22), c(340- 59,0.18), t) }
-  else if ( 341 - 59 <= t & t <= 365 - 59 ){ #11
-    recta( c(340- 59,0.18), c(340- 59,0.47), t) }
-  else if ( 366 - 59 <= t & t <= 371 - 59 ){ #12
-    recta( c(340- 59,0.47), c(371- 59,0.13), t) }
-  else if ( 372 - 59 <= t & t <= 395 - 59 ){ #13
-    recta( c(371- 59,0.13), c(395- 59,0.17), t) }
-  else if ( 396 - 59 <= t & t <= 423 - 59 ){ #14
-    recta( c(395- 59,0.17), c(423- 59,0.18), t) }
-}
-
 ## Funcion del modelo ====
-beta_t_modelo_covid <- function(t, state, parameters){
-  
-  #función de beta
-  beta_interpol <- approxfun(x = valores_beta_t$dias,
-                             y = valores_beta_t$beta,
-                             method = "linear")
-  #valor de beta_t
-  beta_t <- beta_interpol(t)
-  
+beta_t_modelo_covid <- function(time, state, parameters){
   with(as.list(c(state, parameters)), {
     
+    beta<-contact_rate(time)
+    
     ## GRUPO 1
-    dS1   <- - (beta_t/(N1+N2+N3+N4)) * S1 * (I1 + I2 + I3 + I4)
-    dE1   <- ( (beta_t/(N1+N2+N3+N4)) * S1 * (I1 + I2 + I3 + I4) ) - ( alpha * E1 )
+    dS1   <- - S1 * contact_rate(time) * (I1 + I2 + I3 + I4)/(N1 + N2 + N3 + N4)
+    dE1   <- S1 * contact_rate(time) * (I1 + I2 + I3 + I4)/(N1 + N2 + N3 + N4) - ( alpha * E1 )
     dI1   <- ( alpha * E1 ) - ( ph_1 * delta_h * I1 ) - ( pl_1 * delta_l * I1 )
     dI_l1 <- ( pl_1 * delta_l * I1 ) - ( gamma_R * I_l1 )
     dI_h1 <- ( ph_1 * delta_h * I1 ) - ( pi_1 * delta_i * I_h1 ) - ( (1 - pi_1) * gamma_h * I_h1 )
@@ -92,10 +45,9 @@ beta_t_modelo_covid <- function(t, state, parameters){
     dR1   <- ( gamma_R * I_l1 ) + ( (1 - pi_1) * gamma_h * I_h1 ) + ( (1 - mu_1) * gamma_i * I_i1 )
     
     
-    
     ## GRUPO 2
-    dS2   <- - (beta_t/(N1+N2+N3+N4)) * S2 * (I1 + I2 + I3 + I4)
-    dE2   <- ( (beta_t/(N1+N2+N3+N4)) * S2 * (I1 + I2 + I3 + I4) ) - ( alpha * E2 )
+    dS2   <- - S2 * contact_rate(time) * (I1 + I2+ I3 + I4)/(N1+N2+N3+N4)
+    dE2   <- S2 * contact_rate(time) * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4)  - ( alpha * E2 )
     dI2   <- ( alpha * E2 ) - ( ph_2 * delta_h * I2 ) - ( pl_2 * delta_l * I2 )
     dI_l2 <- ( pl_2 * delta_l * I2 ) - ( gamma_R * I_l2 )
     dI_h2 <- ( ph_2 * delta_h * I2 ) - ( pi_2 * delta_i * I_h2 ) - ( (1 - pi_2) * gamma_h * I_h2 )
@@ -104,10 +56,9 @@ beta_t_modelo_covid <- function(t, state, parameters){
     dR2   <- ( gamma_R * I_l2 ) + ( (1 - pi_2) * gamma_h * I_h2 ) + ( (1 - mu_2) * gamma_i * I_i2 )
     
     
-    
     ## GRUPO 3
-    dS3   <- - (beta_t/(N1+N2+N3+N4)) * S3 * (I1 + I2 + I3 + I4)
-    dE3   <- ( (beta_t/(N1+N2+N3+N4)) * S3 * (I1 + I2 + I3 + I4) ) - ( alpha * E3 )
+    dS3   <- - S3 * contact_rate(time) * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4)
+    dE3   <- S3 * contact_rate(time) * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4) - ( alpha * E3 )
     dI3   <- ( alpha * E3 ) - ( ph_3 * delta_h * I3 ) - ( pl_3 * delta_l * I3 )
     dI_l3 <- ( pl_3 * delta_l * I3 ) - ( gamma_R * I_l3 )
     dI_h3 <- ( ph_3 * delta_h * I3 ) - ( pi_3 * delta_i * I_h3 ) - ( (1 - pi_3) * gamma_h * I_h3 )
@@ -116,10 +67,9 @@ beta_t_modelo_covid <- function(t, state, parameters){
     dR3   <- ( gamma_R * I_l3 ) + ( (1 - pi_3) * gamma_h * I_h3 ) + ( (1 - mu_3) * gamma_i * I_i3 )
     
     
-    
     ## GRUPO 4
-    dS4   <- - (beta_t/(N1+N2+N3+N4)) * S4 * (I1 + I2 + I3 + I4)
-    dE4   <- ( (beta_t/(N1+N2+N3+N4)) * S4 * (I1 + I2 + I3 + I4) ) - ( alpha * E4 )
+    dS4   <- - S4 * contact_rate(time) * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4)
+    dE4   <- S4 * contact_rate(time) * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4)  - ( alpha * E4 )
     dI4   <- ( alpha * E4 ) - ( ph_4 * delta_h * I4 ) - ( pl_4 * delta_l * I4 )
     dI_l4 <- ( pl_4 * delta_l * I4 ) - ( gamma_R * I_l4 )
     dI_h4 <- ( ph_4 * delta_h * I4 ) - ( pi_4 * delta_i * I_h4 ) - ( (1 - pi_4) * gamma_h * I_h4 )
@@ -128,21 +78,58 @@ beta_t_modelo_covid <- function(t, state, parameters){
     dR4   <- ( gamma_R * I_l4 ) + ( (1 - pi_4) * gamma_h * I_h4 ) + ( (1 - mu_4) * gamma_i * I_i4 )
     
     
-    
     list(c(dS1, dE1, dI1, dI_l1, dI_h1, dI_i1, dM1, dR1,
            dS2, dE2, dI2, dI_l2, dI_h2, dI_i2, dM2, dR2,
            dS3, dE3, dI3, dI_l3, dI_h3, dI_i3, dM3, dR3,
            dS4, dE4, dI4, dI_l4, dI_h4, dI_i4, dM4, dR4))
-    
   })
+}
+
+#funciones beta_t
+contact_rate <- function(time){
+  # Marzo
+  if (1 <= time & time <= 30){
+    return (0.18)
+  }
+  # Abril
+  else if (time > 30 & time <=60){
+    return((.38-.18)/(60-31)*time -0.0337931)
+  }
+  #Mayo
+  else if(time >60 & time <= 90){
+    return((.125-.38)/(90-61)*time +0.9163793)
+  }
+  # Junio
+  else if (time >90 & time <=120){
+    return((0.15- 0.125)/(120-90)*time +0.05)
+  } #Julio Agosto y Septiembre
+  else if (time > 120 & time <=210){
+    return((0.12-0.15)/(210-121)*time + 0.1907865)
+  } #Octubre
+  else if (time >210 & time <=240){
+    return( (0.18-0.12)/(240-211)*time -0.3165517 )
+  }# Noviembre Diciembre
+  else if (time >240 & time <= 300){
+    return((0.1-0.18)/(300-241)*time + 0.5067797)
+  } else if(time > 300 & time <= 304){
+    return((0.3-0.1)/(304-301)*time -19.96667)
+  }
+  else if(time > 304 & time <= 308){
+    return((0.1-0.3)/(308-305)*time +20.63333)
+  }
+  else if(time >308 & time <= 368){
+    return((0.08-0.1)/(368-309)*time  + 0.2047458)
+  }
+  else if (time > 368 & time <= 398){
+    return((0.06-0.08)/(398-369)*time + 0.3344828)
+  }
 }
 
 ## Tiempo ====
 
-t <- valores_beta_t$dias
+times <- seq(1, 398, by = 1)
 
 ## Parametros ====
-
 parameters <- c(
   
   alpha   <- 1/5.6         ,
@@ -184,8 +171,7 @@ parameters <- c(
   N1       <- 782000       ,
   N2       <- 801000       ,
   N3       <- 539000       ,
-  N4       <- 242000       
-  
+  N4       <- 242000
 )
 
 ## Condiciones iniciales del sistema ====
@@ -248,13 +234,9 @@ state <- c(
 
 ## Out ====
 beta_t_out <- as.data.frame(ode(y     = state,
-                                times = t,
+                                times = times,
                                 func  = beta_t_modelo_covid,
                                 parms = parameters))
-for (tiempo in t) {
-  beta_valor <- beta_interpol(tiempo)
-  cat("Tiempo:", tiempo, " - Valor de Beta:", beta_valor, "\n")
-}
 ## Grafica ====
 
 beta_t_grafica_modelo <- ggmatplot(x = beta_t_out[,1],
@@ -266,15 +248,7 @@ beta_t_grafica_modelo <- ggmatplot(x = beta_t_out[,1],
                             legend_title = "Variables", lwd = 1) + 
   theme(plot.title = element_text(hjust = 0.5))+
   theme(panel.background = element_rect(fill = "white"), 
-        axis.line = element_line(colour = "black", size = 0.75)) +
-  scale_y_continuous(
-    limits = c(0, 800000),  # Establece los límites
-    breaks = seq(0, 800000, by = 100000),  # Establece divisiones cada 100 unidades
-    minor_breaks = NULL  # No se utilizan divisiones menores en este caso
-  ) + 
-  geom_hline(yintercept = seq(0, 800000, by = 100000), 
-             linetype = "dashed", color = "gray")
+        axis.line = element_line(colour = "black", size = 0.75))
 beta_t_grafica_modelo
 
-#ggsave("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.jpeg", 
-#       plot = grafica_modelo, width = 2887, height = 1464, units = "px")
+#ggsave("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.jpeg", plot = grafica_modelo, width = 2887, height = 1464, units = "px")

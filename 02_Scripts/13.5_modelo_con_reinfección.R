@@ -22,12 +22,14 @@ load("03_Out/OutData/Tabla de parametros obtendos por estructura de edad.RData")
 
 # Resolucion ====
 ## Funcion del modelo ====
-reinfeccion_modelo_covid <- function(t, state, parameters){
+reinfeccion_modelo_covid <- function(time, state, parameters){
     with(as.list(c(state, parameters)), {
         
+        beta  <- contact_rate(time)
+        
         ## GRUPO 1
-        dS1   <- - ((beta/(N1+N2+N3+N4)) * S1 * (I1 + I2 + I3 + I4)) + (omega * R1)
-        dE1   <- ( (beta/(N1+N2+N3+N4)) * S1 * (I1 + I2 + I3 + I4) ) - ( alpha * E1 )
+        dS1   <- ( - ( contact_rate(time) * ( S1 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4))) ) + (omega * R1)
+        dE1   <- ( ( contact_rate(time) * ( S1 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4))) ) - ( alpha * E1 )
         dI1   <- ( alpha * E1 ) - ( ph_1 * delta_h * I1 ) - ( pl_1 * delta_l * I1 )
         dI_l1 <- ( pl_1 * delta_l * I1 ) - ( gamma_R * I_l1 )
         dI_h1 <- ( ph_1 * delta_h * I1 ) - ( pi_1 * delta_i * I_h1 ) - ( (1 - pi_1) * gamma_h * I_h1 )
@@ -38,8 +40,8 @@ reinfeccion_modelo_covid <- function(t, state, parameters){
         
         
         ## GRUPO 2
-        dS2   <- - ((beta/(N1+N2+N3+N4)) * S2 * (I1 + I2 + I3 + I4)) + (omega * R2)
-        dE2   <- ( (beta/(N1+N2+N3+N4)) * S2 * (I1 + I2 + I3 + I4) ) - ( alpha * E2 )
+        dS2   <- ( - ( contact_rate(time) * ( S2 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4))) ) + (omega * R2)
+        dE2   <- ( ( contact_rate(time) * ( S2 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4))) ) - ( alpha * E2 )
         dI2   <- ( alpha * E2 ) - ( ph_2 * delta_h * I2 ) - ( pl_2 * delta_l * I2 )
         dI_l2 <- ( pl_2 * delta_l * I2 ) - ( gamma_R * I_l2 )
         dI_h2 <- ( ph_2 * delta_h * I2 ) - ( pi_2 * delta_i * I_h2 ) - ( (1 - pi_2) * gamma_h * I_h2 )
@@ -50,8 +52,8 @@ reinfeccion_modelo_covid <- function(t, state, parameters){
         
         
         ## GRUPO 3
-        dS3   <- - ((beta/(N1+N2+N3+N4)) * S3 * (I1 + I2 + I3 + I4)) + (omega * R3)
-        dE3   <- ( (beta/(N1+N2+N3+N4)) * S3 * (I1 + I2 + I3 + I4) ) - ( alpha * E3 )
+        dS3   <- ( - ( contact_rate(time) * ( S3 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4))) ) + (omega * R3)
+        dE3   <- ( ( contact_rate(time) * ( S3 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4))) ) - ( alpha * E3 )
         dI3   <- ( alpha * E3 ) - ( ph_3 * delta_h * I3 ) - ( pl_3 * delta_l * I3 )
         dI_l3 <- ( pl_3 * delta_l * I3 ) - ( gamma_R * I_l3 )
         dI_h3 <- ( ph_3 * delta_h * I3 ) - ( pi_3 * delta_i * I_h3 ) - ( (1 - pi_3) * gamma_h * I_h3 )
@@ -62,8 +64,8 @@ reinfeccion_modelo_covid <- function(t, state, parameters){
         
         
         ## GRUPO 4
-        dS4   <- - ((beta/(N1+N2+N3+N4)) * S4 * (I1 + I2 + I3 + I4)) + (omega * R4)
-        dE4   <- ( (beta/(N1+N2+N3+N4)) * S4 * (I1 + I2 + I3 + I4) ) - ( alpha * E4 )
+        dS4   <- ( - ( contact_rate(time) * ( S3 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4))) ) + (omega * R4)
+        dE4   <- ( ( contact_rate(time) * ( S3 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4))) ) - ( alpha * E4 )
         dI4   <- ( alpha * E4 ) - ( ph_4 * delta_h * I4 ) - ( pl_4 * delta_l * I4 )
         dI_l4 <- ( pl_4 * delta_l * I4 ) - ( gamma_R * I_l4 )
         dI_h4 <- ( ph_4 * delta_h * I4 ) - ( pi_4 * delta_i * I_h4 ) - ( (1 - pi_4) * gamma_h * I_h4 )
@@ -81,17 +83,55 @@ reinfeccion_modelo_covid <- function(t, state, parameters){
     })
 }
 
+##Funcion beta_t ====
+contact_rate<-function(time){
+    
+    # Marzo
+    if (1 <= time & time <= 30){
+        return (0.18)
+    }
+    # Abril
+    else if (time > 30 & time <=60){
+        return((.38-.18)/(60-31)*time -0.0337931)
+    }
+    #Mayo
+    else if(time >60 & time <= 90){
+        return((.125-.38)/(90-61)*time +0.9163793)
+    }
+    # Junio
+    else if (time >90 & time <=120){
+        return((0.15- 0.125)/(120-90)*time +0.05)
+    } #Julio Agosto y Septiembre
+    else if (time > 120 & time <=210){
+        return((0.12-0.15)/(210-121)*time + 0.1907865)
+    } #Octubre
+    else if (time >210 & time <=240){
+        return( (0.18-0.12)/(240-211)*time -0.3165517 )
+    }# Noviembre Diciembre
+    else if (time >240 & time <= 300){
+        return((0.1-0.18)/(300-241)*time + 0.5067797)
+    } else if(time > 300 & time <= 304){
+        return((0.3-0.1)/(304-301)*time -19.96667)
+    }
+    else if(time > 304 & time <= 308){
+        return((0.1-0.3)/(308-305)*time +20.63333)
+    }
+    else if(time >308 & time <= 368){
+        return((0.08-0.1)/(368-309)*time  + 0.2047458)
+    }
+    else if (time > 368 & time <= 398){
+        return((0.06-0.08)/(398-369)*time + 0.3344828)
+    }
+}
+
 ## Tiempo ====
 
-t <- seq (0, 500, by = 1)
+time <- seq (0, 398, by = 1)
 
 ## Parametros ====
 
 parameters <- c(
     
-    #beta    <- 0.716         , #https://www.sciencedirect.com/science/article/pii/S0960077920305610
-    beta <- 0.65           ,
-   
     alpha   <- 1/5.6         ,
     
     pl_1    <- 0.9746533     ,
@@ -197,7 +237,7 @@ state <- c(
 
 ## Out ====
 reinfeccion_out <- as.data.frame(ode(y     = state,
-                                     times = t,
+                                     times = times,
                                      func  = reinfeccion_modelo_covid,
                                      parms = parameters))
 
@@ -223,3 +263,10 @@ reinfeccion_grafica_modelo
 
 #ggsave("03_Out/Plots/reinfeccion_modelo_COVID.jpeg", 
 #       plot = reinfeccion_grafica_modelo, width = 2887, height = 1464, units = "px")
+
+ggplot(reinfeccion_out, aes(x = time)) +
+    geom_line(aes(y = I1)) +
+    geom_line(aes(y = I2)) +
+    geom_line(aes(y = I3)) +
+    geom_line(aes(y = I4))
+
