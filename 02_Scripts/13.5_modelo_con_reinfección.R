@@ -25,11 +25,10 @@ load("03_Out/OutData/Tabla de parametros obtendos por estructura de edad.RData")
 reinfeccion_modelo_covid <- function(time, state, parameters){
     with(as.list(c(state, parameters)), {
         
-        beta  <- contact_rate(time)
-        
+        beta<-contact_rate(time)
         ## GRUPO 1
-        dS1   <- ( - ( contact_rate(time) * ( S1 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4))) ) + (omega * R1)
-        dE1   <- ( ( contact_rate(time) * ( S1 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4))) ) - ( alpha * E1 )
+        dS1   <- - (S1 *(I1 + I2 + I3 + I4)/(N1 + N2 + N3 + N4) * contact_rate(time)) + (omega * R1)
+        dE1   <-  S1 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4) *  contact_rate(time) - ( alpha * E1 )
         dI1   <- ( alpha * E1 ) - ( ph_1 * delta_h * I1 ) - ( pl_1 * delta_l * I1 )
         dI_l1 <- ( pl_1 * delta_l * I1 ) - ( gamma_R * I_l1 )
         dI_h1 <- ( ph_1 * delta_h * I1 ) - ( pi_1 * delta_i * I_h1 ) - ( (1 - pi_1) * gamma_h * I_h1 )
@@ -38,10 +37,9 @@ reinfeccion_modelo_covid <- function(time, state, parameters){
         dR1   <- ( gamma_R * I_l1 ) + ( (1 - pi_1) * gamma_h * I_h1 ) + ( (1 - mu_1) * gamma_i * I_i1 ) - (omega * R1)
         
         
-        
         ## GRUPO 2
-        dS2   <- ( - ( contact_rate(time) * ( S2 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4))) ) + (omega * R2)
-        dE2   <- ( ( contact_rate(time) * ( S2 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4))) ) - ( alpha * E2 )
+        dS2   <- - (S2 *  contact_rate(time) * (I1 + I2+ I3 + I4)/(N1+N2+N3+N4)) + (omega * R2)
+        dE2   <-   contact_rate(time) * S2 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4)  - ( alpha * E2 )
         dI2   <- ( alpha * E2 ) - ( ph_2 * delta_h * I2 ) - ( pl_2 * delta_l * I2 )
         dI_l2 <- ( pl_2 * delta_l * I2 ) - ( gamma_R * I_l2 )
         dI_h2 <- ( ph_2 * delta_h * I2 ) - ( pi_2 * delta_i * I_h2 ) - ( (1 - pi_2) * gamma_h * I_h2 )
@@ -50,10 +48,9 @@ reinfeccion_modelo_covid <- function(time, state, parameters){
         dR2   <- ( gamma_R * I_l2 ) + ( (1 - pi_2) * gamma_h * I_h2 ) + ( (1 - mu_2) * gamma_i * I_i2 ) - (omega * R2)
         
         
-        
         ## GRUPO 3
-        dS3   <- ( - ( contact_rate(time) * ( S3 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4))) ) + (omega * R3)
-        dE3   <- ( ( contact_rate(time) * ( S3 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4))) ) - ( alpha * E3 )
+        dS3   <- - (S3 *  contact_rate(time) *(I1 + I2 + I3 + I4)/(N1+N2+N3+N4)) + (omega * R3)
+        dE3   <-   contact_rate(time) * S3 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4) - ( alpha * E3 )
         dI3   <- ( alpha * E3 ) - ( ph_3 * delta_h * I3 ) - ( pl_3 * delta_l * I3 )
         dI_l3 <- ( pl_3 * delta_l * I3 ) - ( gamma_R * I_l3 )
         dI_h3 <- ( ph_3 * delta_h * I3 ) - ( pi_3 * delta_i * I_h3 ) - ( (1 - pi_3) * gamma_h * I_h3 )
@@ -62,10 +59,9 @@ reinfeccion_modelo_covid <- function(time, state, parameters){
         dR3   <- ( gamma_R * I_l3 ) + ( (1 - pi_3) * gamma_h * I_h3 ) + ( (1 - mu_3) * gamma_i * I_i3 ) - (omega * R3)
         
         
-        
         ## GRUPO 4
-        dS4   <- ( - ( contact_rate(time) * ( S3 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4))) ) + (omega * R4)
-        dE4   <- ( ( contact_rate(time) * ( S3 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4))) ) - ( alpha * E4 )
+        dS4   <- - (S4  * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4)* contact_rate(time)) + (omega * R4)
+        dE4   <-   contact_rate(time)* S4 * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4)  - ( alpha * E4 )
         dI4   <- ( alpha * E4 ) - ( ph_4 * delta_h * I4 ) - ( pl_4 * delta_l * I4 )
         dI_l4 <- ( pl_4 * delta_l * I4 ) - ( gamma_R * I_l4 )
         dI_h4 <- ( ph_4 * delta_h * I4 ) - ( pi_4 * delta_i * I_h4 ) - ( (1 - pi_4) * gamma_h * I_h4 )
@@ -74,12 +70,10 @@ reinfeccion_modelo_covid <- function(time, state, parameters){
         dR4   <- ( gamma_R * I_l4 ) + ( (1 - pi_4) * gamma_h * I_h4 ) + ( (1 - mu_4) * gamma_i * I_i4 ) - (omega * R4)
         
         
-        
         list(c(dS1, dE1, dI1, dI_l1, dI_h1, dI_i1, dM1, dR1,
                dS2, dE2, dI2, dI_l2, dI_h2, dI_i2, dM2, dR2,
                dS3, dE3, dI3, dI_l3, dI_h3, dI_i3, dM3, dR3,
                dS4, dE4, dI4, dI_l4, dI_h4, dI_i4, dM4, dR4))
-        
     })
 }
 
@@ -237,7 +231,7 @@ state <- c(
 
 ## Out ====
 reinfeccion_out <- as.data.frame(ode(y     = state,
-                                     times = times,
+                                     times = time,
                                      func  = reinfeccion_modelo_covid,
                                      parms = parameters))
 
