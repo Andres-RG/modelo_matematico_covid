@@ -296,6 +296,7 @@ casos_x_grupos$grupos <- factor(casos_x_grupos$grupos,
                                            "18-39 años",
                                            "40-59 años",
                                            "Mayores de 60 años"))
+#save(casos_x_grupos, file = "03_Out/OutData/casos_datos_x_grupos.RData")
 ###CORTE 398 dias
 casos_x_grupos_corte <- casos_x_grupos %>%
   filter(FECHA_SINTOMAS <= as.Date("2021-04-3"))
