@@ -8,6 +8,7 @@ library(viridis)
 library(deSolve)
 library(ape)
 library(lubridate)
+library(pheatmap)
 
 # Cargar las funciones
 source("02_Scripts/Functions/Functions.R")
@@ -20,7 +21,17 @@ load("03_Out/OutData/probabilidades_de_transicion.RData")
 # probabilidades de transicion obtenidas, mediante la visualizacion con el uso
 # de un heatmap. 
 heatmap(cor(t(probabilidades_de_transicion)))
-
+etiquetas <- c("18-","18-29","30-39","40-49","50-59","60-69","70+")
+heatmap <- pheatmap(cor(t(probabilidades_de_transicion)),
+         color = viridis(100),
+         cellwidth = 25,  # Ancho de las celdas
+         cellheight = 25,  # Alto de las celdas
+         cluster_rows = F,  # Agrupar filas
+         cluster_cols = F,  # Agrupar columnas
+         border_color = NA,  # Color del borde
+         labels_row = etiquetas,  # Cambiar etiquetas de filas
+         labels_col = etiquetas  # Cambiar etiquetas de columnas
+)
 # Con la visuaclización de las correlaciones entre las probabilidades de transicion,
 # se pueden ir separando diferentes grupos que son los que más se correlacionan.
 # Estos grupos son: 
@@ -31,9 +42,9 @@ heatmap(cor(t(probabilidades_de_transicion)))
 # ----------------- 18 -  (Grupo 5)
 
 # El objeto que contiene el heatmap se guarda como un archivo png
-#png("03_Out/Plots/heatmap_probabilidades_de_transicion.png", 
-#    width = 265, height = 265, res = 300, units = "mm")
-#heatmap(cor(t(probabilidades_de_transicion)))
+#jpeg("03_Out/Plots/pretty_heatmap_probabilidades_de_transicion.jpeg", 
+#    width = 100, height = 100, res = 300, units = "mm")
+heatmap
 #dev.off()
 
 
