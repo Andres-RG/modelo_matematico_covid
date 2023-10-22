@@ -6,7 +6,6 @@ library(tidyverse)
 library(viridisLite)
 library(viridis)
 library(deSolve)
-library(ape)
 library(lubridate)
 library(ggmatplot)
 library(simecol)
@@ -19,69 +18,82 @@ source("02_Scripts/Functions/Functions.R")
 # Se carga la base de datos
 load("03_Out/OutData/probabilidades_de_transicion.RData")
 load("03_Out/OutData/Tabla de parametros obtendos por estructura de edad.RData")
-valores_beta_t <- readRDS("01_RawData/beta_t.RDS")
+contact_rate_df <- read.csv("01_RawData/contact_rate_qro.csv")
+
+##Dates
+dates <- as.Date(contact_rate_df$days)
+contact_rate_df <- mutate(contact_rate_df, dias = dates)
+contact_rate_df <- select(contact_rate_df, c(X, beta_t, dias))
 
 ##Grafica beta_t
-g <- ggplot(valores_beta_t, aes(x = dias, y = beta))+
-  geom_line(alpha = 0.4) + 
-  geom_point(col = "firebrick", shape = 2)
-g
+beta_t_plot <- ggplot(contact_rate_df, aes(x = dias)) +
+  geom_line(aes(y = beta_t), col = "#FF4040", size = 0.9) +
+  labs(x = "Tiempo", y = "Tasa de contacto") +
+  theme(axis.line = element_line(colour = "black", size = 0.6))
+beta_t_plot
+#ggsave("03_Out/Plots/beta_t_para_queretaro.jpeg", plot = beta_t_plot, width = 2887, height = 1864, units = "px")
 #ggplotly(g)
 # Resolucion ====
 ## Funcion del modelo ====
 beta_t_modelo_covid <- function(time, state, parameters){
+  
   with(as.list(c(state, parameters)), {
-    
-    beta<-contact_rate(time)
-    
     ## GRUPO 1
-    dS1   <- - S1 * contact_rate(time) * (I1 + I2 + I3 + I4)/(N1 + N2 + N3 + N4)
-    dE1   <- S1 * contact_rate(time) * (I1 + I2 + I3 + I4)/(N1 + N2 + N3 + N4) - ( alpha * E1 )
+    # Total population
+    total_pop <- S1 + E1 + I1 + I_l1 + I_h1 + I_i1 + R1 + S2 + E2 + I2 +  I_l2 + I_h2 + I_i2 + R2 + S3 + E3 + I3 + I_l3 + I_h3 + I_i3 + R3 + S4 + E4 + I4 + I_l4 + I_h4 + I_i4 + R4  
+    
+    dS1   <- - S1 *(I1 + I2 + I3 + I4)/(total_pop)*contact_rate(time) + immun_lost * R1
+    dE1   <-  S1 * (I1 + I2 + I3 + I4)/(total_pop) *contact_rate(time) - ( alpha * E1 )
     dI1   <- ( alpha * E1 ) - ( ph_1 * delta_h * I1 ) - ( pl_1 * delta_l * I1 )
     dI_l1 <- ( pl_1 * delta_l * I1 ) - ( gamma_R * I_l1 )
     dI_h1 <- ( ph_1 * delta_h * I1 ) - ( pi_1 * delta_i * I_h1 ) - ( (1 - pi_1) * gamma_h * I_h1 )
     dI_i1 <- ( pi_1 * delta_i * I_h1 ) - ( mu_1 * delta_m * I_i1 ) - ( (1 - mu_1) * gamma_i * I_i1 )
     dM1   <-  mu_1 * delta_m * I_i1
-    dR1   <- ( gamma_R * I_l1 ) + ( (1 - pi_1) * gamma_h * I_h1 ) + ( (1 - mu_1) * gamma_i * I_i1 )
+    dR1   <- ( gamma_R * I_l1 ) + ( (1 - pi_1) * gamma_h * I_h1 ) + ( (1 - mu_1) * gamma_i * I_i1 ) - immun_lost * R1
+    
     
     
     ## GRUPO 2
-    dS2   <- - S2 * contact_rate(time) * (I1 + I2+ I3 + I4)/(N1+N2+N3+N4)
-    dE2   <- S2 * contact_rate(time) * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4)  - ( alpha * E2 )
+    dS2   <- - S2 *contact_rate(time) * (I1 + I2+ I3 + I4)/(total_pop)+ immun_lost * R2
+    dE2   <-   contact_rate(time) * S2 * (I1 + I2 + I3 + I4)/(total_pop)  - ( alpha * E2 )
     dI2   <- ( alpha * E2 ) - ( ph_2 * delta_h * I2 ) - ( pl_2 * delta_l * I2 )
     dI_l2 <- ( pl_2 * delta_l * I2 ) - ( gamma_R * I_l2 )
     dI_h2 <- ( ph_2 * delta_h * I2 ) - ( pi_2 * delta_i * I_h2 ) - ( (1 - pi_2) * gamma_h * I_h2 )
     dI_i2 <- ( pi_2 * delta_i * I_h2 ) - ( mu_2 * delta_m * I_i2 ) - ( (1 - mu_2) * gamma_i * I_i2 )
     dM2   <-  mu_2 * delta_m * I_i2
-    dR2   <- ( gamma_R * I_l2 ) + ( (1 - pi_2) * gamma_h * I_h2 ) + ( (1 - mu_2) * gamma_i * I_i2 )
+    dR2   <- ( gamma_R * I_l2 ) + ( (1 - pi_2) * gamma_h * I_h2 ) + ( (1 - mu_2) * gamma_i * I_i2 ) - immun_lost * R2
+    
     
     
     ## GRUPO 3
-    dS3   <- - S3 * contact_rate(time) * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4)
-    dE3   <- S3 * contact_rate(time) * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4) - ( alpha * E3 )
+    dS3   <- - S3*contact_rate(time) *(I1 + I2 + I3 + I4)/(total_pop) + immun_lost * R3
+    dE3   <-   contact_rate(time) * S3 * (I1 + I2 + I3 + I4)/(total_pop) - ( alpha * E3 )
     dI3   <- ( alpha * E3 ) - ( ph_3 * delta_h * I3 ) - ( pl_3 * delta_l * I3 )
     dI_l3 <- ( pl_3 * delta_l * I3 ) - ( gamma_R * I_l3 )
     dI_h3 <- ( ph_3 * delta_h * I3 ) - ( pi_3 * delta_i * I_h3 ) - ( (1 - pi_3) * gamma_h * I_h3 )
     dI_i3 <- ( pi_3 * delta_i * I_h3 ) - ( mu_3 * delta_m * I_i3 ) - ( (1 - mu_3) * gamma_i * I_i3 )
     dM3   <-  mu_3 * delta_m * I_i3
-    dR3   <- ( gamma_R * I_l3 ) + ( (1 - pi_3) * gamma_h * I_h3 ) + ( (1 - mu_3) * gamma_i * I_i3 )
+    dR3   <- ( gamma_R * I_l3 ) + ( (1 - pi_3) * gamma_h * I_h3 ) + ( (1 - mu_3) * gamma_i * I_i3 ) - immun_lost * R3
+    
     
     
     ## GRUPO 4
-    dS4   <- - S4 * contact_rate(time) * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4)
-    dE4   <- S4 * contact_rate(time) * (I1 + I2 + I3 + I4)/(N1+N2+N3+N4)  - ( alpha * E4 )
+    dS4   <- - S4  * (I1 + I2 + I3 + I4)/(total_pop)* contact_rate(time) + immun_lost * R4
+    dE4   <-   contact_rate(time)* S4 * (I1 + I2 + I3 + I4)/(total_pop)  - ( alpha * E4 )
     dI4   <- ( alpha * E4 ) - ( ph_4 * delta_h * I4 ) - ( pl_4 * delta_l * I4 )
     dI_l4 <- ( pl_4 * delta_l * I4 ) - ( gamma_R * I_l4 )
     dI_h4 <- ( ph_4 * delta_h * I4 ) - ( pi_4 * delta_i * I_h4 ) - ( (1 - pi_4) * gamma_h * I_h4 )
     dI_i4 <- ( pi_4 * delta_i * I_h4 ) - ( mu_4 * delta_m * I_i4 ) - ( (1 - mu_4) * gamma_i * I_i4 )
     dM4   <-  mu_4 * delta_m * I_i4
-    dR4   <- ( gamma_R * I_l4 ) + ( (1 - pi_4) * gamma_h * I_h4 ) + ( (1 - mu_4) * gamma_i * I_i4 )
+    dR4   <- ( gamma_R * I_l4 ) + ( (1 - pi_4) * gamma_h * I_h4 ) + ( (1 - mu_4) * gamma_i * I_i4 ) - immun_lost * R4
+    
     
     
     list(c(dS1, dE1, dI1, dI_l1, dI_h1, dI_i1, dM1, dR1,
            dS2, dE2, dI2, dI_l2, dI_h2, dI_i2, dM2, dR2,
            dS3, dE3, dI3, dI_l3, dI_h3, dI_i3, dM3, dR3,
            dS4, dE4, dI4, dI_l4, dI_h4, dI_i4, dM4, dR4))
+    
   })
 }
 
@@ -167,6 +179,8 @@ parameters <- c(
   delta_m <- 1/8           ,
   
   gamma_i <- 1/7           ,
+  
+  immun_lost<- 1/0.005556  ,
   
   N1       <- 782000       ,
   N2       <- 801000       ,
