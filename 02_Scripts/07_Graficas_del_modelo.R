@@ -522,7 +522,7 @@ beta_t_grafica_infectados <- ggmatplot(x = beta_t_out[,1],
                                        fill = colores,
                                        linetype = 1,
                                        xlab = "Tiempo", ylab = "Población",
-                                       main = "Casos Infectados beta_t",
+                                       main = "Casos Infectados",
                                        legend_title = "Grupos",
                                        legend_label = c("Menores 18 años",
                                                         "18 - 39 años",
@@ -531,9 +531,18 @@ beta_t_grafica_infectados <- ggmatplot(x = beta_t_out[,1],
                                        lwd = 1) + 
   theme(plot.title = element_text(hjust = 0.5))+
   theme(panel.background = element_rect(fill = "white"), 
-        axis.line = element_line(colour = "black", size = 0.75))
-beta_t_grafica_infectados
+        axis.line = element_line(colour = "black", size = 0.75)) +
+  scale_y_continuous(
+    limits = c(0, 400),  # Establece los límites
+    breaks = seq(0, 400, by = 50),  # Establece divisiones cada 100 unidades
+    minor_breaks = NULL  # No se utilizan divisiones menores en este caso
+  ) +
+  geom_hline(yintercept = seq(0, 400, by = 50), 
+             linetype = "dashed", color = "gray")
 
+#ggsave("03_Out/Plots/beta_t_grafica_infectados.jpeg", 
+#       plot = beta_t_grafica_infectados, 
+#       width = 2487, height = 1791, units = "px")
 
 
 
@@ -543,7 +552,7 @@ beta_t_grafica_recuperados <- ggmatplot(x = beta_t_out[,1],
                                         fill = colores,
                                         linetype = 1,
                                         xlab = "Tiempo", ylab = "Población",
-                                        main = "Casos Recuperados beta_t",
+                                        main = "Casos Recuperados",
                                         legend_title = "Grupos",
                                         legend_label = c("Menores 18 años",
                                                          "18 - 39 años",
@@ -554,40 +563,79 @@ beta_t_grafica_recuperados <- ggmatplot(x = beta_t_out[,1],
   theme(panel.background = element_rect(fill = "white"), 
         axis.line = element_line(colour = "black", size = 0.75)) +
   scale_y_continuous(
-    limits = c(0, 800000),  # Establece los límites
-    breaks = seq(0, 800000, by = 100000),  # Establece divisiones cada 100 unidades
+    limits = c(0, 6000),  # Establece los límites
+    breaks = seq(0, 6000, by = 1000),  # Establece divisiones cada 100 unidades
     minor_breaks = NULL  # No se utilizan divisiones menores en este caso
   ) +
-  geom_hline(yintercept = seq(0, 800000, by = 100000), 
+  geom_hline(yintercept = seq(0, 6000, by = 1000), 
              linetype = "dashed", color = "gray")
-beta_t_grafica_recuperados
+
+#ggsave("03_Out/Plots/beta_t_grafica_recuperados.jpeg", 
+#       plot = beta_t_grafica_recuperados, 
+#       width = 2487, height = 1791, units = "px")
 
 
 
-beta_t_grafica_muertos <- ggmatplot(x = beta_t_out[,1], 
-                             y = beta_t_out[,c(8,16,24,32)],
-                             plot_type = "line",
-                             fill = colores,
-                             linetype = 1, 
-                             xlab = "Tiempo", ylab = "Población",
-                             main = "Casos Fallecidos beta_t",
-                             legend_title = "Grupos", 
-                             legend_label = c("Menores 18 años",
-                                              "18 - 39 años",
-                                              "40 - 59 años",
-                                              "Mayores de 60 años"),
-                             lwd = 1) +
+
+beta_t_grafica_muertos <- ggmatplot(x = beta_t_out[,1],
+                                    y = beta_t_out[,c(8,16,24,32)],
+                                    plot_type = "line",
+                                    fill = colores,
+                                    linetype = 1,
+                                    xlab = "Tiempo", ylab = "Población",
+                                    main = "Casos Fallecidos",
+                                    legend_title = "Grupos",
+                                    legend_label = c("Menores 18 años",
+                                                     "18 - 39 años",
+                                                     "40 - 59 años",
+                                                     "Mayores de 60 años"),
+                                    lwd = 1) +
   theme(plot.title = element_text(hjust = 0.5))+
   theme(panel.background = element_rect(fill = "white"), 
         axis.line = element_line(colour = "black", size = 0.75)) +
   scale_y_continuous(
-    limits = c(0, 75000),  # Establece los límites
-    breaks = seq(0, 75000, by = 10000),  # Establece divisiones cada 100 unidades
+    limits = c(0, 1250),  # Establece los límites
+    breaks = seq(0, 1250, by = 250),  # Establece divisiones cada 100 unidades
     minor_breaks = NULL  # No se utilizan divisiones menores en este caso
   ) +
-  geom_hline(yintercept = seq(0, 75000, by = 5000), 
+  geom_hline(yintercept = seq(0, 1250, by = 250), 
              linetype = "dashed", color = "gray")
-beta_t_grafica_muertos
+
+#ggsave("03_Out/Plots/beta_t_grafica_muertos.jpeg", 
+#       plot = beta_t_grafica_muertos, 
+#       width = 2487, height = 1791, units = "px")
+#---
+inferidos_totales <- mutate(beta_t_out,
+                            infectados_totales_inf = I1 + I2 + I3 + I4)
+inferidos_totales <- mutate(inferidos_totales,
+                            recuperados_totales_inf = R1 + R2 + R3 + R4)
+inferidos_totales <- mutate(inferidos_totales,
+                            muertos_totales_inf = M1 + M2 + M3 + M4)
+
+
+beta_t_plot_irm <- ggmatplot(x = inferidos_totales[,1], 
+                      y = inferidos_totales[,c(34,35,36)],
+                      plot_type = "line",
+                      linetype = 1, lwd = 1.5,
+                      main = "Total de Casos Infectados, Recuperados y Muertos Inferidos",
+                      xlab = "Tiempo", ylab = "Población", 
+                      legend_label = c("Infectados", "Recuperados", "Fallecidos"),
+                      legend_title = "Casos") +
+  theme(plot.title = element_text(hjust = 0.5))+
+  theme(panel.background = element_rect(fill = "white"), 
+        axis.line = element_line(colour = "black", size = 1)) +
+  scale_y_continuous(
+    limits = c(0, 16000),  # Establece los límites
+    breaks = seq(0, 16000, by = 4000),  # Establece divisiones cada 100 unidades
+    minor_breaks = NULL  # No se utilizan divisiones menores en este caso
+  ) + 
+  geom_hline(yintercept = seq(0, 16000, by = 4000), 
+             linetype = "dashed", color = "gray")
+
+#ggsave("03_Out/Plots/beta_t_grafica_inferidos.jpeg", 
+#       plot = beta_t_plot_irm, 
+#       width = 2487, height = 1791, units = "px")
+#---
 
 
 

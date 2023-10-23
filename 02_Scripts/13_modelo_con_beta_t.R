@@ -30,7 +30,7 @@ beta_t_plot <- ggplot(contact_rate_df, aes(x = dias)) +
   geom_line(aes(y = beta_t), col = "#FF4040", size = 0.9) +
   labs(x = "Tiempo", y = "Tasa de contacto") +
   theme(axis.line = element_line(colour = "black", size = 0.6))
-beta_t_plot
+
 #ggsave("03_Out/Plots/beta_t_para_queretaro.jpeg", plot = beta_t_plot, width = 2887, height = 1864, units = "px")
 #ggplotly(g)
 # Resolucion ====
@@ -42,50 +42,50 @@ beta_t_modelo_covid <- function(time, state, parameters){
     # Total population
     total_pop <- S1 + E1 + I1 + I_l1 + I_h1 + I_i1 + R1 + S2 + E2 + I2 +  I_l2 + I_h2 + I_i2 + R2 + S3 + E3 + I3 + I_l3 + I_h3 + I_i3 + R3 + S4 + E4 + I4 + I_l4 + I_h4 + I_i4 + R4  
     
-    dS1   <- - S1 *(I1 + I2 + I3 + I4)/(total_pop)*contact_rate(time) + immun_lost * R1
+    dS1   <- - S1 *(I1 + I2 + I3 + I4)/(total_pop)*contact_rate(time)+ immun_lost*R1
     dE1   <-  S1 * (I1 + I2 + I3 + I4)/(total_pop) *contact_rate(time) - ( alpha * E1 )
     dI1   <- ( alpha * E1 ) - ( ph_1 * delta_h * I1 ) - ( pl_1 * delta_l * I1 )
     dI_l1 <- ( pl_1 * delta_l * I1 ) - ( gamma_R * I_l1 )
     dI_h1 <- ( ph_1 * delta_h * I1 ) - ( pi_1 * delta_i * I_h1 ) - ( (1 - pi_1) * gamma_h * I_h1 )
     dI_i1 <- ( pi_1 * delta_i * I_h1 ) - ( mu_1 * delta_m * I_i1 ) - ( (1 - mu_1) * gamma_i * I_i1 )
     dM1   <-  mu_1 * delta_m * I_i1
-    dR1   <- ( gamma_R * I_l1 ) + ( (1 - pi_1) * gamma_h * I_h1 ) + ( (1 - mu_1) * gamma_i * I_i1 ) - immun_lost * R1
+    dR1   <- ( gamma_R * I_l1 ) + ( (1 - pi_1) * gamma_h * I_h1 ) + ( (1 - mu_1) * gamma_i * I_i1 ) - immun_lost*R1
     
     
     
     ## GRUPO 2
-    dS2   <- - S2 *contact_rate(time) * (I1 + I2+ I3 + I4)/(total_pop)+ immun_lost * R2
+    dS2   <- - S2 *contact_rate(time) * (I1 + I2+ I3 + I4)/(total_pop)+ immun_lost*R2
     dE2   <-   contact_rate(time) * S2 * (I1 + I2 + I3 + I4)/(total_pop)  - ( alpha * E2 )
     dI2   <- ( alpha * E2 ) - ( ph_2 * delta_h * I2 ) - ( pl_2 * delta_l * I2 )
     dI_l2 <- ( pl_2 * delta_l * I2 ) - ( gamma_R * I_l2 )
     dI_h2 <- ( ph_2 * delta_h * I2 ) - ( pi_2 * delta_i * I_h2 ) - ( (1 - pi_2) * gamma_h * I_h2 )
     dI_i2 <- ( pi_2 * delta_i * I_h2 ) - ( mu_2 * delta_m * I_i2 ) - ( (1 - mu_2) * gamma_i * I_i2 )
     dM2   <-  mu_2 * delta_m * I_i2
-    dR2   <- ( gamma_R * I_l2 ) + ( (1 - pi_2) * gamma_h * I_h2 ) + ( (1 - mu_2) * gamma_i * I_i2 ) - immun_lost * R2
+    dR2   <- ( gamma_R * I_l2 ) + ( (1 - pi_2) * gamma_h * I_h2 ) + ( (1 - mu_2) * gamma_i * I_i2 )-immun_lost*R2
     
     
     
     ## GRUPO 3
-    dS3   <- - S3*contact_rate(time) *(I1 + I2 + I3 + I4)/(total_pop) + immun_lost * R3
+    dS3   <- - S3*contact_rate(time) *(I1 + I2 + I3 + I4)/(total_pop)+ immun_lost*R3
     dE3   <-   contact_rate(time) * S3 * (I1 + I2 + I3 + I4)/(total_pop) - ( alpha * E3 )
     dI3   <- ( alpha * E3 ) - ( ph_3 * delta_h * I3 ) - ( pl_3 * delta_l * I3 )
     dI_l3 <- ( pl_3 * delta_l * I3 ) - ( gamma_R * I_l3 )
     dI_h3 <- ( ph_3 * delta_h * I3 ) - ( pi_3 * delta_i * I_h3 ) - ( (1 - pi_3) * gamma_h * I_h3 )
     dI_i3 <- ( pi_3 * delta_i * I_h3 ) - ( mu_3 * delta_m * I_i3 ) - ( (1 - mu_3) * gamma_i * I_i3 )
     dM3   <-  mu_3 * delta_m * I_i3
-    dR3   <- ( gamma_R * I_l3 ) + ( (1 - pi_3) * gamma_h * I_h3 ) + ( (1 - mu_3) * gamma_i * I_i3 ) - immun_lost * R3
+    dR3   <- ( gamma_R * I_l3 ) + ( (1 - pi_3) * gamma_h * I_h3 ) + ( (1 - mu_3) * gamma_i * I_i3 )-immun_lost*R3
     
     
     
     ## GRUPO 4
-    dS4   <- - S4  * (I1 + I2 + I3 + I4)/(total_pop)* contact_rate(time) + immun_lost * R4
+    dS4   <- - S4  * (I1 + I2 + I3 + I4)/(total_pop)* contact_rate(time) + immun_lost*R4
     dE4   <-   contact_rate(time)* S4 * (I1 + I2 + I3 + I4)/(total_pop)  - ( alpha * E4 )
     dI4   <- ( alpha * E4 ) - ( ph_4 * delta_h * I4 ) - ( pl_4 * delta_l * I4 )
     dI_l4 <- ( pl_4 * delta_l * I4 ) - ( gamma_R * I_l4 )
     dI_h4 <- ( ph_4 * delta_h * I4 ) - ( pi_4 * delta_i * I_h4 ) - ( (1 - pi_4) * gamma_h * I_h4 )
     dI_i4 <- ( pi_4 * delta_i * I_h4 ) - ( mu_4 * delta_m * I_i4 ) - ( (1 - mu_4) * gamma_i * I_i4 )
     dM4   <-  mu_4 * delta_m * I_i4
-    dR4   <- ( gamma_R * I_l4 ) + ( (1 - pi_4) * gamma_h * I_h4 ) + ( (1 - mu_4) * gamma_i * I_i4 ) - immun_lost * R4
+    dR4   <- ( gamma_R * I_l4 ) + ( (1 - pi_4) * gamma_h * I_h4 ) + ( (1 - mu_4) * gamma_i * I_i4 )- immun_lost*R4
     
     
     
@@ -98,48 +98,14 @@ beta_t_modelo_covid <- function(time, state, parameters){
 }
 
 #funciones beta_t
-contact_rate <- function(time){
-  # Marzo
-  if (1 <= time & time <= 30){
-    return (0.18)
-  }
-  # Abril
-  else if (time > 30 & time <=60){
-    return((.38-.18)/(60-31)*time -0.0337931)
-  }
-  #Mayo
-  else if(time >60 & time <= 90){
-    return((.125-.38)/(90-61)*time +0.9163793)
-  }
-  # Junio
-  else if (time >90 & time <=120){
-    return((0.15- 0.125)/(120-90)*time +0.05)
-  } #Julio Agosto y Septiembre
-  else if (time > 120 & time <=210){
-    return((0.12-0.15)/(210-121)*time + 0.1907865)
-  } #Octubre
-  else if (time >210 & time <=240){
-    return( (0.18-0.12)/(240-211)*time -0.3165517 )
-  }# Noviembre Diciembre
-  else if (time >240 & time <= 300){
-    return((0.1-0.18)/(300-241)*time + 0.5067797)
-  } else if(time > 300 & time <= 304){
-    return((0.3-0.1)/(304-301)*time -19.96667)
-  }
-  else if(time > 304 & time <= 308){
-    return((0.1-0.3)/(308-305)*time +20.63333)
-  }
-  else if(time >308 & time <= 368){
-    return((0.08-0.1)/(368-309)*time  + 0.2047458)
-  }
-  else if (time > 368 & time <= 398){
-    return((0.06-0.08)/(398-369)*time + 0.3344828)
-  }
+contact_rate_df<-read.csv("01_RawData/contact_rate_qro.csv")
+contact_rate<-function(time){
+  return(contact_rate_df[time,3])
 }
 
 ## Tiempo ====
 
-times <- seq(1, 398, by = 1)
+times <- seq(1,398,by=1)
 
 ## Parametros ====
 parameters <- c(
@@ -180,12 +146,13 @@ parameters <- c(
   
   gamma_i <- 1/7           ,
   
-  immun_lost<- 1/0.005556  ,
+  immun_lost<- 1/171         ,  
   
   N1       <- 782000       ,
   N2       <- 801000       ,
   N3       <- 539000       ,
-  N4       <- 242000
+  N4       <- 242000       
+  
 )
 
 ## Condiciones iniciales del sistema ====
@@ -265,4 +232,4 @@ beta_t_grafica_modelo <- ggmatplot(x = beta_t_out[,1],
         axis.line = element_line(colour = "black", size = 0.75))
 beta_t_grafica_modelo
 
-#ggsave("03_Out/Plots/Modelo COVID con Estructura Etaria para el Estado de Queretaro.jpeg", plot = grafica_modelo, width = 2887, height = 1464, units = "px")
+#ggsave("03_Out/Plots/Modelo COVID con beta t.jpeg", plot = beta_t_grafica_modelo, width = 2887, height = 1464, units = "px")
