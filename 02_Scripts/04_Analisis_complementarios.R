@@ -315,3 +315,65 @@ plot_casos_x_grupos <- ggplot(casos_x_grupos_corte,
   scale_color_manual(values = c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD"))
 plot_casos_x_grupos
 #ggsave("03_Out/Plots/casos_por_grupos.jpeg", plot = plot_casos_x_grupos, width = 2487, height = 1791,units = "px")
+ggsave(filename = "03_Out/Plots/casos_infectados_datos.png", plot = plot_casos_x_grupos,
+       width = 2487, height = 1791,units = "px",
+       bg = "transparent")
+
+
+
+##Muertes por grupos-----
+casos_muerte <- mutate(casos_positivos_re, muerte = c
+                       ( ifelse( !is.na( casos_positivos_re$FECHA_DEF ),
+                                 "Muerte", "No muerte") ) )
+##---
+casos_muerte <- filter(casos_muerte, muerte == "Muerte")
+##---
+ind <- c() # crea un vector vacio
+for (i in nrow(casos_muerte) ) {
+  ind <- c(ind, 1) } # por cada uno de los casos, coloca un 1 en el vector-
+casos_muerte <- mutate(casos_positivos_re, casos = ind)
+##---
+# Suma todos los positivos de un solo dia por fecha de inicio de sintomas
+conteo_casos_muerte <- aggregate(casos~FECHA_SINTOMAS+rango_de_edad, 
+                                       data = casos_muerte,
+                                       FUN = sum)
+##---
+muertes_x_grupos <- conteo_casos_muerte %>%
+  mutate(grupos = case_when(
+    rango_de_edad == "18-" ~ "Menores de 18 años",
+    rango_de_edad %in% c("18-29", "30-39") ~ "18-39 años",
+    rango_de_edad %in% c("40-49", "50-59") ~ "40-59 años",
+    rango_de_edad %in% c("60-69", "70+") ~ "Mayores de 60 años",
+  )) %>%
+  group_by(grupos, FECHA_SINTOMAS) %>%
+  summarise(casos = sum(casos))
+### Ordenar los grupos etarios.
+muertes_x_grupos$grupos <- factor(muertes_x_grupos$grupos,
+                                levels = c("Menores de 18 años",
+                                           "18-39 años",
+                                           "40-59 años",
+                                           "Mayores de 60 años"))
+#save(casos_x_grupos, file = "03_Out/OutData/casos_datos_x_grupos.RData")
+###CORTE 398 dias
+muertes_x_grupos_corte <- muertes_x_grupos %>%
+  filter(FECHA_SINTOMAS <= as.Date("2021-04-3"))
+##---Grafica:=======
+plot_muertes_x_grupos <- ggplot(muertes_x_grupos_corte, 
+                              aes(x = FECHA_SINTOMAS)) + 
+  geom_line(aes(y = casos, color = grupos), size = 0.8) +
+  labs(x = "Tiempo", y = "No. Muertes", title = "Muertes por grupos etarios",
+       color = "Grupos") +
+  theme(axis.text.x = element_text(size = 7,angle = 45, hjust = 1),
+        axis.line = element_line(colour = "black", size = 0.65),
+        plot.title = element_text(hjust = 0.5, size = 13, face = "bold"),
+        legend.text = element_text(size = 11),
+        legend.title = element_text(size = 11, face = "bold")) +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+  scale_color_manual(values = c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD"))
+plot_muertes_x_grupos
+
+
+
+
+###----
+combined_data <- left_join(muertes_x_grupos_corte, beta_t_out, by = c("FECHA_SINTOMAS" = "time"))
