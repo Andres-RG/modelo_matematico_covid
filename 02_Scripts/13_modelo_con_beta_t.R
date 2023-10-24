@@ -233,3 +233,7 @@ beta_t_grafica_modelo <- ggmatplot(x = beta_t_out[,1],
 beta_t_grafica_modelo
 
 #ggsave("03_Out/Plots/Modelo COVID con beta t.jpeg", plot = beta_t_grafica_modelo, width = 2887, height = 1464, units = "px")
+
+
+#369601.9 MUERTES??
+#173995.8 INFECTADOS??
