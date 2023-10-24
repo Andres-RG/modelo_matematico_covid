@@ -353,7 +353,6 @@ muertes_x_grupos$grupos <- factor(muertes_x_grupos$grupos,
                                            "18-39 años",
                                            "40-59 años",
                                            "Mayores de 60 años"))
-#save(casos_x_grupos, file = "03_Out/OutData/casos_datos_x_grupos.RData")
 ###CORTE 398 dias
 muertes_x_grupos_corte <- muertes_x_grupos %>%
   filter(FECHA_SINTOMAS <= as.Date("2021-04-3"))
@@ -371,9 +370,8 @@ plot_muertes_x_grupos <- ggplot(muertes_x_grupos_corte,
   scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
   scale_color_manual(values = c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD"))
 plot_muertes_x_grupos
-
+#ggsave("03_Out/Plots/muertes_por_grupos.jpeg", plot = plot_muertes_x_grupos, width = 2487, height = 1791,units = "px")
 
 
 
 ###----
-combined_data <- left_join(muertes_x_grupos_corte, beta_t_out, by = c("FECHA_SINTOMAS" = "time"))
