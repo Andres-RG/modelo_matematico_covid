@@ -519,7 +519,7 @@ nomc4
 #
 # 2.2.6 Visualicacion de los datos de conteo
 conteos_normalizados <- c(nomc1,nomc2,nomc3,nomc4)
-names(conteos_normalizados) <- c("<18","18-39","40-59","60<")
+names(conteos_normalizados) <- c(">18","18-39","40-59","60>")
 mat_3 <- conteos_normalizados
 col_fun <- colorRamp2(c( 0, 0.375, 0.75), c("lightblue", "deepskyblue", "deepskyblue4"))
 heatmap_p_una_comorbilidad <- Heatmap(mat_3,cluster_rows = F,name = "p(com)", col = col_fun,
