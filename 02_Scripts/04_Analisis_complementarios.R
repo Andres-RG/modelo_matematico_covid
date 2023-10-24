@@ -331,7 +331,7 @@ casos_muerte <- filter(casos_muerte, muerte == "Muerte")
 ind <- c() # crea un vector vacio
 for (i in nrow(casos_muerte) ) {
   ind <- c(ind, 1) } # por cada uno de los casos, coloca un 1 en el vector-
-casos_muerte <- mutate(casos_positivos_re, casos = ind)
+casos_muerte <- mutate(casos_muerte, casos = ind)
 ##---
 # Suma todos los positivos de un solo dia por fecha de inicio de sintomas
 conteo_casos_muerte <- aggregate(casos~FECHA_SINTOMAS+rango_de_edad, 
