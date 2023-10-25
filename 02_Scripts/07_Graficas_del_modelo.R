@@ -528,10 +528,9 @@ beta_t_grafica_infectados <- ggmatplot(x = beta_t_out[,1],
                                                         "18 - 39 años",
                                                         "40 - 59 años",
                                                         "Mayores de 60 años"),
-                                       lwd = 1) + 
+                                       lwd = 1.5) + 
   theme(plot.title = element_text(hjust = 0.5))+
-  theme(panel.background = element_rect(fill = "white"), 
-        axis.line = element_line(colour = "black", size = 0.75)) +
+  theme(axis.line = element_line(colour = "black", size = 0.75)) +
   scale_y_continuous(
     limits = c(0, 400),  # Establece los límites
     breaks = seq(0, 400, by = 50),  # Establece divisiones cada 100 unidades
@@ -558,10 +557,9 @@ beta_t_grafica_recuperados <- ggmatplot(x = beta_t_out[,1],
                                                          "18 - 39 años",
                                                          "40 - 59 años",
                                                          "Mayores de 60 años"),
-                                        lwd = 1) + 
+                                        lwd = 1.5) + 
   theme(plot.title = element_text(hjust = 0.5))+
-  theme(panel.background = element_rect(fill = "white"), 
-        axis.line = element_line(colour = "black", size = 0.75)) +
+  theme(axis.line = element_line(colour = "black", size = 0.75)) +
   scale_y_continuous(
     limits = c(0, 6000),  # Establece los límites
     breaks = seq(0, 6000, by = 1000),  # Establece divisiones cada 100 unidades
@@ -589,10 +587,9 @@ beta_t_grafica_muertos <- ggmatplot(x = beta_t_out[,1],
                                                      "18 - 39 años",
                                                      "40 - 59 años",
                                                      "Mayores de 60 años"),
-                                    lwd = 1) +
+                                    lwd = 1.5) +
   theme(plot.title = element_text(hjust = 0.5))+
-  theme(panel.background = element_rect(fill = "white"), 
-        axis.line = element_line(colour = "black", size = 0.75)) +
+  theme(axis.line = element_line(colour = "black", size = 0.75)) +
   scale_y_continuous(
     limits = c(0, 1250),  # Establece los límites
     breaks = seq(0, 1250, by = 250),  # Establece divisiones cada 100 unidades

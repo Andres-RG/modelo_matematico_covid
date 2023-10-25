@@ -334,7 +334,7 @@ for (i in nrow(casos_muerte) ) {
 casos_muerte <- mutate(casos_muerte, casos = ind)
 ##---
 # Suma todos los positivos de un solo dia por fecha de inicio de sintomas
-conteo_casos_muerte <- aggregate(casos~FECHA_SINTOMAS+rango_de_edad, 
+conteo_casos_muerte <- aggregate(casos~FECHA_DEF+rango_de_edad, 
                                        data = casos_muerte,
                                        FUN = sum)
 ##---
@@ -345,7 +345,7 @@ muertes_x_grupos <- conteo_casos_muerte %>%
     rango_de_edad %in% c("40-49", "50-59") ~ "40-59 años",
     rango_de_edad %in% c("60-69", "70+") ~ "Mayores de 60 años",
   )) %>%
-  group_by(grupos, FECHA_SINTOMAS) %>%
+  group_by(grupos, FECHA_DEF) %>%
   summarise(casos = sum(casos))
 ### Ordenar los grupos etarios.
 muertes_x_grupos$grupos <- factor(muertes_x_grupos$grupos,
