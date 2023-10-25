@@ -538,7 +538,7 @@ beta_t_grafica_infectados <- ggmatplot(x = beta_t_out[,1],
     minor_breaks = NULL  # No se utilizan divisiones menores en este caso
   ) +
   geom_hline(yintercept = seq(0, 400, by = 50), 
-             linetype = "dashed", color = "gray")
+             linetype = "longdash", color = "#838B8B", size = 0.65)
 
 #ggsave("03_Out/Plots/beta_t_grafica_infectados.jpeg", 
 #       plot = beta_t_grafica_infectados, 
@@ -568,7 +568,7 @@ beta_t_grafica_recuperados <- ggmatplot(x = beta_t_out[,1],
     minor_breaks = NULL  # No se utilizan divisiones menores en este caso
   ) +
   geom_hline(yintercept = seq(0, 6000, by = 1000), 
-             linetype = "dashed", color = "gray")
+             linetype = "longdash", color = "#838B8B", size = 0.65)
 
 #ggsave("03_Out/Plots/beta_t_grafica_recuperados.jpeg", 
 #       plot = beta_t_grafica_recuperados, 
@@ -599,7 +599,7 @@ beta_t_grafica_muertos <- ggmatplot(x = beta_t_out[,1],
     minor_breaks = NULL  # No se utilizan divisiones menores en este caso
   ) +
   geom_hline(yintercept = seq(0, 1250, by = 250), 
-             linetype = "dashed", color = "gray")
+             linetype = "longdash", color = "#838B8B", size = 0.65)
 
 #ggsave("03_Out/Plots/beta_t_grafica_muertos.jpeg", 
 #       plot = beta_t_grafica_muertos, 
@@ -630,7 +630,7 @@ beta_t_plot_irm <- ggmatplot(x = inferidos_totales[,1],
     minor_breaks = NULL  # No se utilizan divisiones menores en este caso
   ) + 
   geom_hline(yintercept = seq(0, 16000, by = 4000), 
-             linetype = "dashed", color = "gray")
+             linetype = "longdash", color = "#838B8B", size = 0.65)
 
 #ggsave("03_Out/Plots/beta_t_grafica_inferidos.jpeg", 
 #       plot = beta_t_plot_irm, 
