@@ -79,8 +79,11 @@ heatmap_c1 <- Heatmap(mat_combinaciones_c1,
                               },
                       cluster_columns = F, cluster_rows = F,
                       column_title = "Comorbilidades combinadas <18 años",
+                      column_title_gp = gpar(fontsize = 20, face = "bold"),
                       row_names_side = "left", col = viridis(35),
-                      name = "Valor")
+                      name = "Valor",
+                      row_names_gp = gpar(fontsize = 18),
+                      column_names_gp = gpar(fontsize = 18))
 
 #
 heatmap_c1_v3 <- Heatmap(mat_combinaciones_c1,
@@ -169,8 +172,11 @@ heatmap_c4 <- Heatmap(mat_combinaciones_c4,
                       },
                       cluster_columns = F, cluster_rows = F,
                       column_title = "Comorbilidades combinadas >60 años",
+                      column_title_gp = gpar(fontsize = 20, face = "bold"),
                       row_names_side = "left", col = viridis(35),
-                      name = "Valor")
+                      name = "Valor",
+                      row_names_gp = gpar(fontsize = 18),
+                      column_names_gp = gpar(fontsize = 18))
 #
 heatmap_c4_v3 <- Heatmap(mat_combinaciones_c4,
                          col = viridis(35), name = "Valor",

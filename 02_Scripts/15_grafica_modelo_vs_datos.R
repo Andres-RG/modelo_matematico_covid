@@ -54,10 +54,10 @@ modelo_vs_casos <- ggplot(combined_data,
                           aes(x = FECHA_SINTOMAS)) +
     geom_line(data = modelo_solo_filt, 
               aes(x = FECHA_SINTOMAS, y = casos_totales, color = grupos),
-              size = 1) +
+              lwd = 1.5) +
     geom_point(data = casos_solo_filt, 
                aes(x = FECHA_SINTOMAS, y = casos_totales, 
-                   color = grupos, shape = grupos)) +
+                   color = grupos, shape = grupos), lwd = 1.5) +
     labs(x = "Fecha de Síntomas", y = "Casos Totales", color = "Grupos", 
          title = "Modelo vs Casos observados", shape = "Grupos") +
     theme(axis.line = element_line(colour = "black", size = 0.6),
@@ -90,7 +90,7 @@ modelo_vs_casos <- ggplot(combined_data,
     ###
     geom_line(data = modelo_solo_filt, 
               aes(x = FECHA_SINTOMAS, y = casos_totales, color = grupos),
-              size = 1) +
+              lwd = 1.5) +
     ###
     geom_point(data = casos_solo_filt, 
                aes(x = FECHA_SINTOMAS, y = casos_totales, 
