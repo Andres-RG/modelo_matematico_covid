@@ -526,9 +526,9 @@ heatmap_p_una_comorbilidad <- Heatmap(mat_3, cluster_rows = F,
                                       col = col_fun, name = " ",
                                       row_order = order(names(mat_3),
                                                         decreasing = T),
-                                      row_names_gp = gpar(fontsize = 25, face = "bold"))
+                                      row_names_gp = gpar(fontsize = 9, face = "bold"))
 # jpeg("03_Out/Plots/heatmap_p_una_comorbilidad.jpeg",
-#      width = 265, height = 265, res = 300, units = "mm")
+#      width = 1080, height = 1080, res = 300, units = "px")
 heatmap_p_una_comorbilidad
 # dev.off()
 #
