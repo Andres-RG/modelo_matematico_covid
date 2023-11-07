@@ -70,21 +70,59 @@ nm <- c("Diabetes",
         "Tabaquismo")
 # C1
 mat_combinaciones_c1 = probabilidades_combinadas_cat_1
-heatmap_c1 <- Heatmap(mat_combinaciones_c1,
-                      rect_gp = gpar(type = "none"), column_dend_side = "bottom",
-                      cell_fun = function(j, i, x, y, w, h, fill) {
-                              if(as.numeric(x) <= 1 - as.numeric(y) + 1e-6) {
-                                      grid.rect(x, y, w, h, gp = gpar(fill = fill, col = fill))
-                                      }
-                              },
-                      cluster_columns = F, cluster_rows = F,
-                      column_title = "Comorbilidades combinadas <18 años",
-                      column_title_gp = gpar(fontsize = 20, face = "bold"),
-                      row_names_side = "left", col = viridis(35),
-                      name = "Valor",
-                      row_names_gp = gpar(fontsize = 18),
-                      column_names_gp = gpar(fontsize = 18))
+colnames(mat_combinaciones_c1) <- c("D","E", "A", "I", "H", "CV", "O", "RC", "T")
+rownames(mat_combinaciones_c1) <- c("D","E", "A", "I", "H", "CV", "O", "RC", "T")
 
+mat_combinaciones_c1[upper.tri(mat_combinaciones_c1)] <- NA
+
+heatmap_c1 <- Heatmap(mat_combinaciones_c1       ,
+                      #
+                      rect_gp = gpar(col = "white", lwd = 2),
+                      name = "Valor"             ,
+                      col = viridis(100)         ,
+                      na_col = "white"           ,
+                      # columnas
+                      cluster_columns = F        ,
+                      column_names_rot = 0       ,
+                      column_names_side = "top",
+                      column_title = "Comorbilidades",
+                      column_title_gp = gpar(fontsize = 11, fontface = "bold",
+                                             fill = "gray", border = "gray"),
+                      column_names_centered = T  ,
+                      column_names_gp = gpar(fontsize = 11),
+                      # renglones
+                      cluster_rows = F           ,
+                      row_names_side = "left"    ,
+                      row_title = "Comorbilidades",
+                      row_title_gp = gpar(fontsize = 11, fontface = "bold",
+                                          fill = "gray", border = "gray"),
+                      row_names_centered = T,
+                      row_names_gp = gpar(fontsize = 11)
+                      )
+heatmap_c1
+
+heatmap_c1 <- Heatmap(mat_combinaciones_c1,
+                      rect_gp = gpar(col = "white", lwd = 2), 
+                      column_dend_side = "bottom",
+                      column_names_side = "bottom",
+                      column_names_rot = 0,
+                      cluster_columns = F,
+                      cluster_rows = F,
+                      na_col = "white", 
+                      column_title = "Comorbilidades",
+                      row_title = "Comorbilidades",
+                      column_title_gp = gpar(fontsize = 11, fontface = "bold",
+                                             fill = "gray", border = "gray"),
+                      row_title_gp = gpar(fontsize = 11, fontface = "bold",
+                                          fill = "gray", border = "gray"),
+                      row_names_side = "left",
+                      col = colores_personalizados,
+                      name = "Valor",
+                      row_names_gp = gpar(fontsize = 11),
+                      column_names_gp = gpar(fontsize = 11),
+                      column_names_centered = T,
+                      row_names_centered = T)
+heatmap_c1
 #
 heatmap_c1_v3 <- Heatmap(mat_combinaciones_c1,
         col = viridis(35), name = "Valor",
@@ -194,10 +232,10 @@ heatmap_c4_v3 <- Heatmap(mat_combinaciones_c4,
                          })
 #
 #
-#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c1.jpeg",
-#     width = 265, height = 265, res = 300, units = "mm")
+# jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c1.jpeg",
+#      width = 1080, height = 1080, res = 250, units = "px")
 heatmap_c1
-#dev.off()
+# dev.off()
 #jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c2.jpeg",
 #     width = 265, height = 265, res = 300, units = "mm")
 heatmap_c2
