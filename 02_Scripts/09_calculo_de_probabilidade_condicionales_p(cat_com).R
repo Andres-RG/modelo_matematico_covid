@@ -262,24 +262,33 @@ matriz_comor
 # BiocManager::install("ComplexHeatmap")
 # install_github("jokergoo/ComplexHeatmap")
 mat = matriz_comor
-rownames(mat) <- c("Diabetes",
-                   "EPOC",
-                   "Asma", 
-                   "Inmunsupr",
-                   "Hipertension", 
-                   "Cardiovascular",
-                   "Obesidad",
-                   "Renal Crónica", 
-                   "Tabaquismo")
+rownames(mat) <- c("D",
+                   "E",
+                   "A", 
+                   "I",
+                   "H", 
+                   "CV",
+                   "O",
+                   "RC", 
+                   "T")
 colnames(mat) <- c("< 18", "18 - 39",
                    "40 - 59", "60 <")
-#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_categorias.jpeg",
-#     width = 265, height = 265, res = 300, units = "mm")
-Heatmap(mat, name= "p(com|cat)", col = viridis(10),
-        column_title = "Heatmap de p(com|cat)",
-        na_col = "black",row_names_side = "left",
-        cluster_rows = F, cluster_columns = F)
-#dev.off()
+mat <- t(mat)
+# jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_categorias.jpg",
+#      width = 1080, height = 1080, res = 250, units = "px")
+Heatmap(mat, name= "Probabilidad", col = viridis(100),
+        row_names_side = "left",
+        cluster_rows = F, cluster_columns = F,
+        row_title = "Grupos etarios", column_title = "Comorbilidades",
+        column_names_side = "top", column_dend_side = "bottom",
+        column_names_rot = 0,
+        column_title_gp = gpar(fill = "gray", border = "gray",
+                               fontsize = 9, fontface = "bold"),
+        row_title_gp = gpar(fill = "gray", border = "gray",
+                            fontsize = 9, fontface = "bold"),
+        rect_gp = gpar(col = "white", lwd = 2),
+        column_names_centered = T, row_names_centered = T)
+# dev.off()
 
 # 2.1.5 Determinacion de P ( COM_j ) ----
 #       =         # TODOS LOS QUE TIENEN LA COM_j
@@ -523,12 +532,19 @@ names(conteos_normalizados) <- c(">18","18-39","40-59","60>")
 mat_3 <- conteos_normalizados
 col_fun <- colorRamp2(c( 0, 0.375, 0.75), c("lightblue", "deepskyblue", "deepskyblue4"))
 heatmap_p_una_comorbilidad <- Heatmap(mat_3, cluster_rows = F,
-                                      col = col_fun, name = " ",
+                                      col = col_fun, name = "Probabilidad",
                                       row_order = order(names(mat_3),
                                                         decreasing = T),
-                                      row_names_gp = gpar(fontsize = 9, face = "bold"))
+                                      row_names_gp = gpar(fontsize = 9, 
+                                                          face = "bold"),
+                                      row_title = "Grupos etarios",
+                                      row_title_gp = gpar(fill = "gray", border = "gray",
+                                                          fontsize = 9, fontface = "bold"),
+                                      row_names_centered = T,
+                                      row_names_side = "left",
+                                      column_names_rot = 0)
 # jpeg("03_Out/Plots/heatmap_p_una_comorbilidad.jpeg",
-#      width = 1080, height = 1080, res = 300, units = "px")
+#     width = 1080, height = 1080, res = 250, units = "px")
 heatmap_p_una_comorbilidad
 # dev.off()
 #
