@@ -95,3 +95,50 @@ casos_positivos_muerte_re <- filter(casos_positivos_int_m_re, muerte == "Muerte"
 
 #    Se guarda el objeto como un objeto .RData
 # save(casos_positivos_muerte_re, file = "03_Out/OutData/casos_positivos_muerte_rangos_edades.RData")
+
+# 8. Casos por dia. Incidencia =================================================
+
+pos <- c() # crea un vector vacio
+
+for (i in 1:length(casos_positivos_re$FECHA_SINTOMAS) ) {
+    pos <- c(pos, 1) } # por cada uno de los positivos, 
+# coloca un 1 en el vector-
+
+casos_positivos_re_conteo <- mutate(casos_positivos_re, positivos = pos) 
+# genera una nueva columna en la base de los casos_positivos_re
+# la nueva columna la rellena con el vector de 1's creado. Hay un 1 en todos 
+# los renglones. 
+
+# Suma todos los positivos de un solo dia por fecha de inicio de sintomas
+casos_positivos_re_conteo <- aggregate(positivos~FECHA_SINTOMAS, 
+                                       data = casos_positivos_re_conteo,
+                                       FUN = sum)
+
+# Genera otra columna en el objeto para agregar el numero de dia
+casos_positivos_re_conteo [,3] <- c(1:length(casos_positivos_re_conteo$FECHA_SINTOMAS))
+colnames(casos_positivos_re_conteo)[3] <- "num.dia" 
+casos_positivos_re_conteo
+
+# Se guarda el objeto como un objeto .RData
+# save(casos_positivos_re_conteo, file = "03_Out/OutData/conteo_casos_positivos_rango_edad.RData")
+
+# 9. Casos por dia con rango de edad. Incidencia ===============================
+
+# Primero se establece que cada renglon es equivalente a un individuo
+casos_positivos_x_dia_re <- mutate(casos_positivos_re, individuo = 1)
+
+# Con esta funcion, se suman todos los casos positivos por dia por rango de edad
+casos_positivos_x_dia_re <- aggregate(casos_positivos_x_dia_re$individuo, 
+                                      by = list(casos_positivos_x_dia_re$rango_de_edad,
+                                                casos_positivos_x_dia_re$FECHA_SINTOMAS), 
+                                      FUN = sum)
+colnames(casos_positivos_x_dia_re) <- c("rango_de_edad", 
+                                        "FECHA_SINTOMAS", 
+                                        "casos_totales")
+
+# Se obtiene una tabla con las personas positivas por dia y por rango de edad. No contempla 
+# su estado (hospitalizados, intubados, etc)
+casos_positivos_x_dia_re
+
+# Se guarda el objeto como un objeto .RData
+# save(casos_positivos_x_dia_re, file = "03_Out/OutData/casos_positivos_x_dia_rango_edad.RData")

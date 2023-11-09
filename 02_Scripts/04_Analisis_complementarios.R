@@ -19,50 +19,18 @@ load("03_Out/OutData/casos_positivos_x_dia_rango_edad.RData")
 load("03_Out/OutData/casos_totales_rangos_edades.RData")
 load("03_Out/OutData/casos_solo_fecha.RData")
 
-
-# Tabla de casos positivos totales por dia ====
-
-pos <- c() # crea un vector vacio
-
-for (i in 1:length(casos_positivos_re$FECHA_SINTOMAS) ) {
-    pos <- c(pos, 1) } # por cada uno de los positivos, 
-                       # coloca un 1 en el vector-
-
-casos_positivos_re_conteo <- mutate(casos_positivos_re, positivos = pos) 
-# genera una nueva columna en la base de los casos_positivos_re
-# la nueva columna la rellena con el vector de 1's creado. Hay un 1 en todos 
-# los renglones. 
-
-# Suma todos los positivos de un solo dia por fecha de inicio de sintomas
-casos_positivos_re_conteo <- aggregate(positivos~FECHA_SINTOMAS, 
-                                       data = casos_positivos_re_conteo,
-                                       FUN = sum)
-
-# Genera otra columna en el objeto para agregar el numero de dia
-casos_positivos_re_conteo [,3] <- c(1:length(casos_positivos_re_conteo$FECHA_SINTOMAS))
-colnames(casos_positivos_re_conteo)[3] <- "num.dia" 
-casos_positivos_re_conteo
-
-# Se guarda el objeto como un objeto .RData
-# save(casos_positivos_re_conteo, file = "03_Out/OutData/conteo_casos_positivos_rango_edad.RData")
-
-
-
-
-# Grafica del total de casos positivos con tail probability ====
+# Grafica del total de casos positivos con tail probability ====================
 # Esta grafica contiene EL TOTAL de positivos por fecha de inciio de síntomas 
 # separado por rango de edades. Se guarda al mismo tiempo como un objeto png
 
-#png("03_Out/Plots/grafica de casos positivos tail probability.png", 
-#    width = 550, height = 350)
 plot_casos_positivos_tail_probability <- ggplot(casos_positivos_re, 
        aes(x = FECHA_SINTOMAS, y = rango_de_edad, 
            fill = 0.5 - abs(0.5 - stat(ecdf)))) +
     stat_density_ridges(geom = "density_ridges_gradient", calc_ecdf = T) +
     scale_fill_viridis_c(name = "Tail probability", direction = -1)
 plot_casos_positivos_tail_probability
-#dev.off()
 
+# geom_pont total ==============================================================
 plot_total_casos_positivos_re <- ggplot(casos_positivos_re_conteo,
                                         aes(x = FECHA_SINTOMAS, y = positivos)) +
   geom_point()
@@ -70,43 +38,23 @@ plot_total_casos_positivos_re
 #ggsave("03_Out/Plots/plot_casos_positivos_totales_conteo.jpeg", 
 #       plot = plot_total_casos_positivos_re, width = 2887, height = 1464, units = "px")
 
-
-# Tabla de casos positivos por dia por rango de edad ====
-
-# Primero se establece que cada renglon es equivalente a un individuo
-casos_positivos_x_dia_re <- mutate(casos_positivos_re, individuo = 1)
-
-# Con esta funcion, se suman todos los casos positivos por dia por rango de edad
-casos_positivos_x_dia_re <- aggregate(casos_positivos_x_dia_re$individuo, 
-                                      by = list(casos_positivos_x_dia_re$rango_de_edad,
-                                                casos_positivos_x_dia_re$FECHA_SINTOMAS), 
-                                      FUN = sum)
-colnames(casos_positivos_x_dia_re) <- c("rango_de_edad", 
-                                        "FECHA_SINTOMAS", 
-                                        "casos_totales")
-
-# Se obtiene una tabla con las personas positivas por dia y por rango de edad. No contempla 
-# su estado (hospitalizados, intubados, etc)
-casos_positivos_x_dia_re
-
-# Se guarda el objeto como un objeto .RData
-# save(casos_positivos_x_dia_re, file = "03_Out/OutData/casos_positivos_x_dia_rango_edad.RData")
-
+# geom_pont por rango de edad ==================================================
 plot_pos_x_dia_re_2 <- ggplot(casos_positivos_x_dia_re, 
                               aes(x = FECHA_SINTOMAS, 
                                   y = casos_totales,
                                   color = rango_de_edad,
                                   shape = rango_de_edad)) + 
-  geom_point(alpha = 0.4, size = 3) +
+  geom_point(alpha = 0.6, size = 3) +
   geom_smooth(se = F, linetype = "dashed", size = 1.2, alpha = 1.5) +
   labs(title = "Casos positivos por día",
-       x = "Fecha", y = "No. de casos",
+       x = "Fecha",
+       y = "No. de casos",
        color = "Rangos de edad",   # Cambia el nombre de la leyenda de color
        shape = "Rangos de edad") +
   scale_shape_manual(values = seq(0, 25)) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
   theme(
-    plot.title = element_text(size = 14, hjust = 0.5),
+    plot.title = element_text(size = 14, hjust = 0.5, face = "bold"),
     axis.text.x = element_text(angle = 45, hjust = 1),
     panel.grid.major = element_blank(),
     panel.border = element_blank(),
@@ -120,8 +68,8 @@ plot_pos_x_dia_re_2 <- ggplot(casos_positivos_x_dia_re,
 
 plot_pos_x_dia_re_2
 
-#ggsave("03_Out/Plots/conteo_casos_totales_x_re_v2.jpeg",
-#       plot = plot_pos_x_dia_re_2, width = 2887, height = 1464, units = "px")
+# ggsave("03_Out/Plots/conteo_casos_totales_x_re_v2.jpeg",
+#        plot = plot_pos_x_dia_re_2, width = 2887, height = 1864, units = "px")
 
 # Definicion de parametros ====
 ## Parametros obtenidos por estructura de edad ====
