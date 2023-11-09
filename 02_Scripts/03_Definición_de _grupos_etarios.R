@@ -47,12 +47,10 @@ heatmap <- pheatmap(cor(t(probabilidades_de_transicion)),
 heatmap
 #dev.off()
 
-
-
-
-# Como un segundo análisis de clasificación, se realiza un análisis de clasificacion
-# con diferentes algortimos para probar la robustez de la clasificación
-# y tener mayor certeza de que los grupos se definen adecuadamente. 
+# Como un segundo análisis de clasificación, se realiza un análisis de 
+# clasificacion con diferentes algortimos para probar la robustez de la 
+# clasificación y tener mayor certeza de que los grupos se definen 
+# adecuadamente. 
 
 # Para este análisis, necesitamos primero obtener las distancias entre cada
 # probabilidad, para que aquellas probabilidades que tengan menor distancia entre
