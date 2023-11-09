@@ -61,8 +61,8 @@ plot_positivos_re <- ggplot(casos_positivos_re,
     scale_fill_viridis(discrete = T)
 plot_positivos_re
 # El objeto que contiene la grafica se guarda como una imagen jpeg
-ggsave("03_Out/Plots/cas.jpeg",
-       plot = plot_positivos_re, width = 5733, height = 4300, units = "px")
+# ggsave("03_Out/Plots/casos_positivos_rango_edad.jpeg",
+#        plot = plot_positivos_re, width = 2687, height = 1864, units = "px")
 
 ## DOTPLOT-------------------------------------------------
 plot_pos_dot <- ggplot(casos_positivos_x_dia_re,
@@ -71,7 +71,8 @@ plot_pos_dot <- ggplot(casos_positivos_x_dia_re,
                            col = rango_de_edad,
                            shape = rango_de_edad)) +
     geom_point(size = 1.5,
-               stroke = 1) +
+               stroke = 1,
+               alpha = 0.9) +
     labs(x = "Tiempo",
          y = "Casos positivos",
          title = "Casos positivos a COVID-19",
@@ -105,14 +106,15 @@ plot_pos_dot <- ggplot(casos_positivos_x_dia_re,
 plot_pos_dot
 
 # ggsave("03_Out/Plots/plot_casos_positivos_dotplot.jpeg",
-#       plot = plot_pos_dot, width = 2287, height = 1464, units = "px")
+#       plot = plot_pos_dot, width = 2287, height = 1864, units = "px")
 
 ##FILL | PROPORCION =======
 plot_pos_fill <- ggplot(casos_positivos_re,
                         aes(x = FECHA_SINTOMAS,
                             fill = rango_de_edad)) +
     geom_bar(position = "fill") +
-    labs(x = "Tiempo", y = "Casos positivos",
+    labs(x = "Tiempo",
+         y = "Casos positivos",
          title = "Variación de proporción de casos positivos a COVID-19",
          fill = "Rango de edad") +
     scale_fill_manual(values = viridis(7)) +
@@ -136,5 +138,5 @@ plot_pos_fill <- ggplot(casos_positivos_re,
 
 plot_pos_fill
 
-#ggsave("03_Out/Plots/plot_casos_positivos_proporción.jpeg",
+# ggsave("03_Out/Plots/plot_casos_positivos_proporción.jpeg",
 #       plot = plot_pos_fill, width = 2287, height = 1464, units = "px")
