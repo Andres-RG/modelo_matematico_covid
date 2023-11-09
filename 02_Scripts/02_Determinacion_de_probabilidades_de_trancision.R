@@ -61,8 +61,9 @@ ph_icu <- probabilidades(casos_positivos_intubados_re, casos_positivos_hospitali
 # intubados
 picu_m <- probabilidades(casos_positivos_muerte_re, casos_positivos_intubados_re)
 
-probabilidades_de_transicion <- data.frame(pi_l, pi_h, ph_icu, picu_m)
-colnames(probabilidades_de_transicion) <- c("Infectado --> Ambulatorio",
+probabilidades_de_transicion <- data.frame(ps_i,pi_l, pi_h, ph_icu, picu_m)
+colnames(probabilidades_de_transicion) <- c("Susceptible --> Infectado",
+                                            "Infectado --> Ambulatorio",
                                             "Infectado --> Grave",
                                             "Grave --> ICU",
                                             "ICU --> Muerte")
