@@ -19,7 +19,7 @@ load("03_Out/OutData/conteo_casos_positivos_rango_edad.RData")
 load("03_Out/OutData/casos_positivos_x_dia_rango_edad.RData")
 load("03_Out/OutData/casos_solo_fecha.RData")
 
-## STACK --------------------------------------------------
+## STACK -----------------------------------------------------------------------
 plot_positivos_re <- ggplot(casos_positivos_re,
                             aes(x=FECHA_SINTOMAS,
                                 fill = rango_de_edad)) + 
@@ -39,7 +39,7 @@ plot_positivos_re
 # ggsave("03_Out/Plots/casos_positivos_rango_edad.jpeg",
 #        plot = plot_positivos_re, width = 2687, height = 1864, units = "px")
 
-## DOTPLOT-------------------------------------------------
+## DOTPLOT----------------------------------------------------------------------
 plot_pos_dot <- ggplot(casos_positivos_x_dia_re,
                        aes(x = FECHA_SINTOMAS,
                            y = casos_totales,
@@ -83,7 +83,7 @@ plot_pos_dot
 # ggsave("03_Out/Plots/plot_casos_positivos_dotplot.jpeg",
 #       plot = plot_pos_dot, width = 2287, height = 1864, units = "px")
 
-##FILL | PROPORCION =======
+##FILL | PROPORCION ============================================================
 plot_pos_fill <- ggplot(casos_positivos_re,
                         aes(x = FECHA_SINTOMAS,
                             fill = rango_de_edad)) +
@@ -115,3 +115,39 @@ plot_pos_fill
 
 # ggsave("03_Out/Plots/plot_casos_positivos_proporción.jpeg",
 #       plot = plot_pos_fill, width = 2287, height = 1464, units = "px")
+
+# Grafica de casos positivos por rangos de edad. Geom_density ==================
+
+## Grafica 1
+plot_positivos_re <- ggplot(casos_positivos_re, 
+                            aes(x=FECHA_SINTOMAS, fill = rango_de_edad)) + 
+    geom_density(position="stack") + 
+    ggtitle("Casos positivos a COVID por rangos de edades 
+          para el estado de Queretaro") + 
+    labs(x="Tiempo", y="Casos") +
+    labs(fill="Rangos de Edad") +
+    theme(plot.title = element_text(hjust = 0.5))+
+    theme(panel.background = element_rect(fill = "white"), 
+          axis.line = element_line(colour = "black", size = 1)) +
+    scale_fill_viridis(discrete = T)
+plot_positivos_re
+# El objeto que contiene la grafica se guarda como una imagen jpeg
+# ggsave("03_Out/Plots/plot_casos_positivos_geom_density_1.jpeg", 
+#        plot = plot_positivos_re, width = 2487, height = 1464, units = "px")
+
+## Grafica 2
+plot_positivos_re <- ggplot(casos_positivos_re, 
+                            aes(x=FECHA_SINTOMAS, fill = rango_de_edad)) + 
+    geom_density(position="fill") + 
+    ggtitle("Casos positivos a COVID por rangos de edades 
+          para el estado de Queretaro") + 
+    labs(x="Tiempo", y="Casos") +
+    labs(fill="Rangos de Edad") +
+    theme(plot.title = element_text(hjust = 0.5))+
+    theme(panel.background = element_rect(fill = "white"), 
+          axis.line = element_line(colour = "black", size = 1)) +
+    scale_fill_viridis(discrete = T)
+plot_positivos_re
+# El objeto que contiene la grafica se guarda como una imagen jpeg
+# ggsave("03_Out/Plots/plot_casos_positivos_geom_density_2.jpeg", 
+#        plot = plot_positivos_re, width = 2487, height = 1464, units = "px")

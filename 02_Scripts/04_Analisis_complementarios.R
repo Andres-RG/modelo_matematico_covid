@@ -139,65 +139,7 @@ plot_pos_x_dia_re_2
 # ggsave("03_Out/Plots/conteo_casos_totales_x_re_v2.jpeg",
 #        plot = plot_pos_x_dia_re_2, width = 2887, height = 1864, units = "px")
 
-# Grafica de casos positivos por rangos de edad. Geom_density ====
-
-## Grafica 1
-plot_positivos_re <- ggplot(casos_positivos_re, 
-                            aes(x=FECHA_SINTOMAS, fill = rango_de_edad)) + 
-  geom_density(position="stack") + 
-  ggtitle("Casos positivos a COVID por rangos de edades 
-          para el estado de Queretaro") + 
-  labs(x="Tiempo", y="Casos") +
-  labs(fill="Rangos de Edad") +
-  theme(plot.title = element_text(hjust = 0.5))+
-  theme(panel.background = element_rect(fill = "white"), 
-        axis.line = element_line(colour = "black", size = 1)) +
-  scale_fill_viridis(discrete = T)
-plot_positivos_re
-# El objeto que contiene la grafica se guarda como una imagen jpeg
-ggsave("03_Out/Plots/plot_casos_positivos_geom_density_1.jpeg", 
-       plot = plot_positivos_re, width = 2887, height = 1464, units = "px")
-
-## Grafica 2
-plot_positivos_re <- ggplot(casos_positivos_re, 
-                            aes(x=FECHA_SINTOMAS, fill = rango_de_edad)) + 
-  geom_density(position="fill") + 
-  ggtitle("Casos positivos a COVID por rangos de edades 
-          para el estado de Queretaro") + 
-  labs(x="Tiempo", y="Casos") +
-  labs(fill="Rangos de Edad") +
-  theme(plot.title = element_text(hjust = 0.5))+
-  theme(panel.background = element_rect(fill = "white"), 
-        axis.line = element_line(colour = "black", size = 1)) +
-  scale_fill_viridis(discrete = T)
-plot_positivos_re
-# El objeto que contiene la grafica se guarda como una imagen jpeg
-ggsave("03_Out/Plots/plot_casos_positivos_geom_density_2.jpeg", 
-       plot = plot_positivos_re, width = 2887, height = 1464, units = "px")
-
-# GRAFICA CASOS POSITIVOS -----
-plot_pos_re <- ggplot(casos_positivos_re, 
-                            aes(x = FECHA_SINTOMAS, 
-                                fill = rango_de_edad)) + 
-  geom_bar(position="fill", stat="count") + 
-  ggtitle("Casos positivos a COVID por rangos de edades 
-          para el estado de Queretaro") + 
-  labs(x = "Tiempo", y = "Casos") +
-  labs(fill = "Rangos de Edad") +
-  theme(plot.title = element_text(hjust = 0.5))+
-  theme(panel.background = element_rect(fill = "white"), 
-        axis.line = element_line(colour = "black", size = 1),
-        axis.text.x = element_text(angle = 45, hjust = 1)) +
-  scale_fill_viridis(discrete = T) +
-  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month")
-plot_pos_re
-jpeg("03_Out/Plots/plot_casos_positivos_v2.jpeg",
-     width = 365, height = 265, res = 300, units = "mm")
-plot_pos_re
-dev.off()
-
-
-
+# casos positivos totales acumulados ===========================================
 casos <- casos_positivos_re_conteo[, -3]
 plot_casos <- ggplot(casos, 
                      aes(x = FECHA_SINTOMAS,
@@ -213,37 +155,12 @@ plot_casos <- ggplot(casos,
   scale_fill_viridis(discrete = T) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "1 month")
 plot_casos
-#jpeg("03_Out/Plots/plot_casos_positivos_totales.jpeg",
-#     width = 365, height = 265, res = 300, units = "mm")
-plot_casos
-#dev.off()
 
+# ggsave("03_Out/Plots/plot_casos_positivos_totales.jpeg",
+#        plot = plot_casos, width = 2887, height = 1864, units = "px")
 
+colores <- c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD")
 
-
-head(casos_positivos_x_dia_re)
-####
-#colores <- c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD")
-casos_x_grupos <- casos_positivos_x_dia_re %>%
-  mutate(grupos = case_when(
-    rango_de_edad == "18-" ~ "Menores de 18 años",
-    rango_de_edad %in% c("18-29", "30-39") ~ "18-39 años",
-    rango_de_edad %in% c("40-49", "50-59") ~ "40-59 años",
-    rango_de_edad %in% c("60-69", "70+") ~ "Mayores de 60 años",
-  )) %>%
-  group_by(grupos, FECHA_SINTOMAS) %>%
-  summarise(casos_totales = sum(casos_totales))
-### Ordenar los grupos etarios.
-casos_x_grupos$grupos <- factor(casos_x_grupos$grupos,
-                                levels = c("Menores de 18 años",
-                                           "18-39 años",
-                                           "40-59 años",
-                                           "Mayores de 60 años"))
-#save(casos_x_grupos, file = "03_Out/OutData/casos_datos_x_grupos.RData")
-###CORTE 398 dias
-casos_x_grupos_corte <- casos_x_grupos %>%
-  filter(FECHA_SINTOMAS <= as.Date("2021-04-3"))
-###
 plot_casos_x_grupos <- ggplot(casos_x_grupos_corte, 
                               aes(x = FECHA_SINTOMAS)) + 
   geom_line(aes(y = casos_totales, color = grupos), size = 0.8) +
