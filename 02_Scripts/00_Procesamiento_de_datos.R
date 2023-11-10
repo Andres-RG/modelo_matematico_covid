@@ -171,3 +171,50 @@ casos_x_grupos_corte <- casos_x_grupos %>%
     filter(FECHA_SINTOMAS <= as.Date("2021-04-3"))
 
 # save(casos_x_grupos_corte, file = "03_Out/OutData/casos_x_grupos_corte.RData")
+
+# 11. Muertes por grupo etario =================================================
+
+#     De los casos positivos, se agrega la columna que indica la condición del
+#     individuo.
+casos_muerte <- mutate(casos_positivos_re, muerte = c( 
+    ifelse( !is.na( casos_positivos_re$FECHA_DEF ),"Muerte", "No muerte") ) )
+
+#     Se filtran solo los casos que muerieron
+
+casos_muerte <- filter(casos_muerte, muerte == "Muerte")
+
+ind <- c() # crea un vector vacio
+for (i in nrow(casos_muerte) ) {
+    ind <- c(ind, 1) } # por cada uno de los casos, coloca un 1 en el vector
+casos_muerte <- mutate(casos_muerte, casos = ind)
+
+#     Suma todos los positivos de un solo dia por fecha de inicio de sintomas
+conteo_casos_muerte <- aggregate(casos~FECHA_DEF+rango_de_edad, 
+                                 data = casos_muerte,
+                                 FUN = sum)
+#     Agrupa por grupo etario
+muertes_x_grupos <- conteo_casos_muerte %>%
+    mutate(grupos = case_when(
+        rango_de_edad == "18-" ~ "Menores de 18 años",
+        rango_de_edad %in% c("18-29", "30-39") ~ "18-39 años",
+        rango_de_edad %in% c("40-49", "50-59") ~ "40-59 años",
+        rango_de_edad %in% c("60-69", "70+") ~ "Mayores de 60 años",
+    )) %>%
+    group_by(grupos, FECHA_DEF) %>%
+    summarise(casos = sum(casos))
+
+#      Ordenar los grupos etarios.
+muertes_x_grupos$grupos <- factor(muertes_x_grupos$grupos,
+                                  levels = c("Menores de 18 años",
+                                             "18-39 años",
+                                             "40-59 años",
+                                             "Mayores de 60 años"))
+
+# save(muertes_x_grupos, file = "03_Out/OutData/muertes_datos_x_grupos.RData")
+
+#     corte a los 398 dias
+muertes_x_grupos_corte <- muertes_x_grupos %>%
+    filter(FECHA_DEF <= as.Date("2021-04-3"))
+
+# save(muertes_x_grupos_corte, file = "03_Out/OutData/muertes_x_grupos_corte.RData")
+
