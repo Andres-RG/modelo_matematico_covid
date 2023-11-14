@@ -176,12 +176,13 @@ casos_x_grupos_corte <- casos_x_grupos %>%
 
 #     De los casos positivos, se agrega la columna que indica la condición del
 #     individuo.
-casos_muerte <- mutate(casos_positivos_re, muerte = c( 
+casos_muerte_t <- mutate(casos_positivos_re, muerte = c( 
     ifelse( !is.na( casos_positivos_re$FECHA_DEF ),"Muerte", "No muerte") ) )
+# save(casos_muerte_t, file = "03_Out/OutData/datos_muerte.RData")
 
 #     Se filtran solo los casos que muerieron
 
-casos_muerte <- filter(casos_muerte, muerte == "Muerte")
+casos_muerte <- filter(casos_muerte_t, muerte == "Muerte")
 
 ind <- c() # crea un vector vacio
 for (i in nrow(casos_muerte) ) {
@@ -192,6 +193,7 @@ casos_muerte <- mutate(casos_muerte, casos = ind)
 conteo_casos_muerte <- aggregate(casos~FECHA_DEF+rango_de_edad, 
                                  data = casos_muerte,
                                  FUN = sum)
+# save(conteo_casos_muerte, file = "03_Out/OutData/conteo_casos_muerte.RData")
 #     Agrupa por grupo etario
 muertes_x_grupos <- conteo_casos_muerte %>%
     mutate(grupos = case_when(
@@ -216,5 +218,16 @@ muertes_x_grupos$grupos <- factor(muertes_x_grupos$grupos,
 muertes_x_grupos_corte <- muertes_x_grupos %>%
     filter(FECHA_DEF <= as.Date("2021-04-3"))
 
-# save(muertes_x_grupos_corte, file = "03_Out/OutData/muertes_x_grupos_corte.RData")
+ # save(muertes_x_grupos_corte, file = "03_Out/OutData/muertes_x_grupos_corte.RData")
 
+# 12. Tabla de estado del paciente con rango de edad ===========================
+
+casos_solo_positivos_muerte_re <- casos_muerte_t[,c("ID_REGISTRO","FECHA_SINTOMAS","SEXO","rango_de_edad", "muerte")]
+casos_por_fecha <- casos_solo_positivos_muerte_re %>%
+  count(FECHA_SINTOMAS, rango_de_edad, muerte, name = "NumCasos")
+
+#     La base de datos generada contiene solo los casos positivos, con la 
+#     columna que indica si fallecio o no, y rangos de edades. Se guarada como 
+#     un objeto .RData
+
+# save(casos_por_fecha, file = "03_Out/OutData/casos_solo_fecha.RData")
