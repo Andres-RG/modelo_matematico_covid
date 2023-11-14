@@ -248,7 +248,7 @@ casos_por_fecha <- casos_solo_positivos_muerte_re %>%
 
 vacunacion <- fechas_vacunacion(casos_solo_positivos_muerte_re$FECHA_SINTOMAS)
 casos_muerte_re_vac <- mutate(casos_solo_positivos_muerte_re,
-                              FECHAS_VACUNACION = vacunacion)
+                              ETAPAS_VACUNACION = vacunacion)
 
 #     Se guarda el nuevo objeto como un objeto .RData
 # save(casos_muerte_re_vac, file = "03_Out/OutData/casos_positivos_re_m_vac.RData")
@@ -257,7 +257,7 @@ casos_muerte_re_vac <- mutate(casos_solo_positivos_muerte_re,
 #     vacunacion.
 
 casos_por_fecha_vac <- casos_muerte_re_vac %>%
-  count(FECHA_SINTOMAS, FECHAS_VACUNACION, rango_de_edad, muerte, name = "NumCasos")
+  count(FECHA_SINTOMAS, ETAPAS_VACUNACION, rango_de_edad, muerte, name = "NumCasos")
 
 #     Se guarda en un objeto
 
