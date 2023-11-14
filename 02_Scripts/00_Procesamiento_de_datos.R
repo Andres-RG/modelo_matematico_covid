@@ -231,3 +231,34 @@ casos_por_fecha <- casos_solo_positivos_muerte_re %>%
 #     un objeto .RData
 
 # save(casos_por_fecha, file = "03_Out/OutData/casos_solo_fecha.RData")
+
+# 13. Datos de periodos de vacunacion ==========================================
+
+#     Fechas de vacunacion, de acuerdo a la pag de la Secretaria de Salud
+#     Diciembre 2020 - Febrero 2021 : Personal de salud === PRIMERA FASE
+#     Febrero - Mayo 2021 : 60+                         === SEGUNDA FASE
+#     Mayo - Junio 2021 : 50 - 59                       === TERCERA FASE
+#     Junio - Julio 2021 : 40 - 49                      === CUARTA FASE
+#     Julio 2021 - Marzo 2022 : resto                   === QUINTA FASE
+
+#     A la base de datos de casos_solo_positivos_muerte_re se le va a gregar la 
+#     columna de las fechas de vacunacion. Para esto, se usa la funcion 
+#     fechas_vacunacion, que agrega la etapa de vacunacion de acuerdo a la fecha 
+#     de inicio de sintomas.
+
+vacunacion <- fechas_vacunacion(casos_solo_positivos_muerte_re$FECHA_SINTOMAS)
+casos_muerte_re_vac <- mutate(casos_solo_positivos_muerte_re,
+                              FECHAS_VACUNACION = vacunacion)
+
+#     Se guarda el nuevo objeto como un objeto .RData
+# save(casos_muerte_re_vac, file = "03_Out/OutData/casos_positivos_re_m_vac.RData")
+
+#     Se hace el conteo de casos por fecha de sintomas con la etapa de
+#     vacunacion.
+
+casos_por_fecha_vac <- casos_muerte_re_vac %>%
+  count(FECHA_SINTOMAS, FECHAS_VACUNACION, rango_de_edad, muerte, name = "NumCasos")
+
+#     Se guarda en un objeto
+
+# save(casos_por_fecha_vac, file = "03_Out/OutData/casos_por_fecha_vac.RData")
