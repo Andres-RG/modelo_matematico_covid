@@ -30,6 +30,7 @@ load("03_Out/OutData/casos_positivos_re_comorbilidad_cat_4.RData")
 source("02_Scripts/Functions/Functions.R")
 
 # P ( CAT_i & COM_j & COM_k )
+# Conteos de comorbilidades ====================================================
 casos_pos_re_comorbilidad
 
 conteo_comor_combinated_1 <- comorbilidades_combinadas_conteo(casos_pos_re_comorbilidad_cat_1)
@@ -43,7 +44,8 @@ conteo_comor_combinated_4
 
 # Se dividen los conteos de la combinacion de comorbilidades entre la poblacion
 # de la categoria
-#
+
+# Cálculo de probabiidades =====================================================
 # P(com&com|cat)
 probabilidades_combinadas_cat_1 <- probabilidades_combinaciones(casos_pos_re_comorbilidad_cat_1,
                                                           conteo_comor_combinated_1)
@@ -58,7 +60,9 @@ probabilidades_combinadas_cat_2
 probabilidades_combinadas_cat_3
 probabilidades_combinadas_cat_4
 
-# Heatmap
+# Graficas =====================================================================
+## VERSION 1 -------------------------------------------------------------------
+## vector de nombres
 nm <- c("Diabetes",
         "EPOC",
         "Asma", 
@@ -68,19 +72,24 @@ nm <- c("Diabetes",
         "Obesidad",
         "Renal Crónica", 
         "Tabaquismo")
-# C1
+### CATEGORIA 1 --------------------------------------
+#### Ajuste de la matriz
 mat_combinaciones_c1 = probabilidades_combinadas_cat_1
 colnames(mat_combinaciones_c1) <- c("D","E", "A", "I", "H", "CV", "O", "RC", "T")
 rownames(mat_combinaciones_c1) <- c("D","E", "A", "I", "H", "CV", "O", "RC", "T")
-
-mat_combinaciones_c1[upper.tri(mat_combinaciones_c1)] <- NA
-
+mat_combinaciones_c1
+#### Grafica
 heatmap_c1 <- Heatmap(mat_combinaciones_c1       ,
                       #
-                      rect_gp = gpar(col = "white", lwd = 2),
+                      cell_fun = function(j, i, x, y, w, h, fill) {
+                        if(i >= j) {
+                          grid.rect(x, y, w, h, gp = gpar(fill = fill, col = fill))
+                        }
+                      },
+                      #
+                      rect_gp = gpar(type = "none"),
                       name = "Valor"             ,
                       col = viridis(100)         ,
-                      na_col = "white"           ,
                       # columnas
                       cluster_columns = F        ,
                       column_names_rot = 0       ,
@@ -101,28 +110,13 @@ heatmap_c1 <- Heatmap(mat_combinaciones_c1       ,
                       )
 heatmap_c1
 
-heatmap_c1 <- Heatmap(mat_combinaciones_c1,
-                      rect_gp = gpar(col = "white", lwd = 2), 
-                      column_dend_side = "bottom",
-                      column_names_side = "bottom",
-                      column_names_rot = 0,
-                      cluster_columns = F,
-                      cluster_rows = F,
-                      na_col = "white", 
-                      column_title = "Comorbilidades",
-                      row_title = "Comorbilidades",
-                      column_title_gp = gpar(fontsize = 11, fontface = "bold",
-                                             fill = "gray", border = "gray"),
-                      row_title_gp = gpar(fontsize = 11, fontface = "bold",
-                                          fill = "gray", border = "gray"),
-                      row_names_side = "left",
-                      col = colores_personalizados,
-                      name = "Valor",
-                      row_names_gp = gpar(fontsize = 11),
-                      column_names_gp = gpar(fontsize = 11),
-                      column_names_centered = T,
-                      row_names_centered = T)
-heatmap_c1
+# jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c1.jpeg",
+#      width = 5733, height = 5733, res = 800, units = "px")
+# heatmap_c1
+# dev.off()
+
+### CATEGORIA 2 --------------------------------------
+
 #
 heatmap_c1_v3 <- Heatmap(mat_combinaciones_c1,
         col = viridis(35), name = "Valor",
@@ -232,10 +226,7 @@ heatmap_c4_v3 <- Heatmap(mat_combinaciones_c4,
                          })
 #
 #
-# jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c1.jpeg",
-#      width = 1080, height = 1080, res = 250, units = "px")
-heatmap_c1
-# dev.off()
+
 #jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c2.jpeg",
 #     width = 265, height = 265, res = 300, units = "mm")
 heatmap_c2
