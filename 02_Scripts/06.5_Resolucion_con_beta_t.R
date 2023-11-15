@@ -20,19 +20,6 @@ load("03_Out/OutData/probabilidades_de_transicion.RData")
 load("03_Out/OutData/Tabla de parametros obtendos por estructura de edad.RData")
 contact_rate_df <- read.csv("01_RawData/contact_rate_qro.csv")
 
-##Dates
-dates <- as.Date(contact_rate_df$days)
-contact_rate_df <- mutate(contact_rate_df, dias = dates)
-contact_rate_df <- select(contact_rate_df, c(X, beta_t, dias))
-
-##Grafica beta_t
-beta_t_plot <- ggplot(contact_rate_df, aes(x = dias)) +
-  geom_line(aes(y = beta_t), col = "#FF4040", size = 0.9) +
-  labs(x = "Tiempo", y = "Tasa de contacto") +
-  theme(axis.line = element_line(colour = "black", size = 0.6))
-
-#ggsave("03_Out/Plots/beta_t_para_queretaro.jpeg", plot = beta_t_plot, width = 2887, height = 1864, units = "px")
-#ggplotly(g)
 # Resolucion ====
 ## Funcion del modelo ====
 beta_t_modelo_covid <- function(time, state, parameters){
@@ -98,7 +85,6 @@ beta_t_modelo_covid <- function(time, state, parameters){
 }
 
 #funciones beta_t
-contact_rate_df<-read.csv("01_RawData/contact_rate_qro.csv")
 contact_rate<-function(time){
   return(contact_rate_df[time,3])
 }

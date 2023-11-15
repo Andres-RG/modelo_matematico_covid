@@ -25,6 +25,7 @@ load("03_Out/OutData/datos_muerte.RData")
 load("03_Out/OutData/muertes_datos_x_grupos.RData")
 load("03_Out/OutData/casos_positivos_re_m_vac.RData")
 load("03_Out/OutData/casos_por_fecha_vac.RData")
+contact_rate_df <- read.csv("01_RawData/contact_rate_qro.csv")
 
 # Definicion de parametros =====================================================
 ## Parametros obtenidos por estructura de edad
@@ -414,4 +415,35 @@ plot_muertes_vac
 # jpeg("03_Out/Plots/grafica_muertes_recuperados_etapas_vacunacion.jpeg",
 #      width = 5733, height = 4300, res = 500, units = "px")
 # plot_muertes_vac
+# dev.off()
+
+# Grafica de beta_t ============================================================
+##Dates
+dates <- as.Date(contact_rate_df$days)
+contact_rate_df <- mutate(contact_rate_df, dias = dates)
+contact_rate_df <- select(contact_rate_df, c(X, beta_t, dias))
+
+##Grafica beta_t
+beta_t_plot <- ggplot(contact_rate_df, aes(x = dias)) +
+  geom_line(aes(y = beta_t), col = "#FF4040", size = 0.9) +
+  labs(x = "Tiempo",
+       y = "Tasa de contacto",
+       title = "Cambio de la tasa de contacto") +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") + #agrega los meses
+  theme(panel.background = element_rect(),
+        plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
+        axis.line = element_line(colour = "black", size = 0.65),
+        axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
+        axis.text.y = element_text(size = 9, face = "bold"),
+        axis.title.x = element_text(size = 12, face = "bold"),
+        axis.title.y = element_text(size = 12, face = "bold"),
+        legend.position = "right",  # Posición de la leyenda
+        legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
+        legend.text = element_text(size = 10),  # Texto de la leyenda
+        legend.spacing = unit(0.5, "cm"))
+beta_t_plot
+
+# jpeg("03_Out/Plots/beta_t_para_queretaro.jpeg",
+#      width = 5733, height = 4300, res = 500, units = "px")
+# beta_t_plot
 # dev.off()
