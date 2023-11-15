@@ -21,11 +21,8 @@ load("03_Out/OutData/conteo_comorbilidades.RData")
 load("03_Out/OutData/conteo_SIN_comorbilidades.RData")
 load("03_Out/OutData/matriz_p_comorbilidades.RData")
 
-
 # Se cargan las funciones
 source("02_Scripts/Functions/Functions.R")
-
-
 
 #¿Cuál es la probabilidad que una persona de cierta edad tenga una comorbilidad, 
 # dos, tres , cuatro o combinaciones de éstas ?
@@ -33,7 +30,7 @@ source("02_Scripts/Functions/Functions.R")
 #  es más probable que  pertenezcan
 #  p( cat_j | com_i )
 
-# 1 Ajustar los datos -------------------------------------------
+# 1 Ajustar los datos ==========================================================
 # 1.1 Seleccionar solo las columnas de interes con comorbilidades
 casos_pos_re_comorbilidad <- select(casos_positivos_re, 
                                     c(FECHA_SINTOMAS, EDAD, INTUBADO, NEUMONIA,
@@ -65,10 +62,7 @@ casos_pos_re_comorbilidad_cat_4 <- filter(casos_pos_re_comorbilidad,
                                           rango_de_edad == "60-69" | rango_de_edad == "70+")
 # save(casos_pos_re_comorbilidad_cat_4, file = "03_Out/OutData/casos_positivos_re_comorbilidad_cat_4.RData")
 
-
-
-
-# 2 Determinacion de probabilidad -------------------------------
+# 2 Determinacion de probabilidad ==============================================
 # p( cat_i | com_j ) = P ( COM_j & CAT_i )
 #                      --- --- --- --- ---
 #                         P ( COM_j )
@@ -274,20 +268,27 @@ rownames(mat) <- c("D",
 colnames(mat) <- c("< 18", "18 - 39",
                    "40 - 59", "60 <")
 mat <- t(mat)
+
 # jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_categorias.jpg",
-#      width = 1080, height = 1080, res = 250, units = "px")
-Heatmap(mat, name= "Probabilidad", col = viridis(100),
+#      width = 5733, height = 5733, res = 800, units = "px")
+Heatmap(mat,
+        name= "Probabilidad",
+        col = viridis(100),
         row_names_side = "left",
-        cluster_rows = F, cluster_columns = F,
-        row_title = "Grupos etarios", column_title = "Comorbilidades",
-        column_names_side = "top", column_dend_side = "bottom",
+        cluster_rows = F,
+        cluster_columns = F,
+        row_title = "Grupos etarios",
+        column_title = "Comorbilidades",
+        column_names_side = "top",
+        column_dend_side = "bottom",
         column_names_rot = 0,
         column_title_gp = gpar(fill = "gray", border = "gray",
                                fontsize = 9, fontface = "bold"),
         row_title_gp = gpar(fill = "gray", border = "gray",
                             fontsize = 9, fontface = "bold"),
         rect_gp = gpar(col = "white", lwd = 2),
-        column_names_centered = T, row_names_centered = T)
+        column_names_centered = T,
+        row_names_centered = T)
 # dev.off()
 
 # 2.1.5 Determinacion de P ( COM_j ) ----
