@@ -105,7 +105,7 @@ contact_rate<-function(time){
 
 ## Tiempo ====
 
-times <- seq(1,398,by=1)
+time <- seq(1,398,by=1)
 
 ## Parametros ====
 parameters <- c(
@@ -146,7 +146,7 @@ parameters <- c(
   
   gamma_i <- 1/7           ,
   
-  immun_lost<- 1/171         ,  
+  immun_lost<- 1/180       ,
   
   N1       <- 782000       ,
   N2       <- 801000       ,
@@ -215,25 +215,27 @@ state <- c(
 
 ## Out ====
 beta_t_out <- as.data.frame(ode(y     = state,
-                                times = times,
+                                times = time,
                                 func  = beta_t_modelo_covid,
                                 parms = parameters))
 ## Grafica ====
 
-beta_t_grafica_modelo <- ggmatplot(x = beta_t_out[,1],
-                            y = beta_t_out[,2:33],
-                            plot_type = "line",
-                            fill =viridis(32),
-                            linetype = 1, xlab = "Tiempo", ylab = "Población",
-                            main = "Modelo COVID beta_t",
-                            legend_title = "Variables", lwd = 1) + 
-  theme(plot.title = element_text(hjust = 0.5))+
-  theme(panel.background = element_rect(fill = "white"), 
-        axis.line = element_line(colour = "black", size = 0.75))
-beta_t_grafica_modelo
+# beta_t_grafica_modelo <- ggmatplot(x = beta_t_out[,1],
+#                             y = beta_t_out[,2:33],
+#                             plot_type = "line",
+#                             fill =viridis(32),
+#                             linetype = 1, xlab = "Tiempo", ylab = "Población",
+#                             main = "Modelo COVID beta_t",
+#                             legend_title = "Variables", lwd = 1) + 
+#   theme(plot.title = element_text(hjust = 0.5))+
+#   theme(panel.background = element_rect(fill = "white"), 
+#         axis.line = element_line(colour = "black", size = 0.75))
+# beta_t_grafica_modelo
 
 #ggsave("03_Out/Plots/Modelo COVID con beta t.jpeg", plot = beta_t_grafica_modelo, width = 2887, height = 1464, units = "px")
 
-
-#369601.9 MUERTES??
-#173995.8 INFECTADOS??
+ggplot(beta_t_out, aes(x = times)) + 
+  geom_line(aes(y = I1, color = "Menores de 18 años")) +
+  geom_line(aes(y = I2, color = "18 a 19 años")) +
+  geom_line(aes(y = I3, color = "40 a 59 años")) +
+  geom_line(aes(y = I4, color = "Mayores de 60 años"))

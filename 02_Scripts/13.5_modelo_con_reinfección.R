@@ -162,7 +162,7 @@ parameters <- c(
     
     gamma_i <- 1/7           ,
     
-    omega   <- 1/166         ,
+    omega   <- 1/180         ,
     
     N1       <- 782000       ,
     N2       <- 801000       ,
@@ -236,24 +236,24 @@ reinfeccion_out <- as.data.frame(ode(y     = state,
                                      parms = parameters))
 
 ## Grafica ====
-reinfeccion_grafica_modelo <- ggmatplot(x = reinfeccion_out[,1],
-                                         y = reinfeccion_out[,2:33],
-                                         plot_type = "line",
-                                         fill =viridis(32),
-                                         linetype = 1, xlab = "Tiempo", ylab = "Población",
-                                         main = "Modelo COVID con Estructura Etaria y Reinfección",
-                                        legend_title = "Variables", lwd = 1) +
-    theme(plot.title = element_text(hjust = 0.5))+
-    theme(panel.background = element_rect(fill = "white"), 
-          axis.line = element_line(colour = "black", size = 0.75)) +
-    scale_y_continuous(
-        limits = c(0, 800000),  # Establece los límites
-        breaks = seq(0, 800000, by = 100000),  # Establece divisiones cada 100 unidades
-        minor_breaks = NULL  # No se utilizan divisiones menores en este caso
-    ) + 
-    geom_hline(yintercept = seq(0, 800000, by = 100000), 
-               linetype = "dashed", color = "gray")
-reinfeccion_grafica_modelo
+# reinfeccion_grafica_modelo <- ggmatplot(x = reinfeccion_out[,1],
+#                                          y = reinfeccion_out[,2:33],
+#                                          plot_type = "line",
+#                                          fill =viridis(32),
+#                                          linetype = 1, xlab = "Tiempo", ylab = "Población",
+#                                          main = "Modelo COVID con Estructura Etaria y Reinfección",
+#                                         legend_title = "Variables", lwd = 1) +
+#     theme(plot.title = element_text(hjust = 0.5))+
+#     theme(panel.background = element_rect(fill = "white"), 
+#           axis.line = element_line(colour = "black", size = 0.75)) +
+#     scale_y_continuous(
+#         limits = c(0, 800000),  # Establece los límites
+#         breaks = seq(0, 800000, by = 100000),  # Establece divisiones cada 100 unidades
+#         minor_breaks = NULL  # No se utilizan divisiones menores en este caso
+#     ) + 
+#     geom_hline(yintercept = seq(0, 800000, by = 100000), 
+#                linetype = "dashed", color = "gray")
+# reinfeccion_grafica_modelo
 
 #ggsave("03_Out/Plots/reinfeccion_modelo_COVID.jpeg", 
 #       plot = reinfeccion_grafica_modelo, width = 2887, height = 1464, units = "px")
