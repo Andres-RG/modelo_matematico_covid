@@ -532,8 +532,11 @@ conteos_normalizados <- c(nomc1,nomc2,nomc3,nomc4)
 names(conteos_normalizados) <- c(">18","18-39","40-59","60>")
 mat_3 <- conteos_normalizados
 col_fun <- colorRamp2(c( 0, 0.375, 0.75), c("lightblue", "deepskyblue", "deepskyblue4"))
-heatmap_p_una_comorbilidad <- Heatmap(mat_3, cluster_rows = F,
-                                      col = col_fun, name = "Probabilidad",
+heatmap_p_una_comorbilidad <- Heatmap(mat_3, 
+                                      cluster_rows = F,
+                                      show_column_names = F,
+                                      col = col_fun,
+                                      name = "Probabilidad",
                                       row_order = order(names(mat_3),
                                                         decreasing = T),
                                       row_names_gp = gpar(fontsize = 9, 
@@ -544,33 +547,38 @@ heatmap_p_una_comorbilidad <- Heatmap(mat_3, cluster_rows = F,
                                       row_names_centered = T,
                                       row_names_side = "left",
                                       column_names_rot = 0)
-# jpeg("03_Out/Plots/heatmap_p_una_comorbilidad.jpeg",
-#     width = 1080, height = 1080, res = 250, units = "px")
 heatmap_p_una_comorbilidad
+
+# jpeg("03_Out/Plots/heatmap_p_una_comorbilidad.jpeg",
+#     width = 5733, height = 5733, res = 800, units = "px")
+# heatmap_p_una_comorbilidad
 # dev.off()
-#
+
 mat_3 <- as.matrix(mat_3)
 col_fun <- colorRamp2(c( 0, 0.45, 0.9), 
                       c("lightblue", "deepskyblue", "deepskyblue4"))
 heatmap_p_una_comorbilidad_v2 <-  Heatmap(mat_3, 
-                                          col = col_fun, 
-                                          column_title = "P una comorbilidad",
+                                          col = col_fun,
                                           rect_gp = gpar(type = "none"),
-                                          
                                           cell_fun = function(j, i, x, y, width, height, fill) {
                                                   
                                                   grid.rect(x = x, y = y, width = width, height = height, 
                                                             gp = gpar(col = "black", fill = NA))
                                                   if(i >= j) {
                                                           grid.circle(x = x, y = y, 
-                                                                      r = abs(mat_3[i, j])/2 * min(unit.c(width, height)), 
+                                                                      r = abs(mat_3[i, j])/1.6 * min(unit.c(width, height)), 
                                                                       gp = gpar(fill = col_fun(mat_3[i, j]), col = NA))
                                                   }
                                           },
-                                          cluster_rows = FALSE, cluster_columns = FALSE,
-                                          show_row_names = T, show_column_names = F,
-                                          name = "Valor", row_names_side = "left")
-#jpeg("03_Out/Plots/heatmap_p_una_comorbilidad_v2.jpeg",
-#     width = 265, height = 265, res = 300, units = "mm")
+                                          cluster_rows = FALSE, 
+                                          cluster_columns = FALSE,
+                                          show_row_names = T, 
+                                          show_column_names = F,
+                                          name = "Valor", 
+                                          row_names_side = "left")
 heatmap_p_una_comorbilidad_v2
-#dev.off()
+
+# jpeg("03_Out/Plots/heatmap_p_una_comorbilidad_v2.jpeg",
+#     width = 4300, height = 4733, res = 800, units = "px")
+# heatmap_p_una_comorbilidad_v2
+# dev.off()
