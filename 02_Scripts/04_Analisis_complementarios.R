@@ -107,11 +107,27 @@ plot_casos_positivos_tail_probability
 
 # geom_pont total ==============================================================
 plot_total_casos_positivos_re <- ggplot(casos_positivos_re_conteo,
-                                        aes(x = FECHA_SINTOMAS, y = positivos)) +
-  geom_point()
+                                        aes(x = FECHA_SINTOMAS,
+                                            y = positivos)) +
+  geom_point(col = "#8B0000",
+             shape = 17) + 
+  labs(x = "Tiempo",
+       y = "Casos",
+       title = "Casos positivos") +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+  theme(
+    plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
+    axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
+    axis.text.y = element_text(size = 9, face = "bold"),
+    axis.line = element_line(colour = "black", size = 0.75),
+    axis.title.x = element_text(size = 12, face = "bold"),
+    axis.title.y = element_text(size = 12, face = "bold"))
 plot_total_casos_positivos_re
-#ggsave("03_Out/Plots/plot_casos_positivos_totales_conteo.jpeg", 
-#       plot = plot_total_casos_positivos_re, width = 2887, height = 1464, units = "px")
+
+# jpeg("03_Out/Plots/plot_casos_positivos_totales_conteo.jpeg",
+#      width = 5733, height = 4300, res = 500, units = "px")
+# plot_total_casos_positivos_re
+# dev.off()
 
 # geom_pont por rango de edad ==================================================
 plot_pos_x_dia_re_2 <- ggplot(casos_positivos_x_dia_re, 
@@ -119,32 +135,37 @@ plot_pos_x_dia_re_2 <- ggplot(casos_positivos_x_dia_re,
                                   y = casos_totales,
                                   color = rango_de_edad,
                                   shape = rango_de_edad)) + 
-  geom_point(alpha = 0.6, size = 3) +
-  geom_smooth(se = F, linetype = "dashed", size = 1.2, alpha = 1.5) +
+  geom_point(alpha = 0.6,
+             size = 2.5) +
+  geom_smooth(se = F,
+              linetype = "dashed",
+              alpha = 0.2) +
   labs(title = "Casos positivos por día",
        x = "Fecha",
        y = "No. de casos",
        color = "Rangos de edad",   # Cambia el nombre de la leyenda de color
        shape = "Rangos de edad") +
-  scale_shape_manual(values = seq(0, 25)) +
+  scale_shape_manual(values = seq(1,7)) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
   theme(
-    plot.title = element_text(size = 14, hjust = 0.5, face = "bold"),
-    axis.text.x = element_text(angle = 45, hjust = 1),
-    panel.grid.major = element_blank(),
-    panel.border = element_blank(),
-    panel.background = element_blank(),
+    plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
+    axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
+    axis.text.y = element_text(size = 9, face = "bold"),
     axis.line = element_line(colour = "black", size = 0.75),
+    axis.title.x = element_text(size = 12, face = "bold"),
+    axis.title.y = element_text(size = 12, face = "bold"),
     legend.position = "right",  # Posición de la leyenda
-    legend.title = element_text(size = 10),  # Título de la leyenda
+    legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
     legend.text = element_text(size = 10),  # Texto de la leyenda
     legend.spacing = unit(0.5, "cm")
   )
 
 plot_pos_x_dia_re_2
 
-# ggsave("03_Out/Plots/conteo_casos_totales_x_re_v2.jpeg",
-#        plot = plot_pos_x_dia_re_2, width = 2887, height = 1864, units = "px")
+# jpeg("03_Out/Plots/conteo_casos_totales_x_re_v2.jpeg",
+#      width = 5733, height = 4300, res = 500, units = "px")
+# plot_pos_x_dia_re_2
+# dev.off()
 
 # casos positivos totales acumulados ===========================================
 casos <- casos_positivos_re_conteo[, -3]
@@ -175,7 +196,8 @@ plot_casos_x_grupos <- ggplot(casos_x_grupos_corte,
   geom_line(aes(y = casos_totales, color = grupos), size = 0.8) +
   labs(x = "Tiempo", y = "No. Casos", title = "Casos por grupos etarios",
        color = "Grupos") +
-  theme(axis.text.x = element_text(size = 7,angle = 45, hjust = 1),
+  theme(axis.text.x = element_text(size = 7,angle = 45, 
+                                   hjust = 1, face = "bold"),
         panel.background = element_rect(fill = "gray87"),
         axis.line = element_line(colour = "black", size = 0.65),
         plot.title = element_text(hjust = 0.5, size = 13, face = "bold"),
@@ -185,10 +207,10 @@ plot_casos_x_grupos <- ggplot(casos_x_grupos_corte,
   scale_color_manual(values = c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD"))
 plot_casos_x_grupos
 
-# ggsave(filename = "03_Out/Plots/casos_infectados_datos.jpg",
-#        plot = plot_casos_x_grupos,
-#        width = 2487, height = 1791,
-#        units = "px")
+# jpeg("03_Out/Plots/casos_infectados_datos.jpg",
+#     width = 5733, height = 4300, res = 500, units = "px")
+# plot_casos_x_grupos
+# dev.off()
 
 # muertes por grupos ===========================================================
 
@@ -197,7 +219,8 @@ plot_muertes_x_grupos <- ggplot(muertes_x_grupos_corte,
   geom_line(aes(y = casos, color = grupos), size = 0.8) +
   labs(x = "Tiempo", y = "No. Muertes", title = "Muertes por grupos etarios",
        color = "Grupos") +
-  theme(axis.text.x = element_text(size = 7,angle = 45, hjust = 1),
+  theme(axis.text.x = element_text(size = 7,angle = 45,
+                                   hjust = 1, face = "bold"),
         axis.line = element_line(colour = "black", size = 0.65),
         plot.title = element_text(hjust = 0.5, size = 13, face = "bold"),
         legend.text = element_text(size = 11),
@@ -227,7 +250,7 @@ plot_positivos_muertes_y_no_raw <- ggplot(casos_por_fecha,
        x = "Tiempo", y = "No. de casos", fill = "Muerte") +
   theme(
     plot.title = element_text(size = 14, hjust = 0.5),
-    axis.text.x = element_text(angle = 45, hjust = 1), #texto en el eje x
+    axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"), #texto en el eje x
     panel.grid.major = element_blank(),
     panel.border = element_blank(), 
     axis.line = element_line(colour = "black", size = 0.75), #Eje de la gráfica
