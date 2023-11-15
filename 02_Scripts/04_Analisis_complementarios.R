@@ -206,9 +206,10 @@ plot_muertes_x_grupos <- ggplot(muertes_x_grupos_corte,
   scale_color_manual(values = c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD"))
 plot_muertes_x_grupos
 
-ggsave("03_Out/Plots/muertes_por_grupos.jpeg", 
-       plot = plot_muertes_x_grupos,
-       width = 2887, height = 1864,units = "px")
+# jpeg("03_Out/Plots/muertes_por_grupos.jpeg",
+#     width = 5733, height = 4300, res = 500, units = "px")
+# plot_muertes_x_grupos
+# dev.off()
 
 # Grafica muertes vs recuperados Datos crudos ==================================
 # Se genera una grafica donde se observan las fechas por meses, de los casos 
@@ -247,7 +248,7 @@ plot_positivos_muertes_y_no_raw <- ggplot(casos_por_fecha,
 plot_positivos_muertes_y_no_raw
 
 # jpeg("03_Out/Plots/plot_casos_fallecidos_vs_recuperados_raw.jpeg",
-#     width = 365, height = 265, res = 300, units = "mm")
+#     width = 5733, height = 4300, res = 500, units = "px")
 # plot_positivos_muertes_y_no_raw
 # dev.off()
 
@@ -286,7 +287,7 @@ plot_positivos_muertes_y_no_nom <- ggplot(casos_por_fecha,
 plot_positivos_muertes_y_no_nom
 
 # jpeg("03_Out/Plots/plot_casos_fallecidos_vs_recuperados_nom.jpeg",
-#     width = 365, height = 265, res = 300, units = "mm")
+#     width = 5733, height = 4300, res = 500, units = "px")
 # plot_positivos_muertes_y_no_nom
 # dev.off()
 
@@ -375,6 +376,6 @@ plot_muertes_vac <- ggplot(casos_por_fecha_vac,
 plot_muertes_vac
 
 # jpeg("03_Out/Plots/grafica_muertes_recuperados_etapas_vacunacion.jpeg",
-#      width = 365, height = 265, res = 300, units = "mm")
+#      width = 5733, height = 4300, res = 500, units = "px")
 # plot_muertes_vac
 # dev.off()
