@@ -19,27 +19,37 @@ load("03_Out/OutData/conteo_casos_positivos_rango_edad.RData")
 load("03_Out/OutData/casos_positivos_x_dia_rango_edad.RData")
 load("03_Out/OutData/casos_solo_fecha.RData")
 
-## STACK -----------------------------------------------------------------------
+## STACK =======================================================================
 plot_positivos_re <- ggplot(casos_positivos_re,
-                            aes(x=FECHA_SINTOMAS,
-                                fill = rango_de_edad)) + 
-    geom_bar(position="stack",
-             stat="count") +
-    ggtitle("Casos positivos a COVID por rangos de edades
-            para el estado de Queretaro") + 
-    labs( x = "Tiempo",
-          y = "Casos",
-          fill = "Rangos de Edad") +
-    theme(plot.title = element_text(hjust = 0.5),
-          panel.background = element_rect(fill = "gray87"), 
-          axis.line = element_line(colour = "black", size = 1)) +
-    scale_fill_viridis(discrete = T)
+                            aes(x = FECHA_SINTOMAS,
+                                fill = rango_de_edad)) +
+  geom_bar(position = "stack",
+             stat = "count") +
+  labs( x = "Tiempo",
+        y = "Casos",
+        title = "Casos positivos a COVID por rangos de edades para el estado de Queretaro",
+        fill = "Rangos de Edad") +
+  scale_fill_viridis(discrete = T) +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+  theme(panel.background = element_rect(),
+        plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
+        axis.line = element_line(colour = "black", size = 0.65),
+        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
+        axis.text.y = element_text(size = 9, face = "bold"),
+        axis.title.x = element_text(size = 12, face = "bold"),
+        axis.title.y = element_text(size = 12, face = "bold"),
+        legend.position = "right",  # Posición de la leyenda
+        legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
+        legend.text = element_text(size = 10),  # Texto de la leyenda
+        legend.spacing = unit(0.5, "cm"))
 plot_positivos_re
-# El objeto que contiene la grafica se guarda como una imagen jpeg
-# ggsave("03_Out/Plots/casos_positivos_rango_edad.jpeg",
-#        plot = plot_positivos_re, width = 2687, height = 1864, units = "px")
 
-## DOTPLOT----------------------------------------------------------------------
+# jpeg("03_Out/Plots/casos_positivos_rango_edad.jpeg",
+#     width = 5733, height = 4300, res = 500, units = "px")
+# plot_positivos_re
+# dev.off()
+
+## DOTPLOT =====================================================================
 plot_pos_dot <- ggplot(casos_positivos_x_dia_re,
                        aes(x = FECHA_SINTOMAS,
                            y = casos_totales,
@@ -61,93 +71,108 @@ plot_pos_dot <- ggplot(casos_positivos_x_dia_re,
                                   "50-59" = 5,
                                   "60-69" = 6,
                                   "70+" = 7)) +
-    theme(
-        plot.title = element_text(size = 14, hjust = 0.5),
-        axis.text.x = element_text(size = 7,angle = 45, hjust = 1),
-        axis.line = element_line(colour = "black", size = 0.75),
-        # leyenda
+  theme(panel.background = element_rect(),
+        plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
+        axis.line = element_line(colour = "black", size = 0.65),
+        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
+        axis.text.y = element_text(size = 9, face = "bold"),
+        axis.title.x = element_text(size = 12, face = "bold"),
+        axis.title.y = element_text(size = 12, face = "bold"),
         legend.position = "right",  # Posición de la leyenda
-        legend.title = element_text(size = 10),  # Título de la leyenda
+        legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
         legend.text = element_text(size = 10),  # Texto de la leyenda
-        legend.spacing = unit(0.5, "cm"),
-        # background
-        panel.grid.major.y = element_line(color = "black", size = 0.5, 
-                                          linetype = 2),  # Líneas horizontales al eje x
-        panel.grid.minor = element_blank(),  # Eliminar líneas de cuadrícula menores
-        panel.background = element_blank(),
-        panel.grid.major.x = element_blank()
-    )
-
+        legend.spacing = unit(0.5, "cm"))
 plot_pos_dot
 
-# ggsave("03_Out/Plots/plot_casos_positivos_dotplot.jpeg",
-#       plot = plot_pos_dot, width = 2287, height = 1864, units = "px")
+# jpeg("03_Out/Plots/plot_casos_positivos_dotplot.jpeg",
+#     width = 5733, height = 4300, res = 500, units = "px")
+# plot_pos_dot
+# dev.off()
 
 ##FILL | PROPORCION ============================================================
 plot_pos_fill <- ggplot(casos_positivos_re,
                         aes(x = FECHA_SINTOMAS,
                             fill = rango_de_edad)) +
-    geom_bar(position = "fill") +
-    labs(x = "Tiempo",
-         y = "Casos positivos",
-         title = "Variación de proporción de casos positivos a COVID-19",
-         fill = "Rango de edad") +
-    scale_fill_manual(values = viridis(7)) +
-    theme(
-        plot.title = element_text(size = 14, hjust = 0.5),
-        axis.text.x = element_text(size = 7,angle = 45, hjust = 1),
-        axis.line = element_line(colour = "black", size = 0.75),
-        # leyenda
+  geom_bar(position = "fill") +
+  labs(x = "Tiempo",
+       y = "Casos positivos",
+       title = "Variación de proporción de casos positivos a COVID-19",
+       fill = "Rango de edad") +
+  scale_fill_manual(values = viridis(7)) +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+  theme(panel.background = element_rect(),
+        plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
+        axis.line = element_line(colour = "black", size = 0.65),
+        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
+        axis.text.y = element_text(size = 9, face = "bold"),
+        axis.title.x = element_text(size = 12, face = "bold"),
+        axis.title.y = element_text(size = 12, face = "bold"),
         legend.position = "right",  # Posición de la leyenda
-        legend.title = element_text(size = 10),  # Título de la leyenda
+        legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
         legend.text = element_text(size = 10),  # Texto de la leyenda
-        legend.spacing = unit(0.5, "cm"),
-        # background
-        panel.grid.major.y = element_line(color = "black", size = 0.5, 
-                                          linetype = 2),  # Líneas horizontales al eje x
-        panel.grid.minor = element_blank(),  # Eliminar líneas de cuadrícula menores
-        panel.background = element_blank(),
-        panel.grid.major.x = element_blank()
-    ) +
-    scale_x_date(date_labels = "%b %Y", date_breaks = "1 month")
-
+        legend.spacing = unit(0.5, "cm"))
 plot_pos_fill
 
-# ggsave("03_Out/Plots/plot_casos_positivos_proporción.jpeg",
-#       plot = plot_pos_fill, width = 2287, height = 1464, units = "px")
+# jpeg("03_Out/Plots/plot_casos_positivos_proporción.jpeg",
+#     width = 5733, height = 4300, res = 500, units = "px")
+# plot_pos_fill
+# dev.off()
 
 # Grafica de casos positivos por rangos de edad. Geom_density ==================
+## Grafica 1 -------------------------------------------------------------------
+plot_densidad_positivos_re_v1 <- ggplot(casos_positivos_re,
+                                        aes(x = FECHA_SINTOMAS,
+                                            fill = rango_de_edad)) +
+  geom_density( position = "stack" ) +
+  labs(x = "Tiempo",
+       y = "Densidad",
+       title = "Densidad de Casos positivos",
+       fill = "Rangos de Edad") +
+  scale_fill_viridis(discrete = T) +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+  theme(panel.background = element_rect(),
+        plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
+        axis.line = element_line(colour = "black", size = 0.65),
+        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
+        axis.text.y = element_text(size = 9, face = "bold"),
+        axis.title.x = element_text(size = 12, face = "bold"),
+        axis.title.y = element_text(size = 12, face = "bold"),
+        legend.position = "right",  # Posición de la leyenda
+        legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
+        legend.text = element_text(size = 10),  # Texto de la leyenda
+        legend.spacing = unit(0.5, "cm"))
+plot_densidad_positivos_re_v1
 
-## Grafica 1
-plot_positivos_re <- ggplot(casos_positivos_re, 
-                            aes(x=FECHA_SINTOMAS, fill = rango_de_edad)) + 
-    geom_density(position="stack") + 
-    ggtitle("Casos positivos a COVID por rangos de edades 
-          para el estado de Queretaro") + 
-    labs(x="Tiempo", y="Casos") +
-    labs(fill="Rangos de Edad") +
-    theme(plot.title = element_text(hjust = 0.5))+
-    theme(panel.background = element_rect(fill = "white"), 
-          axis.line = element_line(colour = "black", size = 1)) +
-    scale_fill_viridis(discrete = T)
-plot_positivos_re
-# El objeto que contiene la grafica se guarda como una imagen jpeg
-# ggsave("03_Out/Plots/plot_casos_positivos_geom_density_1.jpeg", 
-#        plot = plot_positivos_re, width = 2487, height = 1464, units = "px")
+# jpeg("03_Out/Plots/plot_casos_positivos_geom_density_1.jpeg",
+#     width = 5733, height = 4300, res = 500, units = "px")
+# plot_densidad_positivos_re_v1
+# dev.off()
 
-## Grafica 2
-plot_positivos_re <- ggplot(casos_positivos_re, 
-                            aes(x=FECHA_SINTOMAS, fill = rango_de_edad)) + 
-    geom_density(position="fill") + 
-    ggtitle("Casos positivos a COVID por rangos de edades 
-          para el estado de Queretaro") + 
-    labs(x="Tiempo", y="Casos") +
-    labs(fill="Rangos de Edad") +
-    theme(plot.title = element_text(hjust = 0.5))+
-    theme(panel.background = element_rect(fill = "white"), 
-          axis.line = element_line(colour = "black", size = 1)) +
-    scale_fill_viridis(discrete = T)
-plot_positivos_re
-# El objeto que contiene la grafica se guarda como una imagen jpeg
-# ggsave("03_Out/Plots/plot_casos_positivos_geom_density_2.jpeg", 
-#        plot = plot_positivos_re, width = 2487, height = 1464, units = "px")
+## Grafica 2 -------------------------------------------------------------------
+plot_densidad_positivos_re_v2 <- ggplot(casos_positivos_re,
+                                        aes( x = FECHA_SINTOMAS,
+                                             fill = rango_de_edad)) +
+  geom_density(position = "fill") +
+  labs( x = "Tiempo",
+        y = "Densidad",
+        title = "Densidad de Casos positivos",
+        fill = "Rangos de Edad") +
+  scale_fill_viridis(discrete = T) + 
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+  theme(panel.background = element_blank(),
+        plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
+        axis.line = element_line(colour = "black", size = 0.65),
+        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
+        axis.text.y = element_text(size = 9, face = "bold"),
+        axis.title.x = element_text(size = 12, face = "bold"),
+        axis.title.y = element_text(size = 12, face = "bold"),
+        legend.position = "right",  # Posición de la leyenda
+        legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
+        legend.text = element_text(size = 10),  # Texto de la leyenda
+        legend.spacing = unit(0.5, "cm"))
+plot_densidad_positivos_re_v2
+
+# jpeg("03_Out/Plots/plot_casos_positivos_geom_density_2.jpeg",
+#     width = 5733, height = 4300, res = 500, units = "px")
+# plot_densidad_positivos_re_v2
+# dev.off()
