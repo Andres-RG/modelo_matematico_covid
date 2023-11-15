@@ -20,8 +20,8 @@ load("03_Out/OutData/probabilidades_de_transicion.RData")
 load("03_Out/OutData/Tabla de parametros obtendos por estructura de edad.RData")
 contact_rate_df <- read.csv("01_RawData/contact_rate_qro.csv")
 
-# Resolucion ====
-## Funcion del modelo ====
+# Resolucion =
+## Funcion del modelo ----------------------------------------------------------
 beta_t_modelo_covid <- function(time, state, parameters){
   
   with(as.list(c(state, parameters)), {
@@ -84,16 +84,16 @@ beta_t_modelo_covid <- function(time, state, parameters){
   })
 }
 
-#funciones beta_t
+##funciones beta_t -------------------------------------------------------------
 contact_rate<-function(time){
   return(contact_rate_df[time,3])
 }
 
-## Tiempo ====
+## Tiempo ----------------------------------------------------------------------
 
 time <- seq(1,398,by=1)
 
-## Parametros ====
+## Parametros ------------------------------------------------------------------
 parameters <- c(
   
   alpha   <- 1/5.6         ,
@@ -141,7 +141,7 @@ parameters <- c(
   
 )
 
-## Condiciones iniciales del sistema ====
+## Condiciones iniciales del sistema -------------------------------------------
 # De acuerdo a la información obtenida del INEGI, la población del estado de 
 # Querétaro es de 2,368,467 habitantes, al senso realizado en 2020. 
 # Este valor de la poblacion se toma como el valor total de la población.
@@ -199,29 +199,34 @@ state <- c(
   R4    = 0
 )
 
-## Out ====
+## Out -------------------------------------------------------------------------
 beta_t_out <- as.data.frame(ode(y     = state,
                                 times = time,
                                 func  = beta_t_modelo_covid,
                                 parms = parameters))
-## Grafica ====
 
+## Grafica ---------------------------------------------------------------------
 # beta_t_grafica_modelo <- ggmatplot(x = beta_t_out[,1],
 #                             y = beta_t_out[,2:33],
 #                             plot_type = "line",
 #                             fill =viridis(32),
 #                             linetype = 1, xlab = "Tiempo", ylab = "Población",
 #                             main = "Modelo COVID beta_t",
-#                             legend_title = "Variables", lwd = 1) + 
-#   theme(plot.title = element_text(hjust = 0.5))+
-#   theme(panel.background = element_rect(fill = "white"), 
-#         axis.line = element_line(colour = "black", size = 0.75))
+#                             legend_title = "Variables", lwd = 1) +
+#   theme(panel.background = element_rect(),
+#         plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
+#         axis.line = element_line(colour = "black", size = 0.65),
+#         axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
+#         axis.text.y = element_text(size = 9, face = "bold"),
+#         axis.title.x = element_text(size = 12, face = "bold"),
+#         axis.title.y = element_text(size = 12, face = "bold"),
+#         legend.position = "right",  # Posición de la leyenda
+#         legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
+#         legend.text = element_text(size = 10),  # Texto de la leyenda
+#         legend.spacing = unit(0.5, "cm"))
+beta_t_grafica_modelo
+
+# jpeg("03_Out/Plots/Modelo COVID con beta t.jpeg",
+#     width = 5733, height = 4300, res = 500, units = "px")
 # beta_t_grafica_modelo
-
-#ggsave("03_Out/Plots/Modelo COVID con beta t.jpeg", plot = beta_t_grafica_modelo, width = 2887, height = 1464, units = "px")
-
-ggplot(beta_t_out, aes(x = times)) + 
-  geom_line(aes(y = I1, color = "Menores de 18 años")) +
-  geom_line(aes(y = I2, color = "18 a 19 años")) +
-  geom_line(aes(y = I3, color = "40 a 59 años")) +
-  geom_line(aes(y = I4, color = "Mayores de 60 años"))
+# dev.off()
