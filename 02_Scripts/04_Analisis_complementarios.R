@@ -119,7 +119,7 @@ plot_total_casos_positivos_re <- ggplot(casos_positivos_re_conteo,
     plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
     axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
     axis.text.y = element_text(size = 9, face = "bold"),
-    axis.line = element_line(colour = "black", size = 0.75),
+    axis.line = element_line(colour = "black", size = 0.65),
     axis.title.x = element_text(size = 12, face = "bold"),
     axis.title.y = element_text(size = 12, face = "bold"))
 plot_total_casos_positivos_re
@@ -151,7 +151,7 @@ plot_pos_x_dia_re_2 <- ggplot(casos_positivos_x_dia_re,
     plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
     axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
     axis.text.y = element_text(size = 9, face = "bold"),
-    axis.line = element_line(colour = "black", size = 0.75),
+    axis.line = element_line(colour = "black", size = 0.65),
     axis.title.x = element_text(size = 12, face = "bold"),
     axis.title.y = element_text(size = 12, face = "bold"),
     legend.position = "right",  # Posición de la leyenda
@@ -172,39 +172,48 @@ casos <- casos_positivos_re_conteo[, -3]
 plot_casos <- ggplot(casos, 
                      aes(x = FECHA_SINTOMAS,
                          y = positivos)) +
-  geom_line(col = "#FF4500", size = 0.6) +
-  ggtitle("Casos positivos totales") + 
-  labs(x = "Tiempo", y = "Casos") +
-  labs(fill = "Rangos de Edad") +
-  theme(plot.title = element_text(hjust = 0.5))+
-  theme(panel.background = element_rect(fill = "white"), 
-        axis.line = element_line(colour = "black", size = 1),
-        axis.text.x = element_text(angle = 45, hjust = 1)) +
-  scale_fill_viridis(discrete = T) +
-  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month")
+  geom_line(col = "#8B0000", size = 0.6) +
+  labs(x = "Tiempo",
+       y = "Casos",
+       title = "Curva de casos positivos") +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+  theme(plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
+        axis.line = element_line(colour = "black", size = 0.65),
+        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
+        axis.text.y = element_text(size = 9, face = "bold"),
+        axis.title.x = element_text(size = 12, face = "bold"),
+        axis.title.y = element_text(size = 12, face = "bold"))
 plot_casos
 
-# ggsave("03_Out/Plots/plot_casos_positivos_totales.jpeg",
-#        plot = plot_casos, width = 2887, height = 1864, units = "px")
-
-colores <- c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD")
+# jpeg("03_Out/Plots/plot_casos_positivos_totales.jpeg",
+#      width = 5733, height = 4300, res = 500, units = "px")
+# plot_casos
+# dev.off()
 
 # casos por grupos =============================================================
-
+colores <- c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD")
 plot_casos_x_grupos <- ggplot(casos_x_grupos_corte, 
                               aes(x = FECHA_SINTOMAS)) + 
-  geom_line(aes(y = casos_totales, color = grupos), size = 0.8) +
-  labs(x = "Tiempo", y = "No. Casos", title = "Casos por grupos etarios",
+  geom_line(aes(y = casos_totales,
+                color = grupos),
+            size = 0.6) +
+  labs(x = "Tiempo",
+       y = "No. Casos",
+       title = "Casos por grupos etarios",
        color = "Grupos") +
-  theme(axis.text.x = element_text(size = 7,angle = 45, 
-                                   hjust = 1, face = "bold"),
-        panel.background = element_rect(fill = "gray87"),
-        axis.line = element_line(colour = "black", size = 0.65),
-        plot.title = element_text(hjust = 0.5, size = 13, face = "bold"),
-        legend.text = element_text(size = 11),
-        legend.title = element_text(size = 11, face = "bold")) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
-  scale_color_manual(values = c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD"))
+  scale_color_manual(values = colores) +
+  theme(panel.background = element_rect(),
+        plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
+        axis.line = element_line(colour = "black", size = 0.65),
+        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
+        axis.text.y = element_text(size = 9, face = "bold"),
+        axis.title.x = element_text(size = 12, face = "bold"),
+        axis.title.y = element_text(size = 12, face = "bold"),
+        legend.position = "right",  # Posición de la leyenda
+        legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
+        legend.text = element_text(size = 10),  # Texto de la leyenda
+        legend.spacing = unit(0.5, "cm"))
 plot_casos_x_grupos
 
 # jpeg("03_Out/Plots/casos_infectados_datos.jpg",
@@ -216,17 +225,26 @@ plot_casos_x_grupos
 
 plot_muertes_x_grupos <- ggplot(muertes_x_grupos_corte, 
                               aes(x = FECHA_DEF)) + 
-  geom_line(aes(y = casos, color = grupos), size = 0.8) +
-  labs(x = "Tiempo", y = "No. Muertes", title = "Muertes por grupos etarios",
+  geom_line(aes(y = casos,
+                color = grupos),
+            size = 0.6) +
+  labs(x = "Tiempo",
+       y = "No. Muertes",
+       title = "Muertes por grupos etarios",
        color = "Grupos") +
-  theme(axis.text.x = element_text(size = 7,angle = 45,
-                                   hjust = 1, face = "bold"),
-        axis.line = element_line(colour = "black", size = 0.65),
-        plot.title = element_text(hjust = 0.5, size = 13, face = "bold"),
-        legend.text = element_text(size = 11),
-        legend.title = element_text(size = 11, face = "bold")) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
-  scale_color_manual(values = c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD"))
+  scale_color_manual(values = colores) +
+  theme(panel.background = element_rect(),
+        plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
+        axis.line = element_line(colour = "black", size = 0.65),
+        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
+        axis.text.y = element_text(size = 9, face = "bold"),
+        axis.title.x = element_text(size = 12, face = "bold"),
+        axis.title.y = element_text(size = 12, face = "bold"),
+        legend.position = "right",  # Posición de la leyenda
+        legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
+        legend.text = element_text(size = 10),  # Texto de la leyenda
+        legend.spacing = unit(0.5, "cm"))
 plot_muertes_x_grupos
 
 # jpeg("03_Out/Plots/muertes_por_grupos.jpeg",
@@ -248,26 +266,24 @@ plot_positivos_muertes_y_no_raw <- ggplot(casos_por_fecha,
   facet_grid(rango_de_edad ~ ., scales = "free_y") +
   labs(title = "Comparación de casos de muertes vs recuperados de COVID-19",
        x = "Tiempo", y = "No. de casos", fill = "Muerte") +
-  theme(
-    plot.title = element_text(size = 14, hjust = 0.5),
-    axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"), #texto en el eje x
-    panel.grid.major = element_blank(),
-    panel.border = element_blank(), 
-    axis.line = element_line(colour = "black", size = 0.75), #Eje de la gráfica
-    legend.position = "bottom",  # Posición de la leyenda
-    legend.title = element_blank(),  # Título de la leyenda
-    legend.text = element_text(size = 10),  # Texto de la leyenda
-    legend.spacing = unit(0.5, "cm")
-  ) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") + #agrega los meses
   scale_y_continuous(labels = scales::comma) + #agrega el numero de casos
   scale_fill_manual(values = c("Muerte" = "red4", "No muerte" = "dodgerblue"),
                     labels = c("Fallecimientos", "Recuperados")) +
   scale_color_manual(values = c("Muerte" = "red4", "No muerte" = "dodgerblue"),
                      labels = c("Fallecimientos", "Recuperados")) + 
-  scale_linetype_manual(values = c("dashed", "solid"))
-
-# El objeto se guarda como un objeto jpeg
+  scale_linetype_manual(values = c("dashed", "solid")) +
+  theme(panel.background = element_rect(),
+        plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
+        axis.line = element_line(colour = "black", size = 0.65),
+        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
+        axis.text.y = element_text(size = 9, face = "bold"),
+        axis.title.x = element_text(size = 12, face = "bold"),
+        axis.title.y = element_text(size = 12, face = "bold"),
+        legend.position = "bottom",  # Posición de la leyenda
+        legend.title = element_blank(),  # Título de la leyenda
+        legend.text = element_text(size = 10, face = "bold"),  # Texto de la leyenda
+        legend.spacing = unit(0.5, "cm"))
 plot_positivos_muertes_y_no_raw
 
 # jpeg("03_Out/Plots/plot_casos_fallecidos_vs_recuperados_raw.jpeg",
@@ -288,25 +304,24 @@ plot_positivos_muertes_y_no_nom <- ggplot(casos_por_fecha,
   facet_grid(rango_de_edad ~ ., scales = "free_y") +
   labs(title = "Comparación de casos de muertes vs recuperados con datos normalizados de COVID-19",
        x = "Tiempo", y = "No. de casos", fill = "Muerte") +
-  theme(
-    plot.title = element_text(size = 14, hjust = 0.5),
-    axis.text.x = element_text(angle = 45, hjust = 1),
-    panel.grid.major = element_blank(),
-    panel.border = element_blank(),
-    axis.line = element_line(colour = "black", size = 0.75),
-    legend.position = "bottom",  # Posición de la leyenda
-    legend.title = element_blank(),
-    legend.text = element_text(size = 10),  # Texto de la leyenda
-    legend.spacing = unit(0.5, "cm")
-  ) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
   scale_y_continuous(labels = scales::comma) +
   scale_fill_manual(values = c("Muerte" = "red4", "No muerte" = "dodgerblue"),
                     labels = c("Fallecimientos", "Recuperados")) +
   scale_color_manual(values = c("Muerte" = "red4", "No muerte" = "dodgerblue"),
                      labels = c("Fallecimientos", "Recuperados")) +
-  scale_linetype_manual(values = c("dashed", "solid"))
-# El objeto se guarda como un objeto jpeg
+  scale_linetype_manual(values = c("dashed", "solid")) +
+  theme(panel.background = element_rect(),
+        plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
+        axis.line = element_line(colour = "black", size = 0.65),
+        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
+        axis.text.y = element_text(size = 9, face = "bold"),
+        axis.title.x = element_text(size = 12, face = "bold"),
+        axis.title.y = element_text(size = 12, face = "bold"),
+        legend.position = "bottom",  # Posición de la leyenda
+        legend.title = element_blank(),  # Título de la leyenda
+        legend.text = element_text(size = 10, face = "bold"),  # Texto de la leyenda
+        legend.spacing = unit(0.5, "cm"))
 plot_positivos_muertes_y_no_nom
 
 # jpeg("03_Out/Plots/plot_casos_fallecidos_vs_recuperados_nom.jpeg",
@@ -361,17 +376,6 @@ plot_muertes_vac <- ggplot(casos_por_fecha_vac,
   facet_grid(rango_de_edad ~ ., scales = "free_y") +
   labs(title = "Comparación de casos de muertes y recuperados en fases de vacunación",
        x = "Tiempo", y = "No. de casos", fill = "Muerte") +
-  theme(
-    plot.title = element_text(size = 14, hjust = 0.5),
-    axis.text.x = element_text(angle = 45, hjust = 1), #texto en el eje x
-    panel.grid.major = element_blank(),
-    panel.border = element_blank(), 
-    axis.line = element_line(colour = "black", size = 0.75), #Eje de la gráfica
-    legend.position = "bottom",  # Posición de la leyenda
-    legend.title = element_blank(),  # Título de la leyenda
-    legend.text = element_text(size = 10),  # Texto de la leyenda
-    legend.spacing = unit(0.5, "cm")
-  ) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") + #agrega los meses
   scale_y_continuous(labels = scales::comma) + #agrega el numero de casos
   scale_fill_manual(values = c("Muerte" = "firebrick3", "No muerte" = "deepskyblue"),
@@ -379,6 +383,17 @@ plot_muertes_vac <- ggplot(casos_por_fecha_vac,
   scale_color_manual(values = c("Muerte" = "firebrick3", "No muerte" = "deepskyblue"),
                      labels = c("Fallecimientos", "Recuperados")) + 
   scale_linetype_manual(values = c("dashed", "solid")) +
+  theme(panel.background = element_rect(),
+        plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
+        axis.line = element_line(colour = "black", size = 0.65),
+        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
+        axis.text.y = element_text(size = 9, face = "bold"),
+        axis.title.x = element_text(size = 12, face = "bold"),
+        axis.title.y = element_text(size = 12, face = "bold"),
+        legend.position = "bottom",  # Posición de la leyenda
+        legend.title = element_blank(),  # Título de la leyenda
+        legend.text = element_text(size = 10, face = "bold"),  # Texto de la leyenda
+        legend.spacing = unit(0.5, "cm")) +
   geom_rect(data = fase_1_coords,
             aes(xmin = xmin, xmax = xmax, ymin = -Inf, ymax = Inf),
             fill = "lightcoral", alpha = 0.5, inherit.aes = FALSE) + 
@@ -394,8 +409,6 @@ plot_muertes_vac <- ggplot(casos_por_fecha_vac,
   geom_rect(data = fase_5_coords,
             aes(xmin = xmin, xmax = xmax, ymin = -Inf, ymax = Inf),
             fill = "lightblue", alpha = 0.5, inherit.aes = FALSE)
-
-# El objeto se guarda como un objeto jpeg
 plot_muertes_vac
 
 # jpeg("03_Out/Plots/grafica_muertes_recuperados_etapas_vacunacion.jpeg",
