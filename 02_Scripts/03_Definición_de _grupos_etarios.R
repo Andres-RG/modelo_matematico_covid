@@ -22,15 +22,21 @@ load("03_Out/OutData/probabilidades_de_transicion.RData")
 # de un heatmap. 
 heatmap(cor(t(probabilidades_de_transicion)))
 etiquetas <- c("18-","18-29","30-39","40-49","50-59","60-69","70+")
-heatmap <- pheatmap(cor(t(probabilidades_de_transicion)),
-         color = viridis(100),
-         cellwidth = 25,  # Ancho de las celdas
-         cellheight = 25,  # Alto de las celdas
-         cluster_rows = F,  # Agrupar filas
-         cluster_cols = F,  # Agrupar columnas
-         border_color = NA,  # Color del borde
-         labels_row = etiquetas,  # Cambiar etiquetas de filas
-         labels_col = etiquetas  # Cambiar etiquetas de columnas
+heatmap <- pheatmap(
+  cor(t(probabilidades_de_transicion)),
+  color = viridis(100),
+  cellwidth = 75,  # Ancho de las celdas
+  cellheight = 75,  # Alto de las celdas
+  cluster_rows = F,  # Agrupar filas
+  cluster_cols = F,  # Agrupar columnas
+  border_color = NA,  # Color del borde
+  labels_row = etiquetas,  # Cambiar etiquetas de filas
+  labels_col = etiquetas,  # Cambiar etiquetas de columnas
+  main = "Correlación p de transición",
+  fontsize = 13,  # Tamaño de fuente para etiquetas
+  fontsize_row = 12,  # Tamaño de fuente para etiquetas de filas
+  fontsize_col = 12,  # Tamaño de fuente para etiquetas de columnas
+  angle_col = 0,
 )
 # Con la visuaclización de las correlaciones entre las probabilidades de transicion,
 # se pueden ir separando diferentes grupos que son los que más se correlacionan.
@@ -42,10 +48,10 @@ heatmap <- pheatmap(cor(t(probabilidades_de_transicion)),
 # ----------------- 18 -  (Grupo 5)
 
 # El objeto que contiene el heatmap se guarda como un archivo png
-#jpeg("03_Out/Plots/pretty_heatmap_probabilidades_de_transicion.jpeg", 
-#    width = 100, height = 100, res = 300, units = "mm")
-heatmap
-#dev.off()
+# jpeg("03_Out/Plots/pretty_heatmap_probabilidades_de_transicion.jpeg",
+#      width = 5733, height = 5733, res = 600, units = "px")
+# heatmap
+# dev.off()
 
 # Como un segundo análisis de clasificación, se realiza un análisis de 
 # clasificacion con diferentes algortimos para probar la robustez de la 
@@ -69,8 +75,8 @@ agroup8 <- hclust(distancias_pt, method = "centroid", members = NULL)
 
 # Los resultados de este análisis se visualizan mediante un dendograma, al mismo
 # tiempo, se guardan los dendogramas en conjunto como un archivo png
-#jpeg("03_Out/Plots/analisis_de_cluster_probabilidades_de_transicion.jpeg",
-#    width = 265, height = 265, res = 300, units = "mm")
+# jpeg("03_Out/Plots/analisis_de_cluster_probabilidades_de_transicion.jpeg",
+#      width = 5733, height = 5733, res = 600, units = "px")
 layout ( matrix ( c( 1 : 9 ), 3, 3))
 plot(agroup1)
 plot(agroup2) 
@@ -81,7 +87,7 @@ plot(agroup6)
 plot(agroup7)
 plot(agroup8)
 layout(matrix (c ( 1 : 9 ), 3, 3))
-#dev.off()
+# dev.off()
 
 # Con la visualizacion de los diferentes dendogramas, se encuentra que hay 
 # resultados que son consistentes y otros que difieren, por lo que se opta por
