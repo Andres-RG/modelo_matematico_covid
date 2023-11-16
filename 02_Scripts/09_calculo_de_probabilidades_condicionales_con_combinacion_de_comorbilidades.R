@@ -465,114 +465,147 @@ heatmap_c4_v2 <- draw(heatmap_c4_v2,
 # heatmap_c4_v2
 # dev.off()
 
-
-
-#
-#
-#
+## VERSION 3 -------------------------------------------------------------------
+### CATEGORIA 1 --------------------------------------
 heatmap_c1_v3 <- Heatmap(mat_combinaciones_c1,
-        col = viridis(35), name = "Valor",
-        column_title = "Combinacion comorbilidades de <18 años",
-        cluster_rows = FALSE, cluster_columns = FALSE,
-        show_row_names = F, show_column_names = F,
-        rect_gp = gpar(type = "none"), 
-        cell_fun = function(j, i, x, y, w, h, fill) {
-            if(i == j) {
-                grid.text(nm[i], x = x, y = y, 
-                          gp = gpar(fontsize = 7.5, fontface = "bold"))
-            } else if(i <= j) {
-                grid.rect(x, y, w, h, gp = gpar(fill = fill, col = "white"))
-            }
-        })
-#
-#
-#
-heatmap_c2_v3 <- Heatmap(mat_combinaciones_c2,
-                         col = viridis(35), name = "Valor",
-                         column_title = "Combinacion comorbilidades 18 - 39 años",
-                         cluster_rows = FALSE, cluster_columns = FALSE,
-                         show_row_names = F, show_column_names = F,
-                         rect_gp = gpar(type = "none"), 
+                         col = viridis(100),
+                         name = "Valor",
+                         cluster_rows = FALSE,
+                         cluster_columns = FALSE,
+                         show_row_names = F,
+                         show_column_names = F,
+                         rect_gp = gpar(type = "none"),
                          cell_fun = function(j, i, x, y, w, h, fill) {
-                                 if(i == j) {
-                                         grid.text(nm[i], x = x, y = y, 
-                                                   gp = gpar(fontsize = 7.5, fontface = "bold"))
-                                 } else if(i <= j) {
-                                         grid.rect(x, y, w, h, gp = gpar(fill = fill, col = "white"))
-                                 }
-                         })
-#
-#
-#
-heatmap_c3_v3 <- Heatmap(mat_combinaciones_c3,
-                         col = viridis(35), name = "Valor",
-                         column_title = "Combinacion comorbilidades 40 - 59 años",
-                         cluster_rows = FALSE, cluster_columns = FALSE,
-                         show_row_names = F, show_column_names = F,
-                         rect_gp = gpar(type = "none"), 
-                         cell_fun = function(j, i, x, y, w, h, fill) {
-                                 if(i == j) {
-                                         grid.text(nm[i], x = x, y = y, 
-                                                   gp = gpar(fontsize = 7.5, fontface = "bold"))
-                                 } else if(i <= j) {
-                                         grid.rect(x, y, w, h, gp = gpar(fill = fill, col = "white"))
-                                 }
-                         })
-#
-#
-#
-heatmap_c4_v3 <- Heatmap(mat_combinaciones_c4,
-                         col = viridis(35), name = "Valor",
-                         column_title = "Combinacion comorbilidades >60 años",
-                         cluster_rows = FALSE, cluster_columns = FALSE,
-                         show_row_names = F, show_column_names = F,
-                         rect_gp = gpar(type = "none"), 
-                         cell_fun = function(j, i, x, y, w, h, fill) {
-                                 if(i == j) {
-                                         grid.text(nm[i], x = x, y = y, 
-                                                   gp = gpar(fontsize = 7.5, fontface = "bold"))
-                                 } else if(i <= j) {
-                                         grid.rect(x, y, w, h, gp = gpar(fill = fill, col = "white"))
-                                 }
-                         })
-#
-#
-#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c1_v3.jpeg",
-#     width = 265, height = 265, res = 300, units = "mm")
-heatmap_c1_v3
-#dev.off()
-#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c2_v3.jpeg",
-#     width = 265, height = 265, res = 300, units = "mm")
-heatmap_c2_v3
-#dev.off()
-#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c3_v3.jpeg",
-#     width = 265, height = 265, res = 300, units = "mm")
-heatmap_c3_v3
-#dev.off()
-#jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c4_v3.jpeg",
-#     width = 265, height = 265, res = 300, units = "mm")
-heatmap_c4_v3
-#dev.off()
-#
+                           if(i == j) {
+                             grid.text(nm[i],
+                                       x = x,
+                                       y = y,
+                                       gp = gpar(fontsize = 10,
+                                                 fontface = "bold"))
+                             } else if(i <= j) {
+                               grid.rect(x, y, w, h, gp = gpar(fill = fill,
+                                                               col = "white"))
+                             }
+                           }
+)
+heatmap_c1_v3 <- draw(heatmap_c1_v3,
+                      column_title = "Menores 18 años",
+                      column_title_gp = grid::gpar(fontsize=15, fontface = "bold"))
 
-# BIG MATRIX -----
-## probabilidades combinadas
+# jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c1_v3.jpeg",
+#      width = 5733, height = 5733, res = 800, units = "px")
+# heatmap_c1_v3
+# dev.off()
+
+### CATEGORIA 2 --------------------------------------
+heatmap_c2_v3 <- Heatmap(mat_combinaciones_c2,
+                         col = viridis(100),
+                         name = "Valor",
+                         cluster_rows = FALSE,
+                         cluster_columns = FALSE,
+                         show_row_names = F,
+                         show_column_names = F,
+                         rect_gp = gpar(type = "none"),
+                         cell_fun = function(j, i, x, y, w, h, fill) {
+                           if(i == j) {
+                             grid.text(nm[i],
+                                       x = x,
+                                       y = y,
+                                       gp = gpar(fontsize = 10,
+                                                 fontface = "bold"))
+                           } else if(i <= j) {
+                             grid.rect(x, y, w, h, gp = gpar(fill = fill,
+                                                             col = "white"))
+                           }
+                         }
+)
+heatmap_c2_v3 <- draw(heatmap_c2_v3,
+                      column_title = "18 a 39 años",
+                      column_title_gp = grid::gpar(fontsize=15, fontface = "bold"))
+
+# jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c2_v3.jpeg",
+#      width = 5733, height = 5733, res = 800, units = "px")
+# heatmap_c2_v3
+# dev.off()
+
+### CATEGORIA 3 --------------------------------------
+heatmap_c3_v3 <- Heatmap(mat_combinaciones_c3,
+                         col = viridis(100),
+                         name = "Valor",
+                         cluster_rows = FALSE,
+                         cluster_columns = FALSE,
+                         show_row_names = F,
+                         show_column_names = F,
+                         rect_gp = gpar(type = "none"),
+                         cell_fun = function(j, i, x, y, w, h, fill) {
+                           if(i == j) {
+                             grid.text(nm[i],
+                                       x = x,
+                                       y = y,
+                                       gp = gpar(fontsize = 10,
+                                                 fontface = "bold"))
+                           } else if(i <= j) {
+                             grid.rect(x, y, w, h, gp = gpar(fill = fill,
+                                                             col = "white"))
+                           }
+                         }
+)
+heatmap_c3_v3 <- draw(heatmap_c3_v3,
+                      column_title = "40 a 59 años",
+                      column_title_gp = grid::gpar(fontsize=15, fontface = "bold"))
+# jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c3_v3.jpeg",
+#      width = 5733, height = 5733, res = 800, units = "px")
+# heatmap_c3_v3
+# dev.off()
+
+### CATEGORIA 4 --------------------------------------
+heatmap_c4_v3 <- Heatmap(mat_combinaciones_c4,
+                         col = viridis(100),
+                         name = "Valor",
+                         cluster_rows = FALSE,
+                         cluster_columns = FALSE,
+                         show_row_names = F,
+                         show_column_names = F,
+                         rect_gp = gpar(type = "none"),
+                         cell_fun = function(j, i, x, y, w, h, fill) {
+                           if(i == j) {
+                             grid.text(nm[i],
+                                       x = x,
+                                       y = y,
+                                       gp = gpar(fontsize = 10,
+                                                 fontface = "bold"))
+                           } else if(i <= j) {
+                             grid.rect(x, y, w, h, gp = gpar(fill = fill,
+                                                             col = "white"))
+                           }
+                         }
+)
+heatmap_c4_v3 <- draw(heatmap_c4_v3,
+                      column_title = "Mayores de 60 años",
+                      column_title_gp = grid::gpar(fontsize=15, fontface = "bold"))
+
+# jpeg("03_Out/Plots/heatmap_probabilidades_comorbilidades_combinadas_c4_v3.jpeg",
+#      width = 5733, height = 5733, res = 800, units = "px")
+# heatmap_c4_v3
+# dev.off()
+
+# BIG MATRIX ===================================================================
+## probabilidades combinadas --------------------------------------------
 probabilidades_combinadas_cat_1
 probabilidades_combinadas_cat_2
 probabilidades_combinadas_cat_3
 probabilidades_combinadas_cat_4
-##hacer una nueva matriz
+## hacer una nueva matriz -----------------------------------------------
 bm <- matrix(nrow = 4, ncol = 9)
 rownames(bm) <- c("Menores 18", "18-39", "40-59", "Mayores 60")
 colnames(bm) <- nm
-##llenar los valores de la matriz
+## llenar los valores de la matriz --------------------------------------
 for (i in 1:ncol(t(matriz_comor)) ) {
   bm[,i] <- t(matriz_comor)[,i]
 }
 bm
-#****
 nr <- nrow(probabilidades_combinadas_cat_1)
-##valores combinados CATEGORA 1
+## valores combinados CATEGORA 1 ----------------------------------------
 valores_sin_diagonal_1 <- c()
 for (i in 1:nr) {
   for (j in 1:nr) {
@@ -582,7 +615,7 @@ for (i in 1:nr) {
   }
 }
 valores_sin_diagonal_1
-##valores combinados CATEGORA 2
+## valores combinados CATEGORA 2 ----------------------------------------
 valores_sin_diagonal_2 <- c()
 for (i in 1:nr) {
   for (j in 1:nr) {
@@ -592,7 +625,7 @@ for (i in 1:nr) {
   }
 }
 valores_sin_diagonal_2
-##valores combinados CATEGORA 3
+## valores combinados CATEGORA 3 ----------------------------------------
 valores_sin_diagonal_3 <- c()
 for (i in 1:nr) {
   for (j in 1:nr) {
@@ -602,7 +635,7 @@ for (i in 1:nr) {
   }
 }
 valores_sin_diagonal_3
-##valores combinados CATEGORA 4
+## valores combinados CATEGORA 4 ----------------------------------------
 valores_sin_diagonal_4 <- c()
 for (i in 1:nr) {
   for (j in 1:nr) {
@@ -612,54 +645,65 @@ for (i in 1:nr) {
   }
 }
 valores_sin_diagonal_4
-##llenar los valores en la matriz
+## llenar los valores en la matriz --------------------------------------
 combin <- rbind(valores_sin_diagonal_1,
                 valores_sin_diagonal_2,
                 valores_sin_diagonal_3,
                 valores_sin_diagonal_4)
 bm <- cbind(bm, combin)
 bm
-colnames(bm) <- c("Diabetes","EPOC","Asma","Inmunsupr","Hipertension",
-                  "Cardiovascular","Obesidad","Renal Crónica","Tabaquismo",
-                  "Diabetes X EPOC", "Diabetes X Asma", "Diabetes X Inmunsupr",
-                  "Diabetes X Hipertension", "Diabetes X Cadiovascular", 
-                  "Diabetes X Obesidad", "Diabetes X Renal Cronica", 
-                  "Diabetes X Tabaquismo", "EPOC X Asma", "EPOC X Inmunsupr",
-                  "EPOC X Hipertension", "EPOC X Cardiovascular", 
-                  "EPOC X Obesidad", "EPOC X Renal Cronica", 
-                  "EPOC X Tabaquismo", "Asma X Inmunsupr", 
-                  "Asma X Hipertension", "Asma X Cardiovascular", 
-                  "Asma X Obesidad", "Asma X Renal Cronica", 
-                  "Asma X Tabaquismo","Inmunsupr X Hipertension", 
-                  "Inmunsupr X Cardiovascular", "Inmunsupr X Obesidad", 
-                  "Inmunsupr X Renal Cronica", "Inmunsupr X Tabaquismo",
-                  "Hipertension X Cardiovascular", "Hipertension X Obesidad", 
-                  "Hipertension X Renal Cronica", "Hipertension X Tabaquismo",
-                  "Cardiovascular X Obesidad", "Cardiovascular X Renal Cronica",
-                  "Cardiovascular X Tabaquismo","Obesidad X Renal Cronica",
-                  "Obesidad X Tabaquismo","Renal Cronica X Tabaquismo")
+colnames(bm) <- c("D","E","A","I","H","CV","O","RC","T",
+                  #
+                  "D X E", "D X A", "D X I","D X H", "D X CV","D X O", "D X RC", 
+                  "D X T",
+                  #
+                  "E X A", "E X I","E X H", "E X CV","E X O", "E X RC","E X T",
+                  #
+                  "A X I","A X H", "A X CV","A X O", "A X RC","A X T",
+                  #
+                  "I X H","I X CV", "I X O","I X RC","I X T",
+                  #
+                  "H X CV", "H X O","H X RC", "H X T",
+                  #
+                  "CV X O", "CV X RC","CV X T",
+                  #
+                  "O X RC","O X T",
+                  #
+                  "RC X T")
 bm
 mat_combinaciones_bm = bm
 #
-cell_width <- unit(10, "mm")
-cell_height <- unit(10, "mm") 
-#
 set.seed(123)
 bm_heatmap <- Heatmap(mat_combinaciones_bm,
-                      name = "p",col = viridis(45),
-                      column_title = "Heatmap Big Matrix",
-                      rect_gp = gpar(col = "white", lwd = 2),
-                      column_title_gp = gpar(fontsize = 12, fontface = "bold"),
-                      cluster_rows = FALSE, cluster_columns = FALSE,
-                      column_names_side = "top", column_dend_side = "bottom",
-                      column_names_gp = gpar(fontsize = 10),
+                      name= "valor",
+                      col = viridis(100),
                       row_names_side = "left",
-                      width = ncol(mat_combinaciones_bm)*unit(9, "mm"), 
-                      height = nrow(mat_combinaciones_bm)*unit(30, "mm")
-                      )
+                      cluster_rows = F,
+                      cluster_columns = F,
+                      row_title = "Grupos etarios",
+                      column_title = "Comorbilidades",
+                      column_names_side = "top",
+                      column_dend_side = "bottom",
+                      column_names_rot = 90,
+                      column_title_gp = gpar(fill = "gray",
+                                             border = "gray",
+                                             fontsize = 9,
+                                             fontface = "bold"),
+                      row_title_gp = gpar(fill = "gray",
+                                          border = "gray",
+                                          fontsize = 9,
+                                          fontface = "bold"),
+                      rect_gp = gpar(col = "white",
+                                     lwd = 0.5),
+                      row_names_gp = gpar(fontsize = 10, 
+                                          fontface = "bold"),
+                      column_names_gp = gpar(fontsize = 10,
+                                             fontface = "bold")
+)
 bm_heatmap
 
-#jpeg("03_Out/Plots/bm_heatmap.jpeg",
-#     width = 465, height = 365, res = 300, units = "mm")
-bm_heatmap
-#dev.off()
+
+# jpeg("03_Out/Plots/bm_heatmap.jpeg",
+#      width = 5733, height = 4300, res = 800, units = "px")
+# bm_heatmap
+# dev.off()
