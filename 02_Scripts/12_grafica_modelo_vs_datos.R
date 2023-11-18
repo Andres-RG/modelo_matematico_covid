@@ -6,7 +6,7 @@ head(beta_t_out)
 head(casos_x_grupos_corte)
 head(muertes_x_grupos_corte)
 
-##---- CASOS
+## CASOS DEL MODELO ============================================================
 beta_t_out <-as.data.frame(ode(y = state,
                                times=times,
                                func  = beta_t_modelo_covid,
@@ -109,6 +109,7 @@ modelo_vs_casos <- ggplot(combined_data,
                                   "I2" = colores[2],
                                   "I3" = colores[3],
                                   "I4" = colores[4]))
+modelo_vs_casos
 #ggsave("03_Out/Plots/modelo_vs_casos.jpeg", plot = modelo_vs_casos, 
 #       width = 3187, height = 1791,units = "px")
 
