@@ -126,15 +126,15 @@ colores <- c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD")
 modelo_vs_muertes <- ggplot(data_frame_filtrado2,
                           aes(x = FECHA_DEF)) +
   ###
-  geom_line(data = modelo_m_solo_filt_solo_filt,
+  geom_line(data = modelo_m_solo_filt,
             aes(x = FECHA_DEF,
-                y = casos,
+                y = muertes_totales,
                 color = grupos),
             lwd = 2) +
   ###
   geom_point(data = muertes_solo_filt,
              aes(x = FECHA_DEF,
-                 y = casos,
+                 y = muertes_totales,
                  color = grupos,
                  shape = grupos),
              size = 3) +
@@ -188,10 +188,10 @@ modelo_vs_muertes <- ggplot(data_frame_filtrado2,
         legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
         legend.text = element_text(size = 10),  # Texto de la leyenda
         legend.spacing = unit(0.5, "cm"))
-modelo_vs_casos
+modelo_vs_muertes
 
-jpeg("03_Out/Plots/modelo_vs_casos.jpeg",
-     width = 5733, height = 4300, res = 500, units = "px")
-modelo_vs_casos
-dev.off()
+# jpeg("03_Out/Plots/modelo_vs_casos.jpeg",
+#      width = 5733, height = 4300, res = 500, units = "px")
+# modelo_vs_casos
+# dev.off()
 
