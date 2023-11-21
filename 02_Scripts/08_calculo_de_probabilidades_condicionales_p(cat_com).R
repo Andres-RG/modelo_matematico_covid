@@ -550,7 +550,7 @@ heatmap_p_una_comorbilidad <- Heatmap(mat_3,
 heatmap_p_una_comorbilidad
 
 # jpeg("03_Out/Plots/heatmap_p_una_comorbilidad.jpeg",
-#     width = 5733, height = 5733, res = 800, units = "px")
+#     width = 5733, height = 5733, res = 1100, units = "px")
 # heatmap_p_una_comorbilidad
 # dev.off()
 

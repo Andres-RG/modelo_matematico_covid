@@ -672,19 +672,20 @@ colnames(bm) <- c("D","E","A","I","H","CV","O","RC","T",
                   "RC X T")
 bm
 mat_combinaciones_bm = bm
+mat_combinaciones_bm <- t(mat_combinaciones_bm)
 #
 set.seed(123)
 bm_heatmap <- Heatmap(mat_combinaciones_bm,
-                      name= "valor",
+                      name= "Valor",
                       col = viridis(100),
                       row_names_side = "left",
                       cluster_rows = F,
                       cluster_columns = F,
-                      row_title = "Grupos etarios",
-                      column_title = "Comorbilidades",
+                      row_title = "Comorbilidades",
+                      column_title = "Grupos etarios",
                       column_names_side = "top",
                       column_dend_side = "bottom",
-                      column_names_rot = 90,
+                      column_names_rot = 0,
                       column_title_gp = gpar(fill = "gray",
                                              border = "gray",
                                              fontsize = 9,
@@ -698,12 +699,16 @@ bm_heatmap <- Heatmap(mat_combinaciones_bm,
                       row_names_gp = gpar(fontsize = 10, 
                                           fontface = "bold"),
                       column_names_gp = gpar(fontsize = 10,
-                                             fontface = "bold")
+                                             fontface = "bold"),
+                      row_names_centered = TRUE,
+                      column_names_centered = TRUE,
+                      width = ncol(mat_combinaciones_bm)*unit(24, "mm"),
+                      height = nrow(mat_combinaciones_bm)*unit(4, "mm")
 )
 bm_heatmap
 
 
 # jpeg("03_Out/Plots/bm_heatmap.jpeg",
-#      width = 5733, height = 4300, res = 800, units = "px")
+#      width = 4300, height = 5733, res = 750, units = "px")
 # bm_heatmap
 # dev.off()

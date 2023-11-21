@@ -61,10 +61,14 @@ res_parametric_si <- estimate_R(incid  = incidencia,
                                                           std_si = 4.2))
                                 )
 head(res_parametric_si$R)
+#
 plot(res_parametric_si, legend = FALSE)
-#jpeg("03_Out/Plots/r0_epiestim.jpeg", width = 365, height = 265, res = 300, units = "mm")
-plot(res_parametric_si, legend = FALSE)
-#dev.off()
+#
+
+# jpeg("03_Out/Plots/r0_epiestim.jpeg",
+#      width = 5733, height = 4300, res = 500, units = "px")
+# plot(res_parametric_si, legend = FALSE)
+# dev.off()
 
 # DATOS AL INICIO
 # Visucalización de datos
