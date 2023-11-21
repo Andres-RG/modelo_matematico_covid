@@ -433,7 +433,7 @@ beta_t_plot <- ggplot(contact_rate_df, aes(x = dias)) +
   theme(panel.background = element_rect(),
         plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
         axis.line = element_line(colour = "black", size = 0.65),
-        axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
+        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
         axis.text.y = element_text(size = 9, face = "bold"),
         axis.title.x = element_text(size = 12, face = "bold"),
         axis.title.y = element_text(size = 12, face = "bold"),
@@ -444,6 +444,6 @@ beta_t_plot <- ggplot(contact_rate_df, aes(x = dias)) +
 beta_t_plot
 
 # jpeg("03_Out/Plots/beta_t_para_queretaro.jpeg",
-#      width = 5733, height = 4300, res = 500, units = "px")
+#      width = 5733, height = 4300, res = 900, units = "px")
 # beta_t_plot
 # dev.off()
