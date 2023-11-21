@@ -25,9 +25,34 @@ incidencia$I[is.na(incidencia$I)] <- 0
 head(incidencia)
 
 # GRAFICA DE INCIDENCIA
-#jpeg("03_Out/Plots/incidencia_covid_qro.jpeg", width = 395, height = 285, res = 300, units = "mm")
+#
 plot(as.incidence(incidencia$I, dates = incidencia$dates))
-#dev.off()
+#
+plot_incidencia <- ggplot(data = incidencia,
+                          aes(x = dates,
+                              y = I)) +
+    geom_bar(stat = "identity", color = "gray26", fill = "gray26") +
+    labs(x = "Tiempo",
+         y = "Incidencia diaria",
+         title = "Incidencia diaria de COVID-19 en el estado de Querétaro") +
+    scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+    theme(panel.background = element_rect(),
+          plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
+          axis.line = element_line(colour = "black", size = 0.65),
+          axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
+          axis.text.y = element_text(size = 9, face = "bold"),
+          axis.title.x = element_text(size = 12, face = "bold"),
+          axis.title.y = element_text(size = 12, face = "bold"),
+          legend.position = "right",  # Posición de la leyenda
+          legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
+          legend.text = element_text(size = 10),  # Texto de la leyenda
+          legend.spacing = unit(0.5, "cm"))
+plot_incidencia
+
+# jpeg("03_Out/Plots/incidencia_covid_qro.jpeg",
+#      width = 5733, height = 4300, res = 500, units = "px")
+# plot_incidencia
+# dev.off()
 
 # EpiEstim R0
 res_parametric_si <- estimate_R(incid  = incidencia,
