@@ -34,22 +34,21 @@ modelo_solo_filt <- filter(data_frame, tipo == "Modelo")
 ### Grafica --------------------------------------------------------------------
 colores <- c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD")
 #
-modelo_vs_casos <- ggplot(data_frame_filtrado,
-                          aes(x = FECHA_SINTOMAS)) +
-  ###
+modelo_vs_casos <- ggplot() +
+  ###   ###   ###   ###   ###
   geom_line(data = modelo_solo_filt,
             aes(x = FECHA_SINTOMAS,
                 y = casos_totales,
                 color = grupos),
             lwd = 2) +
-  ###
+  ###   ###   ###   ###   ###
   geom_point(data = casos_solo_filt,
              aes(x = FECHA_SINTOMAS,
                  y = casos_totales,
                  color = grupos,
                  shape = grupos),
              size = 3) +
-  ###
+  ###   ###   ###   ###   ###
   labs(x = "Tiempo", 
        y = "No. Casos",
        color = "Grupos",
@@ -57,25 +56,11 @@ modelo_vs_casos <- ggplot(data_frame_filtrado,
   ###
   scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
   #
-  scale_shape_manual(values = c(0,16,2,18), name = "Casos") +
-  #
-  scale_color_manual(values = c("Menores de 18 años" = colores[1],
-                                "18-39 años" = colores[2],
-                                "40-59 años" = colores[3],
-                                "Mayores de 60 años" = colores[4]),
-                     name = "Casos") + 
-  #
-  scale_color_manual(values = c("I1" = colores[1],
-                                "I2" = colores[2],
-                                "I3" = colores[3],
-                                "I4" = colores[4]),
-                     name = "Modelo") +
-  #
-  scale_color_manual(breaks = c("Menores de 18 años",
+  scale_color_manual(name = "Modelo",
+                     breaks = c("Menores de 18 años",
                                 "18-39 años",
                                 "40-59 años",
-                                "Mayores de 60 años",
-                                "I1", "I2", "I3", "I4"),
+                                "Mayores de 60 años"),
                      values = c("Menores de 18 años" = colores[1],
                                 "18-39 años" = colores[2],
                                 "40-59 años" = colores[3],
@@ -85,8 +70,15 @@ modelo_vs_casos <- ggplot(data_frame_filtrado,
                                 "I3" = colores[3],
                                 "I4" = colores[4])) +
   #
-  guides(color = guide_legend(override.aes = list(shape = c(0,16,2,18))),
-         shape = "none") +
+  scale_shape_manual(name = "Casos",
+                     breaks = c("Menores de 18 años",
+                                "18-39 años",
+                                "40-59 años",
+                                "Mayores de 60 años"),
+                     values = c("Menores de 18 años" = 18,
+                                "18-39 años" = 2,
+                                "40-59 años" = 16,
+                                "Mayores de 60 años" = 0)) +
   ###
   theme(panel.background = element_rect(),
         plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
