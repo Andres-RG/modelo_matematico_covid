@@ -12,8 +12,8 @@ library(ggmatplot)
 source("02_Scripts/Functions/Functions.R")
 
 # Se cargan los datos del modelo
-source("02_Scripts/modelo.R")
-source("02_Scripts/13_modelo_con_beta_t.R")
+source("02_Scripts/05_Resolucion_numerica.R")
+source("02_Scripts/05.5_Resolucion_con_beta_t.R")
 
 # Se cargan los datos de COVID
 load("03_Out/OutData/casos_positivos_x_dia_rango_edad.RData")
@@ -25,10 +25,10 @@ colores <- c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD")
 ## Gráfica de Infectados -------------------------------------------------------
 grafica_infectados <- ggplot(out,
                              aes(x = time)) +
-  geom_line(aes(y = I1, color = "Menores de 18 años"), size = 1) +
-  geom_line(aes(y = I2, color = "18 a 19 años"), size = 1) +
-  geom_line(aes(y = I3, color = "40 a 59 años"), size = 1) + 
-  geom_line(aes(y = I4, color = "Mayores de 60 años"), size = 1) +
+  geom_line(aes(y = I1, color = "Menores de 18 años"), lwd = 2) +
+  geom_line(aes(y = I2, color = "18 a 19 años"), lwd = 2) +
+  geom_line(aes(y = I3, color = "40 a 59 años"), lwd = 2) + 
+  geom_line(aes(y = I4, color = "Mayores de 60 años"), lwd = 2) +
   labs(x = "Tiempo",
        y = "Población",
        title = "Infectados del modelo",
@@ -37,7 +37,9 @@ grafica_infectados <- ggplot(out,
                                 "18 a 19 años" = colores[2],
                                 "40 a 59 años" = colores[3],
                                 "Mayores de 60 años" = colores[4])) +
-  theme(panel.background = element_rect(),
+  theme(panel.background = element_rect(fill = "gray98"),
+        panel.grid = element_line(color = "gray1",
+                                  linetype = 3),
         plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
         axis.line = element_line(colour = "black", size = 0.65),
         axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
@@ -51,7 +53,7 @@ grafica_infectados <- ggplot(out,
 grafica_infectados
 
 # jpeg("03_Out/Plots/grafica_infectados_inferidos.jpeg",
-#     width = 5733, height = 4300, res = 500, units = "px")
+#     width = 5733, height = 4300, res = 800, units = "px")
 # grafica_infectados
 # dev.off()
 
