@@ -20,11 +20,15 @@ load("03_Out/OutData/casos_positivos_x_dia_rango_edad.RData")
 head(casos_positivos_x_dia_re)
 
 colores <- c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD")
+dates <- seq(as.Date("2020-03-01"),
+             as.Date("2021-07-14"),
+             by = 1)
+out_df <- mutate(out, dias = dates)
 
 # Graficas del modelo ==========================================================
 ## Gráfica de Infectados -------------------------------------------------------
-grafica_infectados <- ggplot(out,
-                             aes(x = time)) +
+grafica_infectados <- ggplot(out_df,
+                             aes(x = dias)) +
   geom_line(aes(y = I1, color = "Menores de 18 años"), lwd = 2) +
   geom_line(aes(y = I2, color = "18 a 19 años"), lwd = 2) +
   geom_line(aes(y = I3, color = "40 a 59 años"), lwd = 2) + 
@@ -37,6 +41,7 @@ grafica_infectados <- ggplot(out,
                                 "18 a 19 años" = colores[2],
                                 "40 a 59 años" = colores[3],
                                 "Mayores de 60 años" = colores[4])) +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
   theme(panel.background = element_rect(fill = "gray98"),
         panel.grid = element_line(color = "gray1",
                                   linetype = 3),
@@ -53,17 +58,17 @@ grafica_infectados <- ggplot(out,
 grafica_infectados
 
 # jpeg("03_Out/Plots/grafica_infectados_inferidos.jpeg",
-#     width = 5733, height = 4300, res = 800, units = "px")
+#     width = 6333, height = 4300, res = 650, units = "px")
 # grafica_infectados
 # dev.off()
 
 # Gráfica de Recuperados -------------------------------------------------------
-grafica_recuperados <- ggplot(out,
-                             aes(x = time)) +
-  geom_line(aes(y = R1, color = "Menores de 18 años"), size = 1) +
-  geom_line(aes(y = R2, color = "18 a 19 años"), size = 1) +
-  geom_line(aes(y = R3, color = "40 a 59 años"), size = 1) + 
-  geom_line(aes(y = R4, color = "Mayores de 60 años"), size = 1) +
+grafica_recuperados <- ggplot(out_df,
+                             aes(x = dias)) +
+  geom_line(aes(y = R1, color = "Menores de 18 años"), lwd = 2) +
+  geom_line(aes(y = R2, color = "18 a 19 años"), lwd = 2) +
+  geom_line(aes(y = R3, color = "40 a 59 años"), lwd = 2) + 
+  geom_line(aes(y = R4, color = "Mayores de 60 años"), lwd = 2) +
   labs(x = "Tiempo",
        y = "Población",
        title = "Recuperados del modelo",
@@ -72,7 +77,10 @@ grafica_recuperados <- ggplot(out,
                                 "18 a 19 años" = colores[2],
                                 "40 a 59 años" = colores[3],
                                 "Mayores de 60 años" = colores[4])) +
-  theme(panel.background = element_rect(),
+  scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  theme(panel.background = element_rect(fill = "gray98"),
+        panel.grid = element_line(color = "gray1",
+                                  linetype = 3),
         plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
         axis.line = element_line(colour = "black", size = 0.65),
         axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
@@ -86,19 +94,17 @@ grafica_recuperados <- ggplot(out,
 grafica_recuperados
 
 # jpeg("03_Out/Plots/grafica_recuperados_inferidos.jpeg",
-#     width = 5733, height = 4300, res = 500, units = "px")
+#     width = 6333, height = 4300, res = 650, units = "px")
 # grafica_recuperados
 # dev.off()
 
-
-
 # Gráfica de Muertos -----------------------------------------------------------
-grafica_muertos <- ggplot(out,
-                              aes(x = time)) +
-  geom_line(aes(y = M1, color = "Menores de 18 años"), size = 1) +
-  geom_line(aes(y = M2, color = "18 a 19 años"), size = 1) +
-  geom_line(aes(y = M3, color = "40 a 59 años"), size = 1) + 
-  geom_line(aes(y = M4, color = "Mayores de 60 años"), size = 1) +
+grafica_muertos <- ggplot(out_df,
+                              aes(x = dias)) +
+  geom_line(aes(y = M1, color = "Menores de 18 años"), lwd = 2) +
+  geom_line(aes(y = M2, color = "18 a 19 años"), lwd = 2) +
+  geom_line(aes(y = M3, color = "40 a 59 años"), lwd = 2) + 
+  geom_line(aes(y = M4, color = "Mayores de 60 años"), lwd = 2) +
   labs(x = "Tiempo",
        y = "Población",
        title = "Muertes del modelo",
@@ -107,7 +113,10 @@ grafica_muertos <- ggplot(out,
                                 "18 a 19 años" = colores[2],
                                 "40 a 59 años" = colores[3],
                                 "Mayores de 60 años" = colores[4])) +
-  theme(panel.background = element_rect(),
+  scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  theme(panel.background = element_rect(fill = "gray98"),
+        panel.grid = element_line(color = "gray1",
+                                  linetype = 3),
         plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
         axis.line = element_line(colour = "black", size = 0.65),
         axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
@@ -121,7 +130,7 @@ grafica_muertos <- ggplot(out,
 grafica_muertos
 
 # jpeg("03_Out/Plots/grafica_muertos_inferidos.jpeg",
-#     width = 5733, height = 4300, res = 500, units = "px")
+#     width = 6333, height = 4300, res = 650, units = "px")
 # grafica_muertos
 # dev.off()
 
@@ -160,13 +169,17 @@ plot_irm
 # dev.off()
 
 # Graficas del modelo con beta_t ===============================================
+dates2 <- seq(as.Date("2020-03-01"),
+             as.Date("2021-04-02"),
+             by = 1)
+beta_t_out_df <- mutate(beta_t_out, dias = dates2)
 ## Gráfica de Infectados -------------------------------------------------------
-beta_t_infectados <- ggplot(beta_t_out,
-                             aes(x = time)) +
-  geom_line(aes(y = I1, color = "Menores de 18 años"), size = 1) +
-  geom_line(aes(y = I2, color = "18 a 19 años"), size = 1) +
-  geom_line(aes(y = I3, color = "40 a 59 años"), size = 1) + 
-  geom_line(aes(y = I4, color = "Mayores de 60 años"), size = 1) +
+beta_t_infectados <- ggplot(beta_t_out_df,
+                             aes(x = dias)) +
+  geom_line(aes(y = I1, color = "Menores de 18 años"), lwd = 2) +
+  geom_line(aes(y = I2, color = "18 a 19 años"), lwd = 2) +
+  geom_line(aes(y = I3, color = "40 a 59 años"), lwd = 2) + 
+  geom_line(aes(y = I4, color = "Mayores de 60 años"), lwd = 2) +
   labs(x = "Tiempo",
        y = "Población",
        title = "Infectados del modelo con beta_t",
@@ -175,7 +188,10 @@ beta_t_infectados <- ggplot(beta_t_out,
                                 "18 a 19 años" = colores[2],
                                 "40 a 59 años" = colores[3],
                                 "Mayores de 60 años" = colores[4])) +
-  theme(panel.background = element_rect(),
+  scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  theme(panel.background = element_rect(fill = "gray98"),
+        panel.grid = element_line(color = "gray1",
+                                  linetype = 3),
         plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
         axis.line = element_line(colour = "black", size = 0.65),
         axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
@@ -189,17 +205,17 @@ beta_t_infectados <- ggplot(beta_t_out,
 beta_t_infectados
 
 # jpeg("03_Out/Plots/beta_t_grafica_infectados.jpeg",
-#     width = 5733, height = 4300, res = 500, units = "px")
+#     width = 6333, height = 4300, res = 650, units = "px")
 # beta_t_infectados
 # dev.off()
 
 # Gráfica de Recuperados -------------------------------------------------------
-beta_t_recuperados <- ggplot(beta_t_out,
-                              aes(x = time)) +
-  geom_line(aes(y = R1, color = "Menores de 18 años"), size = 1) +
-  geom_line(aes(y = R2, color = "18 a 19 años"), size = 1) +
-  geom_line(aes(y = R3, color = "40 a 59 años"), size = 1) + 
-  geom_line(aes(y = R4, color = "Mayores de 60 años"), size = 1) +
+beta_t_recuperados <- ggplot(beta_t_out_df,
+                              aes(x = dias)) +
+  geom_line(aes(y = R1, color = "Menores de 18 años"), lwd = 2) +
+  geom_line(aes(y = R2, color = "18 a 19 años"), lwd = 2) +
+  geom_line(aes(y = R3, color = "40 a 59 años"), lwd = 2) + 
+  geom_line(aes(y = R4, color = "Mayores de 60 años"), lwd = 2) +
   labs(x = "Tiempo",
        y = "Población",
        title = "Recuperados del modelo con beta_t",
@@ -208,7 +224,10 @@ beta_t_recuperados <- ggplot(beta_t_out,
                                 "18 a 19 años" = colores[2],
                                 "40 a 59 años" = colores[3],
                                 "Mayores de 60 años" = colores[4])) +
-  theme(panel.background = element_rect(),
+  scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  theme(panel.background = element_rect(fill = "gray98"),
+        panel.grid = element_line(color = "gray1",
+                                  linetype = 3),
         plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
         axis.line = element_line(colour = "black", size = 0.65),
         axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
@@ -222,19 +241,17 @@ beta_t_recuperados <- ggplot(beta_t_out,
 beta_t_recuperados
 
 # jpeg("03_Out/Plots/beta_t_grafica_recuperados.jpeg",
-#     width = 5733, height = 4300, res = 500, units = "px")
+#     width = 6333, height = 4300, res = 650, units = "px")
 # beta_t_recuperados
 # dev.off()
 
-
-
 # Gráfica de Muertos -----------------------------------------------------------
-beta_t_muertos <- ggplot(beta_t_out,
-                          aes(x = time)) +
-  geom_line(aes(y = M1, color = "Menores de 18 años"), size = 1) +
-  geom_line(aes(y = M2, color = "18 a 19 años"), size = 1) +
-  geom_line(aes(y = M3, color = "40 a 59 años"), size = 1) + 
-  geom_line(aes(y = M4, color = "Mayores de 60 años"), size = 1) +
+beta_t_muertos <- ggplot(beta_t_out_df,
+                          aes(x = dias)) +
+  geom_line(aes(y = M1, color = "Menores de 18 años"), lwd = 2) +
+  geom_line(aes(y = M2, color = "18 a 19 años"), lwd = 2) +
+  geom_line(aes(y = M3, color = "40 a 59 años"), lwd = 2) + 
+  geom_line(aes(y = M4, color = "Mayores de 60 años"), lwd = 2) +
   labs(x = "Tiempo",
        y = "Población",
        title = "Muertes del modelo con beta_t",
@@ -243,7 +260,10 @@ beta_t_muertos <- ggplot(beta_t_out,
                                 "18 a 19 años" = colores[2],
                                 "40 a 59 años" = colores[3],
                                 "Mayores de 60 años" = colores[4])) +
-  theme(panel.background = element_rect(),
+  scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  theme(panel.background = element_rect(fill = "gray98"),
+        panel.grid = element_line(color = "gray1",
+                                  linetype = 3),
         plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
         axis.line = element_line(colour = "black", size = 0.65),
         axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
@@ -257,7 +277,7 @@ beta_t_muertos <- ggplot(beta_t_out,
 beta_t_muertos
 
 # jpeg("03_Out/Plots/beta_t_grafica_muertos.jpeg",
-#     width = 5733, height = 4300, res = 500, units = "px")
+#     width = 6333, height = 4300, res = 650, units = "px")
 # beta_t_muertos
 # dev.off()
 
