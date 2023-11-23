@@ -50,7 +50,7 @@ plot_incidencia <- ggplot(data = incidencia,
 plot_incidencia
 
 # jpeg("03_Out/Plots/incidencia_covid_qro.jpeg",
-#      width = 5733, height = 4300, res = 500, units = "px")
+#      width = 5733, height = 4300, res = 700, units = "px")
 # plot_incidencia
 # dev.off()
 
