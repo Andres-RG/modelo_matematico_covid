@@ -43,17 +43,12 @@ grafica_infectados <- ggplot(out_df,
                                 "40-59"= colores[3],
                                 "60<" = colores[4])) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  theme_minimal() +
   theme(
-    # background
-    panel.background = element_blank(),
-    panel.grid.major = element_line(color = "gray51",
-                                    linewidth = 0.2),
-    panel.grid.minor = element_line(color = "gray51",
-                                    linewidth = 0.2),
     # title
     plot.title = element_text(size = 12, face = "bold"),
     # linea del eje
-    axis.line = element_line(colour = "black", linewidth = 0.5),
+    axis.line = element_line(colour = "black", linewidth = 0.3),
     # eje x
     axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
     axis.title.x = element_text(size = 11, face = "bold"),
@@ -64,7 +59,8 @@ grafica_infectados <- ggplot(out_df,
     legend.position = "right",  # Posición de la leyenda
     legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
     legend.text = element_text(size = 10),  # Texto de la leyenda
-    legend.spacing = unit(0.5, "cm"))
+    legend.spacing = unit(0.5, "cm")
+  )
 grafica_infectados
 
 # jpeg("03_Out/Plots/grafica_infectados_inferidos.jpeg",
@@ -89,17 +85,12 @@ grafica_recuperados <- ggplot(out_df,
                                 "40-59" = colores[3],
                                 "60<" = colores[4])) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  theme_minimal() +
   theme(
-    # background
-    panel.background = element_blank(),
-    panel.grid.major = element_line(color = "gray51",
-                                    linewidth = 0.2),
-    panel.grid.minor = element_line(color = "gray51",
-                                    linewidth = 0.2),
     # title
     plot.title = element_text(size = 12, face = "bold"),
     # linea del eje
-    axis.line = element_line(colour = "black", linewidth = 0.5),
+    axis.line = element_line(colour = "black", linewidth = 0.3),
     # eje x
     axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
     axis.title.x = element_text(size = 11, face = "bold"),
@@ -110,7 +101,8 @@ grafica_recuperados <- ggplot(out_df,
     legend.position = "right",  # Posición de la leyenda
     legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
     legend.text = element_text(size = 10),  # Texto de la leyenda
-    legend.spacing = unit(0.5, "cm"))
+    legend.spacing = unit(0.5, "cm")
+  )
 grafica_recuperados
 
 # jpeg("03_Out/Plots/grafica_recuperados_inferidos.jpeg",
@@ -135,17 +127,12 @@ grafica_muertos <- ggplot(out_df,
                                 "40-59" = colores[3],
                                 "60<" = colores[4])) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  theme_minimal() +
   theme(
-    # background
-    panel.background = element_blank(),
-    panel.grid.major = element_line(color = "gray51",
-                                    linewidth = 0.2),
-    panel.grid.minor = element_line(color = "gray51",
-                                    linewidth = 0.2),
     # title
     plot.title = element_text(size = 12, face = "bold"),
     # linea del eje
-    axis.line = element_line(colour = "black", linewidth = 0.5),
+    axis.line = element_line(colour = "black", linewidth = 0.3),
     # eje x
     axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
     axis.title.x = element_text(size = 11, face = "bold"),
@@ -156,7 +143,8 @@ grafica_muertos <- ggplot(out_df,
     legend.position = "right",  # Posición de la leyenda
     legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
     legend.text = element_text(size = 10),  # Texto de la leyenda
-    legend.spacing = unit(0.5, "cm"))
+    legend.spacing = unit(0.5, "cm")
+  )
 grafica_muertos
 
 # jpeg("03_Out/Plots/grafica_muertos_inferidos.jpeg",
@@ -181,17 +169,12 @@ grafica_hospitalizados <- ggplot(out_df,
                                 "40-59"= colores[3],
                                 "60<" = colores[4])) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  theme_minimal() +
   theme(
-    # background
-    panel.background = element_blank(),
-    panel.grid.major = element_line(color = "gray51",
-                                    linewidth = 0.2),
-    panel.grid.minor = element_line(color = "gray51",
-                                    linewidth = 0.2),
     # title
     plot.title = element_text(size = 12, face = "bold"),
     # linea del eje
-    axis.line = element_line(colour = "black", linewidth = 0.5),
+    axis.line = element_line(colour = "black", linewidth = 0.3),
     # eje x
     axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
     axis.title.x = element_text(size = 11, face = "bold"),
@@ -202,7 +185,8 @@ grafica_hospitalizados <- ggplot(out_df,
     legend.position = "right",  # Posición de la leyenda
     legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
     legend.text = element_text(size = 10),  # Texto de la leyenda
-    legend.spacing = unit(0.5, "cm"))
+    legend.spacing = unit(0.5, "cm")
+  )
 grafica_hospitalizados
 
 # jpeg("03_Out/Plots/grafica_hospitalizados_inferidos.jpeg",
@@ -269,17 +253,12 @@ beta_t_infectados <- ggplot(beta_t_out_df,
                                 "40-59" = colores[3],
                                 "60<" = colores[4])) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  theme_minimal() +
   theme(
-    # background
-    panel.background = element_blank(),
-    panel.grid.major = element_line(color = "gray51",
-                                    linewidth = 0.2),
-    panel.grid.minor = element_line(color = "gray51",
-                                    linewidth = 0.2),
     # title
     plot.title = element_text(size = 12, face = "bold"),
     # linea del eje
-    axis.line = element_line(colour = "black", linewidth = 0.5),
+    axis.line = element_line(colour = "black", linewidth = 0.3),
     # eje x
     axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
     axis.title.x = element_text(size = 11, face = "bold"),
@@ -290,7 +269,8 @@ beta_t_infectados <- ggplot(beta_t_out_df,
     legend.position = "right",  # Posición de la leyenda
     legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
     legend.text = element_text(size = 10),  # Texto de la leyenda
-    legend.spacing = unit(0.5, "cm"))
+    legend.spacing = unit(0.5, "cm")
+  )
 beta_t_infectados
 
 # jpeg("03_Out/Plots/beta_t_grafica_infectados.jpeg",
@@ -315,17 +295,12 @@ beta_t_recuperados <- ggplot(beta_t_out_df,
                                 "40-59" = colores[3],
                                 "60<" = colores[4])) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  theme_minimal() +
   theme(
-    # background
-    panel.background = element_blank(),
-    panel.grid.major = element_line(color = "gray51",
-                                    linewidth = 0.2),
-    panel.grid.minor = element_line(color = "gray51",
-                                    linewidth = 0.2),
     # title
     plot.title = element_text(size = 12, face = "bold"),
     # linea del eje
-    axis.line = element_line(colour = "black", linewidth = 0.5),
+    axis.line = element_line(colour = "black", linewidth = 0.3),
     # eje x
     axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
     axis.title.x = element_text(size = 11, face = "bold"),
@@ -336,7 +311,8 @@ beta_t_recuperados <- ggplot(beta_t_out_df,
     legend.position = "right",  # Posición de la leyenda
     legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
     legend.text = element_text(size = 10),  # Texto de la leyenda
-    legend.spacing = unit(0.5, "cm"))
+    legend.spacing = unit(0.5, "cm")
+  )
 beta_t_recuperados
 
 # jpeg("03_Out/Plots/beta_t_grafica_recuperados.jpeg",
@@ -361,17 +337,12 @@ beta_t_muertos <- ggplot(beta_t_out_df,
                                 "40-59" = colores[3],
                                 "60<" = colores[4])) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  theme_minimal() +
   theme(
-    # background
-    panel.background = element_blank(),
-    panel.grid.major = element_line(color = "gray51",
-                                    linewidth = 0.2),
-    panel.grid.minor = element_line(color = "gray51",
-                                    linewidth = 0.2),
     # title
     plot.title = element_text(size = 12, face = "bold"),
     # linea del eje
-    axis.line = element_line(colour = "black", linewidth = 0.5),
+    axis.line = element_line(colour = "black", linewidth = 0.3),
     # eje x
     axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
     axis.title.x = element_text(size = 11, face = "bold"),
@@ -382,7 +353,8 @@ beta_t_muertos <- ggplot(beta_t_out_df,
     legend.position = "right",  # Posición de la leyenda
     legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
     legend.text = element_text(size = 10),  # Texto de la leyenda
-    legend.spacing = unit(0.5, "cm"))
+    legend.spacing = unit(0.5, "cm")
+  )
 beta_t_muertos
 
 # jpeg("03_Out/Plots/beta_t_grafica_muertos.jpeg",
@@ -407,17 +379,12 @@ beta_t_hospitalizados <- ggplot(beta_t_out_df,
                                 "40-59" = colores[3],
                                 "60<" = colores[4])) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  theme_minimal() +
   theme(
-    # background
-    panel.background = element_blank(),
-    panel.grid.major = element_line(color = "gray51",
-                                    linewidth = 0.2),
-    panel.grid.minor = element_line(color = "gray51",
-                                    linewidth = 0.2),
     # title
     plot.title = element_text(size = 12, face = "bold"),
     # linea del eje
-    axis.line = element_line(colour = "black", linewidth = 0.5),
+    axis.line = element_line(colour = "black", linewidth = 0.3),
     # eje x
     axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
     axis.title.x = element_text(size = 11, face = "bold"),
@@ -428,7 +395,8 @@ beta_t_hospitalizados <- ggplot(beta_t_out_df,
     legend.position = "right",  # Posición de la leyenda
     legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
     legend.text = element_text(size = 10),  # Texto de la leyenda
-    legend.spacing = unit(0.5, "cm"))
+    legend.spacing = unit(0.5, "cm")
+  )
 beta_t_hospitalizados
 
 # jpeg("03_Out/Plots/beta_t_grafica_hospitalizados.jpeg",
