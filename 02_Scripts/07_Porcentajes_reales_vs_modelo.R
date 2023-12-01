@@ -16,6 +16,8 @@ source("02_Scripts/05_Resolucion_numerica.R")
 
 # Se cargan los datos del modelo
 load("03_Out/OutData/casos_totales_rangos_edades.RData")
+load("03_Out/OutData/casos_datos_x_grupos.RData")
+load("03_Out/OutData/muertes_datos_x_grupos.RData")
 
 # Probabilidades reales ========================================================
 totales_reales <- mutate(casos_totales_re, individuo = 1)
@@ -114,3 +116,254 @@ plot_porcentajes <- ggplot(datos, aes(x = estado)) +
        x = "Categoría",
        y = "Valor")
 plot_porcentajes
+
+# Proporciones de las edades en casos ==========================================
+head(casos_x_grupos)
+colores <- c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD")
+
+plot_casos_observados <- ggplot(casos_x_grupos_corte,
+                                aes(x = FECHA_SINTOMAS,
+                                    y = casos_totales)) +
+  geom_density(aes(fill = grupos,
+                   col = grupos),
+               position = "fill",
+               stat = "identity") +
+  labs(x = "Tiempo",
+       y = "Densidad",
+       title = "Casos Observados",
+       fill = "Grupo") +
+  scale_color_manual(values = c("Menores de 18 años" = colores[1],
+                                "18-39 años" = colores[2],
+                                "40-59 años" = colores[3],
+                                "Mayores de 60 años" = colores[4])) +
+  scale_fill_manual(labels = c("Menores de 18 años" = "<18",
+                               "18-39 años" = "18-39",
+                               "40-59 años" = "40-59",
+                               "Mayores de 60 años" = "60<"),
+                    values = c("Menores de 18 años" = colores[1],
+                               "18-39 años" = colores[2],
+                               "40-59 años" = colores[3],
+                               "Mayores de 60 años" = colores[4])) +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  guides(color = "none") +
+  theme_minimal() +
+  theme(
+    # title
+    plot.title = element_text(size = 12, face = "bold"),
+    # linea del eje
+    axis.line = element_line(colour = "black", linewidth = 0.3),
+    # eje x
+    axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
+    axis.title.x = element_text(size = 11, face = "bold"),
+    # eje y
+    axis.text.y = element_text(size = 9, face = "bold"),
+    axis.title.y = element_text(size = 11, face = "bold"),
+    # leyenda
+    legend.position = "right",  # Posición de la leyenda
+    legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
+    legend.text = element_text(size = 10),  # Texto de la leyenda
+    legend.spacing = unit(0.5, "cm")
+    )
+plot_casos_observados
+
+# jpeg("03_Out/Plots/proporcion_casos_observados.jpeg",
+#      width = 5733, height = 4300, res = 800, units = "px")
+# plot_casos_observados
+# dev.off()
+
+## Casos del modelo ------------------------------------------------------------
+casos_modelo_1 <- data_frame(dias = beta_t_out_df$dias,
+                           casos = c(beta_t_out_df$I1),
+                           grupo = "<18")
+casos_modelo_2 <- data_frame(dias = beta_t_out_df$dias,
+                             casos = c(beta_t_out_df$I2),
+                             grupo = "18-39")
+casos_modelo_3 <- data_frame(dias = beta_t_out_df$dias,
+                             casos = c(beta_t_out_df$I3),
+                             grupo = "40-59")
+casos_modelo_4 <- data_frame(dias = beta_t_out_df$dias,
+                             casos = c(beta_t_out_df$I4),
+                             grupo = "60<")
+casos_modelo <- rbind(casos_modelo_1,
+                      casos_modelo_2,
+                      casos_modelo_3,
+                      casos_modelo_4)
+
+casos_modelo$grupo <- factor(casos_modelo$grupo,
+                             levels = c("<18",
+                                        "18-39",
+                                        "40-59",
+                                        "60<"))
+
+plot_casos_modelo <- ggplot(casos_modelo,
+                            aes(x = dias,
+                                y = casos)) +
+  geom_density(aes(fill = grupo,
+                   col = grupo),
+               position = "fill",
+               stat = "identity") +
+  labs(x = "Tiempo",
+       y = "Densidad",
+       title = "Casos modelo",
+       fill = "Grupo") +
+  scale_color_manual(values = c("<18" = colores[1],
+                               "18-39" = colores[2],
+                               "40-59" = colores[3],
+                               "60<" = colores[4])) +
+  scale_fill_manual(values = c("<18" = colores[1],
+                                "18-39" = colores[2],
+                                "40-59" = colores[3],
+                                "60<" = colores[4])) +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  guides(color = "none") +
+  theme_minimal() +
+  theme(
+    # title
+    plot.title = element_text(size = 12, face = "bold"),
+    # linea del eje
+    axis.line = element_line(colour = "black", linewidth = 0.5),
+    # eje x
+    axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
+    axis.title.x = element_text(size = 11, face = "bold"),
+    # eje y
+    axis.text.y = element_text(size = 9, face = "bold"),
+    axis.title.y = element_text(size = 11, face = "bold"),
+    # leyenda
+    legend.position = "right",  # Posición de la leyenda
+    legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
+    legend.text = element_text(size = 10),  # Texto de la leyenda
+    legend.spacing = unit(0.5, "cm")
+    )
+plot_casos_modelo
+
+# jpeg("03_Out/Plots/proporcion_casos_modelo.jpeg",
+#      width = 5733, height = 4300, res = 800, units = "px")
+# plot_casos_modelo
+# dev.off()
+
+# Muertes ----------------------------------------------------------------------
+
+head(muertes_x_grupos)
+
+plot_muertes_observadas <- ggplot(muertes_x_grupos_corte,
+                                  aes(x = FECHA_DEF,
+                                      y = casos)) +
+  geom_density(aes(fill = grupos,
+                   col = grupos),
+               position = "fill",
+               stat = "identity") +
+  labs(x = "Tiempo",
+       y = "Densidad",
+       title = "Muertes Observadas",
+       fill = "Grupo") +
+  scale_color_manual(values = c("Menores de 18 años" = colores[1],
+                                "18-39 años" = colores[2],
+                                "40-59 años" = colores[3],
+                                "Mayores de 60 años" = colores[4])) +
+  scale_fill_manual(labels = c("Menores de 18 años" = "<18",
+                               "18-39 años" = "18-39",
+                               "40-59 años" = "40-59",
+                               "Mayores de 60 años" = "60<"),
+                    values = c("Menores de 18 años" = colores[1],
+                               "18-39 años" = colores[2],
+                               "40-59 años" = colores[3],
+                               "Mayores de 60 años" = colores[4])) +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  guides(color = "none") +
+  theme_minimal() +
+  theme(
+    # title
+    plot.title = element_text(size = 12, face = "bold"),
+    # linea del eje
+    axis.line = element_line(colour = "black", linewidth = 0.3),
+    # eje x
+    axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
+    axis.title.x = element_text(size = 11, face = "bold"),
+    # eje y
+    axis.text.y = element_text(size = 9, face = "bold"),
+    axis.title.y = element_text(size = 11, face = "bold"),
+    # leyenda
+    legend.position = "right",  # Posición de la leyenda
+    legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
+    legend.text = element_text(size = 10),  # Texto de la leyenda
+    legend.spacing = unit(0.5, "cm")
+  )
+plot_muertes_observadas
+
+# jpeg("03_Out/Plots/proporcion_muertes_observadas.jpeg",
+#      width = 5733, height = 4300, res = 800, units = "px")
+# plot_muertes_observadas
+# dev.off()
+
+## Muertes del modelo ----------------------------------------------------------
+
+muertes_modelo_1 <- data_frame(dias = beta_t_out_df$dias,
+                               casos = c(beta_t_out_df$M1),
+                               grupo = "<18")
+muertes_modelo_2 <- data_frame(dias = beta_t_out_df$dias,
+                               casos = c(beta_t_out_df$M2),
+                               grupo = "18-39")
+muertes_modelo_3 <- data_frame(dias = beta_t_out_df$dias,
+                               casos = c(beta_t_out_df$M3),
+                               grupo = "40-59")
+muertes_modelo_4 <- data_frame(dias = beta_t_out_df$dias,
+                               casos = c(beta_t_out_df$M4),
+                               grupo = "60<")
+muertes_modelo <- rbind(muertes_modelo_1,
+                        muertes_modelo_2,
+                        muertes_modelo_3,
+                        muertes_modelo_4)
+
+
+muertes_modelo$grupo <- factor(muertes_modelo$grupo,
+                             levels = c("<18",
+                                        "18-39",
+                                        "40-59",
+                                        "60<"))
+
+plot_muertes_modelo <- ggplot(muertes_modelo,
+                              aes(x = dias,
+                                  y = casos)) +
+  geom_density(aes(fill = grupo,
+                   col = grupo),
+               position = "fill",
+               stat = "identity") +
+  labs(x = "Tiempo",
+       y = "Densidad",
+       title = "Muertes modelo",
+       fill = "Grupo") +
+  scale_color_manual(values = c("<18" = colores[1],
+                                "18-39" = colores[2],
+                                "40-59" = colores[3],
+                                "60<" = colores[4])) +
+  scale_fill_manual(values = c("<18" = colores[1],
+                               "18-39" = colores[2],
+                               "40-59" = colores[3],
+                               "60<" = colores[4])) +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") + #agrega los meses
+  guides(color = "none") +
+  theme_minimal() +
+  theme(
+    # title
+    plot.title = element_text(size = 12, face = "bold"),
+    # linea del eje
+    axis.line = element_line(colour = "black", linewidth = 0.5),
+    # eje x
+    axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
+    axis.title.x = element_text(size = 11, face = "bold"),
+    # eje y
+    axis.text.y = element_text(size = 9, face = "bold"),
+    axis.title.y = element_text(size = 11, face = "bold"),
+    # leyenda
+    legend.position = "right",  # Posición de la leyenda
+    legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
+    legend.text = element_text(size = 10),  # Texto de la leyenda
+    legend.spacing = unit(0.5, "cm")
+  )
+plot_muertes_modelo
+
+
+# jpeg("03_Out/Plots/proporcion_muertes_modelo.jpeg",
+#      width = 5733, height = 4300, res = 800, units = "px")
+# plot_muertes_modelo
+# dev.off()
