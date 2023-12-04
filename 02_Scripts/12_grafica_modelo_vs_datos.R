@@ -32,7 +32,7 @@ data_frame <- data_frame_filtrado %>%
 casos_solo_filt <- filter(data_frame, tipo == "Casos")
 modelo_solo_filt <- filter(data_frame, tipo == "Modelo")
 ### Grafica --------------------------------------------------------------------
-colores <- c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD")
+colores <- viridis(4)
 #
 modelo_vs_casos <- ggplot() +
   ###   ###   ###   ###   ###
@@ -54,13 +54,17 @@ modelo_vs_casos <- ggplot() +
        color = "Grupos",
        title = "Modelo vs Casos observados") +
   ###
-  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "2 month") +
   #
   scale_color_manual(name = "Modelo",
                      breaks = c("Menores de 18 años",
                                 "18-39 años",
                                 "40-59 años",
                                 "Mayores de 60 años"),
+                     labels = c("Menores de 18 años" = "<18",
+                                "18-39 años" = "18-39",
+                                "40-59 años" = "40-59",
+                                "Mayores de 60 años" = "60<"),
                      values = c("Menores de 18 años" = colores[1],
                                 "18-39 años" = colores[2],
                                 "40-59 años" = colores[3],
@@ -75,26 +79,37 @@ modelo_vs_casos <- ggplot() +
                                 "18-39 años",
                                 "40-59 años",
                                 "Mayores de 60 años"),
+                     labels = c("Menores de 18 años" = "<18",
+                                "18-39 años" = "18-39",
+                                "40-59 años" = "40-59",
+                                "Mayores de 60 años" = "60<"),
                      values = c("Menores de 18 años" = 18,
                                 "18-39 años" = 2,
                                 "40-59 años" = 16,
                                 "Mayores de 60 años" = 0)) +
   ###
-  theme(panel.background = element_rect(),
-        plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
-        axis.line = element_line(colour = "black", size = 0.65),
-        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"),
-        axis.text.y = element_text(size = 9, face = "bold"),
-        axis.title.x = element_text(size = 12, face = "bold"),
-        axis.title.y = element_text(size = 12, face = "bold"),
-        legend.position = "right",  # Posición de la leyenda
-        legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
-        legend.text = element_text(size = 10),  # Texto de la leyenda
-        legend.spacing = unit(0.5, "cm"))
+  theme_minimal() +
+  theme(
+    # title
+    plot.title = element_text(size = 12, face = "bold"),
+    # linea del eje
+    axis.line = element_line(colour = "black", linewidth = 0.3),
+    # eje x
+    axis.text.x = element_text(angle = 0, hjust = 1, face = "bold"),
+    axis.title.x = element_text(size = 11, face = "bold"),
+    # eje y
+    axis.text.y = element_text(size = 9, face = "bold"),
+    axis.title.y = element_text(size = 11, face = "bold"),
+    # leyenda
+    legend.position = "right",  # Posición de la leyenda
+    legend.title = element_text(size = 10, face = "bold"),  # Título de la leyenda
+    legend.text = element_text(size = 10),  # Texto de la leyenda
+    legend.spacing = unit(0.5, "cm")
+  )
 modelo_vs_casos
 
 # jpeg("03_Out/Plots/modelo_vs_casos.jpeg",
-#      width = 5733, height = 4300, res = 500, units = "px")
+#      width = 5733, height = 4300, res = 800, units = "px")
 # modelo_vs_casos
 # dev.off()
 
