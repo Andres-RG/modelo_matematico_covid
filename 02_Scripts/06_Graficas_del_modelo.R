@@ -19,7 +19,7 @@ source("02_Scripts/05.5_Resolucion_con_beta_t.R")
 load("03_Out/OutData/casos_positivos_x_dia_rango_edad.RData")
 head(casos_positivos_x_dia_re)
 
-colores <- c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD")
+colores <- viridis(4)
 dates <- seq(as.Date("2020-03-01"),
              as.Date("2021-07-14"),
              by = 1)
