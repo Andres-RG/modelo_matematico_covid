@@ -119,7 +119,7 @@ plot_porcentajes
 
 # Proporciones de las edades en casos ==========================================
 head(casos_x_grupos)
-colores <- c("#00BFFF", "#FFB90F", "#7CCD7C", "#6A5ACD")
+colores <- viridis(4)
 
 plot_casos_observados <- ggplot(casos_x_grupos_corte,
                                 aes(x = FECHA_SINTOMAS,
