@@ -97,7 +97,7 @@ plot_pos_fill <- ggplot(casos_positivos_re,
                         aes(x = FECHA_SINTOMAS,
                             col = rango_de_edad,
                             fill = rango_de_edad)) +
-  geom_bar(position = "fill") +
+  geom_bar(position = "fill", stat = "count") +
   labs(x = "Tiempo",
        y = "Casos positivos",
        title = "Variación de proporción de casos positivos a COVID-19",
@@ -128,13 +128,16 @@ plot_pos_fill
 ## Grafica 1 -------------------------------------------------------------------
 plot_densidad_positivos_re_v1 <- ggplot(casos_positivos_re,
                                         aes(x = FECHA_SINTOMAS,
-                                            fill = rango_de_edad)) +
+                                            fill = rango_de_edad,
+                                            col = rango_de_edad)) +
   geom_density( position = "stack" ) +
   labs(x = "Tiempo",
        y = "Densidad",
        title = "Densidad de Casos positivos",
        fill = "Rangos de Edad") +
   scale_fill_viridis(discrete = T) +
+  scale_color_viridis(discrete = T) +
+  guides(color = "none") +
   scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
   theme(panel.background = element_rect(),
         plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
@@ -157,13 +160,16 @@ plot_densidad_positivos_re_v1
 ## Grafica 2 -------------------------------------------------------------------
 plot_densidad_positivos_re_v2 <- ggplot(casos_positivos_re,
                                         aes( x = FECHA_SINTOMAS,
-                                             fill = rango_de_edad)) +
-  geom_density(position = "fill") +
+                                             fill = rango_de_edad,
+                                             color = rango_de_edad)) +
+  geom_density(position = "fill", stat = "count") +
   labs( x = "Tiempo",
         y = "Densidad",
         title = "Densidad de Casos positivos",
         fill = "Rangos de Edad") +
   scale_fill_viridis(discrete = T) + 
+  scale_color_viridis(discrete = T) +
+  guides(color = "none") +
   scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
   theme(panel.background = element_blank(),
         plot.title = element_text(size = 15, hjust = 0.5, face = "bold"),
