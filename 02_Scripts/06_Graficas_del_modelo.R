@@ -29,10 +29,10 @@ out_df <- mutate(out, dias = dates)
 ## Gráfica de Infectados -------------------------------------------------------
 grafica_infectados <- ggplot(out_df,
                              aes(x = dias)) +
-  geom_line(aes(y = I1, color = "<18"), lwd = 1.7) +
-  geom_line(aes(y = I2, color = "18-39"), lwd = 1.7) +
-  geom_line(aes(y = I3, color = "40-59"), lwd = 1.7) + 
-  geom_line(aes(y = I4, color = "60<"), lwd = 1.7) +
+  geom_line(aes(y = I1, color = "<18"), lwd = 2) +
+  geom_line(aes(y = I2, color = "18-39"), lwd = 2) +
+  geom_line(aes(y = I3, color = "40-59"), lwd = 2) + 
+  geom_line(aes(y = I4, color = "60<"), lwd = 2) +
   labs(x = "Tiempo",
        y = "Población",
        title = "Infectados del modelo",
@@ -71,10 +71,10 @@ grafica_infectados
 ## Gráfica de Recuperados ------------------------------------------------------
 grafica_recuperados <- ggplot(out_df,
                              aes(x = dias)) +
-  geom_line(aes(y = R1, color = "<18"), lwd = 1.7) +
-  geom_line(aes(y = R2, color = "18-39"), lwd = 1.7) +
-  geom_line(aes(y = R3, color = "40-59"), lwd = 1.7) + 
-  geom_line(aes(y = R4, color = "60<"), lwd = 1.7) +
+  geom_line(aes(y = R1, color = "<18"), lwd = 2) +
+  geom_line(aes(y = R2, color = "18-39"), lwd = 2) +
+  geom_line(aes(y = R3, color = "40-59"), lwd = 2) + 
+  geom_line(aes(y = R4, color = "60<"), lwd = 2) +
   labs(x = "Tiempo",
        y = "Población",
        title = "Recuperados del modelo",
@@ -113,10 +113,10 @@ grafica_recuperados
 ## Gráfica de Muertos ----------------------------------------------------------
 grafica_muertos <- ggplot(out_df,
                               aes(x = dias)) +
-  geom_line(aes(y = M1, color = "<18"), lwd = 1.7) +
-  geom_line(aes(y = M2, color = "18-39"), lwd = 1.7) +
-  geom_line(aes(y = M3, color = "40-59"), lwd = 1.7) + 
-  geom_line(aes(y = M4, color = "60<"), lwd = 1.7) +
+  geom_line(aes(y = M1, color = "<18"), lwd = 2) +
+  geom_line(aes(y = M2, color = "18-39"), lwd = 2) +
+  geom_line(aes(y = M3, color = "40-59"), lwd = 2) + 
+  geom_line(aes(y = M4, color = "60<"), lwd = 2) +
   labs(x = "Tiempo",
        y = "Población",
        title = "Muertes del modelo",
@@ -155,10 +155,10 @@ grafica_muertos
 ## Gráfica de Hospitalizados ---------------------------------------------------
 grafica_hospitalizados <- ggplot(out_df,
                                  aes(x = dias)) +
-  geom_line(aes(y = I_h1, color = "<18"), lwd = 1.7) +
-  geom_line(aes(y = I_h2, color = "18-39"), lwd = 1.7) +
-  geom_line(aes(y = I_h3, color = "40-59"), lwd = 1.7) + 
-  geom_line(aes(y = I_h4, color = "60<"), lwd = 1.7) +
+  geom_line(aes(y = I_h1, color = "<18"), lwd = 2) +
+  geom_line(aes(y = I_h2, color = "18-39"), lwd = 2) +
+  geom_line(aes(y = I_h3, color = "40-59"), lwd = 2) + 
+  geom_line(aes(y = I_h4, color = "60<"), lwd = 2) +
   labs(x = "Tiempo",
        y = "Población",
        title = "Hospitalizados del modelo",
@@ -239,10 +239,10 @@ beta_t_out_df <- mutate(beta_t_out, dias = dates2)
 ## Gráfica de Infectados -------------------------------------------------------
 beta_t_infectados <- ggplot(beta_t_out_df,
                              aes(x = dias)) +
-  geom_line(aes(y = I1, color = "<18"), lwd = 1.7) +
-  geom_line(aes(y = I2, color = "18-39"), lwd = 1.7) +
-  geom_line(aes(y = I3, color = "40-59"), lwd = 1.7) + 
-  geom_line(aes(y = I4, color = "60<"), lwd = 1.7) +
+  geom_line(aes(y = I1, color = "<18"), lwd = 2) +
+  geom_line(aes(y = I2, color = "18-39"), lwd = 2) +
+  geom_line(aes(y = I3, color = "40-59"), lwd = 2) + 
+  geom_line(aes(y = I4, color = "60<"), lwd = 2) +
   labs(x = "Tiempo",
        y = "Población",
        title = "Infectados del modelo con beta_t",
@@ -281,10 +281,10 @@ beta_t_infectados
 ## Gráfica de Recuperados ------------------------------------------------------
 beta_t_recuperados <- ggplot(beta_t_out_df,
                               aes(x = dias)) +
-  geom_line(aes(y = R1, color = "<18"), lwd = 1.7) +
-  geom_line(aes(y = R2, color = "18-39"), lwd = 1.7) +
-  geom_line(aes(y = R3, color = "40-59"), lwd = 1.7) + 
-  geom_line(aes(y = R4, color = "60<"), lwd = 1.7) +
+  geom_line(aes(y = R1, color = "<18"), lwd = 2) +
+  geom_line(aes(y = R2, color = "18-39"), lwd = 2) +
+  geom_line(aes(y = R3, color = "40-59"), lwd = 2) + 
+  geom_line(aes(y = R4, color = "60<"), lwd = 2) +
   labs(x = "Tiempo",
        y = "Población",
        title = "Recuperados del modelo con beta_t",
@@ -323,10 +323,10 @@ beta_t_recuperados
 ## Gráfica de Muertos ----------------------------------------------------------
 beta_t_muertos <- ggplot(beta_t_out_df,
                           aes(x = dias)) +
-  geom_line(aes(y = M1, color = "<18"), lwd = 1.7) +
-  geom_line(aes(y = M2, color = "18-39"), lwd = 1.7) +
-  geom_line(aes(y = M3, color = "40-59"), lwd = 1.7) + 
-  geom_line(aes(y = M4, color = "60<"), lwd = 1.7) +
+  geom_line(aes(y = M1, color = "<18"), lwd = 2) +
+  geom_line(aes(y = M2, color = "18-39"), lwd = 2) +
+  geom_line(aes(y = M3, color = "40-59"), lwd = 2) + 
+  geom_line(aes(y = M4, color = "60<"), lwd = 2) +
   labs(x = "Tiempo",
        y = "Población",
        title = "Muertes del modelo con beta_t",
@@ -365,10 +365,10 @@ beta_t_muertos
 ## Gráfica de Hospitalizados ---------------------------------------------------
 beta_t_hospitalizados <- ggplot(beta_t_out_df,
                                 aes(x = dias)) +
-  geom_line(aes(y = I_h1, color = "<18"), lwd = 1.7) +
-  geom_line(aes(y = I_h2, color = "18-39"), lwd = 1.7) +
-  geom_line(aes(y = I_h3, color = "40-59"), lwd = 1.7) + 
-  geom_line(aes(y = I_h4, color = "60<"), lwd = 1.7) +
+  geom_line(aes(y = I_h1, color = "<18"), lwd = 2) +
+  geom_line(aes(y = I_h2, color = "18-39"), lwd = 2) +
+  geom_line(aes(y = I_h3, color = "40-59"), lwd = 2) + 
+  geom_line(aes(y = I_h4, color = "60<"), lwd = 2) +
   labs(x = "Tiempo",
        y = "Población",
        title = "Hospitalizados del modelo con beta_t",
