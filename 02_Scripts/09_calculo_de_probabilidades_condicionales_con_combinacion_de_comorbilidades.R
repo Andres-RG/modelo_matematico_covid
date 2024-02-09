@@ -654,22 +654,22 @@ bm <- cbind(bm, combin)
 bm
 colnames(bm) <- c("D","E","A","I","H","CV","O","RC","T",
                   #
-                  "D X E", "D X A", "D X I","D X H", "D X CV","D X O", "D X RC", 
-                  "D X T",
+                  "D * E", "D * A", "D * I","D * H", "D * CV","D * O", "D * RC", 
+                  "D * T",
                   #
-                  "E X A", "E X I","E X H", "E X CV","E X O", "E X RC","E X T",
+                  "E * A", "E * I","E * H", "E * CV","E * O", "E * RC","E * T",
                   #
-                  "A X I","A X H", "A X CV","A X O", "A X RC","A X T",
+                  "A * I","A * H", "A * CV","A * O", "A * RC","A * T",
                   #
-                  "I X H","I X CV", "I X O","I X RC","I X T",
+                  "I * H","I * CV", "I * O","I * RC","I * T",
                   #
-                  "H X CV", "H X O","H X RC", "H X T",
+                  "H * CV", "H * O","H * RC", "H * T",
                   #
-                  "CV X O", "CV X RC","CV X T",
+                  "CV * O", "CV * RC","CV * T",
                   #
-                  "O X RC","O X T",
+                  "O * RC","O * T",
                   #
-                  "RC X T")
+                  "RC * T")
 bm
 mat_combinaciones_bm = bm
 mat_combinaciones_bm <- t(mat_combinaciones_bm)
@@ -700,8 +700,8 @@ bm_heatmap <- Heatmap(mat_combinaciones_bm,
                                           fontface = "bold"),
                       column_names_gp = gpar(fontsize = 10,
                                              fontface = "bold"),
-                      row_names_centered = TRUE,
-                      column_names_centered = TRUE,
+                      row_names_centered = F,
+                      column_names_centered = T,
                       width = ncol(mat_combinaciones_bm)*unit(24, "mm"),
                       height = nrow(mat_combinaciones_bm)*unit(4, "mm")
 )
