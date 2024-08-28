@@ -1,0 +1,17 @@
+---
+output: html_document
+---
+
+
+$$\begin{aligned}
+& \dot S_j = - \frac{\beta \, \sum_{k=1} ^4 S_j \, I_k}{N} + \omega \, R_j\\
+& \dot E_i = \frac{\beta \, \sum_{k=1} ^4 S_j \, I_k}{N} - \alpha \, E_j \\
+& \dot I_j = \alpha \, E_j - p_{lj} \, \delta_l \, I_j - p_{hj} \, \delta_h \, I_j \\
+& \dot I_{lj} = p_{lj} \, \delta_l \, I_j - \gamma_R \, I_{lj} \\
+& \dot I_{hj} = p_{hj} \, \delta_h \, I_j - p_{ij} \, \delta_i \, I_{hj} - (1 - p_{ij}) \, \gamma_h \, I_{hj} \\
+& \dot I_{ij} = p_{ij} \, \delta_i \, I_{hj} - \mu_j \, \delta_{\mu} \, I_{ij} - (1 - \mu_j) \, \gamma_i \, I_{ij} \\
+& \dot M_j = \mu_j \, \delta_{\mu} \, I_{ij} \\
+& \dot R_j = \gamma_R \, I_{lj} \, + (1 - p_{ij}) \, \gamma_h \, I_{hj} + (1 - \mu_j) \, \gamma_i \, I_{ij} - \omega \, R_j\\
+\\
+& j \,  = 1,2,3,4
+\end{aligned}$$

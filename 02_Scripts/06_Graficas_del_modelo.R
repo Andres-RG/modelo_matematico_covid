@@ -34,8 +34,8 @@ grafica_infectados <- ggplot(out_df,
   geom_line(aes(y = I3, color = "40-59"), lwd = 2) + 
   geom_line(aes(y = I4, color = "60<"), lwd = 2) +
   labs(x = "Tiempo",
-       y = "Población",
-       title = "Infectados del modelo",
+       y = "Infectados",
+       title = "Tasa de contacto constante",
        color = "Grupos") +
   scale_color_manual(breaks = c("<18","18-39","40-59","60<"),
                      values = c("<18" = colores[1],
@@ -76,8 +76,8 @@ grafica_recuperados <- ggplot(out_df,
   geom_line(aes(y = R3, color = "40-59"), lwd = 2) + 
   geom_line(aes(y = R4, color = "60<"), lwd = 2) +
   labs(x = "Tiempo",
-       y = "Población",
-       title = "Recuperados del modelo",
+       y = "Recuperados",
+       title = "Tasa de contacto constante",
        color = "Grupos") +
   scale_color_manual(breaks = c("<18","18-39","40-59","60<"),
                      values = c("<18" = colores[1],
@@ -118,8 +118,8 @@ grafica_muertos <- ggplot(out_df,
   geom_line(aes(y = M3, color = "40-59"), lwd = 2) + 
   geom_line(aes(y = M4, color = "60<"), lwd = 2) +
   labs(x = "Tiempo",
-       y = "Población",
-       title = "Muertes del modelo",
+       y = "Muertes",
+       title = "Tasa de contacto constante",
        color = "Grupos") +
   scale_color_manual(breaks = c("<18","18-39","40-59","60<"),
                      values = c("<18" = colores[1],
@@ -160,8 +160,8 @@ grafica_hospitalizados <- ggplot(out_df,
   geom_line(aes(y = I_h3, color = "40-59"), lwd = 2) + 
   geom_line(aes(y = I_h4, color = "60<"), lwd = 2) +
   labs(x = "Tiempo",
-       y = "Población",
-       title = "Hospitalizados del modelo",
+       y = "Hospitalizaciones",
+       title = "Tasa de contacto constante",
        color = "Grupos") +
   scale_color_manual(breaks = c("<18","18-39","40-59","60<"),
                      values = c("<18" = colores[1],
@@ -244,8 +244,8 @@ beta_t_infectados <- ggplot(beta_t_out_df,
   geom_line(aes(y = I3, color = "40-59"), lwd = 2) + 
   geom_line(aes(y = I4, color = "60<"), lwd = 2) +
   labs(x = "Tiempo",
-       y = "Población",
-       title = "Infectados del modelo con beta_t",
+       y = "Infectados",
+       title = "Modelo con beta_t",
        color = "Grupos") +
   scale_color_manual(breaks = c("<18","18-39","40-59","60<"),
                      values = c("<18" = colores[1],
@@ -286,8 +286,8 @@ beta_t_recuperados <- ggplot(beta_t_out_df,
   geom_line(aes(y = R3, color = "40-59"), lwd = 2) + 
   geom_line(aes(y = R4, color = "60<"), lwd = 2) +
   labs(x = "Tiempo",
-       y = "Población",
-       title = "Recuperados del modelo con beta_t",
+       y = "Recuperados",
+       title = "Modelo con beta_t",
        color = "Grupos") +
   scale_color_manual(breaks = c("<18","18-39","40-59","60<"),
                      values = c("<18" = colores[1],
@@ -328,8 +328,8 @@ beta_t_muertos <- ggplot(beta_t_out_df,
   geom_line(aes(y = M3, color = "40-59"), lwd = 2) + 
   geom_line(aes(y = M4, color = "60<"), lwd = 2) +
   labs(x = "Tiempo",
-       y = "Población",
-       title = "Muertes del modelo con beta_t",
+       y = "Muertes",
+       title = "Modelo con beta_t",
        color = "Grupos") +
   scale_color_manual(breaks = c("<18","18-39","40-59","60<"),
                      values = c("<18" = colores[1],
@@ -370,8 +370,8 @@ beta_t_hospitalizados <- ggplot(beta_t_out_df,
   geom_line(aes(y = I_h3, color = "40-59"), lwd = 2) + 
   geom_line(aes(y = I_h4, color = "60<"), lwd = 2) +
   labs(x = "Tiempo",
-       y = "Población",
-       title = "Hospitalizados del modelo con beta_t",
+       y = "Hospitalizaciones",
+       title = "Modelo con beta_t",
        color = "Grupos") +
   scale_color_manual(breaks = c("<18","18-39","40-59","60<"),
                      values = c("<18" = colores[1],
